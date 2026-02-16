@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Canonical from '../components/SEO/Canonical';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     Mail,
@@ -387,6 +388,7 @@ const Admin = () => {
     // Admin Dashboard
     return (
         <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
+            <Canonical path="/admin" />
             {/* Toast Notification */}
             <AnimatePresence>
                 {toast.show && (

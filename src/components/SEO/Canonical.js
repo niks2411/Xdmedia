@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
 
 const Canonical = ({ path }) => {
-    const domain = 'https://xdmedia.in';
+    const domain = 'https://www.xdmedia.in';
     const canonicalUrl = `${domain}${path}`;
 
     return (
