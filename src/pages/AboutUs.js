@@ -1,4 +1,5 @@
 import React from 'react';
+import Canonical from '../components/SEO/Canonical';
 import { motion } from 'framer-motion';
 import { TimelineDemo } from '../components/TimelineDemo';
 import { MarqueeDemo } from '../components/MarqueeDemo';
@@ -13,6 +14,7 @@ const AboutUs = () => {
 
   return (
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
+      <Canonical path="/about-us" />
       {/* Hero Section - Dark Green Theme matching homepage */}
       <section
         className="py-32 relative overflow-hidden"

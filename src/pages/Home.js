@@ -1,4 +1,5 @@
 import React from 'react';
+import Canonical from '../components/SEO/Canonical';
 import { motion, LazyMotion, domAnimation } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -7,7 +8,7 @@ import {
 import PartnerLogos from '../components/PartnerLogos';
 import { FocusCardsDemo } from '../components/FocusCardsDemo';
 
-import { ProgressiveBlur } from '../components/magicui/progressive-blur';
+
 import { Marquee } from '../components/magicui/marquee';
 import TestimonialCards from '../components/TestimonialCards';
 import WhyChooseUs from '../components/WhyChooseUs';
@@ -28,6 +29,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen relative">
+      <Canonical path="/" />
       {/* Hero Section */}
       <section className="relative overflow-hidden min-h-screen w-full flex items-start pt-20 px-4 sm:px-6 lg:px-8" style={{
         backgroundImage: 'url(/bg1.png)',
@@ -622,12 +624,7 @@ const Home = () => {
       </section>
 
       {/* Progressive Blur Effect - Only after hero section */}
-      <ProgressiveBlur
-        height="30%"
-        position="bottom"
-        blurLevels={[0.2, 0.5, 1, 2, 3, 4, 6, 8]}
-        className="hidden md:block"
-      />
+
     </div>
   );
 };

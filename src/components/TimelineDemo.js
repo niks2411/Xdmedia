@@ -226,20 +226,7 @@ export function TimelineDemo() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-4 mb-6">
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg text-center">
-                <div className="text-4xl font-bold text-green-600 mb-2">2.5B+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider">Views Delivered</div>
-              </div>
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg text-center">
-                <div className="text-4xl font-bold text-green-600 mb-2">₹35+ Cr</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider">Group Revenue</div>
-              </div>
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg text-center">
-                <div className="text-4xl font-bold text-green-600 mb-2">100+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider">Brand Partnerships</div>
-              </div>
-            </div>
+
 
             <div className="bg-gradient-to-r from-green-600 to-emerald-600 p-6 rounded-xl text-white">
               <h4 className="text-lg font-semibold mb-3">What Sets Us Apart</h4>

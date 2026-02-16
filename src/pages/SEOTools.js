@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Canonical from '../components/SEO/Canonical';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TrendingUp, Search, BarChart3, Globe, CheckCircle, ArrowRight } from 'lucide-react';
 import InlineContactForm from '../components/InlineContactForm';
@@ -68,6 +69,7 @@ const SEOTools = () => {
 
   return (
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
+      <Canonical path="/seo-tools" />
       {/* Hero Section with Contact Form */}
       <section
         className="min-h-screen py-12 sm:py-16 lg:py-20 relative overflow-hidden flex items-center"

@@ -1,4 +1,5 @@
 import React from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
@@ -13,21 +14,23 @@ import Admin from './pages/Admin';
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <WelcomePopup />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/seo-tools" element={<SEOTools />} />
-          <Route path="/website-design" element={<MarketingTools />} />
-          <Route path="/performance-marketing" element={<Analytics />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/admin" element={<Admin />} />
-        </Routes>
-      </Layout>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <WelcomePopup />
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/seo-tools" element={<SEOTools />} />
+            <Route path="/website-design" element={<MarketingTools />} />
+            <Route path="/performance-marketing" element={<Analytics />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/admin" element={<Admin />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </HelmetProvider>
   );
 }
 

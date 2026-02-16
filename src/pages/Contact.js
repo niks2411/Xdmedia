@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Canonical from '../components/SEO/Canonical';
 import { motion } from 'framer-motion';
 import {
   Mail,
@@ -118,6 +119,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
+      <Canonical path="/contact" />
       {/* Hero Section */}
       <section
         className="py-32 relative overflow-hidden"

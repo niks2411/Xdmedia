@@ -1,4 +1,5 @@
 import React from 'react';
+import Canonical from '../components/SEO/Canonical';
 import { motion } from 'framer-motion';
 import { BarChart3, TrendingUp, Eye, MousePointer, Clock, CheckCircle, ArrowRight, PieChart, Activity } from 'lucide-react';
 import InlineContactForm from '../components/InlineContactForm';
@@ -31,6 +32,7 @@ const Analytics = () => {
 
   return (
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
+      <Canonical path="/performance-marketing" />
       {/* Hero Section with Contact Form */}
       <section
         className="min-h-screen py-12 sm:py-16 lg:py-20 relative overflow-hidden flex items-center"
