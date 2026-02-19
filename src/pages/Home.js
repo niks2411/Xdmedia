@@ -125,103 +125,7 @@ const Home = () => {
       {/* Partner Logos Section */}
       <PartnerLogos />
 
-      {/* Block: What We Actually Do - Premium Redesign */}
-      <section className="py-32 relative overflow-hidden" style={{ backgroundColor: '#06130b' }}>
-        {/* Background Decorative Elements */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
-          <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-green-500/10 rounded-full blur-[120px]"></div>
-          <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-green-500/10 rounded-full blur-[120px]"></div>
-        </div>
 
-        <div className="container-max px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            {/* Left Side: Manifesto Header */}
-            <div className="lg:col-span-5">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-              >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="h-px w-8 bg-green-500"></div>
-                  <span className="text-xs font-bold text-green-500 uppercase tracking-[0.4em] font-inter">Core Philosophy</span>
-                </div>
-                <h2 className="text-5xl md:text-7xl font-inter font-light text-white mb-8 leading-[1.1] tracking-wide">
-                  What We <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600 font-fraunces italic">Actually Do</span>
-                </h2>
-                <p className="text-xl text-gray-400 leading-relaxed font-light max-w-md">
-                  We don't just sell services. We install growth engines that transform brand potential into market leadership.
-                </p>
-              </motion.div>
-            </div>
-
-            {/* Right Side: High-Fidelity Cards */}
-            <div className="lg:col-span-7 space-y-8">
-              {/* Card 1 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="p-10 rounded-[2rem] bg-white/[0.03] border border-white/10 backdrop-blur-md hover:bg-white/[0.05] transition-all duration-500 group"
-              >
-                <div className="flex flex-col md:flex-row gap-8 items-start">
-                  <div className="w-14 h-14 rounded-2xl bg-green-500/20 flex items-center justify-center border border-green-500/30 group-hover:scale-110 transition-transform duration-500">
-                    <Target className="w-7 h-7 text-green-400" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">Purposeful Growth</h3>
-                    <p className="text-lg text-gray-300 leading-relaxed font-light">
-                      We help brands grow through <span className="text-green-400 font-medium">structured digital execution</span>,
-                      replacing random marketing activities with high-impact, data-backed moves.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Card 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="p-10 rounded-[2rem] bg-white/[0.03] border border-white/10 backdrop-blur-md hover:bg-white/[0.05] transition-all duration-500 group"
-              >
-                <div className="flex flex-col md:flex-row gap-8 items-start">
-                  <div className="w-14 h-14 rounded-2xl bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30 group-hover:scale-110 transition-transform duration-500">
-                    <Zap className="w-7 h-7 text-emerald-400" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">Connected Systems</h3>
-                    <p className="text-lg text-gray-300 leading-relaxed font-light">
-                      From performance marketing to brand positioning, we build
-                      <span className="text-emerald-400 font-medium mx-1">connected growth systems</span>
-                      that generate visibility, leads, and revenue simultaneously.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Bottom Verdict Bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="mt-24 pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-8"
-          >
-            <div className="text-3xl md:text-4xl text-white/90 font-inter tracking-[ -0.02em ]">
-              Not just strategy. Not just services.
-            </div>
-            <div className="text-5xl md:text-7xl font-fraunces italic font-light text-green-500 tracking-tighter shadow-green-500/20 drop-shadow-2xl">
-              Execution.
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
 
       {/* Services Section (Recommended) */}
@@ -235,7 +139,7 @@ const Home = () => {
             className="text-center mb-20"
           >
             <span className="text-sm font-bold text-green-600 uppercase tracking-[0.3em] font-inter mb-4 block">Services</span>
-            <h2 className="text-4xl md:text-6xl font-inter font-light text-gray-900 mb-6 tracking-wide">Our Core Growth Services</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-6 leading-tight tracking-wide">Our Core Growth Services</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
               We provide execution-first digital services designed to work together, <span className="text-gray-900 font-medium">Not in silos.</span>
             </p>
@@ -331,6 +235,83 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Block: What We Actually Do - Premium Redesign - MOVED AFTER SERVICES */}
+      <section className="py-32 relative overflow-hidden" style={{ backgroundColor: '#06130b' }}>
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
+          <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-green-500/10 rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-green-500/10 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div className="container-max px-6 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            {/* Header Area */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <span className="text-[10px] font-bold text-green-500 uppercase tracking-[0.5em] font-inter">Manifesto</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-light text-white leading-tight tracking-tight">
+                What We <span className="font-fraunces italic text-green-500">Actually Do</span>
+              </h2>
+            </motion.div>
+
+            {/* Manifesto Board */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative p-8 md:p-16 rounded-[2rem] bg-white/[0.02] border border-white/10 backdrop-blur-sm overflow-hidden"
+            >
+              {/* Decorative Corner Accents */}
+              <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-green-500/30 rounded-tl-[2rem]"></div>
+              <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-green-500/30 rounded-br-[2rem]"></div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
+                <div className="space-y-6">
+                  <div className="text-sm font-bold text-green-500/50 uppercase tracking-widest font-inter">The Mission</div>
+                  <p className="text-2xl md:text-3xl lg:text-4xl text-white leading-tight font-light tracking-tight">
+                    We help brands grow through <span className="text-green-500 font-medium underline decoration-green-500/20 underline-offset-8">structured digital execution</span>
+                  </p>
+                  <p className="text-xl text-white/40 font-light italic">
+                    Not random marketing activities.
+                  </p>
+                </div>
+
+                <div className="lg:pl-12 lg:border-l border-white/5 space-y-6">
+                  <div className="text-sm font-bold text-green-500/50 uppercase tracking-widest font-inter">The Systems</div>
+                  <p className="text-lg md:text-xl text-gray-400 leading-relaxed font-light">
+                    From websites and SEO to performance marketing and brand positioning, we build <span className="text-gray-200">connected growth systems</span> that generate visibility, leads, and revenue.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Bottom Verdict Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="mt-20 flex flex-col md:flex-row items-center justify-center gap-x-8 gap-y-4"
+          >
+            <div className="text-xl md:text-2xl text-white/40 font-inter tracking-[0.1em] uppercase">
+              Not just strategy. Not just services.
+            </div>
+            <div className="h-px w-12 bg-white/10 hidden md:block"></div>
+            <div className="text-3xl md:text-5xl font-fraunces italic font-light text-green-500 tracking-tighter">
+              Execution.
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* New Section */}
       <section
         className="py-24 relative"
@@ -388,7 +369,7 @@ const Home = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl leading-tight mb-8 sm:mb-10 tracking-tight"
+              className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6 leading-tight tracking-wide"
             >
               <span className="text-white drop-shadow-2xl font-light" style={{
                 textShadow: '0 0 40px rgba(255, 255, 255, 0.2), 0 4px 20px rgba(0,0,0,0.5)'
@@ -691,7 +672,7 @@ const Home = () => {
             className="text-center mb-24"
           >
             <span className="text-sm font-bold text-green-500 uppercase tracking-[0.5em] font-inter mb-4 block">Execution Engine</span>
-            <h2 className="text-4xl md:text-6xl font-inter font-light text-white mb-8 tracking-wide">How We Build Growth</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6 leading-tight tracking-wide">How We Build Growth</h2>
             <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto leading-relaxed">
               We fix foundations, connect channels, then scale performance. <br />
               <span className="text-white font-medium italic">Most agencies guess; we engineer.</span>
@@ -736,7 +717,7 @@ const Home = () => {
 
                     <div className="flex flex-col items-center">
                       <span className="text-green-500 text-[10px] font-bold uppercase tracking-[0.4em] mb-4 opacity-50">Step 0{i + 1}</span>
-                      <h3 className="text-2xl font-inter font-light text-white tracking-widest mb-3 group-hover:text-green-400 transition-colors uppercase italic">{item.step}</h3>
+                      <h3 className="text-2xl font-inter font-light text-white tracking-widest mb-3 group-hover:text-green-400 transition-colors uppercase">{item.step}</h3>
                       <p className="text-gray-500 text-sm font-light leading-relaxed group-hover:text-gray-300 transition-colors max-w-[140px]">{item.desc}</p>
                     </div>
 
@@ -785,7 +766,7 @@ const Home = () => {
             className="text-center mb-24"
           >
             <span className="text-sm font-bold text-green-500 uppercase tracking-[0.5em] font-inter mb-4 block underline decoration-green-500/30 underline-offset-8">Ideal Partners</span>
-            <h2 className="text-4xl md:text-7xl font-inter font-light text-white mb-8 tracking-wide">Built For Performance</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6 leading-tight tracking-wide">Built For Performance</h2>
             <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto leading-relaxed">
               We specialize in engineering growth engines for companies where <span className="text-white font-medium italic">execution is the mission critical variable.</span>
             </p>
@@ -838,7 +819,7 @@ const Home = () => {
               <p className="text-gray-400 font-light text-sm">Rapid testing and market entry for venture-backed firms.</p>
             </motion.div>
 
-            {/* 4. Service Companies - Wide */}
+            {/* 4. Agencies - Wide */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -847,16 +828,16 @@ const Home = () => {
               className="md:col-span-4 p-10 rounded-[2.5rem] bg-gray-900 border border-white/5 relative overflow-hidden group hover:border-green-500/30 transition-all duration-700 h-[300px] flex flex-col justify-between"
             >
               <div className="flex justify-between items-start">
-                <Building2 className="w-12 h-12 text-gray-400 group-hover:text-green-500 transition-colors" />
+                <Briefcase className="w-12 h-12 text-gray-400 group-hover:text-green-500 transition-colors" />
                 <ArrowRight className="w-6 h-6 text-gray-600 group-hover:text-white group-hover:translate-x-2 transition-all" />
               </div>
               <div className="max-w-md">
-                <h3 className="text-2xl md:text-3xl font-inter font-light text-white mb-3">Service Companies</h3>
-                <p className="text-gray-400 font-light">Lead-gen systems that convert prospects into high-value clients predictably.</p>
+                <h3 className="text-2xl md:text-3xl font-inter font-light text-white mb-3">Agencies</h3>
+                <p className="text-gray-400 font-light">Silent execution power for white-label performance partners.</p>
               </div>
             </motion.div>
 
-            {/* 5. Agencies - Middle Square */}
+            {/* 5. Service Companies - Middle Square */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -864,9 +845,9 @@ const Home = () => {
               transition={{ delay: 0.4 }}
               className="md:col-span-3 p-10 rounded-[2.5rem] bg-white/[0.03] border border-white/10 relative overflow-hidden group hover:border-green-500/30 transition-all duration-700 h-[280px] flex flex-col items-center text-center justify-center"
             >
-              <Briefcase className="w-16 h-16 text-green-500/50 mb-6 group-hover:scale-125 transition-transform" />
-              <h3 className="text-2xl font-inter font-light text-white mb-2">Agencies</h3>
-              <p className="text-gray-500 font-light text-sm">Silent execution power for white-label performance partners.</p>
+              <Building2 className="w-16 h-16 text-green-500/50 mb-6 group-hover:scale-125 transition-transform" />
+              <h3 className="text-2xl font-inter font-light text-white mb-2">Service Companies</h3>
+              <p className="text-gray-500 font-light text-sm">Lead-gen systems that convert prospects into high-value clients predictably.</p>
             </motion.div>
 
             {/* 6. Founders - Middle Square */}
@@ -898,15 +879,16 @@ const Home = () => {
         </div>
 
         <div className="container-max px-4 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="text-center"
             >
               <span className="text-sm font-bold text-green-600 uppercase tracking-widest mb-4 block underline decoration-green-500/30 underline-offset-8 font-inter">Outcome Focus</span>
-              <h2 className="text-4xl md:text-5xl font-inter font-light text-gray-900 mb-8 tracking-wide">What Our Work Improves</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-12 leading-tight tracking-wide">What Our Work Improves</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
                   "Rankings",
                   "Lead flow",
@@ -921,47 +903,14 @@ const Home = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex items-center gap-4 group"
+                    className="flex flex-col items-center gap-4 group p-6 rounded-2xl bg-gray-50 border border-transparent hover:border-green-500/10 hover:bg-white hover:shadow-xl transition-all duration-500"
                   >
-                    <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center flex-shrink-0 group-hover:bg-green-500 transition-all duration-500 border border-gray-100">
-                      <TrendingUp className="w-6 h-6 text-green-600 group-hover:text-white transition-colors duration-300" />
+                    <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center flex-shrink-0 group-hover:bg-green-500 transition-all duration-500 border border-gray-100">
+                      <TrendingUp className="w-7 h-7 text-green-600 group-hover:text-white transition-colors duration-300" />
                     </div>
-                    <span className="text-gray-700 font-light text-lg leading-tight group-hover:text-gray-900 transition-colors duration-300 tracking-wide">{item}</span>
+                    <span className="text-gray-700 font-light text-lg leading-tight group-hover:text-gray-900 transition-colors duration-300 tracking-wide text-center">{item}</span>
                   </motion.div>
                 ))}
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative p-12 rounded-[2.5rem] bg-white shadow-2xl overflow-hidden border border-gray-100"
-            >
-              <div className="absolute top-0 right-0 p-8 opacity-5">
-                <TrendingUp className="w-64 h-64 text-green-500" />
-              </div>
-              <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-2 h-12 bg-green-500 rounded-full"></div>
-                  <h3 className="text-5xl md:text-6xl font-inter font-bold text-gray-900 tracking-tighter">Impact</h3>
-                </div>
-                <p className="text-2xl text-gray-600 leading-relaxed mb-10 italic font-fraunces">
-                  "We measure impact, not activity."
-                </p>
-                <div className="relative pt-4">
-                  <div className="flex justify-between mb-2">
-                    <span className="text-sm font-bold text-gray-400 uppercase tracking-widest">Growth Metric</span>
-                    <span className="text-sm font-bold text-green-600">Peak Performance</span>
-                  </div>
-                  <div className="h-2 w-full bg-gray-100 rounded-full overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: '100%' }}
-                      transition={{ duration: 2.5, ease: "circOut" }}
-                      className="h-full bg-gradient-to-r from-green-400 to-green-600"
-                    />
-                  </div>
-                </div>
               </div>
             </motion.div>
           </div>
@@ -979,18 +928,20 @@ const Home = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24"
           >
-            <div className="text-3xl md:text-4xl font-inter text-gray-600 font-light tracking-tight max-w-lg">
-              Fancy strategies are <br className="hidden md:block" />
-              <span className="text-white/20 italic line-through decoration-red-500/80 decoration-2">everywhere.</span>
-            </div>
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 w-full px-4 overflow-visible">
+              {/* Left Side: Fancy strategies are everywhere. */}
+              <div className="text-lg md:text-xl lg:text-2xl font-inter italic font-light text-gray-500 whitespace-nowrap px-2 overflow-visible">
+                Fancy strategies are <span className="text-gray-400 ml-1">everywhere.</span>
+              </div>
 
-            <div className="hidden xl:block h-px flex-grow bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+              {/* Center: Green Divider */}
+              <div className="hidden lg:block w-12 h-1 bg-green-500 rounded-full flex-shrink-0"></div>
 
-            <div className="text-4xl md:text-7xl font-inter font-bold text-white uppercase tracking-tighter text-center lg:text-right leading-[0.9]">
-              Working execution is <br className="hidden md:block" />
-              <span className="text-green-500 italic drop-shadow-[0_0_40px_rgba(34,197,94,0.4)]">rare.</span>
+              {/* Right Side: WORKING EXECUTION IS RARE. */}
+              <div className="text-xl md:text-2xl lg:text-3xl font-inter font-bold text-white uppercase tracking-tight whitespace-nowrap px-2 overflow-visible">
+                WORKING EXECUTION IS <span className="text-green-500 ml-2 inline-block">RARE.</span>
+              </div>
             </div>
           </motion.div>
         </div>
