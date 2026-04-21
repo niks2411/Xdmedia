@@ -1,12 +1,35 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import {
   TrendingUp, Share2, Video, Megaphone, Code, ShoppingCart, Search, Palette,
-  Camera, Pen, Film, Sparkles, ArrowRight, CheckCircle
+  Camera, Pen, Film, Sparkles, ArrowRight, CheckCircle, Users
 } from 'lucide-react';
 
 const Services = () => {
   const serviceCategories = [
+    {
+      category: "Partnership & White Label",
+      tagline: "Scale Your Agency Without Hiring",
+      color: "#22C55E",
+      icon: <Users className="w-8 h-8" />,
+      services: [
+        {
+          icon: <Search className="w-6 h-6" />,
+          title: "White Label SEO Services",
+          path: "/white-label-seo",
+          description: "Deliver powerful search results to your clients without the overhead of an in-house team. We handle the fulfillment, you take the credit.",
+          features: ["Technical SEO Audits", "High-Authority Backlinks", "Keyword Strategy", "Branded Daily Reporting"]
+        },
+        {
+          icon: <Megaphone className="w-6 h-6" />,
+          title: "White Label Digital Marketing",
+          path: "/white-label-digital-marketing",
+          description: "Offer full-stack marketing solutions including SEO, PPC, and Social Media under your own brand with our senior fulfillment team.",
+          features: ["PPC & Google Ads Management", "Social Media Advertising", "Content Marketing", "White Label Client Dashboard"]
+        }
+      ]
+    },
     {
       category: "Digital Marketing Services",
       tagline: "ROI-Driven Campaigns That Scale",
@@ -235,7 +258,7 @@ const Services = () => {
                     ></div>
 
                     {/* Content */}
-                    <div className="relative z-10">
+                    <div className="relative z-10 flex flex-col h-full">
                       {/* Icon */}
                       <div
                         className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110"
@@ -259,7 +282,7 @@ const Services = () => {
                       </p>
 
                       {/* Features */}
-                      <ul className="space-y-2">
+                      <ul className="space-y-2 mb-8">
                         {service.features.map((feature, idx) => (
                           <li key={idx} className="flex items-center gap-2 text-sm text-gray-300">
                             <CheckCircle className="w-4 h-4 flex-shrink-0" style={{ color: category.color }} />
@@ -267,6 +290,22 @@ const Services = () => {
                           </li>
                         ))}
                       </ul>
+
+                      {/* Link at bottom */}
+                      {service.path ? (
+                        <Link 
+                          to={service.path}
+                          className="mt-auto flex items-center gap-2 text-white font-semibold hover:gap-3 transition-all duration-300"
+                          style={{ color: category.color }}
+                        >
+                          Explore Solution
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      ) : (
+                        <div className="mt-auto flex items-center gap-2 text-gray-500 font-semibold italic text-sm">
+                          Core Service
+                        </div>
+                      )}
                     </div>
 
                     {/* Bottom accent */}

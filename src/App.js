@@ -11,6 +11,8 @@ import Analytics from './pages/Analytics';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import Admin from './pages/Admin';
+import WhiteLabelSEO from './pages/WhiteLabelSEO';
+import WhiteLabelMarketing from './pages/WhiteLabelMarketing';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
             <Route path="/seo-tools" element={<SEOTools />} />
             <Route path="/website-design" element={<MarketingTools />} />
             <Route path="/performance-marketing" element={<Analytics />} />
+            <Route path="/white-label-seo" element={<WhiteLabelSEO />} />
+            <Route path="/white-label-digital-marketing" element={<WhiteLabelMarketing />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Admin />} />

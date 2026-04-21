@@ -76,6 +76,24 @@ const Navbar = () => {
           image: '/images/market.webp?v=1',
           features: ['Google & Meta Ads', 'Social Media Marketing', 'Funnel & Retargeting'],
           price: 'Brand Growth'
+        },
+        {
+          name: 'White Label SEO',
+          path: '/white-label-seo',
+          icon: Search,
+          description: 'Agency-grade SEO fulfillment under your own brand.',
+          image: '/images/stitch/white-label-seo-hero.png',
+          features: ['Technical SEO fulfillment', 'Branded Reporting', 'Authority Building'],
+          price: 'Partner Plan'
+        },
+        {
+          name: 'White Label Marketing',
+          path: '/white-label-digital-marketing',
+          icon: Globe,
+          description: 'Full-stack marketing solutions for agency partners.',
+          image: '/images/stitch/white-label-marketing-hero.png',
+          features: ['Google & Meta Ads', 'Social Media Strategy', '100% White Label'],
+          price: 'Partner Plan'
         }
       ]
     },
@@ -205,8 +223,8 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-full left-1/2 transform -translate-x-1/2 rounded-xl mt-3 w-[480px] z-50 services-dropdown shadow-xl border border-gray-200"
-              style={{ backgroundColor: 'rgb(12,33,20)' }}
+              className="absolute top-full left-1/2 transform -translate-x-1/2 rounded-xl mt-3 w-[640px] z-50 services-dropdown shadow-xl border border-white/10"
+              style={{ backgroundColor: '#0d3020' }}
               onMouseEnter={() => {
                 setIsDropdownOpen(true);
                 setActiveDropdown('Services');
@@ -223,7 +241,7 @@ const Navbar = () => {
                       <Link
                         key={dropdownItem.name}
                         to={dropdownItem.path}
-                        className="block p-3 hover:bg-gray-700 transition-colors duration-200 rounded-lg mb-2"
+                        className="block p-3 hover:bg-[#193b2a] transition-colors duration-200 rounded-lg mb-2"
                         onMouseEnter={() => setHoveredService(dropdownItem)}
                         onClick={() => {
                           setIsDropdownOpen(false);
@@ -242,7 +260,7 @@ const Navbar = () => {
                   </div>
 
                   {/* Image Preview - Right */}
-                  <div className="w-48 flex-shrink-0">
+                  <div className="w-72 flex-shrink-0">
                     {hoveredService ? (
                       <motion.div
                         key={hoveredService.name}

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>XD Media | White Label Digital Marketing Partner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#00180c",
+                      "on-background": "#c5ebd3",
+                      "on-tertiary-container": "#76231b",
+                      "primary-container": "#22c55e",
+                      "surface-container-low": "#002112",
+                      "secondary": "#96d59d",
+                      "surface-dim": "#00180c",
+                      "on-surface": "#c5ebd3",
+                      "on-secondary-fixed-variant": "#145126",
+                      "surface-variant": "#193b2a",
+                      "on-primary-fixed-variant": "#005321",
+                      "outline": "#869585",
+                      "background": "#00180c",
+                      "error": "#ffb4ab",
+                      "on-primary": "#003915",
+                      "on-tertiary-fixed-variant": "#7f2a21",
+                      "tertiary-container": "#ff8b7c",
+                      "on-primary-fixed": "#002109",
+                      "inverse-surface": "#c5ebd3",
+                      "inverse-on-surface": "#153726",
+                      "surface-tint": "#4ae176",
+                      "error-container": "#93000a",
+                      "on-primary-container": "#004b1e",
+                      "primary-fixed-dim": "#4ae176",
+                      "on-secondary-fixed": "#002109",
+                      "primary-fixed": "#6bff8f",
+                      "surface-container-highest": "#193b2a",
+                      "on-secondary": "#003915",
+                      "surface-container-lowest": "#001208",
+                      "secondary-fixed-dim": "#96d59d",
+                      "tertiary-fixed-dim": "#ffb4a9",
+                      "on-secondary-container": "#89c78f",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary": "#60130d",
+                      "inverse-primary": "#006e2f",
+                      "secondary-fixed": "#b2f2b7",
+                      "on-error": "#690005",
+                      "tertiary-fixed": "#ffdad5",
+                      "secondary-container": "#175428",
+                      "surface-container": "#022516",
+                      "on-surface-variant": "#bccbb9",
+                      "primary": "#4be277",
+                      "outline-variant": "#3d4a3d",
+                      "surface-bright": "#1e402e",
+                      "tertiary": "#ffb5ab",
+                      "surface-container-high": "#0d3020",
+                      "on-tertiary-fixed": "#410001"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Plus Jakarta Sans"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { background-color: #00180c; color: #c5ebd3; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .hero-glow { background: radial-gradient(circle at 50% 50%, rgba(75, 226, 119, 0.1) 0%, transparent 70%); }
+        .glass-card { backdrop-filter: blur(20px); background: rgba(25, 59, 42, 0.4); border: 1px solid rgba(75, 226, 119, 0.1); }
+    </style>
+</head>
+<body class="bg-surface selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<header class="bg-[#00180c] dark:bg-[#00180c] font-['Plus_Jakarta_Sans'] font-bold tracking-tight docked full-width top-0 sticky z-50 shadow-[0_0_40px_rgba(75,226,119,0.08)]">
+<nav class="flex justify-between items-center w-full px-12 py-8 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center">
+<svg class="h-8 w-auto text-[#4be277]" fill="none" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 10L30 30" stroke="currentColor" stroke-linecap="round" stroke-width="6"></path>
+<path d="M30 10L10 30" stroke="currentColor" stroke-linecap="round" stroke-width="6"></path>
+<circle cx="20" cy="20" fill="currentColor" r="8"></circle>
+</svg>
+</div>
+<div class="text-2xl font-bold tracking-tighter text-white uppercase">MEDIA</div>
+</div>
+<div class="hidden md:flex gap-8 items-center -ml-4">
+<a class="text-[#4be277] font-bold border-b-2 border-[#4be277] pb-1 text-sm tracking-[-0.02em] uppercase" href="#">HOME</a>
+<a class="text-white/80 font-medium hover:text-white transition-colors text-sm tracking-[-0.02em] uppercase" href="#">OUR STORY</a>
+<div class="relative group">
+<button class="text-white/80 font-medium hover:text-white transition-colors text-sm tracking-[-0.02em] flex items-center gap-1 uppercase">
+            SERVICES <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</button>
+<div class="absolute top-full left-0 mt-2 w-48 bg-surface-container-high rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all py-2 border border-outline-variant/20">
+<a class="block px-4 py-2 text-sm text-white/80 hover:bg-primary/10 hover:text-primary" href="#">SEO Optimization</a>
+<a class="block px-4 py-2 text-sm text-white/80 hover:bg-primary/10 hover:text-primary" href="#">PPC Ads</a>
+<a class="block px-4 py-2 text-sm text-white/80 hover:bg-primary/10 hover:text-primary" href="#">Social Media</a>
+</div>
+</div>
+<a class="text-white/80 font-medium hover:text-white transition-colors text-sm tracking-[-0.02em] uppercase" href="#">CONTACT US</a>
+</div>
+<div class="flex gap-4 items-center">
+<button class="border-2 border-primary/40 text-white px-6 py-2.5 rounded-lg text-xs font-bold hover:scale-105 hover:shadow-[0_0_25px_rgba(34,197,94,0.4)] transition-all flex items-center gap-2 uppercase tracking-tight">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_month">calendar_month</span>
+        BOOK A SLOT
+    </button>
+<button class="bg-[#4be277] text-[#003915] px-6 py-3 rounded-lg text-xs font-bold hover:scale-105 hover:shadow-[0_0_25px_rgba(34,197,94,0.4)] transition-all uppercase tracking-tight">
+        GET STARTED
+    </button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 px-8 overflow-hidden">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full hero-glow -z-10"></div>
+<div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+<span class="label-md uppercase tracking-[0.2em] text-primary mb-6 font-bold">Scaling Your Agency Exponentially</span>
+<h1 class="display-lg text-5xl md:text-7xl font-headline font-extrabold text-white leading-tight mb-8 max-w-4xl tracking-tighter">
+                    Your Complete White Label <span class="text-primary">Digital Marketing</span> Partner
+                </h1>
+<p class="body-lg text-lg md:text-xl text-on-surface-variant max-w-2xl mb-12 leading-relaxed">
+                    Offer SEO, PPC, Social Media &amp; more — all under your brand. We do the heavy lifting while you take the credit and the revenue.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 mb-20">
+<button class="bg-primary-container text-on-primary-container px-10 py-4 rounded-full font-bold text-lg hover:shadow-[0_0_30px_rgba(75,226,119,0.3)] transition-all">Get Started</button>
+<button class="border border-outline-variant text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-surface-variant transition-all">View Our Services</button>
+</div>
+<!-- Dashboard Visual -->
+<div class="relative w-full max-w-6xl aspect-[16/9] rounded-xl overflow-hidden shadow-2xl border border-outline-variant/20 bg-surface-container-low group">
+<img alt="Dashboard" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="futuristic dark mode marketing dashboard with glowing neon green charts and data visualizations showing multi-channel performance metrics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ5q9fjci-3hoZJuZ6zmLbStHVxjFfGXug_i9Hdlv9H9es3cwJJEDWKbyv4ltEFHlraK3n8Cm1IEb4eXkHgzmF-Rwi0-d4rNE83p73IGx2UrMEin1Lo6v8xuGbsQDKI1zg4pvCZY1E9wHzYfltlDYpioJnpnxxQ0ae-wz65QEn6ybVFPNMebI_flzStRp6fpuD9oY-tVHhPqmMTllZj7bZlPXODH4vc0lqa5wiXLyI3nJFSOAbh6OYHMOSfngND9rYDBnST0zIbA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+<div class="group">
+<div class="text-6xl font-black text-white mb-2 group-hover:text-primary transition-colors">1M+</div>
+<div class="label-md uppercase tracking-widest text-primary/70">Leads Generated</div>
+</div>
+<div class="group border-y md:border-y-0 md:border-x border-outline-variant/30 py-12 md:py-0">
+<div class="text-6xl font-black text-white mb-2 group-hover:text-primary transition-colors">5M+</div>
+<div class="label-md uppercase tracking-widest text-primary/70">Keywords Ranked</div>
+</div>
+<div class="group">
+<div class="text-6xl font-black text-white mb-2 group-hover:text-primary transition-colors">1000+</div>
+<div class="label-md uppercase tracking-widest text-primary/70">Campaigns Managed</div>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="py-32 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold text-white mb-6">Expert Solutions Under <span class="text-primary">Your Brand</span></h2>
+<p class="text-on-surface-variant text-lg">Deploy high-performance marketing strategies without the overhead of an in-house fulfillment team.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="group bg-surface-container-high p-10 rounded-xl hover:bg-surface-container-highest hover:-translate-y-2 transition-all duration-300">
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-3xl" data-icon="search">search</span>
+</div>
+<h3 class="text-2xl font-bold text-white mb-4">SEO</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">Dominate search rankings with data-driven keyword strategies and technical optimization.</p>
+<a class="text-primary font-semibold flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Learn more <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></a>
+</div>
+<!-- Service 2 -->
+<div class="group bg-surface-container-high p-10 rounded-xl hover:bg-surface-container-highest hover:-translate-y-2 transition-all duration-300">
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-3xl" data-icon="ads_click">ads_click</span>
+</div>
+<h3 class="text-2xl font-bold text-white mb-4">PPC Ads</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">High-intent traffic acquisition via Google, Bing, and Social Media advertising channels.</p>
+<a class="text-primary font-semibold flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Learn more <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></a>
+</div>
+<!-- Service 3 -->
+<div class="group bg-surface-container-high p-10 rounded-xl hover:bg-surface-container-highest hover:-translate-y-2 transition-all duration-300">
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-3xl" data-icon="share">share</span>
+</div>
+<h3 class="text-2xl font-bold text-white mb-4">Social Media</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">Build authoritative brand presence through strategic organic and paid social campaigns.</p>
+<a class="text-primary font-semibold flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Learn more <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></a>
+</div>
+<!-- Service 4 -->
+<div class="group bg-surface-container-high p-10 rounded-xl hover:bg-surface-container-highest hover:-translate-y-2 transition-all duration-300">
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-3xl" data-icon="article">article</span>
+</div>
+<h3 class="text-2xl font-bold text-white mb-4">Content Marketing</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">Compelling narratives that engage audiences and drive consistent brand loyalty.</p>
+<a class="text-primary font-semibold flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Learn more <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></a>
+</div>
+<!-- Service 5 -->
+<div class="group bg-surface-container-high p-10 rounded-xl hover:bg-surface-container-highest hover:-translate-y-2 transition-all duration-300">
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-3xl" data-icon="mail">mail</span>
+</div>
+<h3 class="text-2xl font-bold text-white mb-4">Email Marketing</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">Automated funnel optimization and lifecycle messaging for maximum retention.</p>
+<a class="text-primary font-semibold flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Learn more <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></a>
+</div>
+<!-- Service 6 -->
+<div class="group bg-surface-container-high p-10 rounded-xl hover:bg-surface-container-highest hover:-translate-y-2 transition-all duration-300">
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-3xl" data-icon="psychology">psychology</span>
+</div>
+<h3 class="text-2xl font-bold text-white mb-4">AI Marketing</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">Next-gen automation and predictive analytics to stay ahead of the curve.</p>
+<a class="text-primary font-semibold flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Learn more <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-32 px-8 bg-surface-container-low">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="relative">
+<div class="absolute -top-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+<img alt="Team Collaboration" class="rounded-xl shadow-2xl relative z-10 w-full" data-alt="a professional creative team in a modern dark office collaborating around a glowing monitor with neon accents, soft cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf2jg0Ha7kOZ8iSXoc1wS3KPPllA4feF2J_vc7kKbj4AnJBzk2gs9C6_M2iOgjEMZlBJnIOwF1h4Zt3Je9NLy2dIHijhlW8AmO41bforMNfT_YUhi5V96pSCY8WIKRLnV_AVkQr678m_GxUPP6FlOteAF-eUeBHzcueETXz70h0ySaj549AKGmBxiqAEY881UWBolxAciDLHl8gHZmpGyXZBYV0QTkRbVNyIAkTwGq3ud1Je_9L-XAEIqJjEV_2klmrurB9T6qjw"/>
+<div class="absolute -bottom-6 -right-6 bg-primary p-8 rounded-xl z-20 shadow-xl hidden md:block">
+<span class="text-on-primary font-black text-4xl">10+</span>
+<p class="text-on-primary font-bold text-sm uppercase tracking-tighter">Years Expertise</p>
+</div>
+</div>
+<div>
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold text-white mb-10 leading-tight">Your Success is Our <span class="text-primary">Only</span> Metric</h2>
+<ul class="space-y-8">
+<li class="flex items-start gap-5">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="payments">payments</span>
+</div>
+<div>
+<h4 class="text-xl font-bold text-white mb-2">Cost Effective</h4>
+<p class="text-on-surface-variant">Slash your operational costs by up to 60% compared to hiring full-time staff.</p>
+</div>
+</li>
+<li class="flex items-start gap-5">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<h4 class="text-xl font-bold text-white mb-2">Scalable</h4>
+<p class="text-on-surface-variant">Add new services or increase volume instantly without worrying about capacity.</p>
+</div>
+</li>
+<li class="flex items-start gap-5">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="support_agent">support_agent</span>
+</div>
+<div>
+<h4 class="text-xl font-bold text-white mb-2">Dedicated Support</h4>
+<p class="text-on-surface-variant">A personal account manager for your agency to ensure seamless delivery.</p>
+</div>
+</li>
+<li class="flex items-start gap-5">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+</div>
+<div>
+<h4 class="text-xl font-bold text-white mb-2">Full Branding Control</h4>
+<p class="text-on-surface-variant">Every report, email, and dashboard is 100% white-labeled with your logo.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-32 px-8 overflow-hidden">
+<div class="max-w-7xl mx-auto text-center mb-20">
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold text-white mb-6">Our Seamless <span class="text-primary">Workflow</span></h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">From onboarding to results, our process is engineered for transparency and speed.</p>
+</div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-4 relative">
+<!-- Step 1 -->
+<div class="group bg-surface-container p-8 rounded-xl border-t-4 border-primary/20 hover:border-primary transition-all">
+<span class="text-primary/30 font-black text-6xl block mb-6 group-hover:text-primary transition-colors">01</span>
+<h4 class="text-lg font-bold text-white mb-3">Discovery</h4>
+<p class="text-sm text-on-surface-variant">Analyzing your client's goals and current digital footprint.</p>
+</div>
+<!-- Step 2 -->
+<div class="group bg-surface-container p-8 rounded-xl border-t-4 border-primary/20 hover:border-primary transition-all">
+<span class="text-primary/30 font-black text-6xl block mb-6 group-hover:text-primary transition-colors">02</span>
+<h4 class="text-lg font-bold text-white mb-3">Strategy</h4>
+<p class="text-sm text-on-surface-variant">Building a custom roadmap focused on ROI and growth.</p>
+</div>
+<!-- Step 3 -->
+<div class="group bg-surface-container p-8 rounded-xl border-t-4 border-primary/20 hover:border-primary transition-all">
+<span class="text-primary/30 font-black text-6xl block mb-6 group-hover:text-primary transition-colors">03</span>
+<h4 class="text-lg font-bold text-white mb-3">Execution</h4>
+<p class="text-sm text-on-surface-variant">Deployment of campaigns by our specialist teams.</p>
+</div>
+<!-- Step 4 -->
+<div class="group bg-surface-container p-8 rounded-xl border-t-4 border-primary/20 hover:border-primary transition-all">
+<span class="text-primary/30 font-black text-6xl block mb-6 group-hover:text-primary transition-colors">04</span>
+<h4 class="text-lg font-bold text-white mb-3">Optimization</h4>
+<p class="text-sm text-on-surface-variant">Continuous refinement based on real-time data performance.</p>
+</div>
+<!-- Step 5 -->
+<div class="group bg-surface-container p-8 rounded-xl border-t-4 border-primary/20 hover:border-primary transition-all">
+<span class="text-primary/30 font-black text-6xl block mb-6 group-hover:text-primary transition-colors">05</span>
+<h4 class="text-lg font-bold text-white mb-3">Reporting</h4>
+<p class="text-sm text-on-surface-variant">Monthly white-labeled deep dives into metrics and wins.</p>
+</div>
+</div>
+</section>
+<!-- Industries Section -->
+<section class="py-32 px-8 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto">
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold text-white text-center mb-20">Specialized In <span class="text-primary">Your Vertical</span></h2>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+<div class="flex flex-col items-center p-8 bg-surface-container-high rounded-xl hover:scale-105 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-bold text-white">E-commerce</span>
+</div>
+<div class="flex flex-col items-center p-8 bg-surface-container-high rounded-xl hover:scale-105 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="medical_services">medical_services</span>
+<span class="font-bold text-white">Healthcare</span>
+</div>
+<div class="flex flex-col items-center p-8 bg-surface-container-high rounded-xl hover:scale-105 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="home_work">home_work</span>
+<span class="font-bold text-white">Real Estate</span>
+</div>
+<div class="flex flex-col items-center p-8 bg-surface-container-high rounded-xl hover:scale-105 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="cloud_done">cloud_done</span>
+<span class="font-bold text-white">SaaS</span>
+</div>
+<div class="flex flex-col items-center p-8 bg-surface-container-high rounded-xl hover:scale-105 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="gavel">gavel</span>
+<span class="font-bold text-white">Legal</span>
+</div>
+<div class="flex flex-col items-center p-8 bg-surface-container-high rounded-xl hover:scale-105 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="flight_takeoff">flight_takeoff</span>
+<span class="font-bold text-white">Travel</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-32 px-8 relative">
+<div class="absolute top-1/2 left-0 w-full h-96 bg-primary/5 blur-[120px] -z-10"></div>
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="text-4xl font-headline font-extrabold text-white mb-4">Trusted by 200+ Agencies</h2>
+<div class="flex justify-center gap-1">
+<span class="material-symbols-outlined text-primary" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="glass-card p-10 rounded-xl">
+<p class="text-on-surface italic mb-8">"XD Media transformed our agency capacity overnight. We scaled from 10 to 50 clients in six months without hiring a single new manager."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Client" data-alt="portrait of a confident male agency CEO in a suit, professional business lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiAFGPsxQqXWc9Tj_6e-gGfl18IIw86Az7IUXXXb0507A1ukKjbmOYgHFZFAaq2XVbdncdjW9b7BIYrKSpWNxqvjkuG8sQvtvkEL9qiBMu5U2b1OC0VtqDU0AJMeTBOpOhS2Cc5nSePP0euTYTOvrufKSmGTOazEfPzt3RIh__bpMSz5ACQxNRFLlkCraXbyCiZY1acKgxlFhFEwUKJJVi0G_Al3yZwOz0Epu4gq1mf8PsSN0FfiIasy_Ra9cVP1lSBHBFXBuJGg"/>
+</div>
+<div>
+<h5 class="text-white font-bold">Marcus Chen</h5>
+<p class="text-primary text-xs uppercase font-bold tracking-widest">CEO, Zenith Digital</p>
+</div>
+</div>
+</div>
+<div class="glass-card p-10 rounded-xl border-primary/30">
+<p class="text-on-surface italic mb-8">"The quality of their SEO work is better than what we were doing in-house. Our clients are thrilled, and our margins have never been better."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Client" data-alt="portrait of a smiling female marketing director in a modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFVlgzdyuYrWPHZ47DjWSbIGPZl1wb7J25Qc4xsnPQP2loah4g3TH5GxtZtWKh1AM5wyot2fhrwCQ-2qPiV1k5k1sqcLRPHl-NyUH8hnqznAUr7_hbhTdOU4IEWtuRnW2J6vY2_A5fpvFMmaNzgUIfP278kk0MyT4rMM-ofaL5kjY_Pc-Dp-TkMHVrOXV0P0eMJrAZ1WPXBt0-2WVRwCZxeeJIhMd-XQVX8BKBgPUGSda3_5fVaoegeqRHs42FNEcI73MVh4mULQ"/>
+</div>
+<div>
+<h5 class="text-white font-bold">Sarah Williams</h5>
+<p class="text-primary text-xs uppercase font-bold tracking-widest">Director, Sky High Ads</p>
+</div>
+</div>
+</div>
+<div class="glass-card p-10 rounded-xl">
+<p class="text-on-surface italic mb-8">"Completely invisible fulfillment. My clients think I have a team of 30 people working in the back room. The dashboard is stunning."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Client" data-alt="portrait of an entrepreneur with glasses, neutral background, professional headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6-tlV-uFrZTqWwlwQvRGnaf5E4KiNP-Dei6qX04VNReepYLnRb739vpdiL5OKj7EOkd3mExHMTMvGTaMFQSAeCAr1SYqkUM7gyvRhhzMT6Q0P9Zld1dld8xVDiUYZy96MeRoJhGiZ87cYmF33e69JT2DEeMzrOnH8I2RBJpBeDUifRhkr0wo9yiqX_222N-FErYu0z9KelyKFSLlY0B6FTdjkbqYe5sjxIGqVsF0VYEP04ysV98s82_yA7pCMrbsrculeyXEL5Q"/>
+</div>
+<div>
+<h5 class="text-white font-bold">David Miller</h5>
+<p class="text-primary text-xs uppercase font-bold tracking-widest">Founder, Miller &amp; Co</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 px-8">
+<div class="max-w-5xl mx-auto bg-primary-container rounded-xl p-16 text-center relative overflow-hidden group">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.2)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<h2 class="text-4xl md:text-6xl font-headline font-extrabold text-on-primary-container mb-8 leading-tight">Grow Faster Without Growing Your Team</h2>
+<p class="text-on-primary-container/80 text-xl mb-12 max-w-2xl mx-auto">Join hundreds of agencies who have unlocked their true scaling potential with our white-label solutions.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+<button class="bg-surface text-primary px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-xl">Get Started Now</button>
+<button class="bg-transparent border-2 border-on-primary-container text-on-primary-container px-10 py-5 rounded-full font-bold text-lg hover:bg-on-primary-container/10 transition-all">Contact Us</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#001208] dark:bg-[#001208] full-width bottom border-t border-emerald-900/10 font-['Inter'] leading-relaxed tonal-shift-from-surface-to-surface_container_lowest">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 max-w-[1440px] mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="text-xl font-bold text-white tracking-tighter uppercase mb-4">XD MEDIA</div>
+<p class="text-white/60 max-w-xs text-sm">Elevate your narrative with world-class white label fulfillment. Built for scale, designed for performance.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="text-white/60 font-medium hover:text-[#4be277] transition-colors duration-200 text-lg" href="#">Privacy Policy</a>
+<a class="text-white/60 font-medium hover:text-[#4be277] transition-colors duration-200 text-lg" href="#">Terms of Service</a>
+<a class="text-white/60 font-medium hover:text-[#4be277] transition-colors duration-200 text-lg" href="#">Contact</a>
+</div>
+<div class="mt-8 md:mt-0 text-white/40 text-xs font-['Plus_Jakarta_Sans']">
+    © 2024 XD Media. All rights reserved.
+</div>
+</div>
+</footer>
+</body></html>
