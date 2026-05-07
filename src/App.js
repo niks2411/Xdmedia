@@ -13,6 +13,8 @@ import Contact from './pages/Contact';
 import Admin from './pages/Admin';
 import WhiteLabelSEO from './pages/WhiteLabelSEO';
 import WhiteLabelMarketing from './pages/WhiteLabelMarketing';
+import SEOService from './pages/SEOService';
+import SEOAdmin from './pages/SEOAdmin';
 
 function App() {
   return (
@@ -28,9 +30,11 @@ function App() {
             <Route path="/performance-marketing" element={<Analytics />} />
             <Route path="/white-label-seo" element={<WhiteLabelSEO />} />
             <Route path="/white-label-digital-marketing" element={<WhiteLabelMarketing />} />
+            <Route path="/seo-service" element={<SEOService />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/admin/seo-leads" element={<SEOAdmin />} />
           </Routes>
         </Layout>
       </Router>

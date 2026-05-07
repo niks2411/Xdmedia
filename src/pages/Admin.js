@@ -18,7 +18,9 @@ import {
     Lock,
     LogOut,
     CalendarCheck,
-    Users
+    Users,
+    Link as LinkIcon,
+    Globe
 } from 'lucide-react';
 import { db } from '../firebaseConfig';
 import {
@@ -555,6 +557,7 @@ const Admin = () => {
                                 >
                                     <option value="all" style={{ background: '#1a1a2e' }}>All Pages</option>
                                     <option value="Contact Page" style={{ background: '#1a1a2e' }}>Contact Page</option>
+                                    <option value="SEO Service" style={{ background: '#1a1a2e' }}>SEO Service</option>
                                     <option value="SEO Tools" style={{ background: '#1a1a2e' }}>SEO Tools</option>
                                     <option value="Marketing Tools" style={{ background: '#1a1a2e' }}>Marketing Tools</option>
                                     <option value="Analytics" style={{ background: '#1a1a2e' }}>Analytics</option>
@@ -649,6 +652,14 @@ const Admin = () => {
                                                     <div className="flex items-center gap-2">
                                                         <Phone className="w-4 h-4" />
                                                         {contact.phone}
+                                                    </div>
+                                                )}
+                                                {contact.website && (
+                                                    <div className="flex items-center gap-2">
+                                                        <Globe className="w-4 h-4" />
+                                                        <a href={contact.website} target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors">
+                                                            {contact.website}
+                                                        </a>
                                                     </div>
                                                 )}
                                                 <div className="flex items-center gap-2">
@@ -888,6 +899,14 @@ const Admin = () => {
                                     <div className="flex items-center gap-3 text-gray-300">
                                         <MessageSquare className="w-5 h-5 text-gray-400" />
                                         {selectedContact.service}
+                                    </div>
+                                )}
+                                {selectedContact.website && (
+                                    <div className="flex items-center gap-3 text-gray-300">
+                                        <Globe className="w-5 h-5 text-gray-400" />
+                                        <a href={selectedContact.website} target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors">
+                                            {selectedContact.website}
+                                        </a>
                                     </div>
                                 )}
                                 {selectedContact.sourcePage && (

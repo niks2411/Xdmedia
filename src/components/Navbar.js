@@ -15,7 +15,8 @@ import {
   Cpu,
   Smartphone,
   Globe,
-  Calendar
+  Calendar,
+  Target
 } from 'lucide-react';
 import BookingModal from './BookingModal';
 
@@ -51,7 +52,7 @@ const Navbar = () => {
       hasDropdown: true,
       dropdownItems: [
         {
-          name: 'SEO & Organic Growth',
+          name: 'SEO & Organic Growth Tools',
           path: '/seo-tools',
           icon: Cpu,
           description: 'Technical SEO, Keyword Research, Ecommerce & SaaS SEO, Authority Building',
