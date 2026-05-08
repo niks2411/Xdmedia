@@ -131,10 +131,10 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50" style={{ backgroundColor: 'rgb(12,33,20)' }}>
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-24">
             {/* Logo */}
-            <Link to="/" className="flex items-center group">
+            <Link to="/" className="flex items-center group -ml-10 sm:-ml-12 lg:-ml-16">
               <img
                 src="/logo.png"
                 alt="360 Logo"
@@ -206,13 +206,22 @@ const Navbar = () => {
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-2 rounded-lg hover:bg-green-700 transition-colors"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
-            </button>
+            {/* Mobile Menu Button & Action */}
+            <div className="lg:hidden flex items-center gap-3">
+              <button
+                onClick={() => setIsBookingModalOpen(true)}
+                className="flex items-center gap-2 text-white px-3 py-2 text-[10px] font-medium uppercase tracking-wider border border-green-500 rounded hover:bg-green-500/10 transition-colors"
+              >
+                <Calendar className="w-3.5 h-3.5" />
+                Book
+              </button>
+              <button
+                className="p-1.5 rounded-lg hover:bg-green-700 transition-colors"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                {isMobileMenuOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
+              </button>
+            </div>
           </div>
         </div>
 
@@ -339,6 +348,29 @@ const Navbar = () => {
                     )}
                   </div>
                 ))}
+                <div className="pt-4 space-y-3">
+                  <button
+                    onClick={() => {
+                      setIsBookingModalOpen(true);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="w-full flex items-center justify-center gap-2 text-white px-4 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 border border-green-500 hover:bg-green-500/20 rounded"
+                  >
+                    <Calendar className="w-4 h-4" />
+                    Book a Slot
+                  </button>
+                  <Link
+                    to="/contact"
+                    className="w-full flex items-center justify-center text-white px-6 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg"
+                    style={{
+                      backgroundColor: '#47BF72',
+                      borderRadius: '5px'
+                    }}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    GET STARTED
+                  </Link>
+                </div>
               </div>
             </motion.div>
           )}

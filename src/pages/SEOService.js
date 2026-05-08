@@ -144,7 +144,12 @@ const SEOService = () => {
         <header className="relative pt-12 sm:pt-20 pb-16 sm:pb-24 overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full hero-glow -z-10"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col lg:flex-row items-center gap-12 sm:gap-16">
-            <div className="flex-1 space-y-6 sm:space-y-8 text-center lg:text-left lg:mt-0">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex-1 space-y-6 sm:space-y-8 text-center lg:text-left lg:mt-0"
+            >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f0fdf4] border border-[#dcfce7] text-[#166534] text-xs font-bold tracking-widest uppercase">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e] opacity-75"></span>
@@ -160,10 +165,19 @@ const SEOService = () => {
                 We don't just chase rankings; we build scalable organic growth engines. Outrank competitors and capture high-intent traffic with our proven SEO strategies.
               </p>
               <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4 justify-center lg:justify-start">
-                <button className="bg-[#22c55e] text-[#004b1e] px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.3)] transition-all w-full sm:w-auto">
+                <button 
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="text-white px-8 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg w-full sm:w-auto"
+                  style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
+                  onMouseEnter={(e) => e.target.style.backgroundColor = '#3aa85f'}
+                  onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}
+                >
                   Get Free Audit
                 </button>
-                <button className="bg-white border border-slate-300 text-slate-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all w-full sm:w-auto shadow-sm">
+                <button 
+                  onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-white border border-slate-300 text-slate-900 px-8 py-3 rounded-[5px] font-medium uppercase tracking-wide text-sm hover:bg-slate-50 transition-all w-full sm:w-auto shadow-sm"
+                >
                   View Case Studies
                 </button>
               </div>
@@ -184,10 +198,15 @@ const SEOService = () => {
                   <p className="text-xs sm:text-sm text-slate-500 font-light">Trusted by 100+ Businesses</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
             
             {/* Right Lead Form */}
-            <div className="flex-1 w-full max-w-md mx-auto lg:max-w-none relative">
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex-1 w-full max-w-md mx-auto lg:max-w-none relative"
+            >
               <div className="absolute inset-0 bg-[#4be277]/10 rounded-2xl blur-xl"></div>
               <div className="bg-white p-6 sm:p-8 rounded-2xl relative z-10 shadow-xl border border-slate-100">
                 {heroSubmitted ? (
@@ -237,7 +256,10 @@ const SEOService = () => {
                       </div>
                       <button 
                         disabled={heroSubmitting}
-                        className="w-full bg-[#4be277] text-[#003915] py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_30px_rgba(75,226,119,0.3)] transition-all mt-4 disabled:opacity-50 flex items-center justify-center gap-2"
+                        className="w-full text-white py-4 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg mt-4 disabled:opacity-50 flex items-center justify-center gap-2"
+                        style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
+                        onMouseEnter={(e) => !heroSubmitting && (e.target.style.backgroundColor = '#3aa85f')}
+                        onMouseLeave={(e) => !heroSubmitting && (e.target.style.backgroundColor = '#47BF72')}
                       >
                         {heroSubmitting ? 'Analyzing...' : 'Analyze My Website'}
                       </button>
@@ -245,7 +267,7 @@ const SEOService = () => {
                   </>
                 )}
               </div>
-            </div>
+            </motion.div>
           </div>
         </header>
 
@@ -254,10 +276,17 @@ const SEOService = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-4 sm:gap-8">
               {stats.map((stat, i) => (
-                <div key={i} className={`text-center px-2 sm:px-4 ${i !== 0 && i !== 2 ? 'border-l border-slate-200' : ''} ${i === 2 ? 'md:border-l border-slate-200' : ''}`}>
+                <motion.div 
+                  key={i} 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className={`text-center px-2 sm:px-4 ${i !== 0 && i !== 2 ? 'border-l border-slate-200' : ''} ${i === 2 ? 'md:border-l border-slate-200' : ''}`}
+                >
                   <div className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 mb-2">{stat.number}</div>
                   <div className="text-[#16a34a] text-[10px] sm:text-xs md:text-sm uppercase tracking-wider md:tracking-widest font-bold">{stat.label}</div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -272,7 +301,13 @@ const SEOService = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)] sm:auto-rows-[180px]">
               {/* Tall Card: Keyword Intelligence */}
-              <div className="md:row-span-2 md:col-span-1 glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden group hover:border-[#4be277]/40 hover:bg-[#f0fdf4] transition-all duration-500 flex flex-col justify-end bg-white">
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="md:row-span-2 md:col-span-1 glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden group hover:border-[#4be277]/40 hover:bg-[#f0fdf4] transition-all duration-500 flex flex-col justify-end bg-white"
+              >
                 <div className="absolute -left-20 -bottom-20 w-64 h-64 bg-[#4be277]/10 rounded-full blur-[60px] group-hover:bg-[#4be277]/20 transition-all duration-700"></div>
                 
                 {/* Number Top Right */}
@@ -285,10 +320,16 @@ const SEOService = () => {
                   <h3 className="text-xl sm:text-2xl font-light text-slate-900 mb-2">Keyword Intelligence</h3>
                   <p className="text-slate-600 text-sm leading-relaxed font-light">Data-backed research to identify high-converting, accessible search terms that your competitors are completely missing.</p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Wide Card: Technical SEO */}
-              <div className="md:col-span-2 glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden group hover:border-[#4be277]/40 hover:bg-[#f0fdf4] transition-all duration-500 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 bg-white">
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="md:col-span-2 glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden group hover:border-[#4be277]/40 hover:bg-[#f0fdf4] transition-all duration-500 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 bg-white"
+              >
                 <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-[#4be277]/5 rounded-full blur-[50px] group-hover:bg-[#4be277]/10 transition-all duration-700"></div>
                 
                 {/* Number Top Right */}
@@ -303,10 +344,16 @@ const SEOService = () => {
                   </div>
                   <p className="text-slate-600 text-sm leading-relaxed font-light max-w-md">Ensuring flawless crawlability, rapid indexation, and perfect core web vitals performance to lay a frictionless foundation for growth.</p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Square Card: Content Strategy */}
-              <div className="glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden group hover:border-[#4be277]/40 hover:bg-[#f0fdf4] transition-all duration-500 flex flex-col justify-end bg-white">
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden group hover:border-[#4be277]/40 hover:bg-[#f0fdf4] transition-all duration-500 flex flex-col justify-end bg-white"
+              >
                 <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-[#4be277]/10 rounded-full blur-[40px] group-hover:bg-[#4be277]/20 transition-all duration-700"></div>
                 
                 {/* Number Top Right */}
@@ -319,10 +366,16 @@ const SEOService = () => {
                   <h3 className="text-lg sm:text-xl font-light text-slate-900 mb-2">Content Strategy</h3>
                   <p className="text-slate-600 text-sm leading-relaxed font-light">Perfecting site architecture and content mapping for maximum relevance.</p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Square Card: Authority Building */}
-              <div className="glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden group hover:border-[#4be277]/40 hover:bg-[#f0fdf4] transition-all duration-500 flex flex-col justify-end bg-white">
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden group hover:border-[#4be277]/40 hover:bg-[#f0fdf4] transition-all duration-500 flex flex-col justify-end bg-white"
+              >
                 <div className="absolute -right-10 -top-10 w-40 h-40 bg-[#4be277]/10 rounded-full blur-[40px] group-hover:bg-[#4be277]/20 transition-all duration-700"></div>
                 
                 {/* Number Top Right */}
@@ -335,7 +388,7 @@ const SEOService = () => {
                   <h3 className="text-lg sm:text-xl font-light text-slate-900 mb-2">Authority Building</h3>
                   <p className="text-slate-600 text-sm leading-relaxed font-light">Securing elite contextual backlinks that signal trust to search algorithms.</p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -344,11 +397,22 @@ const SEOService = () => {
         <section className="py-20 sm:py-24 relative bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
-              <div className="relative rounded-2xl overflow-hidden bg-slate-50 p-4 shadow-xl border border-slate-100 group">
+              <motion.div 
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative rounded-2xl overflow-hidden bg-slate-50 p-4 shadow-xl border border-slate-100 group"
+              >
                 <img src="/Illustration-02.png" alt="Data-Driven SEO" className="w-full h-auto rounded-xl grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
-              </div>
+              </motion.div>
               
-              <div>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f0fdf4] border border-[#dcfce7] mb-6">
                   <span className="material-symbols-outlined text-[#16a34a] text-sm">monitoring</span>
                   <span className="text-[#16a34a] text-[10px] sm:text-xs font-bold uppercase tracking-wider">Advanced Analytics</span>
@@ -373,7 +437,7 @@ const SEOService = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -381,21 +445,43 @@ const SEOService = () => {
         {/* New Massive SEO Process Content */}
         {/* Intro Banner */}
         <section className="py-20 bg-slate-50 border-t border-slate-100">
-          <div className="max-w-4xl mx-auto px-4 sm:px-8 text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto px-4 sm:px-8 text-center"
+          >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 mb-6">Shape your business with the <span className="font-fraunces italic text-[#16a34a]">Leading SEO Company</span> in India!</h2>
             <p className="text-lg text-slate-600 mb-8 font-light leading-relaxed">If you are looking for an SEO company to rank your website on #1 page of Google, you have come to the right place! XD Media, the leading SEO company in India, follows an integrated approach to mark your presence in the worldwide online market.</p>
-            <a href="#case-studies" className="inline-flex items-center gap-2 text-[#16a34a] hover:text-[#15803d] font-medium transition-colors">
-              If you want to skip to our Case Studies you can do so by clicking here
-              <span className="material-symbols-outlined text-sm">arrow_forward</span>
-            </a>
-          </div>
+            <div className="flex flex-col items-center gap-6">
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-white px-10 py-4 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg active:scale-95"
+                style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#3aa85f'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}
+              >
+                Get My Free SEO Audit
+              </button>
+              <a href="#case-studies" className="inline-flex items-center gap-2 text-[#16a34a] hover:text-[#15803d] font-medium transition-colors">
+                If you want to skip to our Case Studies you can do so by clicking here
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+            </div>
+          </motion.div>
         </section>
 
         {/* 8 Step Process - Simple Lines Layout */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div>
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
                 <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mb-6">XD Media SEO Campaign <span className="font-fraunces italic text-[#16a34a]">Process</span></h2>
                 <p className="text-slate-600 font-light mb-10 max-w-xl">In the competitive world of internet marketing, strategy should never be an afterthought. Our process is broadly divided into eight logical steps:</p>
                 
@@ -416,11 +502,17 @@ const SEOService = () => {
                     </div>
                   ))}
                 </div>
-              </div>
-              <div className="relative">
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative"
+              >
                 <div className="absolute inset-0 bg-[#f0fdf4] rounded-full blur-3xl opacity-50 -z-10"></div>
-                <img src="/seo_analysis_illustration_1778162948722.png" alt="SEO Analysis Illustration" className="w-full h-auto max-w-lg mx-auto rounded-3xl" />
-              </div>
+                <img src="/seo-analysis.png" alt="SEO Analysis Illustration" className="w-full h-auto max-w-lg mx-auto rounded-3xl" />
+              </motion.div>
             </div>
           </div>
         </section>
@@ -429,7 +521,13 @@ const SEOService = () => {
         <section className="py-20 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              <div className="order-2 lg:order-1">
+              <motion.div 
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="order-2 lg:order-1"
+              >
                 <div className="p-8 bg-white rounded-3xl border border-slate-100 shadow-sm">
                   <h3 className="text-2xl font-light text-slate-900 mb-4">Complimentary Analysis Report</h3>
                   <p className="text-slate-600 text-sm font-light mb-8">We present all this to you within 48 hours from the start of your project campaign. Download some sample reports below:</p>
@@ -446,9 +544,15 @@ const SEOService = () => {
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
               
-              <div className="order-1 lg:order-2">
+              <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="order-1 lg:order-2"
+              >
                 <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mb-6">Website & <span className="font-fraunces italic text-[#16a34a]">Competitive Analysis</span></h2>
                 <div className="space-y-6">
                   <p className="text-slate-600 font-light leading-relaxed border-l-2 border-[#16a34a] pl-6">We start with a detailed analysis of your website including your Meta tags, Image alt tags, Sitemaps, SEO Friendly URLs, JS Minification Test, Canonicalization and a lot more.</p>
@@ -466,7 +570,7 @@ const SEOService = () => {
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -475,7 +579,12 @@ const SEOService = () => {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div>
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
                 <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mb-6"><span className="font-fraunces italic text-[#16a34a]">Keyword</span> Research</h2>
                 <p className="text-slate-600 font-light text-lg mb-10">The aim is to uncover keywords and actual search phrases that customers enter into search engines.</p>
                 
@@ -495,10 +604,16 @@ const SEOService = () => {
                     </div>
                   ))}
                 </div>
-              </div>
-              <div className="relative">
-                <img src="/keyword_research_illustration_1778162962590.png" alt="Keyword Research Illustration" className="w-full h-auto max-w-lg mx-auto rounded-3xl" />
-              </div>
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative"
+              >
+                <img src="/keyword-research.png" alt="Keyword Research Illustration" className="w-full h-auto max-w-lg mx-auto rounded-3xl" />
+              </motion.div>
             </div>
 
             <div className="mt-20 bg-[#001208] text-white p-8 sm:p-12 rounded-3xl relative overflow-hidden">
@@ -525,11 +640,119 @@ const SEOService = () => {
           </div>
         </section>
 
+        {/* Recent Results Section */}
+        <section className="py-20 bg-white border-t border-slate-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 mb-6">Recent Results in Google & AI Search Engines.</h2>
+              <p className="text-lg text-slate-600 max-w-4xl mx-auto font-light leading-relaxed">
+                We go beyond words and get the job done. We have generated over 1 million leads and achieved more than 1,000 successes which highlights our success. Since we rank highly for countless keywords, when you work with us, you can expect professional support that will lift your business. Let's make sure we succeed together!
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden relative max-w-6xl mx-auto">
+              {/* Card Header/Badge */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="flex justify-between items-start p-4 sm:p-6"
+              >
+                <div className="bg-[#1e73be] text-white px-4 py-1.5 rounded-lg text-xs font-medium">
+                  E-Commerce
+                </div>
+                <img src="https://flagcdn.com/w80/in.png" alt="India Flag" className="w-10 sm:w-12 shadow-sm rounded-sm" />
+              </motion.div>
+
+              <div className="px-4 sm:px-6 pb-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                {/* Left Side: Case Study Details */}
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <div className="inline-block bg-pink-50 text-slate-800 px-3 py-1 rounded-md text-xs mb-4 border border-pink-100">
+                    <span className="font-bold">Project :</span> www.excellentpublicity.com
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="text-base font-bold text-slate-900 mb-1">Challenge</h4>
+                      <p className="text-slate-600 font-light text-sm">Ranking in all over India for very competitive keywords</p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-base font-bold text-slate-900 mb-1">Results</h4>
+                      <div className="text-4xl font-bold text-[#1e73be] mb-2">14.9M</div>
+                      <p className="text-slate-800 font-bold text-sm leading-tight">
+                        Gained 14.9M Impressions and 101k Clicks and Ranked 100+ Keywords Representing a Significant Improvement.
+                      </p>
+                    </div>
+
+                    {/* Keywords Table */}
+                    <div className="mt-4">
+                      <table className="w-full text-left text-sm">
+                        <thead>
+                          <tr className="border-b border-slate-100">
+                            <th className="pb-2 font-bold text-slate-900">Keyword</th>
+                            <th className="pb-2 font-bold text-slate-900 text-right">Ranking</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-slate-50">
+                          {[
+                            { kw: "Railway Station Advertising", rank: "1" },
+                            { kw: "Train Station Advertising", rank: "1" },
+                            { kw: "Railway Advertising", rank: "1" }
+                          ].map((item, i) => (
+                            <tr key={i} className="group hover:bg-slate-50 transition-colors">
+                              <td className="py-2 text-slate-600 font-light">{item.kw}</td>
+                              <td className="py-2 text-[#1e73be] font-bold text-right">{item.rank}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Right Side: Analytics & Image */}
+                <motion.div 
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="flex flex-col"
+                >
+                  <h4 className="text-base font-bold text-slate-900 mb-3">Google Analytic</h4>
+                  <div className="bg-slate-50 rounded-xl p-2 border border-slate-100 flex items-center justify-center overflow-hidden max-h-[320px]">
+                    <img src="/seo-chart.png" alt="Google Analytics Report" className="w-full h-full object-contain rounded-lg" />
+                  </div>
+                  <div className="mt-4">
+                    <a href="#" className="inline-flex items-center gap-2 text-[#1e73be] hover:text-[#165a94] font-bold text-sm transition-all border-b border-[#1e73be] pb-0.5">
+                      View Case Study
+                      <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Workflow Section with User's Image */}
+
         <section className="py-20 sm:py-24 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
-              <div className="order-2 lg:order-1">
+              <motion.div 
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="order-2 lg:order-1"
+              >
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Continuous <span className="font-fraunces italic text-[#16a34a]">Optimization</span></h2>
                 <p className="text-base sm:text-lg text-slate-600 mb-8 sm:mb-10 font-light">SEO isn't a one-and-done setup. It's a continuous process of refinement, adaptation to algorithm updates, and compounding growth.</p>
                 
@@ -549,12 +772,18 @@ const SEOService = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="order-1 lg:order-2 relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 p-4 shadow-2xl group flex items-center justify-center min-h-[300px] sm:min-h-[400px]">
+              <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="order-1 lg:order-2 relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 p-4 shadow-2xl group flex items-center justify-center min-h-[300px] sm:min-h-[400px]"
+              >
                 <div className="absolute inset-0 bg-[#4be277]/10 blur-3xl rounded-full"></div>
                 <img src="/Untitled-1-03.png" alt="SEO Workflow Diagram" className="relative z-10 w-full h-auto max-w-md object-contain grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -569,7 +798,14 @@ const SEOService = () => {
 
             <div className="space-y-4">
               {faqs.map((faq, i) => (
-                <div key={i} className="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                <motion.div 
+                  key={i} 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden transition-all duration-300"
+                >
                   <button 
                     onClick={() => setActiveAccordion(activeAccordion === i ? null : i)}
                     className="w-full flex items-center justify-between p-5 sm:p-6 text-left hover:bg-slate-100 transition-colors"
@@ -584,7 +820,7 @@ const SEOService = () => {
                       {faq.answer}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -594,7 +830,12 @@ const SEOService = () => {
         <section id="contact" className="py-24 bg-white border-t border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div>
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f0fdf4] border border-[#dcfce7] mb-6">
                   <span className="material-symbols-outlined text-[#16a34a] text-sm">rocket_launch</span>
                   <span className="text-[#16a34a] text-[10px] sm:text-xs font-bold uppercase tracking-wider">Free SEO Strategy Session</span>
@@ -636,9 +877,15 @@ const SEOService = () => {
                     <p className="text-xs text-slate-500 font-medium">Trusted by 200+ companies worldwide</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="relative">
+              <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative"
+              >
                 <div className="absolute inset-0 bg-[#4be277]/10 rounded-3xl blur-3xl -z-10"></div>
                 {bottomSubmitted ? (
                   <div className="bg-white p-10 rounded-3xl shadow-2xl border border-slate-100 text-center">
@@ -703,7 +950,10 @@ const SEOService = () => {
                     </div>
                     <button 
                       disabled={bottomSubmitting}
-                      className="w-full bg-[#16a34a] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#15803d] shadow-lg shadow-[#16a34a]/20 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                      className="w-full text-white py-4 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                      style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
+                      onMouseEnter={(e) => !bottomSubmitting && (e.target.style.backgroundColor = '#3aa85f')}
+                      onMouseLeave={(e) => !bottomSubmitting && (e.target.style.backgroundColor = '#47BF72')}
                     >
                       {bottomSubmitting ? (
                         <>
@@ -717,7 +967,7 @@ const SEOService = () => {
                     </p>
                   </form>
                 )}
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
