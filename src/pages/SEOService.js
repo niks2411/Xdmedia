@@ -404,7 +404,7 @@ const SEOService = () => {
                 transition={{ duration: 0.6 }}
                 className="relative rounded-2xl overflow-hidden bg-slate-50 p-4 shadow-xl border border-slate-100 group"
               >
-                <img src="/Illustration-02.png" alt="Data-Driven SEO" className="w-full h-auto rounded-xl grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
+                <img src="/seo-analysis.png" alt="Data-Driven SEO" className="w-full h-auto rounded-xl grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
               </motion.div>
               
               <motion.div
@@ -511,7 +511,7 @@ const SEOService = () => {
                 className="relative"
               >
                 <div className="absolute inset-0 bg-[#f0fdf4] rounded-full blur-3xl opacity-50 -z-10"></div>
-                <img src="/seo-analysis.png" alt="SEO Analysis Illustration" className="w-full h-auto max-w-lg mx-auto rounded-3xl" />
+                <img src="/Illustration-02.png" alt="SEO Analysis Illustration" className="w-full h-auto max-w-lg mx-auto rounded-3xl" />
               </motion.div>
             </div>
           </div>
