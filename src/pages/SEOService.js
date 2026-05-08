@@ -454,7 +454,7 @@ const SEOService = () => {
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 mb-6">Shape your business with the <span className="font-fraunces italic text-[#16a34a]">Leading SEO Company</span> in India!</h2>
             <p className="text-lg text-slate-600 mb-8 font-light leading-relaxed">If you are looking for an SEO company to rank your website on #1 page of Google, you have come to the right place! XD Media, the leading SEO company in India, follows an integrated approach to mark your presence in the worldwide online market.</p>
-            <div className="flex flex-col items-center gap-6">
+            <div className="flex justify-center">
               <button 
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="text-white px-10 py-4 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg active:scale-95"
@@ -464,10 +464,6 @@ const SEOService = () => {
               >
                 Get My Free SEO Audit
               </button>
-              <a href="#case-studies" className="inline-flex items-center gap-2 text-[#16a34a] hover:text-[#15803d] font-medium transition-colors">
-                If you want to skip to our Case Studies you can do so by clicking here
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
             </div>
           </motion.div>
         </section>
@@ -511,7 +507,7 @@ const SEOService = () => {
                 className="relative"
               >
                 <div className="absolute inset-0 bg-[#f0fdf4] rounded-full blur-3xl opacity-50 -z-10"></div>
-                <img src="/Illustration-02.png" alt="SEO Analysis Illustration" className="w-full h-auto max-w-lg mx-auto rounded-3xl" />
+                <img src="/SEO CAMPAIGN PROCESS.png" alt="SEO Campaign Process" className="w-full h-auto max-w-lg mx-auto rounded-3xl" />
               </motion.div>
             </div>
           </div>
@@ -727,7 +723,7 @@ const SEOService = () => {
                 >
                   <h4 className="text-base font-bold text-slate-900 mb-3">Google Analytic</h4>
                   <div className="bg-slate-50 rounded-xl p-2 border border-slate-100 flex items-center justify-center overflow-hidden max-h-[320px]">
-                    <img src="/seo-chart.png" alt="Google Analytics Report" className="w-full h-full object-contain rounded-lg" />
+                    <img src="/Weelee Performance Dashboard.png" alt="Google Analytics Report" className="w-full h-full object-contain rounded-lg" />
                   </div>
                   <div className="mt-4">
                     <a href="#" className="inline-flex items-center gap-2 text-[#1e73be] hover:text-[#165a94] font-bold text-sm transition-all border-b border-[#1e73be] pb-0.5">
@@ -782,7 +778,7 @@ const SEOService = () => {
                 className="order-1 lg:order-2 relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 p-4 shadow-2xl group flex items-center justify-center min-h-[300px] sm:min-h-[400px]"
               >
                 <div className="absolute inset-0 bg-[#4be277]/10 blur-3xl rounded-full"></div>
-                <img src="/Untitled-1-03.png" alt="SEO Workflow Diagram" className="relative z-10 w-full h-auto max-w-md object-contain grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
+                <img src="/On page optimization.png" alt="SEO Workflow Diagram" className="relative z-10 w-full h-auto max-w-md object-contain grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
               </motion.div>
             </div>
           </div>
