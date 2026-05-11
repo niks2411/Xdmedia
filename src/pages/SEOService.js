@@ -6,12 +6,16 @@ import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const SEOService = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
+  const [activeResultTab, setActiveResultTab] = useState(0);
   
   // Hero Form State
   const [heroData, setHeroData] = useState({
     name: '',
     email: '',
-    website: ''
+    companyName: '',
+    website: '',
+    phoneNumber: '',
+    budgetRange: ''
   });
   const [heroSubmitting, setHeroSubmitting] = useState(false);
   const [heroSubmitted, setHeroSubmitted] = useState(false);
@@ -33,12 +37,19 @@ const SEOService = () => {
       await addDoc(collection(db, 'contacts'), {
         ...heroData,
         sourcePage: 'SEO Service',
-        formType: 'Hero Proposal',
+        formType: 'Hero Audit Request',
         status: 'new',
         timestamp: serverTimestamp()
       });
       setHeroSubmitted(true);
-      setHeroData({ name: '', email: '', website: '' });
+      setHeroData({ 
+        name: '', 
+        email: '', 
+        companyName: '',
+        website: '', 
+        phoneNumber: '',
+        budgetRange: ''
+      });
     } catch (error) {
       console.error("Error submitting hero form: ", error);
       alert("Something went wrong. Please try again.");
@@ -107,6 +118,58 @@ const SEOService = () => {
     { countryCode: "mx", keyword: "dental implants mexico" },
   ];
 
+  const resultsData = [
+    {
+      category: "AI Search Visibility",
+      smallLabel: "AI SEO / Generative Engine Optimization",
+      heading: "Significant Growth in AI Citations & AI-Cited Pages",
+      challenge: "Improving the website’s visibility across AI-powered search systems by strengthening semantic SEO, topical authority, and content relevance.",
+      resultValue: "+685%",
+      resultDesc: "AI citations increased from 120 to 942, significantly improving visibility across AI-generated search responses and answer engines.",
+      tableTitle: "Metric",
+      tableRows: [
+        { label: "AI Citations", value: "942", growth: "+685%" },
+        { label: "AI-Cited Pages", value: "75", growth: "+188%" },
+        { label: "Total AI Citations", value: "70.1K", growth: "Growth" }
+      ],
+      chartTitle: "AI Visibility Report",
+      image: "/Weelee Performance Dashboard.png"
+    },
+    {
+      category: "Organic SEO Growth",
+      smallLabel: "Organic Search Performance",
+      heading: "Improved Rankings, Impressions & Organic Traffic",
+      challenge: "Implemented a strategic SEO campaign focused on keyword rankings, search visibility, technical SEO improvements, and content optimization.",
+      resultValue: "328K",
+      resultDesc: "Organic clicks increased from 299K to 328K, with total impressions reaching 6.96M within the last 3 months.",
+      tableTitle: "Metric",
+      tableRows: [
+        { label: "Total Clicks", value: "328K", growth: "+26K" },
+        { label: "Total Impressions", value: "6.96M", growth: "+830K" },
+        { label: "Average Position", value: "7.2", growth: "9.6 Prev" },
+        { label: "Average CTR", value: "4.7%", growth: "Stable" }
+      ],
+      chartTitle: "Google Search Console",
+      image: "/Weelee Organic Performance New.png"
+    },
+    {
+      category: "AI Citation Growth",
+      smallLabel: "AI Search Optimization",
+      heading: "Improved AI Citations & Content Recognition",
+      challenge: "Focused on improving content relevance, semantic SEO, topical authority, and crawlable content structure to strengthen visibility.",
+      resultValue: "+740%",
+      resultDesc: "AI citations increased significantly from 20 to 168, showing substantial growth in AI search visibility and answer engine recognition.",
+      tableTitle: "Metric",
+      tableRows: [
+        { label: "AI Citations", value: "168", growth: "+740%" },
+        { label: "AI-Cited Pages", value: "30", growth: "+275%" },
+        { label: "Total AI Citations", value: "8.4K", growth: "Improved" }
+      ],
+      chartTitle: "AI Citation Dashboard",
+      image: "/Onegolf Performance Dashboard.png"
+    }
+  ];
+
   return (
     <div className="bg-white text-slate-800 font-inter selection:bg-[#4be277] selection:text-[#003915] min-h-screen">
       <Canonical path="/seo-service" />
@@ -141,133 +204,166 @@ const SEOService = () => {
 
       <main className="pb-16 sm:pb-0"> {/* Padding bottom for mobile marquee */}
         {/* Hero Section */}
-        <header className="relative pt-12 sm:pt-20 pb-16 sm:pb-24 overflow-hidden">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full hero-glow -z-10"></div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col lg:flex-row items-center gap-12 sm:gap-16">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex-1 space-y-6 sm:space-y-8 text-center lg:text-left lg:mt-0"
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f0fdf4] border border-[#dcfce7] text-[#166534] text-xs font-bold tracking-widest uppercase">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#22c55e]"></span>
-                </span>
-                Elite SEO Services
-              </div>
-              <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-slate-900 leading-[1.1] tracking-tight mx-auto lg:mx-0 max-w-2xl">
-                Dominate Search. <br className="hidden sm:block"/>
-                <span className="font-fraunces italic text-[#16a34a] mt-2 sm:mt-0 inline-block">Scale Revenue.</span>
-              </h1>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl font-light mx-auto lg:mx-0">
-                We don't just chase rankings; we build scalable organic growth engines. Outrank competitors and capture high-intent traffic with our proven SEO strategies.
-              </p>
-              <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4 justify-center lg:justify-start">
-                <button 
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-white px-8 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg w-full sm:w-auto"
-                  style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
-                  onMouseEnter={(e) => e.target.style.backgroundColor = '#3aa85f'}
-                  onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}
-                >
-                  Get Free Audit
-                </button>
-                <button 
-                  onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="bg-white border border-slate-300 text-slate-900 px-8 py-3 rounded-[5px] font-medium uppercase tracking-wide text-sm hover:bg-slate-50 transition-all w-full sm:w-auto shadow-sm"
-                >
-                  View Case Studies
-                </button>
-              </div>
-              
-              {/* Trust Indicators */}
-              <div className="pt-8 hidden sm:flex flex-col sm:flex-row items-center gap-4 sm:gap-6 border-t border-slate-200 justify-center lg:justify-start">
-                <div className="flex -space-x-4">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center overflow-hidden">
-                      <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="Client" className="w-full h-full object-cover" />
-                    </div>
-                  ))}
+        {/* Hero Section */}
+        <header className="relative min-h-[600px] lg:min-h-[750px] flex items-center overflow-hidden bg-slate-900">
+          {/* Background Image with Overlay */}
+          <div className="absolute inset-0">
+            <img 
+              src="/seo-hero.png" 
+              className="w-full h-full object-cover opacity-50" 
+              alt="SEO Hero Background"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
+          </div>
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 w-full py-12 sm:py-20">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 sm:gap-16 items-center">
+              {/* Left Content */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-white space-y-6 sm:space-y-10"
+              >
+                <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-white leading-[1.1] tracking-tight">
+                  India's Most Trusted, AI/SEO Company Offering <br className="hidden lg:block"/>
+                  <span className="font-fraunces italic text-[#16a34a]">99% Guaranteed</span> First-Page Rankings
+                </h1>
+                <div className="space-y-4">
+                  <p className="text-xl sm:text-2xl text-slate-200 font-light leading-snug">
+                    Still Not Getting Qualified Leads from Google?
+                  </p>
+                  <p className="text-xl sm:text-2xl text-slate-200 font-bold leading-snug border-l-4 border-[#47BF72] pl-6">
+                    Proven Results Within Stipulated timeline
+                  </p>
                 </div>
-                <div className="text-center sm:text-left">
-                  <div className="flex items-center justify-center sm:justify-start gap-1 text-[#22c55e] mb-1">
-                    {[1,2,3,4,5].map(i => <span key={i} className="material-symbols-outlined text-sm">star</span>)}
-                  </div>
-                  <p className="text-xs sm:text-sm text-slate-500 font-light">Trusted by 100+ Businesses</p>
+                
+                <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4">
+                  <button 
+                    onClick={() => document.getElementById('audit-form')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="text-white px-10 py-4 font-medium uppercase tracking-wide text-sm transition-all duration-200 shadow-lg active:scale-95"
+                    style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = '#3aa85f'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}
+                  >
+                    Talk to our Expert
+                  </button>
+                  <a 
+                    href="https://wa.me/919258462625"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-3 border-2 border-[#25D366] text-white px-10 py-4 font-medium uppercase tracking-wide text-sm transition-all rounded-[5px] bg-[#25D366]/10 backdrop-blur-md hover:bg-[#25D366] active:scale-95 group"
+                  >
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.438 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    WhatsApp Us
+                  </a>
                 </div>
-              </div>
-            </motion.div>
-            
-            {/* Right Lead Form */}
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex-1 w-full max-w-md mx-auto lg:max-w-none relative"
-            >
-              <div className="absolute inset-0 bg-[#4be277]/10 rounded-2xl blur-xl"></div>
-              <div className="bg-white p-6 sm:p-8 rounded-2xl relative z-10 shadow-xl border border-slate-100">
-                {heroSubmitted ? (
-                  <div className="text-center py-8">
-                    <div className="w-16 h-16 bg-[#f0fdf4] rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="material-symbols-outlined text-[#16a34a] text-2xl">check_circle</span>
+              </motion.div>
+
+              {/* Right Form Card */}
+              <motion.div
+                id="audit-form"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="lg:ml-auto w-full"
+              >
+                <div className="bg-white rounded-2xl p-6 sm:p-10 shadow-2xl relative border border-slate-100">
+                  {heroSubmitted ? (
+                    <div className="text-center py-12">
+                      <div className="w-20 h-20 bg-[#f0fdf4] rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span className="material-symbols-outlined text-[#16a34a] text-4xl">check_circle</span>
+                      </div>
+                      <h3 className="text-2xl font-light text-slate-900 mb-2">Request Received!</h3>
+                      <p className="text-slate-500 mb-8 font-light">Our SEO experts will analyze your site and contact you shortly.</p>
+                      <button onClick={() => setHeroSubmitted(false)} className="text-[#16a34a] font-bold hover:underline">Submit another request</button>
                     </div>
-                    <h3 className="text-xl font-medium text-slate-900 mb-2">Request Sent!</h3>
-                    <p className="text-slate-500 text-sm mb-6">We'll be in touch with your custom SEO proposal shortly.</p>
-                    <button onClick={() => setHeroSubmitted(false)} className="text-[#16a34a] text-sm font-bold hover:underline">Send another</button>
-                  </div>
-                ) : (
-                  <>
-                    <h3 className="text-xl sm:text-2xl font-light text-slate-900 mb-2">Request an SEO Proposal</h3>
-                    <p className="text-slate-500 text-sm mb-6 font-light">Discover untapped growth opportunities. No obligations.</p>
-                    
-                    <form onSubmit={handleHeroSubmit} className="space-y-4">
-                      <div>
-                        <input 
-                          type="text" 
-                          required
-                          value={heroData.name}
-                          onChange={(e) => setHeroData({...heroData, name: e.target.value})}
-                          className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light" 
-                          placeholder="Full Name" 
-                        />
-                      </div>
-                      <div>
-                        <input 
-                          type="url" 
-                          required
-                          value={heroData.website}
-                          onChange={(e) => setHeroData({...heroData, website: e.target.value})}
-                          className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light" 
-                          placeholder="Website URL" 
-                        />
-                      </div>
-                      <div>
-                        <input 
-                          type="email" 
-                          required
-                          value={heroData.email}
-                          onChange={(e) => setHeroData({...heroData, email: e.target.value})}
-                          className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light" 
-                          placeholder="Work Email" 
-                        />
-                      </div>
-                      <button 
-                        disabled={heroSubmitting}
-                        className="w-full text-white py-4 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg mt-4 disabled:opacity-50 flex items-center justify-center gap-2"
-                        style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
-                        onMouseEnter={(e) => !heroSubmitting && (e.target.style.backgroundColor = '#3aa85f')}
-                        onMouseLeave={(e) => !heroSubmitting && (e.target.style.backgroundColor = '#47BF72')}
-                      >
-                        {heroSubmitting ? 'Analyzing...' : 'Analyze My Website'}
-                      </button>
-                    </form>
-                  </>
-                )}
-              </div>
-            </motion.div>
+                  ) : (
+                    <>
+                      <h3 className="text-xl sm:text-2xl font-light text-slate-900 mb-8 text-center leading-tight">
+                        Get A Free <span className="font-fraunces italic text-[#16a34a]">SEO & AI SEO</span> Audit Report
+                      </h3>
+                      
+                      <form onSubmit={handleHeroSubmit} className="space-y-4">
+                        <div className="space-y-4">
+                          <input 
+                            type="text" 
+                            placeholder="Enter your name"
+                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                            value={heroData.name}
+                            onChange={(e) => setHeroData({...heroData, name: e.target.value})}
+                            required
+                          />
+                          <input 
+                            type="email" 
+                            placeholder="Company Email"
+                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                            value={heroData.email}
+                            onChange={(e) => setHeroData({...heroData, email: e.target.value})}
+                            required
+                          />
+                          <input 
+                            type="text" 
+                            placeholder="Company Name"
+                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                            value={heroData.companyName}
+                            onChange={(e) => setHeroData({...heroData, companyName: e.target.value})}
+                            required
+                          />
+                          <input 
+                            type="url" 
+                            placeholder="Website URL"
+                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                            value={heroData.website}
+                            onChange={(e) => setHeroData({...heroData, website: e.target.value})}
+                            required
+                          />
+                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <select className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm">
+                              <option>India (+91)</option>
+                              <option>US (+1)</option>
+                              <option>UK (+44)</option>
+                            </select>
+                            <input 
+                              type="tel" 
+                              placeholder="Phone Number"
+                              className="sm:col-span-2 bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                              value={heroData.phoneNumber}
+                              onChange={(e) => setHeroData({...heroData, phoneNumber: e.target.value})}
+                              required
+                            />
+                          </div>
+                          <select 
+                            className="w-full bg-slate-50 border border-slate-200 text-slate-600 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm"
+                            value={heroData.budgetRange}
+                            onChange={(e) => setHeroData({...heroData, budgetRange: e.target.value})}
+                            required
+                          >
+                            <option value="" disabled>Monthly Budget Range</option>
+                            <option value="30k-50k">₹30,000 to ₹50,000</option>
+                            <option value="50k-1l">₹50,000 to ₹1 Lakh</option>
+                            <option value="1l-2.5l">₹1 Lakh to ₹2.5 Lakh</option>
+                            <option value="over-2.5l">Over ₹2.5 Lakh</option>
+                          </select>
+                        </div>
+                        
+                        <button 
+                          disabled={heroSubmitting}
+                          className="w-full text-white py-4 font-medium uppercase tracking-wide text-sm transition-all duration-200 shadow-lg mt-4 disabled:opacity-50 active:scale-[0.98]"
+                          style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
+                          onMouseEnter={(e) => !heroSubmitting && (e.target.style.backgroundColor = '#3aa85f')}
+                          onMouseLeave={(e) => !heroSubmitting && (e.target.style.backgroundColor = '#47BF72')}
+                        >
+                          {heroSubmitting ? 'Submitting...' : 'Get My Free Audit'}
+                        </button>
+                      </form>
+                    </>
+                  )}
+                </div>
+              </motion.div>
+            </div>
           </div>
         </header>
 
@@ -471,7 +567,7 @@ const SEOService = () => {
         {/* 8 Step Process - Simple Lines Layout */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 sm:gap-16 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -507,7 +603,7 @@ const SEOService = () => {
                 className="relative"
               >
                 <div className="absolute inset-0 bg-[#f0fdf4] rounded-full blur-3xl opacity-50 -z-10"></div>
-                <img src="/SEO CAMPAIGN PROCESS.png" alt="SEO Campaign Process" className="w-full h-auto max-w-lg mx-auto rounded-3xl" />
+                <img src="/SEO CAMPAIGN PROCESS.png" alt="SEO Campaign Process" className="w-full h-auto max-w-2xl mx-auto rounded-3xl" />
               </motion.div>
             </div>
           </div>
@@ -522,24 +618,13 @@ const SEOService = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="order-2 lg:order-1"
+                className="order-2 lg:order-1 relative rounded-2xl overflow-hidden bg-white p-4 shadow-xl border border-slate-100 group"
               >
-                <div className="p-8 bg-white rounded-3xl border border-slate-100 shadow-sm">
-                  <h3 className="text-2xl font-light text-slate-900 mb-4">Complimentary Analysis Report</h3>
-                  <p className="text-slate-600 text-sm font-light mb-8">We present all this to you within 48 hours from the start of your project campaign. Download some sample reports below:</p>
-                  
-                  <div className="space-y-3">
-                    {[1, 2, 3].map((num) => (
-                      <a key={num} href="#" className="flex items-center justify-between p-4 rounded-xl border border-slate-100 hover:border-[#16a34a] hover:bg-[#f0fdf4] transition-all group">
-                        <div className="flex items-center gap-3">
-                          <span className="material-symbols-outlined text-slate-400 group-hover:text-[#16a34a]">picture_as_pdf</span>
-                          <span className="font-medium text-slate-700 group-hover:text-slate-900">Sample Analysis Report {num}</span>
-                        </div>
-                        <span className="text-sm font-bold text-[#16a34a]">Download</span>
-                      </a>
-                    ))}
-                  </div>
-                </div>
+                <img 
+                  src="/competitive-analysis-light.png" 
+                  alt="Website and Competitive Analysis" 
+                  className="w-full h-auto rounded-xl grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" 
+                />
               </motion.div>
               
               <motion.div 
@@ -646,93 +731,97 @@ const SEOService = () => {
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden relative max-w-6xl mx-auto">
-              {/* Card Header/Badge */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="flex justify-between items-start p-4 sm:p-6"
-              >
-                <div className="bg-[#1e73be] text-white px-4 py-1.5 rounded-lg text-xs font-medium">
-                  E-Commerce
-                </div>
-                <img src="https://flagcdn.com/w80/in.png" alt="India Flag" className="w-10 sm:w-12 shadow-sm rounded-sm" />
-              </motion.div>
-
-              <div className="px-4 sm:px-6 pb-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                {/* Left Side: Case Study Details */}
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
+            {/* Tab Navigation */}
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10">
+              {resultsData.map((tab, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveResultTab(idx)}
+                  className={`px-6 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${
+                    activeResultTab === idx
+                      ? 'bg-[#16a34a] text-white'
+                      : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
+                  }`}
                 >
-                  <div className="inline-block bg-pink-50 text-slate-800 px-3 py-1 rounded-md text-xs mb-4 border border-pink-100">
-                    <span className="font-bold">Project :</span> www.excellentpublicity.com
-                  </div>
+                  {tab.category}
+                </button>
+              ))}
+            </div>
 
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="text-base font-bold text-slate-900 mb-1">Challenge</h4>
-                      <p className="text-slate-600 font-light text-sm">Ranking in all over India for very competitive keywords</p>
+            <div className="max-w-6xl mx-auto">
+              {resultsData.map((data, idx) => (
+                activeResultTab === idx && (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden relative"
+                  >
+                    {/* Card Header/Badge */}
+                    <div className="flex justify-between items-start p-4 sm:p-6">
+                      <div className="bg-[#1e73be] text-white px-4 py-1.5 rounded-lg text-xs font-medium">
+                        {data.category}
+                      </div>
+                      <img src="https://flagcdn.com/w80/in.png" alt="India Flag" className="w-10 sm:w-12 shadow-sm rounded-sm" />
                     </div>
 
-                    <div>
-                      <h4 className="text-base font-bold text-slate-900 mb-1">Results</h4>
-                      <div className="text-4xl font-bold text-[#1e73be] mb-2">14.9M</div>
-                      <p className="text-slate-800 font-bold text-sm leading-tight">
-                        Gained 14.9M Impressions and 101k Clicks and Ranked 100+ Keywords Representing a Significant Improvement.
-                      </p>
-                    </div>
+                    <div className="px-4 sm:px-6 pb-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                      {/* Left Side: Case Study Details */}
+                      <div>
 
-                    {/* Keywords Table */}
-                    <div className="mt-4">
-                      <table className="w-full text-left text-sm">
-                        <thead>
-                          <tr className="border-b border-slate-100">
-                            <th className="pb-2 font-bold text-slate-900">Keyword</th>
-                            <th className="pb-2 font-bold text-slate-900 text-right">Ranking</th>
-                          </tr>
-                        </thead>
-                        <tbody className="divide-y divide-slate-50">
-                          {[
-                            { kw: "Railway Station Advertising", rank: "1" },
-                            { kw: "Train Station Advertising", rank: "1" },
-                            { kw: "Railway Advertising", rank: "1" }
-                          ].map((item, i) => (
-                            <tr key={i} className="group hover:bg-slate-50 transition-colors">
-                              <td className="py-2 text-slate-600 font-light">{item.kw}</td>
-                              <td className="py-2 text-[#1e73be] font-bold text-right">{item.rank}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </motion.div>
 
-                {/* Right Side: Analytics & Image */}
-                <motion.div 
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className="flex flex-col"
-                >
-                  <h4 className="text-base font-bold text-slate-900 mb-3">Google Analytic</h4>
-                  <div className="bg-slate-50 rounded-xl p-2 border border-slate-100 flex items-center justify-center overflow-hidden max-h-[320px]">
-                    <img src="/Weelee Performance Dashboard.png" alt="Google Analytics Report" className="w-full h-full object-contain rounded-lg" />
-                  </div>
-                  <div className="mt-4">
-                    <a href="#" className="inline-flex items-center gap-2 text-[#1e73be] hover:text-[#165a94] font-bold text-sm transition-all border-b border-[#1e73be] pb-0.5">
-                      View Case Study
-                      <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                    </a>
-                  </div>
-                </motion.div>
-              </div>
+                        <div className="space-y-4">
+                          <div>
+                            <h4 className="text-base font-bold text-slate-900 mb-1">Challenge</h4>
+                            <p className="text-slate-600 font-light text-sm">{data.challenge}</p>
+                          </div>
+
+                          <div>
+                            <h4 className="text-base font-bold text-slate-900 mb-1">Results</h4>
+                            <div className="text-4xl font-bold text-[#1e73be] mb-2">{data.resultValue}</div>
+                            <p className="text-slate-800 font-bold text-sm leading-tight">
+                              {data.resultDesc}
+                            </p>
+                          </div>
+
+                          {/* Keywords Table */}
+                          <div className="mt-4">
+                            <table className="w-full text-left text-sm">
+                              <thead>
+                                <tr className="border-b border-slate-100">
+                                  <th className="pb-2 font-bold text-slate-900">{data.tableTitle}</th>
+                                  <th className="pb-2 font-bold text-slate-900 text-right">Value</th>
+                                </tr>
+                              </thead>
+                              <tbody className="divide-y divide-slate-50">
+                                {data.tableRows.map((item, i) => (
+                                  <tr key={i} className="group hover:bg-slate-50 transition-colors">
+                                    <td className="py-2 text-slate-600 font-light">{item.label}</td>
+                                    <td className="py-2 text-[#1e73be] font-bold text-right">{item.value} <span className="text-[10px] opacity-70 ml-1">({item.growth})</span></td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Right Side: Analytics & Image */}
+                      <div className="flex flex-col">
+                        <h4 className="text-base font-bold text-slate-900 mb-3">{data.chartTitle}</h4>
+                        <div className="bg-slate-50 rounded-xl p-2 border border-slate-100 flex items-center justify-center overflow-hidden min-h-[280px] max-h-[320px]">
+                          {data.image ? (
+                            <img src={data.image} alt={data.chartTitle} className="w-full h-auto object-contain rounded-lg" />
+                          ) : (
+                            <div className="text-slate-300 text-xs italic">Analytics Visual Pending</div>
+                          )}
+                        </div>
+
+                      </div>
+                    </div>
+                  </motion.div>
+                )
+              ))}
             </div>
           </div>
         </section>
@@ -998,6 +1087,21 @@ const SEOService = () => {
           </motion.div>
         </div>
       </div>
+      {/* Floating WhatsApp Button */}
+      <a 
+        href="https://wa.me/919258462625" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="fixed bottom-20 right-8 z-[100] bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 group"
+        aria-label="Contact on WhatsApp"
+      >
+        <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.438 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span className="absolute right-16 bg-white text-slate-800 px-4 py-2 rounded-lg text-sm font-medium shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-slate-100">
+          Chat with an Expert
+        </span>
+      </a>
     </div>
   );
 };
