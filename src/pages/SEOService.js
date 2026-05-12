@@ -3,11 +3,12 @@ import { motion } from 'framer-motion';
 import Canonical from '../components/SEO/Canonical';
 import { db } from '../firebaseConfig';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { MarqueeDemo } from '../components/MarqueeDemo';
 
 const SEOService = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
   const [activeResultTab, setActiveResultTab] = useState(0);
-  
+
   // Hero Form State
   const [heroData, setHeroData] = useState({
     name: '',
@@ -42,11 +43,11 @@ const SEOService = () => {
         timestamp: serverTimestamp()
       });
       setHeroSubmitted(true);
-      setHeroData({ 
-        name: '', 
-        email: '', 
+      setHeroData({
+        name: '',
+        email: '',
         companyName: '',
-        website: '', 
+        website: '',
         phoneNumber: '',
         budgetRange: ''
       });
@@ -174,7 +175,8 @@ const SEOService = () => {
     <div className="bg-white text-slate-800 font-inter selection:bg-[#4be277] selection:text-[#003915] min-h-screen">
       <Canonical path="/seo-service" />
       {/* Custom Styles */}
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
 
         .material-symbols-outlined {
@@ -208,9 +210,9 @@ const SEOService = () => {
         <header className="relative min-h-[600px] lg:min-h-[750px] flex items-center overflow-hidden bg-slate-900">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0">
-            <img 
-              src="/seo-hero.png" 
-              className="w-full h-full object-cover opacity-50" 
+            <img
+              src="/seo-hero.png"
+              className="w-full h-full object-cover opacity-50"
               alt="SEO Hero Background"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
@@ -226,7 +228,7 @@ const SEOService = () => {
                 className="text-white space-y-6 sm:space-y-10"
               >
                 <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-white leading-[1.1] tracking-tight">
-                  India's Most Trusted, AI/SEO Company Offering <br className="hidden lg:block"/>
+                  India's Most Trusted, AI/SEO Company Offering <br className="hidden lg:block" />
                   <span className="font-fraunces italic text-[#16a34a]">99% Guaranteed</span> First-Page Rankings
                 </h1>
                 <div className="space-y-4">
@@ -237,9 +239,9 @@ const SEOService = () => {
                     Proven Results Within Stipulated timeline
                   </p>
                 </div>
-                
+
                 <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4">
-                  <button 
+                  <button
                     onClick={() => document.getElementById('audit-form')?.scrollIntoView({ behavior: 'smooth' })}
                     className="text-white px-10 py-4 font-medium uppercase tracking-wide text-sm transition-all duration-200 shadow-lg active:scale-95"
                     style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
@@ -248,14 +250,14 @@ const SEOService = () => {
                   >
                     Talk to our Expert
                   </button>
-                  <a 
+                  <a
                     href="https://wa.me/919258462625"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-3 border-2 border-[#25D366] text-white px-10 py-4 font-medium uppercase tracking-wide text-sm transition-all rounded-[5px] bg-[#25D366]/10 backdrop-blur-md hover:bg-[#25D366] active:scale-95 group"
                   >
                     <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.438 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.438 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                     </svg>
                     WhatsApp Us
                   </a>
@@ -285,39 +287,39 @@ const SEOService = () => {
                       <h3 className="text-xl sm:text-2xl font-light text-slate-900 mb-8 text-center leading-tight">
                         Get A Free <span className="font-fraunces italic text-[#16a34a]">SEO & AI SEO</span> Audit Report
                       </h3>
-                      
+
                       <form onSubmit={handleHeroSubmit} className="space-y-4">
                         <div className="space-y-4">
-                          <input 
-                            type="text" 
+                          <input
+                            type="text"
                             placeholder="Enter your name"
                             className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
                             value={heroData.name}
-                            onChange={(e) => setHeroData({...heroData, name: e.target.value})}
+                            onChange={(e) => setHeroData({ ...heroData, name: e.target.value })}
                             required
                           />
-                          <input 
-                            type="email" 
+                          <input
+                            type="email"
                             placeholder="Company Email"
                             className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
                             value={heroData.email}
-                            onChange={(e) => setHeroData({...heroData, email: e.target.value})}
+                            onChange={(e) => setHeroData({ ...heroData, email: e.target.value })}
                             required
                           />
-                          <input 
-                            type="text" 
+                          <input
+                            type="text"
                             placeholder="Company Name"
                             className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
                             value={heroData.companyName}
-                            onChange={(e) => setHeroData({...heroData, companyName: e.target.value})}
+                            onChange={(e) => setHeroData({ ...heroData, companyName: e.target.value })}
                             required
                           />
-                          <input 
-                            type="url" 
+                          <input
+                            type="url"
                             placeholder="Website URL"
                             className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
                             value={heroData.website}
-                            onChange={(e) => setHeroData({...heroData, website: e.target.value})}
+                            onChange={(e) => setHeroData({ ...heroData, website: e.target.value })}
                             required
                           />
                           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -326,19 +328,19 @@ const SEOService = () => {
                               <option>US (+1)</option>
                               <option>UK (+44)</option>
                             </select>
-                            <input 
-                              type="tel" 
+                            <input
+                              type="tel"
                               placeholder="Phone Number"
                               className="sm:col-span-2 bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
                               value={heroData.phoneNumber}
-                              onChange={(e) => setHeroData({...heroData, phoneNumber: e.target.value})}
+                              onChange={(e) => setHeroData({ ...heroData, phoneNumber: e.target.value })}
                               required
                             />
                           </div>
-                          <select 
+                          <select
                             className="w-full bg-slate-50 border border-slate-200 text-slate-600 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm"
                             value={heroData.budgetRange}
-                            onChange={(e) => setHeroData({...heroData, budgetRange: e.target.value})}
+                            onChange={(e) => setHeroData({ ...heroData, budgetRange: e.target.value })}
                             required
                           >
                             <option value="" disabled>Monthly Budget Range</option>
@@ -348,8 +350,8 @@ const SEOService = () => {
                             <option value="over-2.5l">Over ₹2.5 Lakh</option>
                           </select>
                         </div>
-                        
-                        <button 
+
+                        <button
                           disabled={heroSubmitting}
                           className="w-full text-white py-4 font-medium uppercase tracking-wide text-sm transition-all duration-200 shadow-lg mt-4 disabled:opacity-50 active:scale-[0.98]"
                           style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
@@ -372,8 +374,8 @@ const SEOService = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-4 sm:gap-8">
               {stats.map((stat, i) => (
-                <motion.div 
-                  key={i} 
+                <motion.div
+                  key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -397,7 +399,7 @@ const SEOService = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)] sm:auto-rows-[180px]">
               {/* Tall Card: Keyword Intelligence */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -405,10 +407,10 @@ const SEOService = () => {
                 className="md:row-span-2 md:col-span-1 glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden group hover:border-[#4be277]/40 hover:bg-[#f0fdf4] transition-all duration-500 flex flex-col justify-end bg-white"
               >
                 <div className="absolute -left-20 -bottom-20 w-64 h-64 bg-[#4be277]/10 rounded-full blur-[60px] group-hover:bg-[#4be277]/20 transition-all duration-700"></div>
-                
+
                 {/* Number Top Right */}
                 <div className="absolute top-6 right-6 text-5xl font-fraunces text-slate-100 font-bold italic group-hover:text-[#4be277]/30 transition-colors z-20 duration-500">01</div>
-                
+
                 <div className="relative z-20 mt-20 md:mt-0">
                   <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center relative z-20 group-hover:bg-[#dcfce7] transition-all duration-500 mb-4">
                     <span className="material-symbols-outlined text-[#16a34a] text-2xl">manage_search</span>
@@ -419,7 +421,7 @@ const SEOService = () => {
               </motion.div>
 
               {/* Wide Card: Technical SEO */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -427,10 +429,10 @@ const SEOService = () => {
                 className="md:col-span-2 glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden group hover:border-[#4be277]/40 hover:bg-[#f0fdf4] transition-all duration-500 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 bg-white"
               >
                 <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-[#4be277]/5 rounded-full blur-[50px] group-hover:bg-[#4be277]/10 transition-all duration-700"></div>
-                
+
                 {/* Number Top Right */}
                 <div className="absolute top-6 right-6 text-5xl font-fraunces text-slate-100 font-bold italic group-hover:text-[#4be277]/30 transition-colors z-20 duration-500">02</div>
-                
+
                 <div className="relative z-20 flex-1 pr-12">
                   <div className="flex items-center gap-4 mb-3">
                     <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center relative z-20 group-hover:bg-[#dcfce7] transition-all duration-500">
@@ -443,7 +445,7 @@ const SEOService = () => {
               </motion.div>
 
               {/* Square Card: Content Strategy */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -451,7 +453,7 @@ const SEOService = () => {
                 className="glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden group hover:border-[#4be277]/40 hover:bg-[#f0fdf4] transition-all duration-500 flex flex-col justify-end bg-white"
               >
                 <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-[#4be277]/10 rounded-full blur-[40px] group-hover:bg-[#4be277]/20 transition-all duration-700"></div>
-                
+
                 {/* Number Top Right */}
                 <div className="absolute top-6 right-6 text-5xl font-fraunces text-slate-100 font-bold italic group-hover:text-[#4be277]/30 transition-colors z-20 duration-500">03</div>
 
@@ -465,7 +467,7 @@ const SEOService = () => {
               </motion.div>
 
               {/* Square Card: Authority Building */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -473,7 +475,7 @@ const SEOService = () => {
                 className="glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden group hover:border-[#4be277]/40 hover:bg-[#f0fdf4] transition-all duration-500 flex flex-col justify-end bg-white"
               >
                 <div className="absolute -right-10 -top-10 w-40 h-40 bg-[#4be277]/10 rounded-full blur-[40px] group-hover:bg-[#4be277]/20 transition-all duration-700"></div>
-                
+
                 {/* Number Top Right */}
                 <div className="absolute top-6 right-6 text-5xl font-fraunces text-slate-100 font-bold italic group-hover:text-[#4be277]/30 transition-colors z-20 duration-500">04</div>
 
@@ -493,16 +495,16 @@ const SEOService = () => {
         <section className="py-20 sm:py-24 relative bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 className="relative rounded-2xl overflow-hidden bg-slate-50 p-4 shadow-xl border border-slate-100 group"
               >
-                <img src="/seo-analysis.png" alt="Data-Driven SEO" className="w-full h-auto rounded-xl grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
+                <img src="/images/seo-analysis1.jpeg" alt="Data-Driven SEO" className="w-full h-auto rounded-xl grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -515,7 +517,7 @@ const SEOService = () => {
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Data-Driven Approach to <span className="font-fraunces italic text-[#16a34a]">Growth</span></h2>
                 <p className="text-base sm:text-lg text-slate-600 mb-8 sm:mb-10 font-light">Guesswork has no place in modern SEO. Our strategies are built on deep data analysis, competitor reverse-engineering, and proven frameworks.</p>
-                
+
                 <div className="space-y-6">
                   {[
                     { icon: "radar", title: "Competitor Analysis", desc: "We map out exactly what your top competitors are doing and build a roadmap to outpace them." },
@@ -541,7 +543,7 @@ const SEOService = () => {
         {/* New Massive SEO Process Content */}
         {/* Intro Banner */}
         <section className="py-20 bg-slate-50 border-t border-slate-100">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -551,7 +553,7 @@ const SEOService = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 mb-6">Shape your business with the <span className="font-fraunces italic text-[#16a34a]">Leading SEO Company</span> in India!</h2>
             <p className="text-lg text-slate-600 mb-8 font-light leading-relaxed">If you are looking for an SEO company to rank your website on #1 page of Google, you have come to the right place! XD Media, the leading SEO company in India, follows an integrated approach to mark your presence in the worldwide online market.</p>
             <div className="flex justify-center">
-              <button 
+              <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="text-white px-10 py-4 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg active:scale-95"
                 style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
@@ -576,7 +578,7 @@ const SEOService = () => {
               >
                 <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mb-6">XD Media SEO Campaign <span className="font-fraunces italic text-[#16a34a]">Process</span></h2>
                 <p className="text-slate-600 font-light mb-10 max-w-xl">In the competitive world of internet marketing, strategy should never be an afterthought. Our process is broadly divided into eight logical steps:</p>
-                
+
                 <div className="space-y-6">
                   {[
                     "Website & Competitive Analysis",
@@ -589,13 +591,13 @@ const SEOService = () => {
                     "Permanent Traffic, Leads, Income, ROI"
                   ].map((title, i) => (
                     <div key={i} className="flex items-center gap-6 border-b border-slate-100 pb-4 group">
-                      <span className="text-xl font-fraunces italic text-[#16a34a] group-hover:scale-110 transition-transform">0{i+1}</span>
+                      <span className="text-xl font-fraunces italic text-[#16a34a] group-hover:scale-110 transition-transform">0{i + 1}</span>
                       <h4 className="text-lg font-light text-slate-800 group-hover:text-[#16a34a] transition-colors">{title}</h4>
                     </div>
                   ))}
                 </div>
               </motion.div>
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -613,21 +615,21 @@ const SEOService = () => {
         <section className="py-20 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 className="order-2 lg:order-1 relative rounded-2xl overflow-hidden bg-white p-4 shadow-xl border border-slate-100 group"
               >
-                <img 
-                  src="/competitive-analysis-light.png" 
-                  alt="Website and Competitive Analysis" 
-                  className="w-full h-auto rounded-xl grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" 
+                <img
+                  src="/competitive-analysis-light.png"
+                  alt="Website and Competitive Analysis"
+                  className="w-full h-auto rounded-xl grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
                 />
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -639,7 +641,7 @@ const SEOService = () => {
                   <p className="text-slate-600 font-light leading-relaxed border-l-2 border-[#16a34a] pl-6">We start with a detailed analysis of your website including your Meta tags, Image alt tags, Sitemaps, SEO Friendly URLs, JS Minification Test, Canonicalization and a lot more.</p>
                   <p className="text-slate-600 font-light leading-relaxed border-l-2 border-slate-200 pl-6">It is followed by a thorough research of your potential competitors. We then compare your website performance to those who are already ranking for the same organic keywords as yours.</p>
                 </div>
-                
+
                 <div className="mt-10">
                   <h4 className="text-lg font-medium text-slate-900 mb-6">Competitor Analysis Focus:</h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -657,7 +659,7 @@ const SEOService = () => {
         </section>
 
         {/* Keyword Research - Simple Lines Layout */}
-        <section className="py-20 bg-white">
+        {/* <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <motion.div
@@ -668,7 +670,7 @@ const SEOService = () => {
               >
                 <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mb-6"><span className="font-fraunces italic text-[#16a34a]">Keyword</span> Research</h2>
                 <p className="text-slate-600 font-light text-lg mb-10">The aim is to uncover keywords and actual search phrases that customers enter into search engines.</p>
-                
+
                 <div className="space-y-8">
                   {[
                     { title: "Creating a List of Seed Keywords", desc: "Generic terms people use for searching products to get valuable insight into competitor rankings." },
@@ -686,7 +688,7 @@ const SEOService = () => {
                   ))}
                 </div>
               </motion.div>
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -701,7 +703,7 @@ const SEOService = () => {
               <div className="absolute right-0 top-0 w-96 h-96 bg-[#4be277]/10 rounded-full blur-[80px]"></div>
               <div className="relative z-10">
                 <h3 className="text-2xl sm:text-3xl font-light mb-8 max-w-2xl">Ranking for local keywords can be made easy by taking care of <span className="font-fraunces italic text-[#4be277]">3 very important things</span>:</h3>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div>
                     <div className="text-4xl font-fraunces italic text-[#3d4a3d] mb-4">1</div>
@@ -719,7 +721,7 @@ const SEOService = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Recent Results Section */}
         <section className="py-20 bg-white border-t border-slate-100">
@@ -737,11 +739,10 @@ const SEOService = () => {
                 <button
                   key={idx}
                   onClick={() => setActiveResultTab(idx)}
-                  className={`px-6 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${
-                    activeResultTab === idx
-                      ? 'bg-[#16a34a] text-white'
-                      : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
-                  }`}
+                  className={`px-6 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${activeResultTab === idx
+                    ? 'bg-[#16a34a] text-white'
+                    : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
+                    }`}
                 >
                   {tab.category}
                 </button>
@@ -751,7 +752,7 @@ const SEOService = () => {
             <div className="max-w-6xl mx-auto">
               {resultsData.map((data, idx) => (
                 activeResultTab === idx && (
-                  <motion.div 
+                  <motion.div
                     key={idx}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -831,7 +832,7 @@ const SEOService = () => {
         <section className="py-20 sm:py-24 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -840,7 +841,7 @@ const SEOService = () => {
               >
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Continuous <span className="font-fraunces italic text-[#16a34a]">Optimization</span></h2>
                 <p className="text-base sm:text-lg text-slate-600 mb-8 sm:mb-10 font-light">SEO isn't a one-and-done setup. It's a continuous process of refinement, adaptation to algorithm updates, and compounding growth.</p>
-                
+
                 <div className="space-y-4">
                   {[
                     { step: "01", title: "Comprehensive Website Audit", desc: "Identifying technical roadblocks and foundational issues." },
@@ -859,7 +860,7 @@ const SEOService = () => {
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -873,6 +874,28 @@ const SEOService = () => {
           </div>
         </section>
 
+        {/* Testimonials - Dark background */}
+        <section className="py-24" style={{ background: '#0a0a0a' }}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
+                What Our Clients Say
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light">
+                Real results, real testimonials from brands we've helped grow
+              </p>
+              <div className="w-20 h-1 mx-auto mt-6" style={{ background: '#47BF72' }}></div>
+            </motion.div>
+            <MarqueeDemo />
+          </div>
+        </section>
+
         {/* FAQs */}
         <section className="py-20 sm:py-24 relative bg-white">
           <div className="max-w-3xl mx-auto px-4 sm:px-8">
@@ -883,15 +906,15 @@ const SEOService = () => {
 
             <div className="space-y-4">
               {faqs.map((faq, i) => (
-                <motion.div 
-                  key={i} 
+                <motion.div
+                  key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden transition-all duration-300"
                 >
-                  <button 
+                  <button
                     onClick={() => setActiveAccordion(activeAccordion === i ? null : i)}
                     className="w-full flex items-center justify-between p-5 sm:p-6 text-left hover:bg-slate-100 transition-colors"
                   >
@@ -931,7 +954,7 @@ const SEOService = () => {
                 <p className="text-lg text-slate-600 mb-10 font-light leading-relaxed">
                   Stop losing customers to your competitors. Fill out the form to get a complimentary SEO audit and a custom roadmap to rank #1.
                 </p>
-                
+
                 <div className="space-y-6 mb-10">
                   {[
                     { icon: "check_circle", text: "Free 30-minute Strategy Call" },
@@ -947,15 +970,15 @@ const SEOService = () => {
 
                 <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex items-center gap-6">
                   <div className="flex -space-x-3">
-                    {[1,2,3,4].map(n => (
+                    {[1, 2, 3, 4].map(n => (
                       <div key={n} className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
-                        <img src={`https://i.pravatar.cc/100?img=${n+10}`} alt="user" />
+                        <img src={`https://i.pravatar.cc/100?img=${n + 10}`} alt="user" />
                       </div>
                     ))}
                   </div>
                   <div>
                     <div className="flex gap-1 mb-1">
-                      {[1,2,3,4,5].map(n => (
+                      {[1, 2, 3, 4, 5].map(n => (
                         <span key={n} className="material-symbols-outlined text-yellow-400 text-sm">star</span>
                       ))}
                     </div>
@@ -964,7 +987,7 @@ const SEOService = () => {
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -979,7 +1002,7 @@ const SEOService = () => {
                     </div>
                     <h3 className="text-2xl font-medium text-slate-900 mb-2">Audit Request Received!</h3>
                     <p className="text-slate-600 font-light mb-8">Our SEO experts will analyze your website and get back to you within 24 hours.</p>
-                    <button 
+                    <button
                       onClick={() => setBottomSubmitted(false)}
                       className="text-[#16a34a] font-bold hover:underline"
                     >
@@ -991,49 +1014,49 @@ const SEOService = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                       <div>
                         <label className="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
-                        <input 
-                          type="text" 
+                        <input
+                          type="text"
                           required
                           value={bottomData.name}
-                          onChange={(e) => setBottomData({...bottomData, name: e.target.value})}
-                          placeholder="John Doe" 
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#16a34a] focus:ring-4 focus:ring-[#16a34a]/10 transition-all outline-none" 
+                          onChange={(e) => setBottomData({ ...bottomData, name: e.target.value })}
+                          placeholder="John Doe"
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#16a34a] focus:ring-4 focus:ring-[#16a34a]/10 transition-all outline-none"
                         />
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
-                        <input 
-                          type="email" 
+                        <input
+                          type="email"
                           required
                           value={bottomData.email}
-                          onChange={(e) => setBottomData({...bottomData, email: e.target.value})}
-                          placeholder="john@company.com" 
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#16a34a] focus:ring-4 focus:ring-[#16a34a]/10 transition-all outline-none" 
+                          onChange={(e) => setBottomData({ ...bottomData, email: e.target.value })}
+                          placeholder="john@company.com"
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#16a34a] focus:ring-4 focus:ring-[#16a34a]/10 transition-all outline-none"
                         />
                       </div>
                     </div>
                     <div className="mb-6">
                       <label className="block text-sm font-medium text-slate-700 mb-2">Website URL</label>
-                      <input 
-                        type="url" 
+                      <input
+                        type="url"
                         required
                         value={bottomData.website}
-                        onChange={(e) => setBottomData({...bottomData, website: e.target.value})}
-                        placeholder="https://yourwebsite.com" 
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#16a34a] focus:ring-4 focus:ring-[#16a34a]/10 transition-all outline-none" 
+                        onChange={(e) => setBottomData({ ...bottomData, website: e.target.value })}
+                        placeholder="https://yourwebsite.com"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#16a34a] focus:ring-4 focus:ring-[#16a34a]/10 transition-all outline-none"
                       />
                     </div>
                     <div className="mb-8">
                       <label className="block text-sm font-medium text-slate-700 mb-2">How can we help?</label>
-                      <textarea 
-                        rows="4" 
+                      <textarea
+                        rows="4"
                         value={bottomData.message}
-                        onChange={(e) => setBottomData({...bottomData, message: e.target.value})}
-                        placeholder="Tell us about your SEO goals..." 
+                        onChange={(e) => setBottomData({ ...bottomData, message: e.target.value })}
+                        placeholder="Tell us about your SEO goals..."
                         className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#16a34a] focus:ring-4 focus:ring-[#16a34a]/10 transition-all outline-none resize-none"
                       ></textarea>
                     </div>
-                    <button 
+                    <button
                       disabled={bottomSubmitting}
                       className="w-full text-white py-4 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                       style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
@@ -1068,7 +1091,7 @@ const SEOService = () => {
           <div className="absolute right-[-12px] top-0 w-0 h-0 border-t-[24px] border-t-transparent border-b-[24px] border-b-transparent border-l-[12px] border-l-[#4be277] hidden sm:block"></div>
           <div className="absolute right-[-8px] top-0 w-0 h-0 border-t-[20px] border-t-transparent border-b-[20px] border-b-transparent border-l-[8px] border-l-[#4be277] sm:hidden"></div>
         </div>
-        
+
         {/* Marquee Wrapper */}
         <div className="flex-1 overflow-hidden relative flex items-center h-full ml-4 sm:ml-6">
           <motion.div
@@ -1088,15 +1111,15 @@ const SEOService = () => {
         </div>
       </div>
       {/* Floating WhatsApp Button */}
-      <a 
-        href="https://wa.me/919258462625" 
-        target="_blank" 
+      <a
+        href="https://wa.me/919258462625"
+        target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-20 right-8 z-[100] bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 group"
         aria-label="Contact on WhatsApp"
       >
         <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.438 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.438 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
         </svg>
         <span className="absolute right-16 bg-white text-slate-800 px-4 py-2 rounded-lg text-sm font-medium shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-slate-100">
           Chat with an Expert
