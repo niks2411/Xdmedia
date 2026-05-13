@@ -400,7 +400,7 @@ const SEOService = () => {
         </header>
 
         {/* Stats Section */}
-        <section className="py-12 border-y border-slate-200 bg-[#f1e1cf] relative z-10">
+        <section className="py-12 border-y border-slate-200 bg-slate-200 relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-4 sm:gap-8">
               {stats.map((stat, i) => (
@@ -421,7 +421,7 @@ const SEOService = () => {
         </section>
 
         {/* Features / Services Section */}
-        <section className="py-20 sm:py-24 relative overflow-hidden bg-[#f8fffb]">
+        <section className="py-20 sm:py-24 relative overflow-hidden bg-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="mb-12 sm:mb-20 text-center">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Complete SEO Solutions</h2>
@@ -522,7 +522,7 @@ const SEOService = () => {
         </section>
 
         {/* Data-Driven Section with User's Image */}
-        <section className="py-20 sm:py-24 relative bg-white">
+        <section className="py-20 sm:py-24 relative bg-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
               <motion.div
@@ -530,7 +530,7 @@ const SEOService = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="relative rounded-2xl overflow-hidden bg-[#f8fffb] p-4 shadow-xl border border-slate-100 group"
+                className="relative rounded-2xl overflow-hidden bg-slate-50 p-4 shadow-xl border border-slate-100 group"
               >
                 <img src="/images/seo-analysis1.jpeg" alt="Data-Driven SEO" className="w-full h-auto rounded-xl grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
               </motion.div>
@@ -572,7 +572,7 @@ const SEOService = () => {
 
         {/* New Massive SEO Process Content */}
         {/* Intro Banner */}
-        <section className="py-20 bg-[#f1e1cf] border-t border-slate-100">
+        <section className="py-20 bg-slate-200 border-t border-slate-100">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -597,7 +597,7 @@ const SEOService = () => {
         </section>
 
         {/* 8 Step Process - Simple Lines Layout */}
-        <section className="py-20 bg-[#f8fffb]">
+        <section className="py-20 bg-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 sm:gap-16 items-center">
               <motion.div
@@ -670,7 +670,7 @@ const SEOService = () => {
         </section>
 
         {/* Analysis Details - Simple Lines */}
-        <section className="py-20 bg-[#f8fffb]">
+        <section className="py-20 bg-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <motion.div
@@ -782,7 +782,7 @@ const SEOService = () => {
         </section> */}
 
         {/* Recent Results Section */}
-        <section className="py-20 bg-[#f1e1cf] border-t border-slate-100">
+        <section className="py-20 bg-slate-100 border-t border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 mb-6">Recent Results in Google & AI Search Engines.</h2>
@@ -868,7 +868,7 @@ const SEOService = () => {
                       {/* Right Side: Analytics & Image */}
                       <div className="flex flex-col">
                         <h4 className="text-base font-bold text-slate-900 mb-3">{data.chartTitle}</h4>
-                        <div className="bg-[#f8fffb] rounded-xl p-2 border border-slate-100 flex items-center justify-center overflow-hidden min-h-[280px] max-h-[320px]">
+                        <div className="bg-slate-50 rounded-xl p-2 border border-slate-100 flex items-center justify-center overflow-hidden min-h-[280px] max-h-[320px]">
                           {data.image ? (
                             <img src={data.image} alt={data.chartTitle} className="w-full h-auto object-contain rounded-lg" />
                           ) : (
@@ -887,7 +887,7 @@ const SEOService = () => {
 
         {/* Workflow Section with User's Image */}
 
-        <section className="py-20 sm:py-24 bg-[#f8fffb]">
+        <section className="py-20 sm:py-24 bg-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
               <motion.div
@@ -955,7 +955,7 @@ const SEOService = () => {
         </section>
 
         {/* FAQs */}
-        <section className="py-20 sm:py-24 relative bg-[#f1e1cf]">
+        <section className="py-20 sm:py-24 relative bg-slate-100">
           <div className="max-w-3xl mx-auto px-4 sm:px-8">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Frequently Asked <span className="font-fraunces italic text-[#16a34a]">Questions</span></h2>
