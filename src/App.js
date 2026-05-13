@@ -31,6 +31,7 @@ function App() {
             <Route path="/white-label-seo" element={<WhiteLabelSEO />} />
             <Route path="/white-label-digital-marketing" element={<WhiteLabelMarketing />} />
             <Route path="/seo-service" element={<SEOService />} />
+            <Route path="/affordable-seo-services-in-india" element={<SEOService />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Admin />} />
