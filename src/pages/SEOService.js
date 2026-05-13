@@ -31,6 +31,28 @@ const SEOService = () => {
   });
   const [bottomSubmitting, setBottomSubmitting] = useState(false);
   const [bottomSubmitted, setBottomSubmitted] = useState(false);
+  const [processCardTransform, setProcessCardTransform] = useState({
+    rotateX: 0,
+    rotateY: 0,
+    translateY: 0
+  });
+
+  const handleProcessCardMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    const maxTilt = 10;
+
+    setProcessCardTransform({
+      rotateX: (0.5 - y) * maxTilt,
+      rotateY: (x - 0.5) * maxTilt,
+      translateY: -6
+    });
+  };
+
+  const resetProcessCardTransform = () => {
+    setProcessCardTransform({ rotateX: 0, rotateY: 0, translateY: 0 });
+  };
 
   const handleHeroSubmit = async (e) => {
     e.preventDefault();
@@ -613,7 +635,35 @@ const SEOService = () => {
                 className="relative"
               >
                 <div className="absolute inset-0 bg-[#f0fdf4] rounded-full blur-3xl opacity-50 -z-10"></div>
-                <img src="/SEO CAMPAIGN PROCESS.png" alt="SEO Campaign Process" className="w-full h-auto max-w-2xl mx-auto rounded-3xl" />
+                <div
+                  className="relative max-w-2xl mx-auto"
+                  style={{ perspective: '1200px' }}
+                >
+                  <div
+                    className="relative rounded-3xl transition-transform duration-200 ease-out will-change-transform [transform-style:preserve-3d]"
+                    onMouseMove={handleProcessCardMove}
+                    onMouseLeave={resetProcessCardTransform}
+                    style={{
+                      transform: `rotateX(${processCardTransform.rotateX}deg) rotateY(${processCardTransform.rotateY}deg) translateY(${processCardTransform.translateY}px)`
+                    }}
+                  >
+                    {/* Depth shadow */}
+                    <div className="absolute -inset-2 rounded-[28px] bg-black/10 blur-2xl translate-y-6 -z-10"></div>
+
+                    {/* Specular highlight */}
+                    <div className="pointer-events-none absolute inset-0 rounded-3xl bg-[radial-gradient(1200px_circle_at_10%_10%,rgba(255,255,255,0.55),transparent_55%)] mix-blend-soft-light opacity-70"></div>
+
+                    {/* Subtle edge */}
+                    <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-white/60"></div>
+
+                    <img
+                      src="/SEO CAMPAIGN PROCESS.png"
+                      alt="SEO Campaign Process"
+                      className="w-full h-auto rounded-3xl bg-white shadow-xl"
+                      style={{ transform: 'translateZ(24px)' }}
+                    />
+                  </div>
+                </div>
               </motion.div>
             </div>
           </div>
