@@ -5,7 +5,6 @@ import Layout from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import WelcomePopup from './components/WelcomePopup';
 import Home from './pages/Home';
-import SEOTools from './pages/SEOTools';
 import MarketingTools from './pages/MarketingTools';
 import Analytics from './pages/Analytics';
 import AboutUs from './pages/AboutUs';
@@ -15,6 +14,7 @@ import WhiteLabelSEO from './pages/WhiteLabelSEO';
 import WhiteLabelMarketing from './pages/WhiteLabelMarketing';
 import SEOService from './pages/SEOService';
 import SEOAdmin from './pages/SEOAdmin';
+import WebDevelopmentService from './pages/WebDevelopmentService';
 
 function App() {
   return (
@@ -25,13 +25,14 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/seo-tools" element={<SEOTools />} />
             <Route path="/website-design" element={<MarketingTools />} />
             <Route path="/performance-marketing" element={<Analytics />} />
             <Route path="/white-label-seo" element={<WhiteLabelSEO />} />
             <Route path="/white-label-digital-marketing" element={<WhiteLabelMarketing />} />
             <Route path="/seo-service" element={<SEOService />} />
             <Route path="/affordable-seo-services-in-india" element={<SEOService />} />
+            <Route path="/web-development-services" element={<WebDevelopmentService />} />
+            <Route path="/web-development-company-india" element={<WebDevelopmentService />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Admin />} />

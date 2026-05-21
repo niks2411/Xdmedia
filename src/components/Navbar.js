@@ -52,14 +52,15 @@ const Navbar = () => {
       hasDropdown: true,
       dropdownItems: [
         {
-          name: 'SEO & Organic Growth Tools',
-          path: '/seo-tools',
+          name: 'SEO Services',
+          path: '/affordable-seo-services-in-india',
           icon: Cpu,
           description: 'Technical SEO, Keyword Research, Ecommerce & SaaS SEO, Authority Building',
           image: '/images/seo.webp',
           features: ['Technical SEO & Site Architecture', 'Ecommerce & SaaS SEO', 'Authority & Backlink Building'],
           price: 'Core Expertise ⭐'
         },
+
         {
           name: 'Website Design & Development',
           path: '/website-design',
@@ -74,7 +75,7 @@ const Navbar = () => {
           path: '/performance-marketing',
           icon: BarChart3,
           description: 'Google Ads, Meta Ads, Social Media Marketing, Funnel Optimization',
-          image: '/images/market.webp?v=1',
+          image: '/images/performance-marketing.png',
           features: ['Google & Meta Ads', 'Social Media Marketing', 'Funnel & Retargeting'],
           price: 'Brand Growth'
         },

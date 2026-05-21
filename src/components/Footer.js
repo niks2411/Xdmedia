@@ -11,7 +11,8 @@ const Footer = () => {
   const quickLinks = [
     { name: 'Home', path: '/' },
     { name: 'Our Story', path: '/about-us' },
-    { name: 'SEO & Organic Growth', path: '/seo-tools' },
+    { name: 'SEO Services', path: '/affordable-seo-services-in-india' },
+
     { name: 'Website Design & Development', path: '/website-design' },
     { name: 'Performance Marketing', path: '/performance-marketing' },
     { name: 'Contact Us', path: '/contact' }
