@@ -2,7 +2,15 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
-export const Timeline = ({ data }) => {
+export const Timeline = ({
+  data,
+  title = "Our Journey",
+  description = "We've been building 360° Website Control for the past 2 years. Here's a timeline of our journey.",
+  containerClassName = "bg-white dark:bg-neutral-950",
+  titleClassName = "text-black dark:text-white",
+  descriptionClassName = "text-neutral-700 dark:text-neutral-300",
+  lineColor = "from-blue-500 via-blue-500"
+}) => {
   const ref = useRef(null);
   const containerRef = useRef(null);
   const [height, setHeight] = useState(0);
@@ -24,16 +32,15 @@ export const Timeline = ({ data }) => {
 
   return (
     <div
-      className="w-full bg-white dark:bg-neutral-950 font-sans md:px-10"
+      className={`w-full font-sans md:px-10 ${containerClassName}`}
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl font-light">
-          Our Journey
+        <h2 className={`text-lg md:text-4xl mb-4 max-w-4xl font-light ${titleClassName}`}>
+          {title}
         </h2>
-        <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm font-light">
-          We've been building 360° Website Control for the past 2 years. Here's
-          a timeline of our journey.
+        <p className={`text-sm md:text-base max-w-sm font-light ${descriptionClassName}`}>
+          {description}
         </p>
       </div>
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
@@ -67,7 +74,7 @@ export const Timeline = ({ data }) => {
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-blue-500 via-blue-500 to-transparent from-[0%] via-[10%] rounded-full"
+            className={`absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t to-transparent from-[0%] via-[10%] rounded-full ${lineColor}`}
           />
         </div>
       </div>

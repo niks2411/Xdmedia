@@ -32,7 +32,7 @@ const Home = () => {
       <Canonical path="/" />
       {/* Hero Section */}
       <section className="relative overflow-hidden min-h-screen w-full flex items-start pt-20 px-4 sm:px-6 lg:px-8" style={{
-        backgroundImage: 'url(/bg1.png)',
+        backgroundImage: 'url(/landing_hero_bg.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
