@@ -277,7 +277,7 @@ const WebDevelopmentService = () => {
                     Talk to our Expert
                   </button>
                   <a
-                    href="https://wa.me/919258462625"
+                    href="https://wa.me/917901724043?text=Hi%20XD%20Media%2C%20I%20am%20interested%20in%20your%20Web%20Development%20services.%20I%20would%20like%20to%20get%20a%20proposal%20%26%20estimate."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-3 border-2 border-[#25D366] text-white px-10 py-4 font-medium uppercase tracking-wide text-sm transition-all rounded-[5px] bg-[#25D366]/10 backdrop-blur-md hover:bg-[#25D366] active:scale-95 group"
@@ -1095,7 +1095,7 @@ const WebDevelopmentService = () => {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/919258462625"
+        href="https://wa.me/917901724043?text=Hi%20XD%20Media%2C%20I%20am%20interested%20in%20your%20Web%20Development%20services.%20I%20would%20like%20to%20get%20a%20proposal%20%26%20estimate."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-20 right-8 z-[100] bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 group"
