@@ -26,8 +26,10 @@ const SEOService = () => {
   const [bottomData, setBottomData] = useState({
     name: '',
     email: '',
+    companyName: '',
     website: '',
-    message: ''
+    phoneNumber: '',
+    budgetRange: ''
   });
   const [bottomSubmitting, setBottomSubmitting] = useState(false);
   const [bottomSubmitted, setBottomSubmitted] = useState(false);
@@ -94,7 +96,14 @@ const SEOService = () => {
         timestamp: serverTimestamp()
       });
       setBottomSubmitted(true);
-      setBottomData({ name: '', email: '', website: '', message: '' });
+      setBottomData({
+        name: '',
+        email: '',
+        companyName: '',
+        website: '',
+        phoneNumber: '',
+        budgetRange: ''
+      });
     } catch (error) {
       console.error("Error submitting bottom form: ", error);
       alert("Something went wrong. Please try again.");
@@ -272,13 +281,13 @@ const SEOService = () => {
 
                 <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4">
                   <button
-                    onClick={() => document.getElementById('audit-form')?.scrollIntoView({ behavior: 'smooth' })}
+                    onClick={() => document.getElementById('recent-results')?.scrollIntoView({ behavior: 'smooth' })}
                     className="text-white px-10 py-4 font-medium uppercase tracking-wide text-sm transition-all duration-200 shadow-lg active:scale-95"
                     style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
                     onMouseEnter={(e) => e.target.style.backgroundColor = '#3aa85f'}
                     onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}
                   >
-                    Talk to our Expert
+                    View Results
                   </button>
                   <a
                     href="https://wa.me/917901724043?text=Hi%20XD%20Media%2C%20I%20am%20interested%20in%20your%20SEO%20%26%20AI%20SEO%20services.%20I%20would%20like%20to%20get%20an%20SEO%20audit%20report."
@@ -532,7 +541,7 @@ const SEOService = () => {
                 transition={{ duration: 0.6 }}
                 className="relative rounded-2xl overflow-hidden bg-slate-50 p-4 shadow-xl border border-slate-100 group"
               >
-                <img src="/images/seo-analysis1.jpeg" alt="Data-Driven SEO" className="w-full h-auto rounded-xl grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
+                <img src="/Illustration.png" alt="Data-Driven SEO" className="w-full h-auto rounded-xl grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
               </motion.div>
 
               <motion.div
@@ -782,7 +791,7 @@ const SEOService = () => {
         </section> */}
 
         {/* Recent Results Section */}
-        <section className="py-20 bg-slate-100 border-t border-slate-100">
+        <section id="recent-results" className="py-20 bg-slate-100 border-t border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 mb-6">Recent Results in Google & AI Search Engines.</h2>
@@ -881,6 +890,18 @@ const SEOService = () => {
                   </motion.div>
                 )
               ))}
+            </div>
+
+            <div className="flex justify-center mt-12">
+              <button
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-white px-10 py-4 font-medium uppercase tracking-wide text-sm transition-all duration-200 shadow-lg active:scale-95"
+                style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#3aa85f'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}
+              >
+                Get Free Audit
+              </button>
             </div>
           </div>
         </section>
@@ -1068,55 +1089,72 @@ const SEOService = () => {
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleBottomSubmit} className="bg-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-100">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-                      <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
-                        <input
-                          type="text"
-                          required
-                          value={bottomData.name}
-                          onChange={(e) => setBottomData({ ...bottomData, name: e.target.value })}
-                          placeholder="John Doe"
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#16a34a] focus:ring-4 focus:ring-[#16a34a]/10 transition-all outline-none"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
-                        <input
-                          type="email"
-                          required
-                          value={bottomData.email}
-                          onChange={(e) => setBottomData({ ...bottomData, email: e.target.value })}
-                          placeholder="john@company.com"
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#16a34a] focus:ring-4 focus:ring-[#16a34a]/10 transition-all outline-none"
-                        />
-                      </div>
-                    </div>
-                    <div className="mb-6">
-                      <label className="block text-sm font-medium text-slate-700 mb-2">Website URL</label>
+                  <form onSubmit={handleBottomSubmit} className="bg-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-100 space-y-4">
+                    <div className="space-y-4">
+                      <input
+                        type="text"
+                        placeholder="Enter your name"
+                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                        value={bottomData.name}
+                        onChange={(e) => setBottomData({ ...bottomData, name: e.target.value })}
+                        required
+                      />
+                      <input
+                        type="email"
+                        placeholder="Company Email"
+                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                        value={bottomData.email}
+                        onChange={(e) => setBottomData({ ...bottomData, email: e.target.value })}
+                        required
+                      />
+                      <input
+                        type="text"
+                        placeholder="Company Name"
+                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                        value={bottomData.companyName}
+                        onChange={(e) => setBottomData({ ...bottomData, companyName: e.target.value })}
+                        required
+                      />
                       <input
                         type="url"
-                        required
+                        placeholder="Website URL"
+                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
                         value={bottomData.website}
                         onChange={(e) => setBottomData({ ...bottomData, website: e.target.value })}
-                        placeholder="https://yourwebsite.com"
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#16a34a] focus:ring-4 focus:ring-[#16a34a]/10 transition-all outline-none"
+                        required
                       />
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <select className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm">
+                          <option>India (+91)</option>
+                          <option>US (+1)</option>
+                          <option>UK (+44)</option>
+                        </select>
+                        <input
+                          type="tel"
+                          placeholder="Phone Number"
+                          className="sm:col-span-2 bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                          value={bottomData.phoneNumber}
+                          onChange={(e) => setBottomData({ ...bottomData, phoneNumber: e.target.value })}
+                          required
+                        />
+                      </div>
+                      <select
+                        className="w-full bg-slate-50 border border-slate-200 text-slate-600 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm"
+                        value={bottomData.budgetRange}
+                        onChange={(e) => setBottomData({ ...bottomData, budgetRange: e.target.value })}
+                        required
+                      >
+                        <option value="" disabled>Monthly Budget Range</option>
+                        <option value="30k-50k">₹30,000 to ₹50,000</option>
+                        <option value="50k-1l">₹50,000 to ₹1 Lakh</option>
+                        <option value="1l-2.5l">₹1 Lakh to ₹2.5 Lakh</option>
+                        <option value="over-2.5l">Over ₹2.5 Lakh</option>
+                      </select>
                     </div>
-                    <div className="mb-8">
-                      <label className="block text-sm font-medium text-slate-700 mb-2">How can we help?</label>
-                      <textarea
-                        rows="4"
-                        value={bottomData.message}
-                        onChange={(e) => setBottomData({ ...bottomData, message: e.target.value })}
-                        placeholder="Tell us about your SEO goals..."
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#16a34a] focus:ring-4 focus:ring-[#16a34a]/10 transition-all outline-none resize-none"
-                      ></textarea>
-                    </div>
+
                     <button
                       disabled={bottomSubmitting}
-                      className="w-full text-white py-4 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                      className="w-full text-white py-4 font-medium uppercase tracking-wide text-sm transition-all duration-200 shadow-lg mt-4 disabled:opacity-50 active:scale-[0.98] flex items-center justify-center gap-2"
                       style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
                       onMouseEnter={(e) => !bottomSubmitting && (e.target.style.backgroundColor = '#3aa85f')}
                       onMouseLeave={(e) => !bottomSubmitting && (e.target.style.backgroundColor = '#47BF72')}
@@ -1124,9 +1162,9 @@ const SEOService = () => {
                       {bottomSubmitting ? (
                         <>
                           <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
-                          Sending...
+                          Submitting...
                         </>
-                      ) : 'Send My Free Audit'}
+                      ) : 'Get My Free Audit'}
                     </button>
                     <p className="text-center text-xs text-slate-400 mt-4">
                       No credit card required. We respect your privacy.
