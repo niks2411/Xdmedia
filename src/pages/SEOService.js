@@ -5,6 +5,7 @@ import Canonical from '../components/SEO/Canonical';
 import { db } from '../firebaseConfig';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { MarqueeDemo } from '../components/MarqueeDemo';
+import { TrendingUp } from 'lucide-react';
 
 const SEOService = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
@@ -157,11 +158,11 @@ const SEOService = () => {
       smallLabel: "AI SEO / Generative Engine Optimization",
       heading: "Significant Growth in AI Citations & AI-Cited Pages",
       challenge: "Improving the website’s visibility across AI-powered search systems by strengthening semantic SEO, topical authority, and content relevance.",
-      resultValue: "+685%",
+      resultValue: "+70.1K",
       resultDesc: "AI citations increased from 120 to 942, significantly improving visibility across AI-generated search responses and answer engines.",
       tableTitle: "Metric",
       tableRows: [
-        { label: "AI Citations", value: "942", growth: "+685%" },
+        { label: "AI Citations", value: "942", growth: "+70.1K" },
         { label: "AI-Cited Pages", value: "75", growth: "+188%" },
         { label: "Total AI Citations", value: "70.1K", growth: "Growth" }
       ],
@@ -190,11 +191,11 @@ const SEOService = () => {
       smallLabel: "AI Search Optimization",
       heading: "Improved AI Citations & Content Recognition",
       challenge: "Focused on improving content relevance, semantic SEO, topical authority, and crawlable content structure to strengthen visibility.",
-      resultValue: "+740%",
+      resultValue: "+8.4K",
       resultDesc: "AI citations increased significantly from 20 to 168, showing substantial growth in AI search visibility and answer engine recognition.",
       tableTitle: "Metric",
       tableRows: [
-        { label: "AI Citations", value: "168", growth: "+740%" },
+        { label: "AI Citations", value: "168", growth: "+8.4K" },
         { label: "AI-Cited Pages", value: "30", growth: "+275%" },
         { label: "Total AI Citations", value: "8.4K", growth: "Improved" }
       ],
@@ -830,7 +831,6 @@ const SEOService = () => {
                       <div className="bg-[#1e73be] text-white px-4 py-1.5 rounded-lg text-xs font-medium">
                         {data.category}
                       </div>
-                      <img src="https://flagcdn.com/w80/in.png" alt="India Flag" className="w-10 sm:w-12 shadow-sm rounded-sm" />
                     </div>
 
                     <div className="px-4 sm:px-6 pb-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -846,7 +846,10 @@ const SEOService = () => {
 
                           <div>
                             <h4 className="text-base font-bold text-slate-900 mb-1">Results</h4>
-                            <div className="text-4xl font-bold text-[#1e73be] mb-2">{data.resultValue}</div>
+                            <div className="text-4xl font-bold text-[#1e73be] mb-2 flex items-center gap-1.5">
+                              {data.resultValue}
+                              <TrendingUp className="w-7 h-7 text-[#1e73be]" />
+                            </div>
                             <p className="text-slate-800 font-bold text-sm leading-tight">
                               {data.resultDesc}
                             </p>
@@ -865,7 +868,22 @@ const SEOService = () => {
                                 {data.tableRows.map((item, i) => (
                                   <tr key={i} className="group hover:bg-slate-50 transition-colors">
                                     <td className="py-2 text-slate-600 font-light">{item.label}</td>
-                                    <td className="py-2 text-[#1e73be] font-bold text-right">{item.value} <span className="text-[10px] opacity-70 ml-1">({item.growth})</span></td>
+                                    <td className="py-2 text-[#1e73be] font-bold text-right">
+                                      <div className="inline-flex items-center justify-end gap-1">
+                                        <span className="flex items-center gap-0.5">
+                                          {item.value}
+                                          {item.value.includes('8.4') && (
+                                            <TrendingUp className="w-3.5 h-3.5 text-[#1e73be]" />
+                                          )}
+                                        </span>
+                                        <span className="text-[10px] opacity-70 ml-1 flex items-center gap-0.5">
+                                          ({item.growth})
+                                          {(item.growth.includes('+') || item.growth.includes('8.4') || item.growth.toLowerCase() === 'growth' || item.growth.toLowerCase() === 'improved') && (
+                                            <TrendingUp className="w-3.5 h-3.5 text-[#1e73be]" />
+                                          )}
+                                        </span>
+                                      </div>
+                                    </td>
                                   </tr>
                                 ))}
                               </tbody>
