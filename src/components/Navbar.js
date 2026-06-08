@@ -62,12 +62,12 @@ const Navbar = () => {
         },
 
         {
-          name: 'Website Design & Development',
-          path: '/website-design',
-          icon: Mail,
-          description: 'React.js, Next.js, WordPress, Shopify, WooCommerce, Speed Optimization',
+          name: 'Web Development Services',
+          path: '/web-development-services',
+          icon: Code,
+          description: 'React.js, Next.js, Custom Web Apps, eCommerce, CMS & CRM Systems',
           image: '/images/web.webp?v=1',
-          features: ['Custom UI/UX & Development', 'Ecommerce Solutions', 'Speed & CRO Optimization'],
+          features: ['Custom UI/UX & Next.js Apps', 'eCommerce & Portal Systems', 'Database & CRM Integration'],
           price: 'Core Expertise ⭐'
         },
         {
