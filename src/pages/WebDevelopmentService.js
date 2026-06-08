@@ -194,10 +194,10 @@ const WebDevelopmentService = () => {
   return (
     <div className="bg-white text-slate-800 font-inter selection:bg-[#4be277] selection:text-[#003915] min-h-screen">
       <Helmet>
-        <title>Best Website Development Services in India | Custom Web App Development | LapaOne</title>
+        <title>Best Website Development Services in India | Custom Web App Development | </title>
         <meta
           name="description"
-          content="Scale your business with the best website development services in India. Custom Web Application, Laravel, React, WordPress & Shopify development by LapaOne."
+          content="Scale your business with the best website development services in India. Custom Web Application, Laravel, React, WordPress & Shopify development by ."
         />
       </Helmet>
       <Canonical path="/web-development-services" />
@@ -575,7 +575,7 @@ const WebDevelopmentService = () => {
             className="max-w-4xl mx-auto px-4 sm:px-8 text-center"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 mb-6">Shape your business with the <span className="font-fraunces italic text-[#16a34a]">Leading Web Development Company</span> in India!</h2>
-            <p className="text-lg text-slate-600 mb-8 font-light leading-relaxed">If you are looking for a development company to build custom web applications, eCommerce portals, or corporate sites, you have come to the right place! LapaOne follows an integrated agile approach to deliver secure and scalable platforms.</p>
+            <p className="text-lg text-slate-600 mb-8 font-light leading-relaxed">If you are looking for a development company to build custom web applications, eCommerce portals, or corporate sites, you have come to the right place!  follows an integrated agile approach to deliver secure and scalable platforms.</p>
             <div className="flex justify-center">
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -600,7 +600,7 @@ const WebDevelopmentService = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mb-6">LapaOne Web Development <span className="font-fraunces italic text-[#16a34a]">Process</span></h2>
+                <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mb-6"> Web Development <span className="font-fraunces italic text-[#16a34a]">Process</span></h2>
                 <p className="text-slate-600 font-light mb-10 max-w-xl">From concept to cloud deployment, our workflow is structured into eight logical sprints ensuring zero downtime and complete project alignment:</p>
 
                 <div className="space-y-6">
@@ -907,7 +907,7 @@ const WebDevelopmentService = () => {
                     </span>
                   </button>
                   <div className={`overflow-hidden transition-all duration-300 ${activeAccordion === i ? 'max-h-96' : 'max-h-0'}`}>
-                    <div className="p-5 sm:p-6 pt-0 text-slate-600 leading-relaxed font-light text-sm sm:text-base border-t border-slate-200 mt-2 pt-4">
+                    <div className="p-5 sm:p-6 pt-4 text-slate-600 leading-relaxed font-light text-sm sm:text-base border-t border-slate-200 mt-2">
                       {faq.answer}
                     </div>
                   </div>

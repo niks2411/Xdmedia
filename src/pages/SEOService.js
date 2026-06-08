@@ -268,8 +268,8 @@ const SEOService = () => {
                 className="text-white space-y-6 sm:space-y-10"
               >
                 <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-white leading-[1.1] tracking-tight">
-                  India's Most Trusted, AI/SEO Company Offering <br className="hidden lg:block" />
-                  <span className="font-fraunces italic text-[#16a34a]">99% Guaranteed</span> First-Page Rankings
+                  AI-Powered SEO Solutions <br className="hidden lg:block" />
+                  Built for <span className="font-fraunces italic text-[#16a34a]">Long-Term Rankings</span> & Revenue Growth
                 </h1>
                 <div className="space-y-4">
                   <p className="text-xl sm:text-2xl text-slate-200 font-light leading-snug">
@@ -528,6 +528,18 @@ const SEOService = () => {
                 </div>
               </motion.div>
             </div>
+
+            <div className="flex justify-center mt-12">
+              <button
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-white px-10 py-4 font-medium uppercase tracking-wide text-sm transition-all duration-200 shadow-lg active:scale-95"
+                style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#3aa85f'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}
+              >
+                Get Free Audit
+              </button>
+            </div>
           </div>
         </section>
 
@@ -712,7 +724,7 @@ const SEOService = () => {
 
                 <div className="mt-10">
                   <h4 className="text-lg font-medium text-slate-900 mb-6">Competitor Analysis Focus:</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                     {["What your competitors are doing better?", "What backlink strategies are they following?", "How are their traffic patterns?", "Onsite performance and riferring domains"].map((q, i) => (
                       <div key={i} className="flex items-center gap-3 text-slate-600 font-light text-sm">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>
@@ -720,6 +732,15 @@ const SEOService = () => {
                       </div>
                     ))}
                   </div>
+                  <button
+                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="text-white px-10 py-4 font-medium uppercase tracking-wide text-sm transition-all duration-200 shadow-lg active:scale-95"
+                    style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = '#3aa85f'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}
+                  >
+                    Get Free Audit
+                  </button>
                 </div>
               </motion.div>
             </div>
@@ -1021,7 +1042,7 @@ const SEOService = () => {
                     </span>
                   </button>
                   <div className={`overflow-hidden transition-all duration-300 ${activeAccordion === i ? 'max-h-96' : 'max-h-0'}`}>
-                    <div className="p-5 sm:p-6 pt-0 text-slate-600 leading-relaxed font-light text-sm sm:text-base border-t border-slate-200 mt-2 pt-4">
+                    <div className="p-5 sm:p-6 pt-4 text-slate-600 leading-relaxed font-light text-sm sm:text-base border-t border-slate-200 mt-2">
                       {faq.answer}
                     </div>
                   </div>

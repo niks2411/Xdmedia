@@ -12,11 +12,79 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import ProcessWorkflow from '../components/ProcessWorkflow';
 import CredibilityBacking from '../components/CredibilityBacking';
 import BookingModal from '../components/BookingModal';
-import { TrendingUp, Target, Zap, ShieldCheck, Search, Code, BarChart3, Users, Settings, Globe, ArrowRight, Layers, Play, RefreshCw, BarChart, Activity, ShoppingBag, Building2, Rocket, Briefcase, User } from 'lucide-react';
+import { TrendingUp, Target, Zap, ShieldCheck, Search, Code, BarChart3, Users, Settings, Globe, ArrowRight, Layers, Play, RefreshCw, BarChart, Activity, ShoppingBag, Building2, Rocket, Briefcase, User, CheckCircle, AlertCircle, Send } from 'lucide-react';
+import { db } from '../firebaseConfig';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 
 const Home = () => {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: ''
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      await addDoc(collection(db, 'contacts'), {
+        ...formData,
+        timestamp: serverTimestamp(),
+        status: 'new',
+        sourcePage: 'Home Page Hero'
+      });
+
+      try {
+        await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            service: formData.service,
+            message: formData.message
+          })
+        });
+      } catch (emailErr) {
+        console.error('Email notification failed:', emailErr);
+      }
+
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      }, 3000);
+    } catch (err) {
+      console.error('Error submitting form:', err);
+      setError('Failed to submit form. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
 
   const stats = [
@@ -110,14 +178,180 @@ const Home = () => {
               </motion.div>
             </motion.div>
 
-            {/* Right Side Background Image */}
-            <div className="block relative mt-8 lg:mt-0">
-              <img
-                src="/bgright.png"
-                alt="Background Right"
-                className="w-full h-full object-contain"
-              />
-            </div>
+            {/* Right Side Lead Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="w-full lg:ml-auto max-w-lg relative z-20 mt-8 lg:mt-0"
+            >
+              <div className="rounded-3xl p-6 sm:p-8 backdrop-blur-xl border relative shadow-2xl overflow-hidden" style={{
+                background: 'rgba(255, 255, 255, 0.03)',
+                borderColor: 'rgba(255, 255, 255, 0.1)'
+              }}>
+                {/* Accent glow inside card */}
+                <div className="absolute -right-20 -bottom-20 w-60 h-60 bg-green-500/10 rounded-full blur-[80px] pointer-events-none"></div>
+
+                {isSubmitted ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="text-center py-12 relative z-10"
+                  >
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style={{
+                      background: 'rgba(71, 191, 114, 0.2)',
+                      border: '2px solid #47BF72'
+                    }}>
+                      <CheckCircle className="w-10 h-10 text-green-400" />
+                    </div>
+                    <h3 className="text-2xl font-light text-white mb-2">Request Received!</h3>
+                    <p className="text-gray-400 font-light text-sm">
+                      Thank you. Our experts will get back to you within 24 hours.
+                    </p>
+                  </motion.div>
+                ) : (
+                  <div className="relative z-10">
+                    <h3 className="text-xl sm:text-2xl font-light text-white mb-2 leading-tight font-inter">
+                      Request a Free Proposal
+                    </h3>
+                    <p className="text-gray-400 font-light text-xs sm:text-sm mb-6">
+                      Fill out the form below to kickstart your project.
+                    </p>
+
+                    {error && (
+                      <div className="mb-4 p-3 rounded-lg flex items-center gap-3" style={{
+                        background: 'rgba(239, 68, 68, 0.1)',
+                        border: '1px solid rgba(239, 68, 68, 0.3)'
+                      }}>
+                        <AlertCircle className="w-4 h-4 text-red-400" />
+                        <p className="text-xs text-red-400">{error}</p>
+                      </div>
+                    )}
+
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                      <div>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          required
+                          disabled={isSubmitting}
+                          placeholder="Your Full Name"
+                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 outline-none text-sm placeholder-white/40 disabled:opacity-50"
+                          style={{
+                            background: 'rgba(255, 255, 255, 0.05)',
+                            border: '1px solid rgba(255, 255, 255, 0.1)',
+                            color: 'white'
+                          }}
+                        />
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          required
+                          disabled={isSubmitting}
+                          placeholder="Email Address"
+                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 outline-none text-sm placeholder-white/40 disabled:opacity-50"
+                          style={{
+                            background: 'rgba(255, 255, 255, 0.05)',
+                            border: '1px solid rgba(255, 255, 255, 0.1)',
+                            color: 'white'
+                          }}
+                        />
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          required
+                          disabled={isSubmitting}
+                          placeholder="Phone Number"
+                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 outline-none text-sm placeholder-white/40 disabled:opacity-50"
+                          style={{
+                            background: 'rgba(255, 255, 255, 0.05)',
+                            border: '1px solid rgba(255, 255, 255, 0.1)',
+                            color: 'white'
+                          }}
+                        />
+                      </div>
+
+                      <div>
+                        <select
+                          name="service"
+                          value={formData.service}
+                          onChange={handleInputChange}
+                          required
+                          disabled={isSubmitting}
+                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 outline-none text-sm disabled:opacity-50 appearance-none cursor-pointer"
+                          style={{
+                            background: 'rgba(255, 255, 255, 0.05)',
+                            border: '1px solid rgba(255, 255, 255, 0.1)',
+                            color: formData.service ? 'white' : 'rgba(255, 255, 255, 0.4)'
+                          }}
+                        >
+                          <option value="" disabled style={{ background: '#0f172a', color: 'rgba(255, 255, 255, 0.4)' }}>
+                            Select Service Interested In
+                          </option>
+                          <option value="SEO & Search Growth" style={{ background: '#0f172a', color: 'white' }}>
+                            SEO & Search Growth
+                          </option>
+                          <option value="Website Development" style={{ background: '#0f172a', color: 'white' }}>
+                            Website Development
+                          </option>
+                          <option value="Performance Marketing" style={{ background: '#0f172a', color: 'white' }}>
+                            Performance Marketing
+                          </option>
+                          <option value="Branding & Positioning" style={{ background: '#0f172a', color: 'white' }}>
+                            Branding & Positioning
+                          </option>
+                          <option value="Growth Consulting" style={{ background: '#0f172a', color: 'white' }}>
+                            Growth Consulting
+                          </option>
+                          <option value="White-Label Execution" style={{ background: '#0f172a', color: 'white' }}>
+                            White-Label Execution
+                          </option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <textarea
+                          name="message"
+                          value={formData.message}
+                          onChange={handleInputChange}
+                          disabled={isSubmitting}
+                          placeholder="Tell us about your project (optional)"
+                          rows={3}
+                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 resize-none outline-none text-sm placeholder-white/40 disabled:opacity-50"
+                          style={{
+                            background: 'rgba(255, 255, 255, 0.05)',
+                            border: '1px solid rgba(255, 255, 255, 0.1)',
+                            color: 'white'
+                          }}
+                        />
+                      </div>
+
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full py-3.5 rounded-xl font-medium uppercase tracking-wide text-xs sm:text-sm text-white transition-all duration-300 hover:scale-[1.02] active:scale-95 inline-flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                        style={{
+                          background: 'linear-gradient(135deg, #47BF72, #3aa85f)',
+                          boxShadow: '0 8px 30px rgba(71, 191, 114, 0.2)'
+                        }}
+                      >
+                        {isSubmitting ? 'Sending...' : 'Get My Free Proposal'}
+                        <Send className="w-4 h-4" />
+                      </button>
+                    </form>
+                  </div>
+                )}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
