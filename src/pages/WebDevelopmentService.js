@@ -1,10 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import Canonical from '../components/SEO/Canonical';
 import { db } from '../firebaseConfig';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { MarqueeDemo } from '../components/MarqueeDemo';
+
+// Projects Showcase State (Moved outside component to prevent recreating on every render)
+const projects = [
+  {
+    title: "vidflyy",
+    url: "https://vidflyy.com",
+    description: "A specialized platform for creators and businesses to promote their videos, engineered with Next.js frontend, Node.js backend, and scalable AWS cloud infrastructure.",
+    image: "/1.jpg",
+    tech: ["Next.js", "Node.js (Express)", "AWS Cloud", "Serverless"]
+  },
+  {
+    title: "ShigramPay",
+    url: "https://shigrampay.ai/",
+    description: "India's first payment recognition application, utilizing advanced AI engines to automate transaction tracking, invoice matching, and ledger adjustments.",
+    image: "/2.jpg",
+    tech: ["React.js", "AI Recognition", "Tailwind CSS", "MongoDB"]
+  },
+  {
+    title: "LRWC",
+    url: "https://lrwc.in/",
+    description: "A premium event planning and booking portal across India, specialized in coordinating high-end weddings, vendor management, and guest invitations.",
+    image: "/3.jpg",
+    tech: ["Tailwind CSS", "React.js", "Django REST", "PostgreSQL"]
+  },
+  {
+    title: "Medical Travel",
+    url: "https://medical-travel.vercel.app/",
+    description: "A comprehensive digital solution resolving international medical travel challenges, facilitating travel logistics, doctor consulting, and patient support during transit.",
+    image: "/4.jpg",
+    tech: ["Next.js", "Vercel Hosting", "Firebase DB", "Google Maps API"]
+  }
+];
 
 const WebDevelopmentService = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
@@ -26,8 +58,10 @@ const WebDevelopmentService = () => {
   const [bottomData, setBottomData] = useState({
     name: '',
     email: '',
+    companyName: '',
     website: '',
-    message: ''
+    phoneNumber: '',
+    budgetRange: ''
   });
   const [bottomSubmitting, setBottomSubmitting] = useState(false);
   const [bottomSubmitted, setBottomSubmitted] = useState(false);
@@ -36,6 +70,27 @@ const WebDevelopmentService = () => {
     rotateY: 0,
     translateY: 0
   });
+
+  const [currentProject, setCurrentProject] = useState(0);
+  const [isAutoplayPaused, setIsAutoplayPaused] = useState(false);
+
+  useEffect(() => {
+    if (isAutoplayPaused) return;
+    const interval = setInterval(() => {
+      setCurrentProject((prev) => (prev + 1) % projects.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [isAutoplayPaused, currentProject]);
+
+  const handleMouseEnter = () => {
+    if (window.matchMedia('(hover: hover)').matches) {
+      setIsAutoplayPaused(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsAutoplayPaused(false);
+  };
 
   const handleProcessCardMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -94,7 +149,14 @@ const WebDevelopmentService = () => {
         timestamp: serverTimestamp()
       });
       setBottomSubmitted(true);
-      setBottomData({ name: '', email: '', website: '', message: '' });
+      setBottomData({
+        name: '',
+        email: '',
+        companyName: '',
+        website: '',
+        phoneNumber: '',
+        budgetRange: ''
+      });
     } catch (error) {
       console.error("Error submitting bottom form: ", error);
       alert("Something went wrong. Please try again.");
@@ -296,7 +358,7 @@ const WebDevelopmentService = () => {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="lg:ml-auto w-full"
+                className="lg:ml-auto lg:mr-8 w-full max-w-md"
               >
                 <div className="bg-white rounded-2xl p-6 sm:p-10 shadow-2xl relative border border-slate-100">
                   {heroSubmitted ? (
@@ -512,6 +574,135 @@ const WebDevelopmentService = () => {
                   <p className="text-slate-600 text-sm leading-relaxed font-light">Custom dashboard logs, Perfex CRM setups, ERP connectivity, and structured SQL/NoSQL database configurations.</p>
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Projects Showcase Slider */}
+        <section className="py-20 sm:py-24 bg-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-8">
+            <div className="mb-12 sm:mb-16 text-center">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f0fdf4] border border-[#dcfce7] mb-4">
+                <span className="material-symbols-outlined text-[#16a34a] text-sm font-bold">work</span>
+                <span className="text-[#16a34a] text-[10px] sm:text-xs font-bold uppercase tracking-wider">Our Showcase</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 mb-4">
+                Featured <span className="font-fraunces italic text-[#16a34a]">Web Development</span> Projects
+              </h2>
+              <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto font-light">
+                Take a look at some of the high-performance applications, Web3 platforms, and custom portals we have engineered.
+              </p>
+            </div>
+
+            {/* Slider Container */}
+            <div 
+              className="max-w-5xl mx-auto relative"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              {/* Inner Card Wrapper with Slide Animation */}
+              <div className="bg-slate-50 border border-slate-100 rounded-3xl p-6 sm:p-10 shadow-xl overflow-hidden relative min-h-[400px] flex items-center">
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#f0fdf4]/30 via-transparent to-transparent pointer-events-none"></div>
+                
+                {/* 4 Cards Slider Layout */}
+                <div className="w-full">
+                  {projects.map((project, idx) => {
+                    if (idx !== currentProject) return null;
+                    return (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -50 }}
+                        transition={{ duration: 0.5 }}
+                        className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+                      >
+                        {/* Project Details (Left) */}
+                        <div className="lg:col-span-5 space-y-6 flex flex-col justify-center">
+                          <div className="flex flex-wrap gap-2">
+                            {project.tech.map((t, i) => (
+                              <span 
+                                key={i} 
+                                className="bg-[#f0fdf4] text-[#16a34a] border border-[#dcfce7] px-3 py-1 rounded-full text-xs font-semibold"
+                              >
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+                          
+                          <h3 className="text-2xl sm:text-3xl font-light text-slate-900 leading-tight">
+                            {project.title}
+                          </h3>
+                          
+                          <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
+                            {project.description}
+                          </p>
+
+                          <div className="pt-2">
+                            <a
+                              href={project.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 text-white px-6 py-3 rounded-lg text-sm font-semibold transition-all shadow-md hover:shadow-lg active:scale-95"
+                              style={{ backgroundColor: '#16a34a' }}
+                            >
+                              Visit Project Site
+                              <span className="material-symbols-outlined text-sm">open_in_new</span>
+                            </a>
+                          </div>
+                        </div>
+
+                        {/* Project Screenshot (Right) */}
+                        <div className="lg:col-span-7 relative group/img overflow-hidden rounded-2xl shadow-xl border border-slate-200/60 bg-white">
+                          <div className="aspect-[16/10] overflow-hidden">
+                            <img
+                              src={project.image}
+                              alt={project.title}
+                              className="w-full h-full object-contain object-center group-hover/img:scale-105 transition-transform duration-700 bg-slate-50"
+                            />
+                          </div>
+                          <div className="absolute inset-0 bg-slate-900/5 group-hover/img:bg-transparent transition-colors duration-300"></div>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Slider Controls (Arrow Buttons) */}
+              <div className="flex justify-between items-center mt-6">
+                {/* Dots indicator */}
+                <div className="flex gap-2.5">
+                  {projects.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentProject(idx)}
+                      className={`h-2.5 rounded-full transition-all duration-300 ${
+                        idx === currentProject ? 'w-8 bg-[#16a34a]' : 'w-2.5 bg-slate-200 hover:bg-slate-300'
+                      }`}
+                      aria-label={`Go to slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+
+                {/* Left/Right Buttons */}
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length)}
+                    className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 hover:bg-slate-100 text-slate-700 flex items-center justify-center transition-all shadow-sm active:scale-95 hover:border-[#16a34a]/30"
+                    aria-label="Previous slide"
+                  >
+                    <span className="material-symbols-outlined">arrow_back</span>
+                  </button>
+                  <button
+                    onClick={() => setCurrentProject((prev) => (prev + 1) % projects.length)}
+                    className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 hover:bg-slate-100 text-slate-700 flex items-center justify-center transition-all shadow-sm active:scale-95 hover:border-[#16a34a]/30"
+                    aria-label="Next slide"
+                  >
+                    <span className="material-symbols-outlined">arrow_forward</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -975,7 +1166,7 @@ const WebDevelopmentService = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="relative"
+                className="relative lg:ml-auto lg:mr-8 w-full max-w-md"
               >
                 <div className="absolute inset-0 bg-[#4be277]/10 rounded-3xl blur-3xl -z-10"></div>
                 {bottomSubmitted ? (
@@ -994,53 +1185,73 @@ const WebDevelopmentService = () => {
                   </div>
                 ) : (
                   <form onSubmit={handleBottomSubmit} className="bg-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-100">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-                      <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
-                        <input
-                          type="text"
-                          required
-                          value={bottomData.name}
-                          onChange={(e) => setBottomData({ ...bottomData, name: e.target.value })}
-                          placeholder="John Doe"
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#16a34a] focus:ring-4 focus:ring-[#16a34a]/10 transition-all outline-none"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
-                        <input
-                          type="email"
-                          required
-                          value={bottomData.email}
-                          onChange={(e) => setBottomData({ ...bottomData, email: e.target.value })}
-                          placeholder="john@company.com"
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#16a34a] focus:ring-4 focus:ring-[#16a34a]/10 transition-all outline-none"
-                        />
-                      </div>
-                    </div>
-                    <div className="mb-6">
-                      <label className="block text-sm font-medium text-slate-700 mb-2">Website URL (Optional)</label>
+                    <h3 className="text-xl sm:text-2xl font-light text-slate-900 mb-8 text-center leading-tight">
+                      Get A Free <span className="font-fraunces italic text-[#16a34a]">Web Development</span> Proposal & Estimate
+                    </h3>
+
+                    <div className="space-y-4">
+                      <input
+                        type="text"
+                        placeholder="Enter your name"
+                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                        value={bottomData.name}
+                        onChange={(e) => setBottomData({ ...bottomData, name: e.target.value })}
+                        required
+                      />
+                      <input
+                        type="email"
+                        placeholder="Company Email"
+                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                        value={bottomData.email}
+                        onChange={(e) => setBottomData({ ...bottomData, email: e.target.value })}
+                        required
+                      />
+                      <input
+                        type="text"
+                        placeholder="Company Name"
+                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                        value={bottomData.companyName}
+                        onChange={(e) => setBottomData({ ...bottomData, companyName: e.target.value })}
+                        required
+                      />
                       <input
                         type="url"
+                        placeholder="Current Website URL (Optional)"
+                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
                         value={bottomData.website}
                         onChange={(e) => setBottomData({ ...bottomData, website: e.target.value })}
-                        placeholder="https://yourwebsite.com"
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#16a34a] focus:ring-4 focus:ring-[#16a34a]/10 transition-all outline-none"
                       />
-                    </div>
-                    <div className="mb-8">
-                      <label className="block text-sm font-medium text-slate-700 mb-2">How can we help?</label>
-                      <textarea
-                        rows="4"
-                        value={bottomData.message}
-                        onChange={(e) => setBottomData({ ...bottomData, message: e.target.value })}
-                        placeholder="Tell us about your web development goals..."
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#16a34a] focus:ring-4 focus:ring-[#16a34a]/10 transition-all outline-none resize-none"
-                      ></textarea>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <select className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm">
+                          <option>India (+91)</option>
+                          <option>US (+1)</option>
+                          <option>UK (+44)</option>
+                        </select>
+                        <input
+                          type="tel"
+                          placeholder="Phone Number"
+                          className="sm:col-span-2 bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                          value={bottomData.phoneNumber}
+                          onChange={(e) => setBottomData({ ...bottomData, phoneNumber: e.target.value })}
+                          required
+                        />
+                      </div>
+                      <select
+                        className="w-full bg-slate-50 border border-slate-200 text-slate-600 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm"
+                        value={bottomData.budgetRange}
+                        onChange={(e) => setBottomData({ ...bottomData, budgetRange: e.target.value })}
+                        required
+                      >
+                        <option value="" disabled>Project Budget Range</option>
+                        <option value="50k-1l">₹50,000 to ₹1 Lakh</option>
+                        <option value="1l-2.5l">₹1 Lakh to ₹2.5 Lakh</option>
+                        <option value="2.5l-5l">₹2.5 Lakh to ₹5 Lakh</option>
+                        <option value="over-5l">Over ₹5 Lakh</option>
+                      </select>
                     </div>
                     <button
                       disabled={bottomSubmitting}
-                      className="w-full text-white py-4 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                      className="w-full text-white py-4 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg mt-6 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                       style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
                       onMouseEnter={(e) => !bottomSubmitting && (e.target.style.backgroundColor = '#3aa85f')}
                       onMouseLeave={(e) => !bottomSubmitting && (e.target.style.backgroundColor = '#47BF72')}
@@ -1048,9 +1259,9 @@ const WebDevelopmentService = () => {
                       {bottomSubmitting ? (
                         <>
                           <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
-                          Sending...
+                          Submitting...
                         </>
-                      ) : 'Send My Free Proposal'}
+                      ) : 'Get My Free Proposal & Estimate'}
                     </button>
                     <p className="text-center text-xs text-slate-400 mt-4">
                       No credit card required. We respect your privacy.

@@ -268,7 +268,7 @@ const SEOService = () => {
                 className="text-white space-y-6 sm:space-y-10"
               >
                 <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-white leading-[1.1] tracking-tight">
-                  AI-Powered SEO Solutions <br className="hidden lg:block" />
+                  <span className="sm:whitespace-nowrap">AI-Powered SEO Solutions</span> <br className="hidden lg:block" />
                   Built for <span className="font-fraunces italic text-[#16a34a]">Long-Term Rankings</span> & Revenue Growth
                 </h1>
                 <div className="space-y-4">
@@ -310,7 +310,7 @@ const SEOService = () => {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="lg:ml-auto w-full"
+                className="lg:ml-auto lg:mr-8 w-full max-w-md"
               >
                 <div className="bg-white rounded-2xl p-6 sm:p-10 shadow-2xl relative border border-slate-100">
                   {heroSubmitted ? (
