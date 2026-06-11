@@ -983,10 +983,10 @@ const SEOService = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="order-1 lg:order-2 relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 p-4 shadow-2xl group flex items-center justify-center min-h-[300px] sm:min-h-[400px]"
+                className="order-1 lg:order-2 relative rounded-2xl overflow-hidden bg-white border border-slate-100 p-4 shadow-xl group flex items-center justify-center min-h-[400px] sm:min-h-[550px]"
               >
-                <div className="absolute inset-0 bg-[#4be277]/10 blur-3xl rounded-full"></div>
-                <img src="/On page optimization.png" alt="SEO Workflow Diagram" className="relative z-10 w-full h-auto max-w-md object-contain grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
+                <div className="absolute inset-0 bg-[#f0fdf4]/30 blur-3xl rounded-full"></div>
+                <img src="/On page optimization.png" alt="SEO Workflow Diagram" className="relative z-10 w-full h-auto max-w-xl object-contain grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
               </motion.div>
             </div>
           </div>
