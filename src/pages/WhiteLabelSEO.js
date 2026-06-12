@@ -159,42 +159,7 @@ const WhiteLabelSEO = () => {
     { number: "04", title: "Unbranded Reports Delivery", description: "Monthly interactive white-labeled dashboards and PDFs delivered straight to your inbox." }
   ];
 
-  const pricingPlans = [
-    {
-      name: "Local SEO Plan",
-      price: "$499",
-      features: [
-        "10 Keyword Targets",
-        "Google Business Profile Setup",
-        "Local Citation Building",
-        "Monthly Brandable Reports",
-        "Technical SEO Cleanup"
-      ]
-    },
-    {
-      name: "Global SEO Plan",
-      price: "$1,299",
-      popular: true,
-      features: [
-        "25 Keyword Targets",
-        "4 High-Authority Guest Links",
-        "Comprehensive Tech Audits",
-        "Custom Client Dashboard",
-        "Priority Agency Slack Channel"
-      ]
-    },
-    {
-      name: "E-Commerce Plan",
-      price: "$2,499",
-      features: [
-        "Unlimited Keyword Mapping",
-        "Catalog & Schema Optimization",
-        "Regular Blog Content Output",
-        "Advanced Link Velocity",
-        "Direct Strategy Consults"
-      ]
-    }
-  ];
+
 
   const faqs = [
     {
@@ -281,13 +246,13 @@ const WhiteLabelSEO = () => {
 
                 <div className="flex flex-wrap gap-4 pt-4">
                   <button
-                    onClick={() => document.getElementById('partnership-pricing')?.scrollIntoView({ behavior: 'smooth' })}
+                    onClick={() => document.getElementById('partnership-form')?.scrollIntoView({ behavior: 'smooth' })}
                     className="text-white px-8 py-4 font-semibold uppercase tracking-wide text-xs transition-all duration-200 shadow-lg"
                     style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
                     onMouseEnter={(e) => e.target.style.backgroundColor = '#3aa85f'}
                     onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}
                   >
-                    View Wholesale Rates
+                    Become a Partner
                   </button>
                   <a
                     href="https://wa.me/917901724043?text=Hi%20XD%20Media%2C%20I%20am%20interested%20in%20your%20White%20Label%20SEO%20partnership."
@@ -504,59 +469,7 @@ const WhiteLabelSEO = () => {
           </div>
         </section>
 
-        {/* Partner Pricing Plans */}
-        <section id="partnership-pricing" className="py-24 bg-black border-t border-white/5">
-          <div className="max-w-7xl mx-auto px-4 sm:px-8">
-            <div className="text-center mb-20">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-white mb-4">Partner Wholesale Plans</h2>
-              <p className="text-gray-400 font-light max-w-xl mx-auto">Scalable wholesale rates built to leave your agency with maximum profit margins.</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-              {pricingPlans.map((plan, i) => (
-                <div
-                  key={i}
-                  className={`glass-card p-8 rounded-2xl flex flex-col justify-between relative transition-all duration-300 ${
-                    plan.popular ? 'border-[#47BF72] scale-105 bg-[#47BF72]/5' : ''
-                  }`}
-                >
-                  {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#47BF72] text-black px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
-                      Most Active
-                    </div>
-                  )}
-                  <div>
-                    <h4 className="text-lg font-medium text-white mb-2">{plan.name}</h4>
-                    <div className="flex items-baseline gap-1 mb-6">
-                      <span className="text-3xl sm:text-4xl font-bold text-white">{plan.price}</span>
-                      <span className="text-gray-400 text-sm">/ month</span>
-                    </div>
-                    <ul className="space-y-4 mb-8 text-sm text-gray-300">
-                      {plan.features.map((feat, idx) => (
-                        <li key={idx} className="flex items-center gap-3 font-light">
-                          <span className="material-symbols-outlined text-[#47BF72] text-sm">check_circle</span>
-                          {feat}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <button
-                    onClick={() => {
-                      document.getElementById('partnership-form')?.scrollIntoView({ behavior: 'smooth' });
-                      setFormData(prev => ({ ...prev, clientCount: '1-5' }));
-                    }}
-                    className={`w-full py-3 rounded-lg font-medium text-xs uppercase tracking-wider transition-all duration-200 ${
-                      plan.popular
-                        ? 'bg-[#47BF72] text-black hover:bg-[#3aa85f]'
-                        : 'border border-white/20 text-white hover:bg-white/5'
-                    }`}
-                  >
-                    Select Plan
-                  </button>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+
 
         {/* FAQs */}
         <section className="py-24 bg-[#0d0d0d] border-t border-white/5">
