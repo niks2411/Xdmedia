@@ -254,10 +254,7 @@ const Home = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="w-full lg:ml-auto max-w-lg relative z-20 mt-8 lg:mt-0"
             >
-              <div className="rounded-3xl p-6 sm:p-8 backdrop-blur-xl border relative shadow-2xl overflow-hidden" style={{
-                background: 'rgba(255, 255, 255, 0.03)',
-                borderColor: 'rgba(255, 255, 255, 0.1)'
-              }}>
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 relative shadow-2xl overflow-hidden">
                 {/* Accent glow inside card */}
                 <div className="absolute -right-20 -bottom-20 w-60 h-60 bg-green-500/10 rounded-full blur-[80px] pointer-events-none"></div>
 
@@ -271,29 +268,26 @@ const Home = () => {
                       background: 'rgba(71, 191, 114, 0.2)',
                       border: '2px solid #47BF72'
                     }}>
-                      <CheckCircle className="w-10 h-10 text-green-400" />
+                      <CheckCircle className="w-10 h-10 text-green-600" />
                     </div>
-                    <h3 className="text-2xl font-light text-white mb-2">Request Received!</h3>
-                    <p className="text-gray-400 font-light text-sm">
+                    <h3 className="text-2xl font-light text-slate-900 mb-2">Request Received!</h3>
+                    <p className="text-slate-500 font-light text-sm">
                       Thank you. Our experts will get back to you within 24 hours.
                     </p>
                   </motion.div>
                 ) : (
                   <div className="relative z-10">
-                    <h3 className="text-xl sm:text-2xl font-light text-white mb-2 leading-tight font-inter">
+                    <h3 className="text-xl sm:text-2xl font-light text-slate-900 mb-2 leading-tight font-inter">
                       Request a Free Proposal
                     </h3>
-                    <p className="text-gray-400 font-light text-xs sm:text-sm mb-6">
+                    <p className="text-slate-500 font-light text-xs sm:text-sm mb-6">
                       Fill out the form below to kickstart your project.
                     </p>
 
                     {error && (
-                      <div className="mb-4 p-3 rounded-lg flex items-center gap-3" style={{
-                        background: 'rgba(239, 68, 68, 0.1)',
-                        border: '1px solid rgba(239, 68, 68, 0.3)'
-                      }}>
-                        <AlertCircle className="w-4 h-4 text-red-400" />
-                        <p className="text-xs text-red-400">{error}</p>
+                      <div className="mb-4 p-3 rounded-lg flex items-center gap-3 bg-red-500/10 border border-red-500/30 text-red-600 text-xs">
+                        <AlertCircle className="w-4 h-4 shrink-0" />
+                        <p>{error}</p>
                       </div>
                     )}
 
@@ -307,12 +301,7 @@ const Home = () => {
                           required
                           disabled={isSubmitting}
                           placeholder="Your Full Name"
-                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 outline-none text-sm placeholder-white/40 disabled:opacity-50"
-                          style={{
-                            background: 'rgba(255, 255, 255, 0.05)',
-                            border: '1px solid rgba(255, 255, 255, 0.1)',
-                            color: 'white'
-                          }}
+                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
                         />
                       </div>
 
@@ -325,12 +314,7 @@ const Home = () => {
                           required
                           disabled={isSubmitting}
                           placeholder="Email Address"
-                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 outline-none text-sm placeholder-white/40 disabled:opacity-50"
-                          style={{
-                            background: 'rgba(255, 255, 255, 0.05)',
-                            border: '1px solid rgba(255, 255, 255, 0.1)',
-                            color: 'white'
-                          }}
+                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
                         />
                         <input
                           type="tel"
@@ -340,12 +324,7 @@ const Home = () => {
                           required
                           disabled={isSubmitting}
                           placeholder="Phone Number"
-                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 outline-none text-sm placeholder-white/40 disabled:opacity-50"
-                          style={{
-                            background: 'rgba(255, 255, 255, 0.05)',
-                            border: '1px solid rgba(255, 255, 255, 0.1)',
-                            color: 'white'
-                          }}
+                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
                         />
                       </div>
 
@@ -356,32 +335,30 @@ const Home = () => {
                           onChange={handleInputChange}
                           required
                           disabled={isSubmitting}
-                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 outline-none text-sm disabled:opacity-50 appearance-none cursor-pointer"
+                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 outline-none text-sm disabled:opacity-50 appearance-none cursor-pointer bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
                           style={{
-                            background: 'rgba(255, 255, 255, 0.05)',
-                            border: '1px solid rgba(255, 255, 255, 0.1)',
-                            color: formData.service ? 'white' : 'rgba(255, 255, 255, 0.4)'
+                            color: formData.service ? '#0f172a' : 'rgba(15, 23, 42, 0.4)'
                           }}
                         >
-                          <option value="" disabled style={{ background: '#0f172a', color: 'rgba(255, 255, 255, 0.4)' }}>
+                          <option value="" disabled style={{ background: 'white', color: 'rgba(15, 23, 42, 0.4)' }}>
                             Select Service Interested In
                           </option>
-                          <option value="SEO & Search Growth" style={{ background: '#0f172a', color: 'white' }}>
+                          <option value="SEO & Search Growth" style={{ background: 'white', color: '#0f172a' }}>
                             SEO & Search Growth
                           </option>
-                          <option value="Website Development" style={{ background: '#0f172a', color: 'white' }}>
+                          <option value="Website Development" style={{ background: 'white', color: '#0f172a' }}>
                             Website Development
                           </option>
-                          <option value="Performance Marketing" style={{ background: '#0f172a', color: 'white' }}>
+                          <option value="Performance Marketing" style={{ background: 'white', color: '#0f172a' }}>
                             Performance Marketing
                           </option>
-                          <option value="Branding & Positioning" style={{ background: '#0f172a', color: 'white' }}>
+                          <option value="Branding & Positioning" style={{ background: 'white', color: '#0f172a' }}>
                             Branding & Positioning
                           </option>
-                          <option value="Growth Consulting" style={{ background: '#0f172a', color: 'white' }}>
+                          <option value="Growth Consulting" style={{ background: 'white', color: '#0f172a' }}>
                             Growth Consulting
                           </option>
-                          <option value="White-Label Execution" style={{ background: '#0f172a', color: 'white' }}>
+                          <option value="White-Label Execution" style={{ background: 'white', color: '#0f172a' }}>
                             White-Label Execution
                           </option>
                         </select>
@@ -395,12 +372,7 @@ const Home = () => {
                           disabled={isSubmitting}
                           placeholder="Tell us about your project (optional)"
                           rows={3}
-                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 resize-none outline-none text-sm placeholder-white/40 disabled:opacity-50"
-                          style={{
-                            background: 'rgba(255, 255, 255, 0.05)',
-                            border: '1px solid rgba(255, 255, 255, 0.1)',
-                            color: 'white'
-                          }}
+                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 resize-none outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
                         />
                       </div>
 
@@ -454,63 +426,63 @@ const Home = () => {
                 icon: Search,
                 title: "SEO & Search Growth",
                 desc: "Technical, content, local, ecommerce, and global SEO focused on rankings that convert, Not vanity traffic.",
-                punch: "Rankings that actually drive revenue."
+                punch: "Rankings that actually drive revenue.",
+                path: "/seo-service"
               },
               {
                 icon: Code,
                 title: "Website Development",
                 desc: "Fast, scalable, conversion-focused websites built with modern tech stacks and clean architecture.",
-                punch: "Built for speed and high retention."
+                punch: "Built for speed and high retention.",
+                path: "/web-development-services"
               },
               {
                 icon: BarChart3,
                 title: "Performance Marketing",
                 desc: "Google & Meta ads built around funnels, tracking, and ROI, Not just clicks and impressions.",
-                punch: "Max ROI through data-driven ad spend."
+                punch: "Max ROI through data-driven ad spend.",
+                path: "/performance-marketing"
               },
               {
-                icon: Users,
-                title: "Branding & Positioning",
-                desc: "Clear brand messaging, authority positioning, and market differentiation that supports growth.",
-                punch: "Differentiation that dominates markets."
-              },
-              {
-                icon: Settings,
-                title: "Growth Consulting",
-                desc: "Strategy + execution roadmaps for founders and businesses ready to scale digitally.",
-                punch: "Blueprints for 10x scalability."
+                icon: ShieldCheck,
+                title: "White Label SEO",
+                desc: "Deliver top-tier organic search rankings under your own agency brand. We handle technical execution anonymously.",
+                punch: "Rankings that build your agency authority.",
+                path: "/white-label-seo"
               },
               {
                 icon: Globe,
-                title: "White-Label Execution",
-                desc: "Backend delivery partner for agencies needing reliable SEO, web, and performance execution.",
-                punch: "Your scalable backend army."
+                title: "White Label Marketing",
+                desc: "Scale your agency with complete white-label PPC, social, and automation funnels running invisibly behind you.",
+                punch: "Invisible marketing fulfillment.",
+                path: "/white-label-digital-marketing"
               }
             ].map((service, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="group relative p-8 rounded-[2rem] bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-2xl hover:shadow-green-500/10 hover:border-green-500/20 transition-all duration-500 cursor-pointer overflow-hidden"
-              >
-                {/* Icon & Title */}
-                <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-6 group-hover:bg-green-500 group-hover:shadow-green-500/20 transition-all duration-500">
-                    <service.icon className="w-7 h-7 text-green-600 group-hover:text-white transition-colors duration-500" />
+              <Link to={service.path} key={i} className="block h-full">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group relative p-8 rounded-[2rem] bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-2xl hover:shadow-green-500/10 hover:border-green-500/20 transition-all duration-500 cursor-pointer overflow-hidden h-full"
+                >
+                  {/* Icon & Title */}
+                  <div className="relative z-10">
+                    <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-6 group-hover:bg-green-500 group-hover:shadow-green-500/20 transition-all duration-500">
+                      <service.icon className="w-7 h-7 text-green-600 group-hover:text-white transition-colors duration-500" />
+                    </div>
+                    <h3 className="text-xl font-light text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-300 tracking-wide">{service.title}</h3>
+
+                    {/* Static Description */}
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
+                      {service.desc}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-light text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-300 tracking-wide">{service.title}</h3>
 
-                  {/* Static Description */}
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
-                    {service.desc}
-                  </p>
-                </div>
-
-                {/* Decorative background element */}
-                <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-green-500/5 rounded-full blur-2xl group-hover:bg-green-500/10 transition-colors duration-500"></div>
-              </motion.div>
+                  {/* Decorative background element */}
+                  <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-green-500/5 rounded-full blur-2xl group-hover:bg-green-500/10 transition-colors duration-500"></div>
+                </motion.div>
+              </Link>
             ))}
           </div>
 
@@ -531,82 +503,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Block: What We Actually Do - Premium Redesign - MOVED AFTER SERVICES */}
-      <section className="py-32 relative overflow-hidden" style={{ backgroundColor: '#06130b' }}>
-        {/* Background Decorative Elements */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
-          <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-green-500/10 rounded-full blur-[120px]"></div>
-          <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-green-500/10 rounded-full blur-[120px]"></div>
-        </div>
-
-        <div className="container-max px-6 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            {/* Header Area */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <span className="text-[10px] font-bold text-green-500 uppercase tracking-[0.5em] font-inter">Manifesto</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-light text-white leading-tight tracking-tight">
-                What We <span className="font-fraunces italic text-green-500">Actually Do</span>
-              </h2>
-            </motion.div>
-
-            {/* Manifesto Board */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.98 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative p-8 md:p-16 rounded-[2rem] bg-white/[0.02] border border-white/10 backdrop-blur-sm overflow-hidden"
-            >
-              {/* Decorative Corner Accents */}
-              <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-green-500/30 rounded-tl-[2rem]"></div>
-              <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-green-500/30 rounded-br-[2rem]"></div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
-                <div className="space-y-6">
-                  <div className="text-sm font-bold text-green-500/50 uppercase tracking-widest font-inter">The Mission</div>
-                  <p className="text-2xl md:text-3xl lg:text-4xl text-white leading-tight font-light tracking-tight">
-                    We help brands grow through <span className="text-green-500 font-medium underline decoration-green-500/20 underline-offset-8">structured digital execution</span>
-                  </p>
-                  <p className="text-xl text-white/40 font-light italic">
-                    Not random marketing activities.
-                  </p>
-                </div>
-
-                <div className="lg:pl-12 lg:border-l border-white/5 space-y-6">
-                  <div className="text-sm font-bold text-green-500/50 uppercase tracking-widest font-inter">The Systems</div>
-                  <p className="text-lg md:text-xl text-gray-400 leading-relaxed font-light">
-                    From websites and SEO to performance marketing and brand positioning, we build <span className="text-gray-200">connected growth systems</span> that generate visibility, leads, and revenue.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Bottom Verdict Bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="mt-20 flex flex-col md:flex-row items-center justify-center gap-x-8 gap-y-4"
-          >
-            <div className="text-xl md:text-2xl text-white/40 font-inter tracking-[0.1em] uppercase">
-              Not just strategy. Not just services.
-            </div>
-            <div className="h-px w-12 bg-white/10 hidden md:block"></div>
-            <div className="text-3xl md:text-5xl font-fraunces italic font-light text-green-500 tracking-tighter">
-              Execution.
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* New Section */}
       <section
@@ -881,15 +777,6 @@ const Home = () => {
                 >
                   <div className="text-4xl md:text-5xl font-light text-white" style={{ textShadow: '0 0 20px rgba(71, 191, 114, 0.5)' }}>23+</div>
                   <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Countries Served</div>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="text-4xl md:text-5xl font-light text-white" style={{ textShadow: '0 0 20px rgba(71, 191, 114, 0.5)' }}>9+</div>
-                  <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Average Client NPS</div>
                 </motion.div>
               </div>
             </motion.div>
@@ -1247,34 +1134,6 @@ const Home = () => {
       </section>
 
 
-      {/* BLOCK 7 — SMART EDGE STRIP (Brand Voice) */}
-      <section className="bg-black py-24 overflow-hidden relative border-y border-white/5">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[radial-gradient(#47BF72_1px,transparent_1px)] [background-size:32px_32px]"></div>
-        </div>
-        <div className="container-max relative z-10 px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 w-full px-4 overflow-visible">
-              {/* Left Side: Fancy strategies are everywhere. */}
-              <div className="text-lg md:text-xl lg:text-2xl font-inter italic font-light text-gray-500 whitespace-nowrap px-2 overflow-visible">
-                Fancy strategies are <span className="text-gray-400 ml-1">everywhere.</span>
-              </div>
-
-              {/* Center: Green Divider */}
-              <div className="hidden lg:block w-12 h-1 bg-green-500 rounded-full flex-shrink-0"></div>
-
-              {/* Right Side: WORKING EXECUTION IS RARE. */}
-              <div className="text-xl md:text-2xl lg:text-3xl font-inter font-bold text-white uppercase tracking-tight whitespace-nowrap px-2 overflow-visible">
-                WORKING EXECUTION IS <span className="text-green-500 ml-2 inline-block">RARE.</span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Progressive Blur Effect - Only after hero section */}
 
