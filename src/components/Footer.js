@@ -117,7 +117,7 @@ const Footer = () => {
         <div className="w-full py-12 px-4 sm:px-6 lg:px-8">
           {/* Main Footer Content */}
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
-            <div className="lg:w-1/3 flex justify-center lg:justify-start w-full lg:-mt-28 md:-mt-20 -mt-12">
+            <div className="lg:w-1/3 flex justify-center lg:justify-start w-full lg:-mt-36 md:-mt-28 -mt-20">
               <img
                 src="/logo.png"
                 alt="360 Logo"

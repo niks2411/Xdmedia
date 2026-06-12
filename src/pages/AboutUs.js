@@ -12,6 +12,7 @@ const AboutUs = () => {
     { value: "100+", label: "Brand Partnerships" }
   ];
 
+
   return (
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
       <Canonical path="/about-us" />
@@ -66,49 +67,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Stats Grid - Dark Background like homepage */}
-      <section className="py-20 px-4 sm:px-6" style={{ background: '#0a0a0a' }}>
-        <div className="container-max">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-                <div
-                  className="relative overflow-hidden rounded-2xl p-4 sm:p-8 text-center transition-all duration-300 hover:shadow-2xl backdrop-blur-xl border h-full min-h-[140px] sm:min-h-[180px] flex flex-col justify-center"
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.03)',
-                    borderColor: 'rgba(255, 255, 255, 0.1)'
-                  }}
-                >
-                  <div className="text-2xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-3" style={{
-                    background: 'linear-gradient(135deg, #47BF72 0%, #3aa85f 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
-                  }}>
-                    {stat.value}
-                  </div>
-                  <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-medium leading-tight">
-                    {stat.label}
-                  </div>
 
-                  {/* Hover accent */}
-                  <div
-                    className="absolute bottom-0 left-0 right-0 h-1 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
-                    style={{ background: '#47BF72' }}
-                  ></div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Mission & Vision - Dark gradient like homepage */}
       <section
