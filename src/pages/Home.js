@@ -31,54 +31,48 @@ const Home = () => {
   const [error, setError] = useState(null);
   
   const [activeStep, setActiveStep] = useState(0);
-  const [visibleSteps, setVisibleSteps] = useState([0]);
   const [visiblePaths, setVisiblePaths] = useState([]);
 
   const startSequence = () => {
-    setVisibleSteps([0]);
     setVisiblePaths([]);
     setActiveStep(0);
 
     // Step 1 to 2
     setTimeout(() => {
       setVisiblePaths(prev => [...prev, 0]);
-    }, 600);
+    }, 300);
     setTimeout(() => {
-      setVisibleSteps(prev => [...prev, 1]);
       setActiveStep(1);
-    }, 1200);
+    }, 650);
 
     // Step 2 to 3
     setTimeout(() => {
       setVisiblePaths(prev => [...prev, 1]);
-    }, 1800);
+    }, 950);
     setTimeout(() => {
-      setVisibleSteps(prev => [...prev, 2]);
       setActiveStep(2);
-    }, 2400);
+    }, 1300);
 
     // Step 3 to 4
     setTimeout(() => {
       setVisiblePaths(prev => [...prev, 2]);
-    }, 3000);
+    }, 1600);
     setTimeout(() => {
-      setVisibleSteps(prev => [...prev, 3]);
       setActiveStep(3);
-    }, 3600);
+    }, 1950);
 
     // Step 4 to 5
     setTimeout(() => {
       setVisiblePaths(prev => [...prev, 3]);
-    }, 4200);
+    }, 2250);
     setTimeout(() => {
-      setVisibleSteps(prev => [...prev, 4]);
       setActiveStep(4);
-    }, 4800);
+    }, 2600);
 
     // Step 5 back to 1 (completes the ring)
     setTimeout(() => {
       setVisiblePaths(prev => [...prev, 4]);
-    }, 5400);
+    }, 2900);
   };
 
   const handleInputChange = (e) => {
@@ -220,7 +214,7 @@ const Home = () => {
                     </span>
                     <span>
                       <strong className="text-white font-medium">{item.title}</strong>
-                      <span className="text-white/60"> — {item.desc}</span>
+                      <span className="text-white/60">- {item.desc}</span>
                     </span>
                   </li>
                 ))}
@@ -486,20 +480,7 @@ const Home = () => {
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-16 text-center"
-          >
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-2 text-gray-900 font-bold uppercase tracking-widest text-sm hover:text-green-600 transition-colors group"
-            >
-              View All Services
-              <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </motion.div>
+
         </div>
       </section>
 
@@ -544,7 +525,7 @@ const Home = () => {
           </motion.div>
  
            {/* Feature Cards */}
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 md:px-0 mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto px-6 md:px-0 mt-4">
              {/* Card 1 */}
              <Link to="/list-your-business-on-chatgpt" className="block group">
                <motion.div
@@ -636,52 +617,7 @@ const Home = () => {
                  </div>
                </motion.div>
              </Link>
- 
-             {/* Card 3 */}
-             <Link to="/ai-automation-tools" className="block group">
-               <motion.div
-                 initial={{ opacity: 0, y: 30 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 transition={{ duration: 0.8, delay: 0.3 }}
-                 viewport={{ once: true }}
-                 className="relative rounded-2xl overflow-hidden h-[420px] cursor-pointer transform transition-all duration-500 hover:-translate-y-2"
-                 style={{
-                   boxShadow: '0 4px 20px rgba(0,0,0,0.3)'
-                 }}
-                 onMouseEnter={(e) => {
-                   e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5), 0 0 60px rgba(71, 191, 114, 0.3)';
-                 }}
-                 onMouseLeave={(e) => {
-                   e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
-                 }}
-               >
-                 <div
-                   className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
-                   style={{
-                     backgroundImage: 'url(https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400&h=400&fit=crop)'
-                   }}
-                 ></div>
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 transition-all duration-500"></div>
-                 <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-green-500/0 group-hover:from-green-500/10 group-hover:to-green-500/5 transition-all duration-500"></div>
-                 <div className="absolute bottom-0 left-0 right-0 p-8 transform transition-all duration-500 group-hover:translate-y-[-8px]">
-                   <h3 className="text-2xl font-bold text-white mb-4 transition-all duration-300 group-hover:text-green-400">
-                     AI & Automation Tools
-                   </h3>
-                   <p className="text-gray-200 text-sm leading-relaxed mb-6">
-                     Work smarter, not harder. We set up custom AI and automation solutions to streamline workflows, generate leads, and enhance customer engagement 24/7.
-                   </p>
-                   <div
-                     className="inline-flex items-center justify-center text-white px-5 py-2.5 rounded font-semibold text-xs transition-all duration-300"
-                     style={{
-                       background: 'linear-gradient(135deg, #47BF72, #3aa85f)',
-                       boxShadow: '0 4px 15px rgba(71, 191, 114, 0.2)'
-                     }}
-                   >
-                     Explore AI Tools
-                   </div>
-                 </div>
-               </motion.div>
-             </Link>
+
            </div>
         </div>
       </section>
@@ -865,19 +801,16 @@ const Home = () => {
             ].map((item, i) => {
               const isLeft = i % 2 === 0;
               const isActive = activeStep === i;
-              const isVisible = visibleSteps.includes(i);
 
               return (
                 <React.Fragment key={i}>
                   {/* Step Card */}
                   <motion.div
                     className={`flex ${isLeft ? 'justify-start' : 'justify-end'}`}
-                    initial={{ opacity: 0, x: isLeft ? -60 : 60 }}
-                    animate={{ 
-                      opacity: isVisible ? 1 : 0, 
-                      x: isVisible ? 0 : (isLeft ? -60 : 60) 
-                    }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}
+                    initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: i * 0.12, ease: "easeOut" }}
                   >
                     <div
                       className="w-[52%] rounded-2xl p-1 cursor-pointer transition-all duration-500"
@@ -929,7 +862,7 @@ const Home = () => {
                                 boxShadow: isActive ? '0 0 25px rgba(34,197,94,0.15)' : 'none'
                               }}
                             >
-                              <item.icon className={`w-7 h-7 transition-all duration-500 ${isActive ? 'text-green-400' : 'text-gray-500'}`} />
+                              <item.icon className={`w-7 h-7 transition-all duration-500 ${isActive ? 'text-green-400' : 'text-white/60'}`} />
                             </div>
                           </div>
 
@@ -938,7 +871,7 @@ const Home = () => {
                             <div className="flex items-center gap-3 mb-2">
                               <span 
                                 className="text-[10px] font-bold uppercase tracking-[0.25em] transition-colors duration-500"
-                                style={{ color: isActive ? '#4ade80' : '#6b7280' }}
+                                style={{ color: isActive ? '#4ade80' : '#a3a3a3' }}
                               >
                                 Step 0{i + 1}
                               </span>
@@ -951,10 +884,10 @@ const Home = () => {
                                 />
                               )}
                             </div>
-                            <h3 className={`text-xl font-bold mb-2 transition-colors duration-500 ${isActive ? 'text-white' : 'text-gray-300'}`}>
+                            <h3 className="text-xl font-bold mb-2 transition-colors duration-500 text-white">
                               {item.step}
                             </h3>
-                            <p className={`text-sm font-light leading-relaxed transition-colors duration-500 ${isActive ? 'text-gray-300' : 'text-gray-500'}`}>
+                            <p className={`text-sm font-light leading-relaxed transition-colors duration-500 ${isActive ? 'text-white' : 'text-white/70'}`}>
                               {item.desc}
                             </p>
                           </div>
@@ -1053,7 +986,7 @@ const Home = () => {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.2 }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
                   className="flex gap-6 items-start"
                 >
                   <div 
@@ -1106,27 +1039,30 @@ const Home = () => {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-12 leading-tight tracking-wide">What Our Work Improves</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
-                  "Rankings",
-                  "Lead flow",
-                  "Conversion rate",
-                  "Funnel performance",
-                  "Cost per acquisition",
-                  "Digital asset value"
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex flex-col items-center gap-4 group p-6 rounded-2xl bg-gray-50 border border-transparent hover:border-green-500/10 hover:bg-white hover:shadow-xl transition-all duration-500"
-                  >
-                    <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center flex-shrink-0 group-hover:bg-green-500 transition-all duration-500 border border-gray-100">
-                      <TrendingUp className="w-7 h-7 text-green-600 group-hover:text-white transition-colors duration-300" />
-                    </div>
-                    <span className="text-gray-700 font-light text-lg leading-tight group-hover:text-gray-900 transition-colors duration-300 tracking-wide text-center">{item}</span>
-                  </motion.div>
-                ))}
+                  { title: "Rankings", icon: TrendingUp },
+                  { title: "Lead flow", icon: Users },
+                  { title: "Conversion rate", icon: Target },
+                  { title: "Funnel performance", icon: Layers },
+                  { title: "Cost per acquisition", icon: BarChart3 },
+                  { title: "Digital asset value", icon: ShieldCheck }
+                ].map((item, i) => {
+                  const Icon = item.icon;
+                  return (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.1 }}
+                      viewport={{ once: true }}
+                      className="flex flex-col items-center gap-4 group p-6 rounded-2xl bg-gray-50 border border-transparent hover:border-green-500/10 hover:bg-white hover:shadow-xl transition-all duration-500"
+                    >
+                      <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center flex-shrink-0 group-hover:bg-green-500 transition-all duration-500 border border-gray-100">
+                        <Icon className="w-7 h-7 text-green-600 group-hover:text-white transition-colors duration-300" />
+                      </div>
+                      <span className="text-gray-700 font-light text-lg leading-tight group-hover:text-gray-900 transition-colors duration-300 tracking-wide text-center">{item.title}</span>
+                    </motion.div>
+                  );
+                })}
               </div>
             </motion.div>
           </div>

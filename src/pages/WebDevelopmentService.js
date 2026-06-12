@@ -40,7 +40,6 @@ const projects = [
 
 const WebDevelopmentService = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
-  const [activeResultTab, setActiveResultTab] = useState(0);
 
   // Hero Form State
   const [heroData, setHeroData] = useState({
@@ -200,57 +199,6 @@ const WebDevelopmentService = () => {
     { countryCode: "br", clientName: "Fintech Application São Paulo", tech: "Laravel API" },
     { countryCode: "kr", clientName: "Seoul Auto Reservation Portal", tech: "React / Express" },
     { countryCode: "it", clientName: "Rome Corporate CMS", tech: "WordPress Custom Theme" },
-  ];
-
-  const resultsData = [
-    {
-      category: "Frontend Solutions",
-      smallLabel: "NextJS SPA / JAMstack",
-      heading: "98% PageSpeed Score & Accelerated Loading",
-      challenge: "Building a high-performance visual website for design agency Spellaro with clean animations, while maintaining load speed under 1 second.",
-      resultValue: "98/100",
-      resultDesc: "Implemented headless Next.js rendering on Vercel CDN, resulting in 0.8s LCP, boosting retention and lowering bounce rates by 35%.",
-      tableTitle: "Performance Indicator",
-      tableRows: [
-        { label: "First Contentful Paint (FCP)", value: "0.4s", growth: "Excellent" },
-        { label: "Largest Contentful Paint (LCP)", value: "0.8s", growth: "Optimal" },
-        { label: "Cumulative Layout Shift (CLS)", value: "0.01", growth: "Perfect" }
-      ],
-      chartTitle: "NextJS Lighthouse Score",
-      image: "/Weelee Performance Dashboard.png"
-    },
-    {
-      category: "Backend Systems",
-      smallLabel: "Secure CRM / Laravel Portal",
-      heading: "Optimized Database Queries & Instant APIs",
-      challenge: "Configuring a highly secure, role-based database portal for a Fintech firm supporting over 10K+ active records without query timeout spikes.",
-      resultValue: "85ms",
-      resultDesc: "Leveraged Redis caching and complex PostgreSQL indexing to reduce average API response latency from 420ms to 85ms.",
-      tableTitle: "Performance Indicator",
-      tableRows: [
-        { label: "Average API Latency", value: "85ms", growth: "-335ms" },
-        { label: "Database Query Time", value: "12ms", growth: "-80%" },
-        { label: "SSL Security Encryption", value: "A+ Rating", growth: "Active" }
-      ],
-      chartTitle: "Laravel Backend Latency",
-      image: "/Weelee Organic Performance New.png"
-    },
-    {
-      category: "eCommerce Portals",
-      smallLabel: "Shopify Custom Liquid / WooCommerce",
-      heading: "Fluid Checkout Flow & Automated API Syncs",
-      challenge: "Developing a custom storefront integrating inventory CRM APIs, localized payment processors, and automated shipping calculators.",
-      resultValue: "96/100",
-      resultDesc: "Boosted checkout responsiveness and load speed by 65%, driving a 24% increase in sales conversion rates within 3 months.",
-      tableTitle: "Performance Indicator",
-      tableRows: [
-        { label: "Average Page Load Speed", value: "1.1s", growth: "Optimal" },
-        { label: "API Sync Latency", value: "140ms", growth: "Fast" },
-        { label: "Cart Conversion Rate", value: "4.8%", growth: "+1.2%" }
-      ],
-      chartTitle: "Headless Commerce Analytics",
-      image: "/Onegolf Performance Dashboard.png"
-    }
   ];
 
   return (
@@ -901,106 +849,7 @@ const WebDevelopmentService = () => {
           </div>
         </section>
 
-        {/* Recent Results Section */}
-        <section className="py-20 bg-slate-100 border-t border-slate-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 mb-6">Recent Deployments & Performance Scores</h2>
-              <p className="text-lg text-slate-600 max-w-4xl mx-auto font-light leading-relaxed">
-                We write clean, high-performance code. From banking CRMs with tight SSL encryption to headless Next.js online stores, we configure platforms that pass Google's Core Web Vitals with flying colors.
-              </p>
-            </div>
 
-            {/* Tab Navigation */}
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10">
-              {resultsData.map((tab, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveResultTab(idx)}
-                  className={`px-6 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${activeResultTab === idx
-                    ? 'bg-[#16a34a] text-white'
-                    : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
-                    }`}
-                >
-                  {tab.category}
-                </button>
-              ))}
-            </div>
-
-            <div className="max-w-6xl mx-auto">
-              {resultsData.map((data, idx) => (
-                activeResultTab === idx && (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden relative"
-                  >
-                    {/* Card Header */}
-                    <div className="flex justify-between items-start p-4 sm:p-6">
-                      <div className="bg-[#1e73be] text-white px-4 py-1.5 rounded-lg text-xs font-medium">
-                        {data.category}
-                      </div>
-                      <img src="https://flagcdn.com/w80/in.png" alt="India Flag" className="w-10 sm:w-12 shadow-sm rounded-sm" />
-                    </div>
-
-                    <div className="px-4 sm:px-6 pb-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                      {/* Left Side: Details */}
-                      <div>
-                        <div className="space-y-4">
-                          <div>
-                            <h4 className="text-base font-bold text-slate-900 mb-1">Challenge</h4>
-                            <p className="text-slate-600 font-light text-sm">{data.challenge}</p>
-                          </div>
-
-                          <div>
-                            <h4 className="text-base font-bold text-slate-900 mb-1">Results</h4>
-                            <div className="text-4xl font-bold text-[#1e73be] mb-2">{data.resultValue}</div>
-                            <p className="text-slate-800 font-bold text-sm leading-tight">
-                              {data.resultDesc}
-                            </p>
-                          </div>
-
-                          {/* Metrics Table */}
-                          <div className="mt-4">
-                            <table className="w-full text-left text-sm">
-                              <thead>
-                                <tr className="border-b border-slate-100">
-                                  <th className="pb-2 font-bold text-slate-900">{data.tableTitle}</th>
-                                  <th className="pb-2 font-bold text-slate-900 text-right">Value</th>
-                                </tr>
-                              </thead>
-                              <tbody className="divide-y divide-slate-50">
-                                {data.tableRows.map((item, i) => (
-                                  <tr key={i} className="group hover:bg-slate-50 transition-colors">
-                                    <td className="py-2 text-slate-600 font-light">{item.label}</td>
-                                    <td className="py-2 text-[#1e73be] font-bold text-right">{item.value} <span className="text-[10px] opacity-70 ml-1">({item.growth})</span></td>
-                                  </tr>
-                                ))}
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Right Side: Analytics */}
-                      <div className="flex flex-col">
-                        <h4 className="text-base font-bold text-slate-900 mb-3">{data.chartTitle}</h4>
-                        <div className="bg-slate-50 rounded-xl p-2 border border-slate-100 flex items-center justify-center overflow-hidden min-h-[280px] max-h-[320px]">
-                          {data.image ? (
-                            <img src={data.image} alt={data.chartTitle} className="w-full h-auto object-contain rounded-lg" />
-                          ) : (
-                            <div className="text-slate-300 text-xs italic">Analytics Visual Pending</div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                )
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Workflow Section */}
         <section className="py-20 sm:py-24 bg-slate-200">

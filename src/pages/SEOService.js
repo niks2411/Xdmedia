@@ -431,11 +431,11 @@ const SEOService = () => {
         </section>
 
         {/* Features / Services Section */}
-        <section className="py-20 sm:py-24 relative overflow-hidden bg-slate-100">
+        <section className="pt-20 sm:pt-24 pb-8 sm:pb-10 relative overflow-hidden bg-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="mb-12 sm:mb-20 text-center">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Complete SEO Solutions</h2>
-              <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto font-light">Everything you need to capture market share and drive qualified leads.</p>
+              <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">Everything you need to capture search market share, build domain authority, and drive qualified leads. We map out full-funnel keyword opportunities, resolve complex technical crawlability blocks, and scale high-value backlink campaigns to deliver sustainable organic revenue.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)] sm:auto-rows-[180px]">
               {/* Tall Card: Keyword Intelligence */}
@@ -544,7 +544,7 @@ const SEOService = () => {
         </section>
 
         {/* Data-Driven Section with User's Image */}
-        <section className="py-20 sm:py-24 relative bg-slate-100">
+        <section className="pt-8 sm:pt-10 pb-20 sm:pb-24 relative bg-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
               <motion.div

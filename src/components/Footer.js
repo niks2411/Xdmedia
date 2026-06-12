@@ -60,7 +60,7 @@ const Footer = () => {
                   textShadow: '0 2px 10px rgba(0,0,0,0.5)'
                 }}
               >
-                If you want marketing that actually gets implemented — we should talk.
+                If you want marketing that actually gets implemented, we should talk.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-8 flex-wrap lg:flex-nowrap">
                 {/* Primary Button */}
@@ -93,14 +93,6 @@ const Footer = () => {
                   Get Proposal
                 </Link>
 
-                {/* Tertiary Button - Sleek Underline */}
-                <Link
-                  to="/contact"
-                  className="group relative text-white/80 hover:text-white px-4 py-4 font-medium uppercase tracking-wide text-sm transition-all duration-300 whitespace-nowrap text-center"
-                >
-                  <span className="relative z-10">Request Audit</span>
-                  <div className="absolute bottom-4 left-4 right-4 h-0.5 bg-[#47BF72]/50 group-hover:bg-[#47BF72] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                </Link>
               </div>
             </div>
 
@@ -125,8 +117,7 @@ const Footer = () => {
         <div className="w-full py-12 px-4 sm:px-6 lg:px-8">
           {/* Main Footer Content */}
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
-            {/* Large Logo Section - Left Side */}
-            <div className="lg:w-1/3 flex justify-center lg:justify-start w-full">
+            <div className="lg:w-1/3 flex justify-center lg:justify-start w-full lg:-mt-28 md:-mt-20 -mt-12">
               <img
                 src="/logo.png"
                 alt="360 Logo"
