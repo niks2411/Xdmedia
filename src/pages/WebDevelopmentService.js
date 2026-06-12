@@ -9,7 +9,7 @@ import { MarqueeDemo } from '../components/MarqueeDemo';
 // Projects Showcase State (Moved outside component to prevent recreating on every render)
 const projects = [
   {
-    title: "vidflyy",
+    title: "Vidflyy",
     url: "https://vidflyy.com",
     description: "A specialized platform for creators and businesses to promote their videos, engineered with Next.js frontend, Node.js backend, and scalable AWS cloud infrastructure.",
     image: "/1.jpg",
