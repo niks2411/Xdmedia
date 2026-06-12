@@ -279,7 +279,7 @@ const AboutUs = () => {
               Leadership
             </span>
             <h2 className="text-4xl sm:text-5xl text-white mb-4 font-light">
-              Meet the Co-Founder
+              Meet the Founder
             </h2>
             <div className="w-20 h-1 mx-auto" style={{ background: '#47BF72' }}></div>
           </motion.div>
@@ -380,7 +380,7 @@ const AboutUs = () => {
                           </svg>
                         </div>
                         <div>
-                          <div className="text-white font-semibold text-lg">Co-Founder</div>
+                          <div className="text-white font-semibold text-lg">Founder</div>
                           <div className="text-gray-400 text-sm">XD MEDIA</div>
                         </div>
                       </div>

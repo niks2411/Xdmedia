@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { AvatarCirclesDemo } from './AvatarCirclesDemo';
 import BookingModal from './BookingModal';
 
 const Footer = () => {
@@ -137,7 +136,7 @@ const Footer = () => {
 
             {/* Content Columns - Right Side */}
             <div className="lg:w-2/3">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Company Info */}
                 <div>
                   <h3 className="text-lg font-semibold mb-4 text-white">Our Company</h3>
@@ -176,14 +175,6 @@ const Footer = () => {
                       </li>
                     ))}
                   </ul>
-                </div>
-
-                {/* Team Section */}
-                <div>
-                  <h3 className="text-lg font-semibold mb-4 text-white">Our Team</h3>
-                  <div className="mt-4">
-                    <AvatarCirclesDemo />
-                  </div>
                 </div>
               </div>
             </div>

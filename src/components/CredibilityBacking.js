@@ -17,7 +17,7 @@ const CredibilityBacking = () => {
             ]
         },
         {
-            name: "vidflyyY Promotion LLP",
+            name: "vidflyy Promotion LLP",
             icon: <TrendingUp className="w-8 h-8" />,
             revenue: "YouTube Specialist",
             description: "Video Marketing Platform",
