@@ -15,6 +15,9 @@ import WhiteLabelMarketing from './pages/WhiteLabelMarketing';
 import SEOService from './pages/SEOService';
 import SEOAdmin from './pages/SEOAdmin';
 import WebDevelopmentService from './pages/WebDevelopmentService';
+import ChatGPTListing from './pages/ChatGPTListing';
+import GMBOptimization from './pages/GMBOptimization';
+import AIAutomationTools from './pages/AIAutomationTools';
 
 function App() {
   return (
@@ -37,6 +40,9 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/admin/seo-leads" element={<SEOAdmin />} />
+            <Route path="/list-your-business-on-chatgpt" element={<ChatGPTListing />} />
+            <Route path="/gmb-optimization" element={<GMBOptimization />} />
+            <Route path="/ai-automation-tools" element={<AIAutomationTools />} />
           </Routes>
         </Layout>
       </Router>

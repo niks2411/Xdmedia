@@ -718,7 +718,7 @@ const WebDevelopmentService = () => {
                 transition={{ duration: 0.6 }}
                 className="relative rounded-2xl overflow-hidden bg-slate-50 p-4 shadow-xl border border-slate-100 group"
               >
-                <img src="/Weelee Performance Dashboard.png" alt="Data-Driven Web Dev" className="w-full h-auto rounded-xl grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
+                <img src="/Illustration Data Driven Approach -04.png" alt="Data-Driven Web Dev" className="w-full h-auto rounded-xl grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
               </motion.div>
 
               <motion.div
@@ -866,7 +866,7 @@ const WebDevelopmentService = () => {
                 className="order-2 lg:order-1 relative rounded-2xl overflow-hidden bg-white p-4 shadow-xl border border-slate-100 group"
               >
                 <img
-                  src="/competitive-analysis-light.png"
+                  src="/Illustration Final-08.png"
                   alt="Code Integrity & Audit"
                   className="w-full h-auto rounded-xl grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
                 />

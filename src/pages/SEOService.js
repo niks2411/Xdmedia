@@ -703,7 +703,7 @@ const SEOService = () => {
                 className="order-2 lg:order-1 relative rounded-2xl overflow-hidden bg-white p-4 shadow-xl border border-slate-100 group"
               >
                 <img
-                  src="/competitive-analysis-light.png"
+                  src="/Illustration Final-08.png"
                   alt="Website and Competitive Analysis"
                   className="w-full h-auto rounded-xl grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
                 />

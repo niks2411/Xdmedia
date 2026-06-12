@@ -120,58 +120,39 @@ const Contact = () => {
   return (
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
       <Canonical path="/contact" />
-      {/* Hero Section */}
-      <section
-        className="py-32 relative overflow-hidden"
-        style={{
-          background: 'linear-gradient(135deg, rgb(12,33,21) 0%, rgb(20,50,35) 100%)'
-        }}
-      >
-        <div className="absolute inset-0 overflow-hidden opacity-20">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-green-400 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-300 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+
+      {/* Contact Form & Info */}
+      <section className="py-24 relative overflow-hidden" style={{ background: '#0a0a0a' }}>
+        {/* Dynamic Background Glow */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+          <div className="absolute top-20 left-1/4 w-96 h-96 bg-green-500/10 rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-400/5 rounded-full blur-[120px]"></div>
         </div>
 
         <div className="container-max relative z-10">
+          {/* Header */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+            className="mb-16 text-center max-w-3xl mx-auto"
           >
-            <motion.div
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-6 py-2 rounded-full text-sm font-medium uppercase tracking-wider mb-8"
-              style={{
-                background: 'rgba(71, 191, 114, 0.2)',
-                border: '1px solid rgba(71, 191, 114, 0.4)',
-                color: '#47BF72'
-              }}
-            >
-              Get In Touch
-            </motion.div>
-
-            <h1 className="text-5xl sm:text-6xl md:text-7xl leading-tight mb-8 tracking-tight">
-              <span className="text-white font-inter font-normal block mb-2">
-                Let's Work
-              </span>
-              <span className="text-white font-fraunces italic font-light">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl leading-tight mb-4 tracking-tight">
+              <span className="text-white font-inter font-normal">Let's Work </span>
+              <span className="text-white font-fraunces italic font-light" style={{
+                background: 'linear-gradient(135deg, #ffffff 0%, #47BF72 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}>
                 Together.
               </span>
             </h1>
-
-            <p className="text-xl text-gray-300 leading-relaxed font-light max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-400 font-light leading-relaxed">
               Ready to transform your digital presence? Contact us today and let's discuss how we can help you achieve your goals.
             </p>
           </motion.div>
-        </div>
-      </section>
 
-      {/* Contact Form & Info */}
-      <section className="py-24" style={{ background: '#0a0a0a' }}>
-        <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Info Cards */}
             <div className="lg:col-span-1 space-y-6">

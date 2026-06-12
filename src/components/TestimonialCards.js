@@ -86,7 +86,7 @@ const TestimonialCards = () => {
               The Impact We Deliver
             </h2>
             <p className="text-lg text-gray-300 mb-12 leading-relaxed">
-              Our clients don't just work with us — they win with us.
+              Our clients don't just work with us, they win with us.
             </p>
 
             {/* Navigation Buttons */}

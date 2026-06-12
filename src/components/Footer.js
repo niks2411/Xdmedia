@@ -21,6 +21,98 @@ const Footer = () => {
 
   return (
     <>
+      {/* CTA Banner — Let's Build Your Growth Engine */}
+      <section
+        className="py-28 md:py-40 flex items-center relative overflow-hidden"
+        style={{
+          backgroundImage: 'url(/sukhi.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* Overlay for better text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40"></div>
+
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Text Content */}
+            <div className="text-left">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl leading-tight mb-6 sm:mb-8 tracking-tight">
+                <span className="text-white drop-shadow-2xl font-light block mb-2" style={{
+                  textShadow: '0 0 40px rgba(71, 191, 114, 0.3), 0 4px 20px rgba(0,0,0,0.5)'
+                }}>
+                  Let's Build Your
+                </span>
+                <span className="text-white drop-shadow-2xl italic font-light block" style={{
+                  fontFamily: "'Georgia', 'Times New Roman', serif",
+                  background: 'linear-gradient(135deg, #ffffff 0%, #47BF72 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  filter: 'drop-shadow(0 4px 20px rgba(0,0,0,0.3))'
+                }}>
+                  Growth Engine
+                </span>
+              </h2>
+              <p
+                className="text-lg md:text-xl text-white/95 mb-10 leading-relaxed max-w-xl"
+                style={{
+                  textShadow: '0 2px 10px rgba(0,0,0,0.5)'
+                }}
+              >
+                If you want marketing that actually gets implemented — we should talk.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-8 flex-wrap lg:flex-nowrap">
+                {/* Primary Button */}
+                <button
+                  onClick={() => setIsBookingOpen(true)}
+                  className="text-white px-8 py-4 font-medium uppercase tracking-wide text-sm transition-all duration-300 shadow-lg whitespace-nowrap text-center"
+                  style={{
+                    backgroundColor: '#47BF72',
+                    borderRadius: '5px'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#3aa85f';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#47BF72';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                >
+                  Book Strategy Call
+                </button>
+
+                {/* Secondary Button - Ghost style */}
+                <Link
+                  to="/contact"
+                  className="text-white px-8 py-4 font-medium uppercase tracking-wide text-sm transition-all duration-300 border border-[#47BF72] hover:bg-[#47BF72]/10 rounded-[5px] whitespace-nowrap text-center"
+                  onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                >
+                  Get Proposal
+                </Link>
+
+                {/* Tertiary Button - Sleek Underline */}
+                <Link
+                  to="/contact"
+                  className="group relative text-white/80 hover:text-white px-4 py-4 font-medium uppercase tracking-wide text-sm transition-all duration-300 whitespace-nowrap text-center"
+                >
+                  <span className="relative z-10">Request Audit</span>
+                  <div className="absolute bottom-4 left-4 right-4 h-0.5 bg-[#47BF72]/50 group-hover:bg-[#47BF72] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Side - Empty for background image to show */}
+            <div className="hidden lg:block">
+              {/* Space intentionally left for the background image visual */}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <footer
         className="text-white relative overflow-hidden"
         style={{
@@ -32,24 +124,6 @@ const Footer = () => {
         }}
       >
         <div className="w-full py-12 px-4 sm:px-6 lg:px-8">
-          {/* Free Consultancy Section - Now at the top */}
-          <div className="mb-12 pb-8 border-b border-gray-600/30">
-            <div className="text-center max-w-4xl mx-auto">
-              <h3 className="text-2xl md:text-3xl font-light text-white mb-4">
-                Ready to Transform Your Digital Presence?
-              </h3>
-              <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-lg font-light">
-                Book a free 30-minute consultancy session with our experts to discuss your digital marketing goals and get personalized recommendations.
-              </p>
-              <button
-                className="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-green-900/20"
-                onClick={() => setIsBookingOpen(true)}
-              >
-                Book Free 30-Min Consultancy
-              </button>
-            </div>
-          </div>
-
           {/* Main Footer Content */}
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
             {/* Large Logo Section - Left Side */}
@@ -144,4 +218,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
