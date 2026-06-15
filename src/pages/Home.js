@@ -148,7 +148,7 @@ const Home = () => {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <img
-            src="/seo-hero.png"
+            src="/premium_photo-1661696348133-653cb6cc037c.avif"
             className="w-full h-full object-cover opacity-50"
             alt="Hero Background"
           />
@@ -246,9 +246,9 @@ const Home = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="w-full lg:ml-auto max-w-lg relative z-20 mt-8 lg:mt-0"
+              className="w-full lg:ml-auto max-w-md relative z-20 mt-8 lg:mt-0"
             >
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 relative shadow-2xl overflow-hidden">
+              <div className="bg-white rounded-2xl p-6 sm:p-10 border border-slate-100 relative shadow-2xl overflow-hidden">
                 {/* Accent glow inside card */}
                 <div className="absolute -right-20 -bottom-20 w-60 h-60 bg-green-500/10 rounded-full blur-[80px] pointer-events-none"></div>
 
@@ -271,12 +271,9 @@ const Home = () => {
                   </motion.div>
                 ) : (
                   <div className="relative z-10">
-                    <h3 className="text-xl sm:text-2xl font-light text-slate-900 mb-2 leading-tight font-inter">
-                      Request a Free Proposal
+                    <h3 className="text-xl sm:text-2xl font-light text-slate-900 mb-8 text-center leading-tight font-inter">
+                      Get A Free <span className="font-fraunces italic text-[#16a34a]">Growth Proposal</span> & Estimate
                     </h3>
-                    <p className="text-slate-500 font-light text-xs sm:text-sm mb-6">
-                      Fill out the form below to kickstart your project.
-                    </p>
 
                     {error && (
                       <div className="mb-4 p-3 rounded-lg flex items-center gap-3 bg-red-500/10 border border-red-500/30 text-red-600 text-xs">
@@ -295,11 +292,11 @@ const Home = () => {
                           required
                           disabled={isSubmitting}
                           placeholder="Your Full Name"
-                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
+                          className="w-full px-4 py-3.5 rounded-xl transition-all duration-300 outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
                         />
                       </div>
 
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
                         <input
                           type="email"
                           name="email"
@@ -308,8 +305,11 @@ const Home = () => {
                           required
                           disabled={isSubmitting}
                           placeholder="Email Address"
-                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
+                          className="w-full px-4 py-3.5 rounded-xl transition-all duration-300 outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
                         />
+                      </div>
+
+                      <div>
                         <input
                           type="tel"
                           name="phone"
@@ -318,7 +318,7 @@ const Home = () => {
                           required
                           disabled={isSubmitting}
                           placeholder="Phone Number"
-                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
+                          className="w-full px-4 py-3.5 rounded-xl transition-all duration-300 outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
                         />
                       </div>
 
@@ -329,7 +329,7 @@ const Home = () => {
                           onChange={handleInputChange}
                           required
                           disabled={isSubmitting}
-                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 outline-none text-sm disabled:opacity-50 appearance-none cursor-pointer bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
+                          className="w-full px-4 py-3.5 rounded-xl transition-all duration-300 outline-none text-sm disabled:opacity-50 appearance-none cursor-pointer bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
                           style={{
                             color: formData.service ? '#0f172a' : 'rgba(15, 23, 42, 0.4)'
                           }}
@@ -366,14 +366,14 @@ const Home = () => {
                           disabled={isSubmitting}
                           placeholder="Tell us about your project (optional)"
                           rows={3}
-                          className="w-full px-4 py-3 rounded-xl transition-all duration-300 resize-none outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
+                          className="w-full px-4 py-3.5 rounded-xl transition-all duration-300 resize-none outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
                         />
                       </div>
 
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full py-3.5 rounded-xl font-medium uppercase tracking-wide text-xs sm:text-sm text-white transition-all duration-300 hover:scale-[1.02] active:scale-95 inline-flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                        className="w-full py-4 rounded-xl font-medium uppercase tracking-wide text-xs sm:text-sm text-white transition-all duration-300 hover:scale-[1.02] active:scale-95 inline-flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                         style={{
                           background: 'linear-gradient(135deg, #47BF72, #3aa85f)',
                           boxShadow: '0 8px 30px rgba(71, 191, 114, 0.2)'

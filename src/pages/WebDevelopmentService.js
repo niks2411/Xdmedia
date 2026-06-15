@@ -247,7 +247,7 @@ const WebDevelopmentService = () => {
           {/* Background Image with Overlay */}
           <div className="absolute inset-0">
             <img
-              src="/seo-hero.png"
+              src="/seo-hero-backup.png"
               className="w-full h-full object-cover opacity-50"
               alt="Web Development Hero Background"
             />
