@@ -26,6 +26,9 @@ const PrivacyPolicy = () => {
   ];
   const [activeSection, setActiveSection] = React.useState('');
 
+
+
+
   React.useEffect(() => {
     const handleScroll = () => {
       // Check if we are at the bottom of the page
@@ -392,11 +395,11 @@ const PrivacyPolicy = () => {
                 Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that info, or delete it in some circumstances. 
               </p>
               <p>
-                To request to review, update, or delete your personal information, please submit a request by clicking below:
+                To request to review, update, or delete your personal information, please email us by clicking below:
               </p>
               <div className="pt-2">
                 <a
-                  href="https://app.termly.io/dsar/a2c8b0a9-e478-483b-9394-6ae08bb5ae9e"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=connect@xdmedia.in"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center text-white px-6 py-3 rounded-lg text-sm font-semibold uppercase tracking-wider transition-all duration-300 hover:scale-105"
@@ -405,7 +408,7 @@ const PrivacyPolicy = () => {
                     boxShadow: '0 4px 20px rgba(71, 191, 114, 0.3)'
                   }}
                 >
-                  Submit Data Request (DSAR)
+                  Email Us
                 </a>
               </div>
             </section>
