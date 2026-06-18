@@ -546,6 +546,15 @@ const SEOService = () => {
         {/* Data-Driven Section with User's Image */}
         <section className="pt-8 sm:pt-10 pb-20 sm:pb-24 relative bg-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
+            {/* Mobile Header block */}
+            <div className="lg:hidden mb-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f0fdf4] border border-[#dcfce7] mb-4">
+                <span className="material-symbols-outlined text-[#16a34a] text-sm">monitoring</span>
+                <span className="text-[#16a34a] text-[10px] sm:text-xs font-bold uppercase tracking-wider">Advanced Analytics</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 leading-tight">Data-Driven Approach to <span className="font-fraunces italic text-[#16a34a]">Growth</span></h2>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -563,11 +572,14 @@ const SEOService = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f0fdf4] border border-[#dcfce7] mb-6">
-                  <span className="material-symbols-outlined text-[#16a34a] text-sm">monitoring</span>
-                  <span className="text-[#16a34a] text-[10px] sm:text-xs font-bold uppercase tracking-wider">Advanced Analytics</span>
+                {/* Desktop-only Header block */}
+                <div className="hidden lg:block">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f0fdf4] border border-[#dcfce7] mb-6">
+                    <span className="material-symbols-outlined text-[#16a34a] text-sm">monitoring</span>
+                    <span className="text-[#16a34a] text-[10px] sm:text-xs font-bold uppercase tracking-wider">Advanced Analytics</span>
+                  </div>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Data-Driven Approach to <span className="font-fraunces italic text-[#16a34a]">Growth</span></h2>
                 </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Data-Driven Approach to <span className="font-fraunces italic text-[#16a34a]">Growth</span></h2>
                 <p className="text-base sm:text-lg text-slate-600 mb-8 sm:mb-10 font-light">Guesswork has no place in modern SEO. Our strategies are built on deep data analysis, competitor reverse-engineering, and proven frameworks.</p>
 
                 <div className="space-y-6">
@@ -621,15 +633,25 @@ const SEOService = () => {
         {/* 8 Step Process - Simple Lines Layout */}
         <section className="py-20 bg-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
+            {/* Mobile Header block */}
+            <div className="lg:hidden mb-8">
+              <h2 className="text-3xl sm:text-4xl font-light text-slate-900 leading-tight">XD Media SEO Campaign <span className="font-fraunces italic text-[#16a34a]">Process</span></h2>
+              <p className="text-slate-600 font-light mt-4 max-w-xl">In the competitive world of internet marketing, strategy should never be an afterthought. Our process is broadly divided into eight logical steps:</p>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 sm:gap-16 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
+                className="order-2 lg:order-1"
               >
-                <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mb-6">XD Media SEO Campaign <span className="font-fraunces italic text-[#16a34a]">Process</span></h2>
-                <p className="text-slate-600 font-light mb-10 max-w-xl">In the competitive world of internet marketing, strategy should never be an afterthought. Our process is broadly divided into eight logical steps:</p>
+                {/* Desktop-only Header block */}
+                <div className="hidden lg:block">
+                  <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mb-6">XD Media SEO Campaign <span className="font-fraunces italic text-[#16a34a]">Process</span></h2>
+                  <p className="text-slate-600 font-light mb-10 max-w-xl">In the competitive world of internet marketing, strategy should never be an afterthought. Our process is broadly divided into eight logical steps:</p>
+                </div>
 
                 <div className="space-y-6">
                   {[
@@ -654,7 +676,7 @@ const SEOService = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="relative"
+                className="order-1 lg:order-2 relative"
               >
                 <div className="absolute inset-0 bg-[#f0fdf4] rounded-full blur-3xl opacity-50 -z-10"></div>
                 <div
@@ -694,13 +716,18 @@ const SEOService = () => {
         {/* Analysis Details - Simple Lines */}
         <section className="py-20 bg-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
+            {/* Mobile Header block */}
+            <div className="lg:hidden mb-8">
+              <h2 className="text-3xl sm:text-4xl font-light text-slate-900 leading-tight">Website & <span className="font-fraunces italic text-[#16a34a]">Competitive Analysis</span></h2>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="order-2 lg:order-1 relative rounded-2xl overflow-hidden bg-white p-4 shadow-xl border border-slate-100 group"
+                className="lg:order-1 relative rounded-2xl overflow-hidden bg-white p-4 shadow-xl border border-slate-100 group"
               >
                 <img
                   src="/Illustration Final-08.png"
@@ -714,9 +741,10 @@ const SEOService = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="order-1 lg:order-2"
+                className="lg:order-2"
               >
-                <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mb-6">Website & <span className="font-fraunces italic text-[#16a34a]">Competitive Analysis</span></h2>
+                {/* Desktop-only Header block */}
+                <h2 className="hidden lg:block text-3xl sm:text-4xl font-light text-slate-900 mb-6">Website & <span className="font-fraunces italic text-[#16a34a]">Competitive Analysis</span></h2>
                 <div className="space-y-6">
                   <p className="text-slate-600 font-light leading-relaxed border-l-2 border-[#16a34a] pl-6">We start with a detailed analysis of your website including your Meta tags, Image alt tags, Sitemaps, SEO Friendly URLs, JS Minification Test, Canonicalization and a lot more.</p>
                   <p className="text-slate-600 font-light leading-relaxed border-l-2 border-slate-200 pl-6">It is followed by a thorough research of your potential competitors. We then compare your website performance to those who are already ranking for the same organic keywords as yours.</p>
@@ -949,6 +977,11 @@ const SEOService = () => {
 
         <section className="py-20 sm:py-24 bg-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
+            {/* Mobile Header block */}
+            <div className="lg:hidden mb-8">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 leading-tight">Continuous <span className="font-fraunces italic text-[#16a34a]">Optimization</span></h2>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -957,7 +990,8 @@ const SEOService = () => {
                 transition={{ duration: 0.6 }}
                 className="order-2 lg:order-1"
               >
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Continuous <span className="font-fraunces italic text-[#16a34a]">Optimization</span></h2>
+                {/* Desktop-only Header block */}
+                <h2 className="hidden lg:block text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Continuous <span className="font-fraunces italic text-[#16a34a]">Optimization</span></h2>
                 <p className="text-base sm:text-lg text-slate-600 mb-8 sm:mb-10 font-light">SEO isn't a one-and-done setup. It's a continuous process of refinement, adaptation to algorithm updates, and compounding growth.</p>
 
                 <div className="space-y-4">

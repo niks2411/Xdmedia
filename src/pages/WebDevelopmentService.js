@@ -243,7 +243,7 @@ const WebDevelopmentService = () => {
 
       <main className="pb-16 sm:pb-0"> {/* Padding bottom for mobile marquee */}
         {/* Hero Section */}
-        <header className="relative min-h-[600px] lg:min-h-[750px] flex items-center overflow-hidden bg-slate-900">
+        <header className="relative min-h-[500px] lg:min-h-[600px] flex items-start overflow-hidden bg-slate-900">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0">
             <img
@@ -254,7 +254,7 @@ const WebDevelopmentService = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
           </div>
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 w-full py-12 sm:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 w-full pt-4 sm:pt-8 lg:pt-10 pb-12 sm:pb-20">
             <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 sm:gap-16 items-center">
               {/* Left Content */}
               <motion.div
@@ -263,15 +263,15 @@ const WebDevelopmentService = () => {
                 transition={{ duration: 0.8 }}
                 className="text-white space-y-6 sm:space-y-10"
               >
-                <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-white leading-[1.1] tracking-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl font-light text-white leading-[1.1] tracking-tight">
                   India's Most Trusted, Web Development Company Offering <br className="hidden lg:block" />
                   <span className="font-fraunces italic text-[#16a34a]">High-Performance</span> Digital Solutions
                 </h1>
                 <div className="space-y-4">
-                  <p className="text-xl sm:text-2xl text-slate-200 font-light leading-snug">
+                  <p className="text-lg sm:text-xl text-slate-200 font-light leading-snug">
                     Still Not Getting High Conversions from Your Site?
                   </p>
-                  <p className="text-xl sm:text-2xl text-slate-200 font-bold leading-snug border-l-4 border-[#47BF72] pl-6">
+                  <p className="text-lg sm:text-xl text-slate-200 font-bold leading-snug border-l-4 border-[#47BF72] pl-6">
                     Scalable, Secure & Fast Web Apps Within Stipulated Timeline
                   </p>
                 </div>
@@ -658,6 +658,15 @@ const WebDevelopmentService = () => {
         {/* Data-Driven Section */}
         <section className="py-20 sm:py-24 relative bg-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
+            {/* Mobile Header block */}
+            <div className="lg:hidden mb-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f0fdf4] border border-[#dcfce7] mb-4">
+                <span className="material-symbols-outlined text-[#16a34a] text-sm">monitoring</span>
+                <span className="text-[#16a34a] text-[10px] sm:text-xs font-bold uppercase tracking-wider">Advanced Performance</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 leading-tight">Data-Driven Approach to <span className="font-fraunces italic text-[#16a34a]">Engineering</span></h2>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -675,11 +684,14 @@ const WebDevelopmentService = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f0fdf4] border border-[#dcfce7] mb-6">
-                  <span className="material-symbols-outlined text-[#16a34a] text-sm">monitoring</span>
-                  <span className="text-[#16a34a] text-[10px] sm:text-xs font-bold uppercase tracking-wider">Advanced Performance</span>
+                {/* Desktop-only Header block */}
+                <div className="hidden lg:block">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f0fdf4] border border-[#dcfce7] mb-6">
+                    <span className="material-symbols-outlined text-[#16a34a] text-sm">monitoring</span>
+                    <span className="text-[#16a34a] text-[10px] sm:text-xs font-bold uppercase tracking-wider">Advanced Performance</span>
+                  </div>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Data-Driven Approach to <span className="font-fraunces italic text-[#16a34a]">Engineering</span></h2>
                 </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Data-Driven Approach to <span className="font-fraunces italic text-[#16a34a]">Engineering</span></h2>
                 <p className="text-base sm:text-lg text-slate-600 mb-8 sm:mb-10 font-light">Guesswork has no place in custom software development. We architect frameworks that prioritize loading speed, database integrity, and high search visibility.</p>
 
                 <div className="space-y-6">
@@ -732,15 +744,25 @@ const WebDevelopmentService = () => {
         {/* 8 Step Process */}
         <section className="py-20 bg-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 sm:gap-16 items-center">
+            {/* Mobile Header block */}
+            <div className="lg:hidden mb-8">
+              <h2 className="text-3xl sm:text-4xl font-light text-slate-900 leading-tight">Web Development <span className="font-fraunces italic text-[#16a34a]">Process</span></h2>
+              <p className="text-slate-600 font-light mt-4 max-w-xl">From concept to cloud deployment, our workflow is structured into eight logical sprints ensuring zero downtime and complete project alignment:</p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
+                className="order-2 lg:order-1"
               >
-                <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mb-6"> Web Development <span className="font-fraunces italic text-[#16a34a]">Process</span></h2>
-                <p className="text-slate-600 font-light mb-10 max-w-xl">From concept to cloud deployment, our workflow is structured into eight logical sprints ensuring zero downtime and complete project alignment:</p>
+                {/* Desktop-only Header block */}
+                <div className="hidden lg:block">
+                  <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mb-6">Web Development <span className="font-fraunces italic text-[#16a34a]">Process</span></h2>
+                  <p className="text-slate-600 font-light mb-10 max-w-xl">From concept to cloud deployment, our workflow is structured into eight logical sprints ensuring zero downtime and complete project alignment:</p>
+                </div>
 
                 <div className="space-y-6">
                   {[
@@ -765,11 +787,11 @@ const WebDevelopmentService = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="relative"
+                className="order-1 lg:order-2 relative"
               >
                 <div className="absolute inset-0 bg-[#f0fdf4] rounded-full blur-3xl opacity-50 -z-10"></div>
                 <div
-                  className="relative max-w-2xl mx-auto"
+                  className="relative max-w-xl mx-auto"
                   style={{ perspective: '1200px' }}
                 >
                   <div
@@ -805,16 +827,21 @@ const WebDevelopmentService = () => {
         {/* Code Integrity & Architecture Audit */}
         <section className="py-20 bg-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
+            {/* Mobile Header block */}
+            <div className="lg:hidden mb-8">
+              <h2 className="text-3xl sm:text-4xl font-light text-slate-900 leading-tight">Code Integrity & <span className="font-fraunces italic text-[#16a34a]">Architecture Audit</span></h2>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="order-2 lg:order-1 relative rounded-2xl overflow-hidden bg-white p-4 shadow-xl border border-slate-100 group"
+                className="lg:order-1 relative rounded-2xl overflow-hidden bg-white p-4 shadow-xl border border-slate-100 group"
               >
                 <img
-                  src="/Illustration Final-08.png"
+                  src="/code.png"
                   alt="Code Integrity & Audit"
                   className="w-full h-auto rounded-xl grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
                 />
@@ -825,9 +852,10 @@ const WebDevelopmentService = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="order-1 lg:order-2"
+                className="lg:order-2"
               >
-                <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mb-6">Code Integrity & <span className="font-fraunces italic text-[#16a34a]">Architecture Audit</span></h2>
+                {/* Desktop-only Header block */}
+                <h2 className="hidden lg:block text-3xl sm:text-4xl font-light text-slate-900 mb-6">Code Integrity & <span className="font-fraunces italic text-[#16a34a]">Architecture Audit</span></h2>
                 <div className="space-y-6">
                   <p className="text-slate-600 font-light leading-relaxed border-l-2 border-[#16a34a] pl-6">We inspect your existing databases, API latency values, server loads, and frontend responsiveness configs to map out performance bottlenecks before writing a single line of code.</p>
                   <p className="text-slate-600 font-light leading-relaxed border-l-2 border-slate-200 pl-6">We compare layout metrics and responsiveness constraints to ensure your future system scales flawlessly under concurrent traffic loads.</p>
@@ -854,6 +882,11 @@ const WebDevelopmentService = () => {
         {/* Workflow Section */}
         <section className="py-20 sm:py-24 bg-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
+            {/* Mobile Header block */}
+            <div className="lg:hidden mb-8">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 leading-tight">Continuous <span className="font-fraunces italic text-[#16a34a]">Optimization</span></h2>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -862,7 +895,8 @@ const WebDevelopmentService = () => {
                 transition={{ duration: 0.6 }}
                 className="order-2 lg:order-1"
               >
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Continuous <span className="font-fraunces italic text-[#16a34a]">Optimization</span></h2>
+                {/* Desktop-only Header block */}
+                <h2 className="hidden lg:block text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Continuous <span className="font-fraunces italic text-[#16a34a]">Optimization</span></h2>
                 <p className="text-base sm:text-lg text-slate-600 mb-8 sm:mb-10 font-light">Custom software isn't static. We support your code long after deployment with database checks and server upgrades.</p>
 
                 <div className="space-y-4">
@@ -888,10 +922,9 @@ const WebDevelopmentService = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="order-1 lg:order-2 relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 p-4 shadow-2xl group flex items-center justify-center min-h-[300px] sm:min-h-[400px]"
+                className="order-1 lg:order-2 relative group flex items-center justify-center"
               >
-                <div className="absolute inset-0 bg-[#4be277]/10 blur-3xl rounded-full"></div>
-                <img src="/competitive-analysis.png" alt="Development Architecture Layout" className="relative z-10 w-full h-auto max-w-md object-contain grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
+                <img src="/comp.png" alt="Development Architecture Layout" className="w-full h-auto max-w-md object-contain grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
               </motion.div>
             </div>
           </div>

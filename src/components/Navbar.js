@@ -211,10 +211,10 @@ const Navbar = () => {
             <div className="lg:hidden flex items-center gap-3">
               <button
                 onClick={() => setIsBookingModalOpen(true)}
-                className="flex items-center gap-2 text-white px-3 py-2 text-[10px] font-medium uppercase tracking-wider border border-green-500 rounded hover:bg-green-500/10 transition-colors"
+                className="flex items-center gap-2 text-white px-3 py-2 text-[10px] font-medium uppercase tracking-wider border border-green-500 rounded hover:bg-green-500/10 transition-colors whitespace-nowrap"
               >
                 <Calendar className="w-3.5 h-3.5" />
-                Book
+                Book a Slot
               </button>
               <button
                 className="p-1.5 rounded-lg hover:bg-green-700 transition-colors"

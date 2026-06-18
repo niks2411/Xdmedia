@@ -91,8 +91,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      detail: 'contact@xdmedia.in',
-      action: 'mailto:contact@xdmedia.in'
+      detail: 'connect@xdmedia.in',
+      action: 'mailto:connect@xdmedia.in'
     },
     {
       icon: Phone,

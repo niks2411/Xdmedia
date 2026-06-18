@@ -144,7 +144,7 @@ const Home = () => {
     <div className="min-h-screen relative">
       <Canonical path="/" />
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-screen w-full flex items-start pt-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
+      <section className="relative overflow-hidden min-h-[500px] lg:min-h-[600px] w-full flex items-start pt-4 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <img
@@ -160,29 +160,16 @@ const Home = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-left mt-8 ml-4"
+              className="text-left ml-4"
             >
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.2 }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl leading-tight mb-6 sm:mb-8 tracking-tight"
+                className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-white leading-[1.1] tracking-tight mb-6 sm:mb-8"
               >
-                <span className="text-white drop-shadow-2xl font-inter font-semibold block mb-2" style={{
-                  textShadow: '0 0 40px rgba(71, 191, 114, 0.3), 0 4px 20px rgba(0,0,0,0.5)'
-                }}>
-                  1 SEO Strategy =
-                </span>
-                <span className="text-white drop-shadow-2xl font-fraunces italic font-light block" style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, #47BF72 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  textShadow: 'none',
-                  filter: 'drop-shadow(0 4px 20px rgba(0,0,0,0.3))'
-                }}>
-                  3X Your Organic Traffic
-                </span>
+                1 SEO Strategy = <br className="hidden lg:block" />
+                <span className="font-fraunces italic text-[#16a34a]">3X Your Organic Traffic</span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -644,7 +631,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6 leading-tight tracking-wide"
+                className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6 leading-tight tracking-wide text-center lg:text-left"
               >
                 Who We Are
               </motion.h2>
@@ -653,7 +640,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="text-gray-200 max-w-xl mb-8 text-lg leading-relaxed"
+                className="text-gray-200 max-w-xl mb-8 text-lg leading-relaxed text-center lg:text-left mx-auto lg:mx-0"
               >
                 We've done all the heavy lifting so you don't have to.get all the data you need
                 to launch and grow your business faster.
@@ -663,6 +650,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
+                className="text-center lg:text-left"
               >
                 <Link
                   to="/about"

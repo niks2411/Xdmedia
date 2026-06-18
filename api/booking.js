@@ -61,7 +61,7 @@ export default async function handler(req, res) {
           <p style="color: #fff; font-size: 14px;"><strong>The XD Media Team</strong></p>
           <p style="color: #666; font-size: 12px;">
             SCO-40, HLP Galleria, SAS Nagar Mohali, 160062, Chandigarh<br/>
-            +91 7901724043 | contact@xdmedia.in
+            +91 7901724043 | connect@xdmedia.in
           </p>
         </div>
       `,
@@ -70,7 +70,7 @@ export default async function handler(req, res) {
         // Send notification email to admin
         await resend.emails.send({
             from: "XD Media <no-reply@xdmedia.in>",
-            to: "contact@xdmedia.in",
+            to: "connect@xdmedia.in",
             subject: `New Booking: ${name} - ${formattedDate}`,
             html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

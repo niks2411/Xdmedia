@@ -36,8 +36,8 @@ const Footer = () => {
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Text Content */}
-            <div className="text-left">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl leading-tight mb-6 sm:mb-8 tracking-tight">
+            <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl leading-tight mb-6 sm:mb-8 tracking-tight w-full">
                 <span className="text-white drop-shadow-2xl font-light block mb-2" style={{
                   textShadow: '0 0 40px rgba(71, 191, 114, 0.3), 0 4px 20px rgba(0,0,0,0.5)'
                 }}>
@@ -55,14 +55,14 @@ const Footer = () => {
                 </span>
               </h2>
               <p
-                className="text-lg md:text-xl text-white/95 mb-10 leading-relaxed max-w-xl"
+                className="text-lg md:text-xl text-white/95 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0"
                 style={{
                   textShadow: '0 2px 10px rgba(0,0,0,0.5)'
                 }}
               >
                 If you want marketing that actually gets implemented, we should talk.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-8 flex-wrap lg:flex-nowrap">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-8 flex-wrap lg:flex-nowrap w-full lg:w-auto">
                 {/* Primary Button */}
                 <button
                   onClick={() => setIsBookingOpen(true)}
@@ -138,7 +138,7 @@ const Footer = () => {
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3 text-gray-300">
                       <Mail className="w-4 h-4" />
-                      <span className="text-sm">Connect@xdmedia.in</span>
+                      <span className="text-sm">connect@xdmedia.in</span>
                     </div>
                     <div className="flex items-center space-x-3 text-gray-300">
                       <Phone className="w-4 h-4" />

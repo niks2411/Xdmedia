@@ -163,11 +163,11 @@ const AboutUs = () => {
               }}
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <h3 className="text-4xl font-bold text-white mb-6 font-inter">
+                <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
+                  <h3 className="text-4xl font-bold text-white mb-6 font-inter text-center lg:text-left">
                     Who We Are
                   </h3>
-                  <p className="text-xl text-gray-200 leading-relaxed mb-8 font-light">
+                  <p className="text-xl text-gray-200 leading-relaxed mb-8 font-light text-center lg:text-left mx-auto lg:mx-0">
                     Backed by established ventures with ₹35+ crore annual revenue, 112.5+ billion YouTube views delivered, and 1M+ combined subscribers. This is the powerhouse behind XD MEDIA.
                   </p>
                   <button
