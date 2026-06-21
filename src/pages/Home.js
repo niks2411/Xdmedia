@@ -144,7 +144,7 @@ const Home = () => {
     <div className="min-h-screen relative">
       <Canonical path="/" />
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-[500px] lg:min-h-[600px] w-full flex items-start pt-4 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
+      <section className="relative overflow-hidden min-h-[500px] lg:min-h-[600px] w-full flex items-start pt-16 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <img
@@ -823,20 +823,6 @@ const Home = () => {
                         <div className="flex items-start gap-6">
                           {/* Step Number + Icon */}
                           <div className="flex-shrink-0 relative">
-                            {/* Large watermark number */}
-                            <div 
-                              className="absolute -top-3 -left-2 text-[52px] font-black leading-none select-none pointer-events-none"
-                              style={{ 
-                                background: isActive 
-                                  ? 'linear-gradient(180deg, rgba(34,197,94,0.15) 0%, transparent 80%)' 
-                                  : 'linear-gradient(180deg, rgba(255,255,255,0.04) 0%, transparent 80%)',
-                                WebkitBackgroundClip: 'text',
-                                WebkitTextFillColor: 'transparent',
-                                backgroundClip: 'text',
-                              }}
-                            >
-                              0{i + 1}
-                            </div>
                             {/* Icon container */}
                             <div 
                               className="relative w-16 h-16 rounded-xl flex items-center justify-center mt-2 transition-all duration-500"
