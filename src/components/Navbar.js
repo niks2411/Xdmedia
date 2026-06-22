@@ -234,7 +234,7 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-full left-1/2 transform -translate-x-1/2 rounded-xl mt-3 w-[640px] z-50 services-dropdown shadow-xl border border-white/10"
+              className="absolute top-full left-1/2 transform -translate-x-1/2 rounded-xl mt-3 w-[320px] z-50 services-dropdown shadow-xl border border-white/10"
               style={{ backgroundColor: '#0d3020' }}
               onMouseEnter={() => {
                 setIsDropdownOpen(true);
@@ -245,58 +245,26 @@ const Navbar = () => {
               }}
             >
               <div className="p-4">
-                <div className="flex gap-4">
-                  {/* Service Links - Left */}
-                  <div className="flex-1">
-                    {servicesItem?.dropdownItems?.map((dropdownItem) => (
-                      <Link
-                        key={dropdownItem.name}
-                        to={dropdownItem.path}
-                        className="block p-3 hover:bg-[#193b2a] transition-colors duration-200 rounded-lg mb-2"
-                        onMouseEnter={() => setHoveredService(dropdownItem)}
-                        onClick={() => {
-                          setIsDropdownOpen(false);
-                          setHoveredService(null);
-                        }}
-                      >
-                        <div className="flex items-start space-x-3">
-                          {dropdownItem.icon && <dropdownItem.icon className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />}
-                          <div className="flex-1">
-                            <h3 className="text-white font-medium text-sm mb-1 leading-tight">{dropdownItem.name}</h3>
-                            <span className="inline-block text-xs font-medium text-green-400">{dropdownItem.price}</span>
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-
-                  {/* Image Preview - Right */}
-                  <div className="w-72 flex-shrink-0">
-                    {hoveredService ? (
-                      <motion.div
-                        key={hoveredService.name}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.2 }}
-                        className="bg-gray-800 rounded-lg overflow-hidden h-full"
-                      >
-                        <img
-                          src={hoveredService.image}
-                          alt={hoveredService.name}
-                          className="w-full h-full object-cover"
-                        />
-                      </motion.div>
-                    ) : (
-                      <div className="bg-gray-800 rounded-lg overflow-hidden h-full">
-                        <img
-                          src="/images/web.webp?v=1"
-                          alt="Website Design & Development"
-                          className="w-full h-full object-cover"
-                        />
+                {servicesItem?.dropdownItems?.map((dropdownItem) => (
+                  <Link
+                    key={dropdownItem.name}
+                    to={dropdownItem.path}
+                    className="block p-3 hover:bg-[#193b2a] transition-colors duration-200 rounded-lg mb-2"
+                    onMouseEnter={() => setHoveredService(dropdownItem)}
+                    onClick={() => {
+                      setIsDropdownOpen(false);
+                      setHoveredService(null);
+                    }}
+                  >
+                    <div className="flex items-start space-x-3">
+                      {dropdownItem.icon && <dropdownItem.icon className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />}
+                      <div className="flex-1">
+                        <h3 className="text-white font-medium text-sm mb-1 leading-tight">{dropdownItem.name}</h3>
+                        <span className="inline-block text-xs font-medium text-green-400">{dropdownItem.price}</span>
                       </div>
-                    )}
-                  </div>
-                </div>
+                    </div>
+                  </Link>
+                ))}
               </div>
             </motion.div>
           )}

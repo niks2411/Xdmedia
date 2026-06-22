@@ -3,12 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Calendar, Clock, User, Mail, Phone, CheckCircle, Loader2 } from 'lucide-react';
 import { db } from '../firebaseConfig';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
+import { countries } from '../lib/countries';
 
 const BookingModal = ({ isOpen, onClose }) => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: '',
+        countryCode: '+91',
         bookingDate: '',
         timeSlot: ''
     });
@@ -75,7 +77,7 @@ const BookingModal = ({ isOpen, onClose }) => {
             await addDoc(collection(db, 'bookings'), {
                 name: formData.name,
                 email: formData.email,
-                phone: formData.phone,
+                phone: `${formData.countryCode} ${formData.phone}`,
                 bookingDate: formData.bookingDate,
                 timeSlot: formData.timeSlot,
                 status: 'pending',
@@ -91,7 +93,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                     body: JSON.stringify({
                         name: formData.name,
                         email: formData.email,
-                        phone: formData.phone,
+                        phone: `${formData.countryCode} ${formData.phone}`,
                         bookingDate: formData.bookingDate,
                         timeSlot: formData.timeSlot
                     })
@@ -105,7 +107,7 @@ const BookingModal = ({ isOpen, onClose }) => {
 
             // Reset form after 3 seconds and close modal
             setTimeout(() => {
-                setFormData({ name: '', email: '', phone: '', bookingDate: '', timeSlot: '' });
+                setFormData({ name: '', email: '', phone: '', countryCode: '+91', bookingDate: '', timeSlot: '' });
                 setIsSuccess(false);
                 onClose();
             }, 3000);
@@ -230,18 +232,38 @@ const BookingModal = ({ isOpen, onClose }) => {
                                                     <Phone className="w-4 h-4 inline-block mr-2" />
                                                     Phone Number
                                                 </label>
-                                                <input
-                                                    type="tel"
-                                                    name="phone"
-                                                    value={formData.phone}
-                                                    onChange={handleInputChange}
-                                                    placeholder="+91 98765 43210"
-                                                    className="w-full px-4 py-3 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400/50 transition-all"
-                                                    style={{
-                                                        background: 'rgba(255, 255, 255, 0.05)',
-                                                        border: '1px solid rgba(255, 255, 255, 0.1)'
-                                                    }}
-                                                />
+                                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                                    <select
+                                                        name="countryCode"
+                                                        value={formData.countryCode}
+                                                        onChange={handleInputChange}
+                                                        disabled={isSubmitting}
+                                                        className="sm:col-span-1 px-3 py-3 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-green-400/50 transition-all text-sm"
+                                                        style={{
+                                                            background: 'rgba(255, 255, 255, 0.05)',
+                                                            border: '1px solid rgba(255, 255, 255, 0.1)',
+                                                            color: 'rgba(255, 255, 255, 0.7)'
+                                                        }}
+                                                    >
+                                                        {countries.map((c, idx) => (
+                                                            <option key={`${c.name}-${c.code}-${idx}`} value={c.code} style={{ background: '#1a1a2e', color: 'white' }}>
+                                                                {c.name} ({c.code})
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                    <input
+                                                        type="tel"
+                                                        name="phone"
+                                                        value={formData.phone}
+                                                        onChange={handleInputChange}
+                                                        placeholder="+91 98765 43210"
+                                                        className="sm:col-span-2 px-4 py-3 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400/50 transition-all text-sm"
+                                                        style={{
+                                                            background: 'rgba(255, 255, 255, 0.05)',
+                                                            border: '1px solid rgba(255, 255, 255, 0.1)'
+                                                        }}
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
 

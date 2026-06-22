@@ -5,6 +5,7 @@ import Canonical from '../components/SEO/Canonical';
 import { db } from '../firebaseConfig';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { ChevronDown, Send, CheckCircle, AlertCircle, HelpCircle } from 'lucide-react';
+import { countries } from '../lib/countries';
 
 const WhiteLabelMarketing = () => {
   // Hero Form State
@@ -14,6 +15,7 @@ const WhiteLabelMarketing = () => {
     agencyName: '',
     website: '',
     phoneNumber: '',
+    countryCode: '+91',
     clientCount: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,6 +29,7 @@ const WhiteLabelMarketing = () => {
     agencyName: '',
     website: '',
     phoneNumber: '',
+    countryCode: '+91',
     clientCount: ''
   });
   const [bottomSubmitting, setBottomSubmitting] = useState(false);
@@ -43,6 +46,7 @@ const WhiteLabelMarketing = () => {
     try {
       await addDoc(collection(db, 'contacts'), {
         ...formData,
+        phoneNumber: `${formData.countryCode} ${formData.phoneNumber}`,
         sourcePage: 'White Label Marketing',
         formType: 'Hero Partnership Request',
         status: 'new',
@@ -55,6 +59,7 @@ const WhiteLabelMarketing = () => {
         agencyName: '',
         website: '',
         phoneNumber: '',
+        countryCode: '+91',
         clientCount: ''
       });
     } catch (err) {
@@ -72,6 +77,7 @@ const WhiteLabelMarketing = () => {
     try {
       await addDoc(collection(db, 'contacts'), {
         ...bottomData,
+        phoneNumber: `${bottomData.countryCode} ${bottomData.phoneNumber}`,
         sourcePage: 'White Label Marketing',
         formType: 'Bottom Partnership Request',
         status: 'new',
@@ -84,6 +90,7 @@ const WhiteLabelMarketing = () => {
         agencyName: '',
         website: '',
         phoneNumber: '',
+        countryCode: '+91',
         clientCount: ''
       });
     } catch (err) {
@@ -362,14 +369,27 @@ const WhiteLabelMarketing = () => {
                           onChange={(e) => setFormData({ ...formData, website: e.target.value })}
                           required
                         />
-                        <input
-                          type="tel"
-                          placeholder="Phone Number"
-                          className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 font-light text-sm"
-                          value={formData.phoneNumber}
-                          onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
-                          required
-                        />
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                          <select
+                            value={formData.countryCode}
+                            onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
+                            className="sm:col-span-1 bg-slate-900 border border-white/10 text-white/70 px-3 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all font-light text-sm text-left"
+                          >
+                            {countries.map((c, idx) => (
+                              <option key={`hero-${c.name}-${c.code}-${idx}`} value={c.code}>
+                                {c.name} ({c.code})
+                              </option>
+                            ))}
+                          </select>
+                          <input
+                            type="tel"
+                            placeholder="Phone Number"
+                            className="sm:col-span-2 bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 font-light text-sm"
+                            value={formData.phoneNumber}
+                            onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
+                            required
+                          />
+                        </div>
                         <select
                           className="w-full bg-slate-900 border border-white/10 text-white/70 px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all font-light text-sm"
                           value={formData.clientCount}
@@ -660,14 +680,27 @@ const WhiteLabelMarketing = () => {
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input
-                      type="tel"
-                      placeholder="Phone Number"
-                      className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 font-light text-sm"
-                      value={bottomData.phoneNumber}
-                      onChange={(e) => setBottomData({ ...bottomData, phoneNumber: e.target.value })}
-                      required
-                    />
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      <select
+                        value={bottomData.countryCode}
+                        onChange={(e) => setBottomData({ ...bottomData, countryCode: e.target.value })}
+                        className="sm:col-span-1 bg-slate-900 border border-white/10 text-white/70 px-3 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all font-light text-sm text-left"
+                      >
+                        {countries.map((c, idx) => (
+                          <option key={`bottom-${c.name}-${c.code}-${idx}`} value={c.code}>
+                            {c.name} ({c.code})
+                          </option>
+                        ))}
+                      </select>
+                      <input
+                        type="tel"
+                        placeholder="Phone Number"
+                        className="sm:col-span-2 bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 font-light text-sm"
+                        value={bottomData.phoneNumber}
+                        onChange={(e) => setBottomData({ ...bottomData, phoneNumber: e.target.value })}
+                        required
+                      />
+                    </div>
                     <select
                       className="w-full bg-slate-900 border border-white/10 text-white/70 px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all font-light text-sm"
                       value={bottomData.clientCount}

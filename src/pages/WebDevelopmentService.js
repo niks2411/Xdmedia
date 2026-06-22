@@ -5,6 +5,7 @@ import Canonical from '../components/SEO/Canonical';
 import { db } from '../firebaseConfig';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { MarqueeDemo } from '../components/MarqueeDemo';
+import { countries } from '../lib/countries';
 
 // Projects Showcase State (Moved outside component to prevent recreating on every render)
 const projects = [
@@ -48,6 +49,7 @@ const WebDevelopmentService = () => {
     companyName: '',
     website: '',
     phoneNumber: '',
+    countryCode: '+91',
     budgetRange: ''
   });
   const [heroSubmitting, setHeroSubmitting] = useState(false);
@@ -60,6 +62,7 @@ const WebDevelopmentService = () => {
     companyName: '',
     website: '',
     phoneNumber: '',
+    countryCode: '+91',
     budgetRange: ''
   });
   const [bottomSubmitting, setBottomSubmitting] = useState(false);
@@ -114,6 +117,7 @@ const WebDevelopmentService = () => {
     try {
       await addDoc(collection(db, 'contacts'), {
         ...heroData,
+        phoneNumber: `${heroData.countryCode} ${heroData.phoneNumber}`,
         sourcePage: 'Web Development Service',
         formType: 'Hero Quote Request',
         status: 'new',
@@ -126,6 +130,7 @@ const WebDevelopmentService = () => {
         companyName: '',
         website: '',
         phoneNumber: '',
+        countryCode: '+91',
         budgetRange: ''
       });
     } catch (error) {
@@ -142,6 +147,7 @@ const WebDevelopmentService = () => {
     try {
       await addDoc(collection(db, 'contacts'), {
         ...bottomData,
+        phoneNumber: `${bottomData.countryCode} ${bottomData.phoneNumber}`,
         sourcePage: 'Web Development Service',
         formType: 'Bottom Proposal Request',
         status: 'new',
@@ -154,6 +160,7 @@ const WebDevelopmentService = () => {
         companyName: '',
         website: '',
         phoneNumber: '',
+        countryCode: '+91',
         budgetRange: ''
       });
     } catch (error) {
@@ -342,11 +349,10 @@ const WebDevelopmentService = () => {
                           />
                           <input
                             type="text"
-                            placeholder="Company Name"
+                            placeholder="Company Name (optional)"
                             className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
                             value={heroData.companyName}
                             onChange={(e) => setHeroData({ ...heroData, companyName: e.target.value })}
-                            required
                           />
                           <input
                             type="url"
@@ -356,27 +362,31 @@ const WebDevelopmentService = () => {
                             onChange={(e) => setHeroData({ ...heroData, website: e.target.value })}
                           />
                           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <select className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm">
-                              <option>India (+91)</option>
-                              <option>US (+1)</option>
-                              <option>UK (+44)</option>
+                            <select
+                              value={heroData.countryCode}
+                              onChange={(e) => setHeroData({ ...heroData, countryCode: e.target.value })}
+                              className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm"
+                            >
+                              {countries.map((c, idx) => (
+                                <option key={`hero-${c.name}-${c.code}-${idx}`} value={c.code}>
+                                  {c.name} ({c.code})
+                                </option>
+                              ))}
                             </select>
                             <input
                               type="tel"
-                              placeholder="Phone Number"
+                              placeholder="Phone Number (optional)"
                               className="sm:col-span-2 bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
                               value={heroData.phoneNumber}
                               onChange={(e) => setHeroData({ ...heroData, phoneNumber: e.target.value })}
-                              required
                             />
                           </div>
                           <select
                             className="w-full bg-slate-50 border border-slate-200 text-slate-600 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm"
                             value={heroData.budgetRange}
                             onChange={(e) => setHeroData({ ...heroData, budgetRange: e.target.value })}
-                            required
                           >
-                            <option value="" disabled>Project Budget Range</option>
+                            <option value="" disabled>Project Budget Range (optional)</option>
                             <option value="50k-1l">₹50,000 to ₹1 Lakh</option>
                             <option value="1l-2.5l">₹1 Lakh to ₹2.5 Lakh</option>
                             <option value="2.5l-5l">₹2.5 Lakh to ₹5 Lakh</option>
@@ -1088,11 +1098,10 @@ const WebDevelopmentService = () => {
                       />
                       <input
                         type="text"
-                        placeholder="Company Name"
+                        placeholder="Company Name (optional)"
                         className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
                         value={bottomData.companyName}
                         onChange={(e) => setBottomData({ ...bottomData, companyName: e.target.value })}
-                        required
                       />
                       <input
                         type="url"
@@ -1102,27 +1111,31 @@ const WebDevelopmentService = () => {
                         onChange={(e) => setBottomData({ ...bottomData, website: e.target.value })}
                       />
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <select className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm">
-                          <option>India (+91)</option>
-                          <option>US (+1)</option>
-                          <option>UK (+44)</option>
+                        <select
+                          value={bottomData.countryCode}
+                          onChange={(e) => setBottomData({ ...bottomData, countryCode: e.target.value })}
+                          className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm"
+                        >
+                          {countries.map((c, idx) => (
+                            <option key={`bottom-${c.name}-${c.code}-${idx}`} value={c.code}>
+                              {c.name} ({c.code})
+                            </option>
+                          ))}
                         </select>
                         <input
                           type="tel"
-                          placeholder="Phone Number"
+                          placeholder="Phone Number (optional)"
                           className="sm:col-span-2 bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
                           value={bottomData.phoneNumber}
                           onChange={(e) => setBottomData({ ...bottomData, phoneNumber: e.target.value })}
-                          required
                         />
                       </div>
                       <select
                         className="w-full bg-slate-50 border border-slate-200 text-slate-600 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm"
                         value={bottomData.budgetRange}
                         onChange={(e) => setBottomData({ ...bottomData, budgetRange: e.target.value })}
-                        required
                       >
-                        <option value="" disabled>Project Budget Range</option>
+                        <option value="" disabled>Project Budget Range (optional)</option>
                         <option value="50k-1l">₹50,000 to ₹1 Lakh</option>
                         <option value="1l-2.5l">₹1 Lakh to ₹2.5 Lakh</option>
                         <option value="2.5l-5l">₹2.5 Lakh to ₹5 Lakh</option>

@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { db } from '../firebaseConfig';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { countries } from '../lib/countries';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,6 +20,7 @@ const Contact = () => {
     email: '',
     company: '',
     phone: '',
+    countryCode: '+91',
     service: '',
     message: ''
   });
@@ -57,7 +59,7 @@ const Contact = () => {
             name: formData.name,
             email: formData.email,
             company: formData.company,
-            phone: formData.phone,
+            phone: `${formData.countryCode} ${formData.phone}`,
             service: formData.service,
             message: formData.message
           })
@@ -75,6 +77,7 @@ const Contact = () => {
           email: '',
           company: '',
           phone: '',
+          countryCode: '+91',
           service: '',
           message: ''
         });
@@ -302,33 +305,54 @@ const Contact = () => {
                         <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
                           Phone Number
                         </label>
-                        <input
-                          type="tel"
-                          id="phone"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          disabled={isSubmitting}
-                          className="w-full px-4 py-3 rounded-lg transition-all duration-300 outline-none disabled:opacity-50"
-                          style={{
-                            background: 'rgba(255, 255, 255, 0.05)',
-                            border: '1px solid rgba(255, 255, 255, 0.1)',
-                            color: 'white'
-                          }}
-                          placeholder="+1 (555) 123-4567"
-                        />
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                          <select
+                            name="countryCode"
+                            value={formData.countryCode}
+                            onChange={handleInputChange}
+                            disabled={isSubmitting}
+                            className="sm:col-span-1 px-3 py-3 rounded-lg transition-all duration-300 outline-none disabled:opacity-50"
+                            style={{
+                              background: 'rgba(255, 255, 255, 0.05)',
+                              border: '1px solid rgba(255, 255, 255, 0.1)',
+                              color: 'rgba(255, 255, 255, 0.7)'
+                            }}
+                          >
+                            {countries.map((c, idx) => (
+                              <option key={`${c.name}-${c.code}-${idx}`} value={c.code} style={{ background: '#1a1a2e', color: 'white' }}>
+                                {c.name} ({c.code})
+                              </option>
+                            ))}
+                          </select>
+                          <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleInputChange}
+                            disabled={isSubmitting}
+                            className="sm:col-span-2 px-4 py-3 rounded-lg transition-all duration-300 outline-none disabled:opacity-50"
+                            style={{
+                              background: 'rgba(255, 255, 255, 0.05)',
+                              border: '1px solid rgba(255, 255, 255, 0.1)',
+                              color: 'white'
+                            }}
+                            placeholder="9999XXXXXX"
+                          />
+                        </div>
                       </div>
                     </div>
 
                     <div>
                       <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">
-                        Service Interested In
+                        Service Interested In *
                       </label>
                       <select
                         id="service"
                         name="service"
                         value={formData.service}
                         onChange={handleInputChange}
+                        required
                         disabled={isSubmitting}
                         className="w-full px-4 py-3 rounded-lg transition-all duration-300 outline-none disabled:opacity-50"
                         style={{
@@ -346,14 +370,13 @@ const Contact = () => {
 
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                        Message *
+                        Message
                       </label>
                       <textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
-                        required
                         disabled={isSubmitting}
                         rows={6}
                         className="w-full px-4 py-3 rounded-lg transition-all duration-300 resize-none outline-none disabled:opacity-50"

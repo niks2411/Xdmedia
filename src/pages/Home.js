@@ -15,6 +15,7 @@ import BookingModal from '../components/BookingModal';
 import { TrendingUp, Target, Zap, ShieldCheck, Search, Code, BarChart3, Users, Settings, Globe, ArrowRight, Layers, Play, RefreshCw, BarChart, Activity, ShoppingBag, Building2, Rocket, Briefcase, User, CheckCircle, AlertCircle, Send } from 'lucide-react';
 import { db } from '../firebaseConfig';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { countries } from '../lib/countries';
 
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
     name: '',
     email: '',
     phone: '',
+    countryCode: '+91',
     service: '',
     message: ''
   });
@@ -103,7 +105,7 @@ const Home = () => {
           body: JSON.stringify({
             name: formData.name,
             email: formData.email,
-            phone: formData.phone,
+            phone: `${formData.countryCode} ${formData.phone}`,
             service: formData.service,
             message: formData.message
           })
@@ -119,6 +121,7 @@ const Home = () => {
           name: '',
           email: '',
           phone: '',
+          countryCode: '+91',
           service: '',
           message: ''
         });
@@ -296,16 +299,28 @@ const Home = () => {
                         />
                       </div>
 
-                      <div>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <select
+                          name="countryCode"
+                          value={formData.countryCode}
+                          onChange={handleInputChange}
+                          disabled={isSubmitting}
+                          className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#47BF72] focus:bg-white outline-none transition-all font-light text-sm"
+                        >
+                          {countries.map((c, idx) => (
+                            <option key={`${c.name}-${c.code}-${idx}`} value={c.code}>
+                              {c.name} ({c.code})
+                            </option>
+                          ))}
+                        </select>
                         <input
                           type="tel"
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          required
                           disabled={isSubmitting}
-                          placeholder="Phone Number"
-                          className="w-full px-4 py-3.5 rounded-xl transition-all duration-300 outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
+                          placeholder="Phone Number (optional)"
+                          className="sm:col-span-2 px-4 py-3.5 rounded-xl transition-all duration-300 outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
                         />
                       </div>
 
