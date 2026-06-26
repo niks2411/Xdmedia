@@ -19,6 +19,7 @@ import ChatGPTListing from './pages/ChatGPTListing';
 import GMBOptimization from './pages/GMBOptimization';
 import AIAutomationTools from './pages/AIAutomationTools';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import BookSlot from './pages/BookSlot';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
             <Route path="/gmb-optimization" element={<GMBOptimization />} />
             <Route path="/ai-automation-tools" element={<AIAutomationTools />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/book-a-slot" element={<BookSlot />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

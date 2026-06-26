@@ -185,13 +185,13 @@ const Navbar = () => {
             </div>
 
             <div className="hidden lg:flex items-center gap-3">
-              <button
-                onClick={() => setIsBookingModalOpen(true)}
+              <Link
+                to="/book-a-slot"
                 className="flex items-center gap-2 text-white px-4 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 border border-green-500 hover:bg-green-500/20 rounded"
               >
                 <Calendar className="w-4 h-4" />
                 Book a Slot
-              </button>
+              </Link>
               <Link
                 to="/contact"
                 className="text-white px-6 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg"
@@ -209,13 +209,14 @@ const Navbar = () => {
 
             {/* Mobile Menu Button & Action */}
             <div className="lg:hidden flex items-center gap-3">
-              <button
-                onClick={() => setIsBookingModalOpen(true)}
+              <Link
+                to="/book-a-slot"
                 className="flex items-center gap-2 text-white px-3 py-2 text-[10px] font-medium uppercase tracking-wider border border-green-500 rounded hover:bg-green-500/10 transition-colors whitespace-nowrap"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Calendar className="w-3.5 h-3.5" />
                 Book a Slot
-              </button>
+              </Link>
               <button
                 className="p-1.5 rounded-lg hover:bg-green-700 transition-colors"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -318,16 +319,14 @@ const Navbar = () => {
                   </div>
                 ))}
                 <div className="pt-4 space-y-3">
-                  <button
-                    onClick={() => {
-                      setIsBookingModalOpen(true);
-                      setIsMobileMenuOpen(false);
-                    }}
+                  <Link
+                    to="/book-a-slot"
                     className="w-full flex items-center justify-center gap-2 text-white px-4 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 border border-green-500 hover:bg-green-500/20 rounded"
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <Calendar className="w-4 h-4" />
                     Book a Slot
-                  </button>
+                  </Link>
                   <Link
                     to="/contact"
                     className="w-full flex items-center justify-center text-white px-6 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg"
