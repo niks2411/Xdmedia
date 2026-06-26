@@ -23,6 +23,7 @@ const Layout = ({ children }) => {
     '/list-your-business-on-chatgpt',
     '/gmb-optimization',
     '/ai-automation-tools',
+    '/book-a-slot',
     '/privacy-policy'
   ];
 
