@@ -77,8 +77,11 @@ export function formatRow(type, data) {
     
     if (type === "contact") {
         const name = data.name || "";
-        const email = data.email || "";
-        const phone = data.phone || data.phoneNumber || "";
+        let phone = data.phone || data.phoneNumber || "";
+        // Escape phone numbers starting with '+' to prevent Google Sheets from parsing them as formulas
+        if (phone.startsWith("+")) {
+            phone = `'${phone}`;
+        }
         const company = data.company || data.companyName || data.agencyName || "";
         const service = data.service || "";
         
