@@ -77,6 +77,7 @@ export function formatRow(type, data) {
     
     if (type === "contact") {
         const name = data.name || "";
+        const email = data.email || "";
         let phone = data.phone || data.phoneNumber || "";
         // Escape phone numbers starting with '+' to prevent Google Sheets from parsing them as formulas
         if (phone.startsWith("+")) {
