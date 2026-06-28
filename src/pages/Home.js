@@ -13,8 +13,6 @@ import ProcessWorkflow from '../components/ProcessWorkflow';
 import CredibilityBacking from '../components/CredibilityBacking';
 import BookingModal from '../components/BookingModal';
 import { TrendingUp, Target, Zap, ShieldCheck, Search, Code, BarChart3, Users, Settings, Globe, ArrowRight, Layers, Play, RefreshCw, BarChart, Activity, ShoppingBag, Building2, Rocket, Briefcase, User, CheckCircle, AlertCircle, Send } from 'lucide-react';
-import { db } from '../firebaseConfig';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { countries } from '../lib/countries';
 
 
@@ -91,27 +89,22 @@ const Home = () => {
     setError(null);
 
     try {
-      await addDoc(collection(db, 'contacts'), {
-        ...formData,
-        timestamp: serverTimestamp(),
-        status: 'new',
-        sourcePage: 'Home Page Hero'
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: `${formData.countryCode} ${formData.phone}`,
+          service: formData.service,
+          message: formData.message,
+          sourcePage: 'Home Page Hero',
+          formType: 'General Inquiry'
+        })
       });
 
-      try {
-        await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            phone: `${formData.countryCode} ${formData.phone}`,
-            service: formData.service,
-            message: formData.message
-          })
-        });
-      } catch (emailErr) {
-        console.error('Email notification failed:', emailErr);
+      if (!response.ok) {
+        throw new Error('Failed to submit contact details to backend');
       }
 
       setIsSubmitted(true);

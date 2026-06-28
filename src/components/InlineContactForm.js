@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle, AlertCircle, Mail, User, Building2, Phone, MessageSquare } from 'lucide-react';
-import { db } from '../firebaseConfig';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { countries } from '../lib/countries';
 
 const InlineContactForm = ({ servicePage, defaultService }) => {
@@ -32,14 +30,24 @@ const InlineContactForm = ({ servicePage, defaultService }) => {
         setError(null);
 
         try {
-            await addDoc(collection(db, 'contacts'), {
-                ...formData,
-                phone: `${formData.countryCode} ${formData.phone}`,
-                service: defaultService,
-                sourcePage: servicePage,
-                timestamp: serverTimestamp(),
-                status: 'new'
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    company: formData.company,
+                    phone: `${formData.countryCode} ${formData.phone}`,
+                    service: defaultService,
+                    message: formData.message,
+                    sourcePage: servicePage,
+                    formType: 'Inline Service Lead'
+                })
             });
+
+            if (!response.ok) {
+                throw new Error('Failed to submit contact details');
+            }
 
             setIsSubmitted(true);
             setTimeout(() => {

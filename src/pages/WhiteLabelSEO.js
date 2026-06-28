@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import Canonical from '../components/SEO/Canonical';
-import { db } from '../firebaseConfig';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { ChevronDown, Send, CheckCircle, AlertCircle, HelpCircle } from 'lucide-react';
 import { countries } from '../lib/countries';
 
@@ -44,14 +42,25 @@ const WhiteLabelSEO = () => {
     setIsSubmitting(true);
     setError(null);
     try {
-      await addDoc(collection(db, 'contacts'), {
-        ...formData,
-        phoneNumber: `${formData.countryCode} ${formData.phoneNumber}`,
-        sourcePage: 'White Label SEO',
-        formType: 'Hero Partnership Request',
-        status: 'new',
-        timestamp: serverTimestamp()
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          agencyName: formData.agencyName,
+          website: formData.website,
+          phoneNumber: `${formData.countryCode} ${formData.phoneNumber}`,
+          clientCount: formData.clientCount,
+          sourcePage: 'White Label SEO',
+          formType: 'Hero Partnership Request'
+        })
       });
+
+      if (!response.ok) {
+        throw new Error('Hero Partnership Request submission failed');
+      }
+
       setIsSubmitted(true);
       setFormData({
         name: '',
@@ -75,14 +84,25 @@ const WhiteLabelSEO = () => {
     setBottomSubmitting(true);
     setBottomError(null);
     try {
-      await addDoc(collection(db, 'contacts'), {
-        ...bottomData,
-        phoneNumber: `${bottomData.countryCode} ${bottomData.phoneNumber}`,
-        sourcePage: 'White Label SEO',
-        formType: 'Bottom Partnership Request',
-        status: 'new',
-        timestamp: serverTimestamp()
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: bottomData.name,
+          email: bottomData.email,
+          agencyName: bottomData.agencyName,
+          website: bottomData.website,
+          phoneNumber: `${bottomData.countryCode} ${bottomData.phoneNumber}`,
+          clientCount: bottomData.clientCount,
+          sourcePage: 'White Label SEO',
+          formType: 'Bottom Partnership Request'
+        })
       });
+
+      if (!response.ok) {
+        throw new Error('Bottom Partnership Request submission failed');
+      }
+
       setBottomSubmitted(true);
       setBottomData({
         name: '',

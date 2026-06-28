@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import Canonical from '../components/SEO/Canonical';
-import { db } from '../firebaseConfig';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { countries } from '../lib/countries';
 import { MarqueeDemo } from '../components/MarqueeDemo';
 import { TrendingUp } from 'lucide-react';
@@ -64,14 +62,25 @@ const SEOService = () => {
     e.preventDefault();
     setHeroSubmitting(true);
     try {
-      await addDoc(collection(db, 'contacts'), {
-        ...heroData,
-        phoneNumber: `${heroData.countryCode} ${heroData.phoneNumber}`,
-        sourcePage: 'SEO Service',
-        formType: 'Hero Audit Request',
-        status: 'new',
-        timestamp: serverTimestamp()
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: heroData.name,
+          email: heroData.email,
+          companyName: heroData.companyName,
+          website: heroData.website,
+          phoneNumber: `${heroData.countryCode} ${heroData.phoneNumber}`,
+          budgetRange: heroData.budgetRange,
+          sourcePage: 'SEO Service',
+          formType: 'Hero Audit Request'
+        })
       });
+
+      if (!response.ok) {
+        throw new Error('Hero Audit Request submission failed');
+      }
+
       setHeroSubmitted(true);
       setHeroData({
         name: '',
@@ -94,14 +103,25 @@ const SEOService = () => {
     e.preventDefault();
     setBottomSubmitting(true);
     try {
-      await addDoc(collection(db, 'contacts'), {
-        ...bottomData,
-        phoneNumber: `${bottomData.countryCode} ${bottomData.phoneNumber}`,
-        sourcePage: 'SEO Service',
-        formType: 'Bottom Audit',
-        status: 'new',
-        timestamp: serverTimestamp()
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: bottomData.name,
+          email: bottomData.email,
+          companyName: bottomData.companyName,
+          website: bottomData.website,
+          phoneNumber: `${bottomData.countryCode} ${bottomData.phoneNumber}`,
+          budgetRange: bottomData.budgetRange,
+          sourcePage: 'SEO Service',
+          formType: 'Bottom Audit'
+        })
       });
+
+      if (!response.ok) {
+        throw new Error('Bottom Audit submission failed');
+      }
+
       setBottomSubmitted(true);
       setBottomData({
         name: '',

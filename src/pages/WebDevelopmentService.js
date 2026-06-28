@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import Canonical from '../components/SEO/Canonical';
-import { db } from '../firebaseConfig';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { MarqueeDemo } from '../components/MarqueeDemo';
 import { countries } from '../lib/countries';
 
@@ -115,14 +113,25 @@ const WebDevelopmentService = () => {
     e.preventDefault();
     setHeroSubmitting(true);
     try {
-      await addDoc(collection(db, 'contacts'), {
-        ...heroData,
-        phoneNumber: `${heroData.countryCode} ${heroData.phoneNumber}`,
-        sourcePage: 'Web Development Service',
-        formType: 'Hero Quote Request',
-        status: 'new',
-        timestamp: serverTimestamp()
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: heroData.name,
+          email: heroData.email,
+          companyName: heroData.companyName,
+          website: heroData.website,
+          phoneNumber: `${heroData.countryCode} ${heroData.phoneNumber}`,
+          budgetRange: heroData.budgetRange,
+          sourcePage: 'Web Development Service',
+          formType: 'Hero Quote Request'
+        })
       });
+
+      if (!response.ok) {
+        throw new Error('Hero Quote Request submission failed');
+      }
+
       setHeroSubmitted(true);
       setHeroData({
         name: '',
@@ -145,14 +154,25 @@ const WebDevelopmentService = () => {
     e.preventDefault();
     setBottomSubmitting(true);
     try {
-      await addDoc(collection(db, 'contacts'), {
-        ...bottomData,
-        phoneNumber: `${bottomData.countryCode} ${bottomData.phoneNumber}`,
-        sourcePage: 'Web Development Service',
-        formType: 'Bottom Proposal Request',
-        status: 'new',
-        timestamp: serverTimestamp()
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: bottomData.name,
+          email: bottomData.email,
+          companyName: bottomData.companyName,
+          website: bottomData.website,
+          phoneNumber: `${bottomData.countryCode} ${bottomData.phoneNumber}`,
+          budgetRange: bottomData.budgetRange,
+          sourcePage: 'Web Development Service',
+          formType: 'Bottom Proposal Request'
+        })
       });
+
+      if (!response.ok) {
+        throw new Error('Bottom Proposal Request submission failed');
+      }
+
       setBottomSubmitted(true);
       setBottomData({
         name: '',

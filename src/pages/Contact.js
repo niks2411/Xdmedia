@@ -10,8 +10,6 @@ import {
   ArrowRight,
   AlertCircle
 } from 'lucide-react';
-import { db } from '../firebaseConfig';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { countries } from '../lib/countries';
 
 const Contact = () => {
@@ -42,31 +40,24 @@ const Contact = () => {
     setError(null);
 
     try {
-      // Add document to Firestore
-      await addDoc(collection(db, 'contacts'), {
-        ...formData,
-        timestamp: serverTimestamp(),
-        status: 'new',
-        sourcePage: 'Contact Page'
+      // Send contact details to backend API (which handles Firebase and Google Sheets sync)
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          phone: `${formData.countryCode} ${formData.phone}`,
+          service: formData.service,
+          message: formData.message,
+          sourcePage: 'Contact Page',
+          formType: 'General Contact'
+        })
       });
 
-      // Send email notification via API
-      try {
-        await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            company: formData.company,
-            phone: `${formData.countryCode} ${formData.phone}`,
-            service: formData.service,
-            message: formData.message
-          })
-        });
-      } catch (emailErr) {
-        console.error('Email notification failed:', emailErr);
-        // Don't fail the submission if email fails
+      if (!response.ok) {
+        throw new Error('Failed to submit contact details to backend');
       }
 
       setIsSubmitted(true);
