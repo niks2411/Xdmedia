@@ -5,9 +5,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'sans': ['DM Sans', 'Inter', 'system-ui', 'sans-serif'],
         'fraunces': ['Fraunces', 'serif'],
-        'inter': ['Inter', 'sans-serif'],
+        'inter': ['DM Sans', 'sans-serif'],
+        'dmsans': ['DM Sans', 'sans-serif'],
       },
       colors: {
         primary: {

@@ -288,7 +288,7 @@ const WebDevelopmentService = () => {
                 transition={{ duration: 0.8 }}
                 className="text-white space-y-6 sm:space-y-10"
               >
-                <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl font-light text-white leading-[1.1] tracking-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl text-white leading-[1.1] tracking-tight">
                   India's Most Trusted, Web Development Company Offering <br className="hidden lg:block" />
                   <span className="font-fraunces italic text-[#16a34a]">High-Performance</span> Digital Solutions
                 </h1>

@@ -162,7 +162,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.2 }}
-                className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-white leading-[1.1] tracking-tight mb-6 sm:mb-8"
+                className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl text-white leading-[1.1] tracking-tight mb-6 sm:mb-8"
               >
                 1 SEO Strategy = <br className="hidden lg:block" />
                 <span className="font-fraunces italic text-[#16a34a]">3X Your Organic Traffic</span>

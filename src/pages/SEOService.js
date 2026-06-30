@@ -292,7 +292,7 @@ const SEOService = () => {
                 transition={{ duration: 0.8 }}
                 className="text-white space-y-6 sm:space-y-10"
               >
-                <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-white leading-[1.1] tracking-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl text-white leading-[1.1] tracking-tight">
                   <span className="sm:whitespace-nowrap">AI-Powered SEO Solutions</span> <br className="hidden lg:block" />
                   Built for <span className="font-fraunces italic text-[#16a34a]">Long-Term Rankings</span> & Revenue Growth
                 </h1>

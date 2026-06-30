@@ -109,7 +109,7 @@ const PrivacyPolicy = () => {
             <ArrowLeft className="w-3.5 h-3.5" /> Back to Home
           </Link>
           
-          <h1 className="text-3xl sm:text-4xl font-light text-white mb-2 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl text-white mb-2 tracking-tight">
             Privacy <span className="font-fraunces italic text-[#47BF72]">Notice</span>
           </h1>
           <p className="text-xs text-gray-400 font-light">

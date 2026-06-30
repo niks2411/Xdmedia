@@ -296,7 +296,7 @@ const WhiteLabelMarketing = () => {
                   </span>
                   White Label Marketing Partnership
                 </div>
-                <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-white leading-[1.1] tracking-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl text-white leading-[1.1] tracking-tight">
                   Your Complete Backend <br />
                   <span className="font-fraunces italic text-[#47BF72]">Digital Marketing Team</span>
                 </h1>

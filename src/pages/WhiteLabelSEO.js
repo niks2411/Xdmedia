@@ -262,7 +262,7 @@ const WhiteLabelSEO = () => {
                   </span>
                   White Label Agency Partnership
                 </div>
-                <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-white leading-[1.1] tracking-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl text-white leading-[1.1] tracking-tight">
                   Premium SEO Services <br />
                   <span className="font-fraunces italic text-[#47BF72]">Under Your Brand Name</span>
                 </h1>
