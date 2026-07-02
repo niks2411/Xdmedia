@@ -215,20 +215,9 @@ const BookSlot = () => {
                 Free 30-Min Strategy Call
               </span>
               <h1 className="text-2xl sm:text-3xl text-white tracking-tight leading-tight">
-                Book Your Free{' '}
-                <span
-                  className="font-fraunces italic"
-                  style={{
-                    background: 'linear-gradient(135deg, #ffffff 0%, #47BF72 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                >
-                  Consultation
-                </span>
+                Book Your Free Strategy Session
               </h1>
-              <p className="text-gray-500 text-sm mt-1 font-light">
+              <p className="text-gray-500 text-sm mt-1">
                 No fluff, no pressure — just a focused conversation on growing your brand.
               </p>
             </div>

@@ -21,6 +21,8 @@ import AIAutomationTools from './pages/AIAutomationTools';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import BookSlot from './pages/BookSlot';
 import NotFound from './pages/NotFound';
+import BlogIndex from './pages/BlogIndex';
+import BlogDetail from './pages/BlogDetail';
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/blog" element={<BlogIndex />} />
+            <Route path="/blog/:slug" element={<BlogDetail />} />
             <Route path="/website-design" element={<MarketingTools />} />
             <Route path="/performance-marketing" element={<Analytics />} />
             <Route path="/white-label-seo" element={<WhiteLabelSEO />} />

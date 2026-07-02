@@ -98,16 +98,11 @@ const MarketingTools = () => {
                 Core Expertise ⭐
               </motion.div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-4 sm:mb-6 tracking-tight">
-                <span className="text-white font-inter font-normal block mb-2">
-                  Website Design & Development
-                </span>
-                <span className="text-white font-fraunces italic font-light">
-                  Designed to Convert.
-                </span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 sm:mb-6 tracking-tight">
+                Website Design & Development <br className="hidden sm:block" /> Designed to Convert.
               </h1>
 
-              <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-inter font-light mb-6 sm:mb-8">
+              <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-inter mb-6 sm:mb-8">
                 High-performance websites built for speed, scale, and conversions. We design and develop websites that don't just look good — they perform. SEO-first, mobile-first, and conversion-focused.
               </p>
 
@@ -270,7 +265,7 @@ const MarketingTools = () => {
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
               Complete Web Design Services
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light">
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               From design to development, we create websites that perform
             </p>
           </motion.div>
@@ -293,7 +288,7 @@ const MarketingTools = () => {
                   <h3 className="text-2xl font-bold text-white mb-4 font-inter">
                     {service.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed mb-6 font-light">
+                  <p className="text-gray-400 leading-relaxed mb-6">
                     {service.description}
                   </p>
                   <ul className="space-y-3">

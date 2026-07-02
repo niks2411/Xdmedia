@@ -50,16 +50,11 @@ const AboutUs = () => {
               About XD MEDIA
             </motion.div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl leading-tight mb-8 tracking-tight">
-              <span className="text-white font-inter font-normal block mb-2">
-                Creating Buzz.
-              </span>
-              <span className="text-white font-fraunces italic font-light">
-                Building Brands.
-              </span>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl text-white leading-tight mb-8 tracking-tight">
+              Creating Buzz. <br className="hidden sm:block" /> Building Brands.
             </h1>
 
-            <p className="text-xl text-gray-300 leading-relaxed font-inter font-light max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 leading-relaxed font-inter max-w-3xl mx-auto">
               A full-stack marketing, branding & technology agency backed by proven industry leaders.
               We deliver end-to-end solutions that drive real, measurable growth.
             </p>
@@ -167,7 +162,7 @@ const AboutUs = () => {
                   <h3 className="text-4xl font-bold text-white mb-6 font-inter text-center lg:text-left">
                     Who We Are
                   </h3>
-                  <p className="text-xl text-gray-200 leading-relaxed mb-8 font-light text-center lg:text-left mx-auto lg:mx-0">
+                  <p className="text-xl text-gray-200 leading-relaxed mb-8 text-center lg:text-left mx-auto lg:mx-0">
                     Backed by established ventures with ₹35+ crore annual revenue, 112.5+ billion YouTube views delivered, and 1M+ combined subscribers. This is the powerhouse behind XD MEDIA.
                   </p>
                   <button
@@ -237,7 +232,7 @@ const AboutUs = () => {
             >
               Leadership
             </span>
-            <h2 className="text-4xl sm:text-5xl text-white mb-4 font-light">
+            <h2 className="text-4xl sm:text-5xl text-white mb-4">
               Meet the Founder
             </h2>
             <div className="w-20 h-1 mx-auto" style={{ background: '#47BF72' }}></div>
@@ -321,7 +316,7 @@ const AboutUs = () => {
                         style={{ background: '#47BF72' }}
                       ></div>
 
-                      <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed mb-8 font-light italic">
+                      <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed mb-8 italic">
                         "I build brands people remember. Not the 'we also do digital marketing' kind."
                       </p>
 
@@ -403,7 +398,7 @@ const AboutUs = () => {
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
               What Our Clients Say
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light">
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Real results, real testimonials from brands we've helped grow
             </p>
             <div className="w-20 h-1 mx-auto mt-6" style={{ background: '#47BF72' }}></div>

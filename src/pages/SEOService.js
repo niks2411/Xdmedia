@@ -232,12 +232,12 @@ const SEOService = () => {
   ];
 
   return (
-    <div className="bg-white text-slate-800 font-inter selection:bg-[#4be277] selection:text-[#003915] min-h-screen">
+    <div className="bg-white text-slate-800 font-inter selection:bg-[#4be277] selection:text-[#003915] min-h-screen seo-service-page">
       <Helmet>
-        <title>Best SEO Services in India | Rank #1 on Google Fast | Free SEO Audit</title>
+        <title>Affordable SEO Services | Drive Organic Growth | XD Media</title>
         <meta
           name="description"
-          content="Increase website traffic, rankings &amp; conversions with affordable SEO services trusted by Indian brands. Free SEO audit available."
+          content="Improve your online visibility with affordable SEO services. XD Media offers keyword research, on-page SEO, technical SEO, local SEO, and link building to increase rankings, traffic, and qualified leads."
         />
       </Helmet>
       <Canonical path="/affordable-seo-services-in-india" />
@@ -294,10 +294,10 @@ const SEOService = () => {
               >
                 <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl text-white leading-[1.1] tracking-tight">
                   <span className="sm:whitespace-nowrap">AI-Powered SEO Solutions</span> <br className="hidden lg:block" />
-                  Built for <span className="font-fraunces italic text-[#16a34a]">Long-Term Rankings</span> & Revenue Growth
+                  Built for Long-Term Rankings & Revenue Growth
                 </h1>
                 <div className="space-y-4">
-                  <p className="text-xl sm:text-2xl text-slate-200 font-light leading-snug">
+                  <p className="text-xl sm:text-2xl text-slate-200 leading-snug">
                     Still Not Getting Qualified Leads from Google?
                   </p>
                   <p className="text-xl sm:text-2xl text-slate-200 font-bold leading-snug border-l-4 border-[#47BF72] pl-6">
@@ -343,13 +343,13 @@ const SEOService = () => {
                       <div className="w-20 h-20 bg-[#f0fdf4] rounded-full flex items-center justify-center mx-auto mb-6">
                         <span className="material-symbols-outlined text-[#16a34a] text-4xl">check_circle</span>
                       </div>
-                      <h3 className="text-2xl font-light text-slate-900 mb-2">Request Received!</h3>
-                      <p className="text-slate-500 mb-8 font-light">Our SEO experts will analyze your site and contact you shortly.</p>
+                      <h3 className="text-2xl text-slate-900 mb-2">Request Received!</h3>
+                      <p className="text-slate-500 mb-8">Our SEO experts will analyze your site and contact you shortly.</p>
                       <button onClick={() => setHeroSubmitted(false)} className="text-[#16a34a] font-bold hover:underline">Submit another request</button>
                     </div>
                   ) : (
                     <>
-                      <h3 className="text-xl sm:text-2xl font-light text-slate-900 mb-8 text-center leading-tight">
+                      <h3 className="text-xl sm:text-2xl text-slate-900 mb-8 text-center leading-tight">
                         Get A Free <span className="font-fraunces italic text-[#16a34a]">SEO & AI SEO</span> Audit Report
                       </h3>
 
@@ -358,7 +358,7 @@ const SEOService = () => {
                           <input
                             type="text"
                             placeholder="Enter your name"
-                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                             value={heroData.name}
                             onChange={(e) => setHeroData({ ...heroData, name: e.target.value })}
                             required
@@ -366,7 +366,7 @@ const SEOService = () => {
                           <input
                             type="email"
                             placeholder="Company Email"
-                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                             value={heroData.email}
                             onChange={(e) => setHeroData({ ...heroData, email: e.target.value })}
                             required
@@ -374,14 +374,14 @@ const SEOService = () => {
                           <input
                             type="text"
                             placeholder="Company Name (optional)"
-                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                             value={heroData.companyName}
                             onChange={(e) => setHeroData({ ...heroData, companyName: e.target.value })}
                           />
                           <input
                             type="url"
                             placeholder="Website URL"
-                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                             value={heroData.website}
                             onChange={(e) => setHeroData({ ...heroData, website: e.target.value })}
                             required
@@ -390,7 +390,7 @@ const SEOService = () => {
                             <select
                               value={heroData.countryCode}
                               onChange={(e) => setHeroData({ ...heroData, countryCode: e.target.value })}
-                              className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm"
+                              className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all text-sm"
                             >
                               {countries.map((c, idx) => (
                                 <option key={`hero-${c.name}-${c.code}-${idx}`} value={c.code}>
@@ -401,22 +401,11 @@ const SEOService = () => {
                             <input
                               type="tel"
                               placeholder="Phone Number (optional)"
-                              className="sm:col-span-2 bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                              className="sm:col-span-2 bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                               value={heroData.phoneNumber}
                               onChange={(e) => setHeroData({ ...heroData, phoneNumber: e.target.value })}
                             />
                           </div>
-                          <select
-                            className="w-full bg-slate-50 border border-slate-200 text-slate-600 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm"
-                            value={heroData.budgetRange}
-                            onChange={(e) => setHeroData({ ...heroData, budgetRange: e.target.value })}
-                          >
-                            <option value="" disabled>Monthly Budget Range (optional)</option>
-                            <option value="30k-50k">₹30,000 to ₹50,000</option>
-                            <option value="50k-1l">₹50,000 to ₹1 Lakh</option>
-                            <option value="1l-2.5l">₹1 Lakh to ₹2.5 Lakh</option>
-                            <option value="over-2.5l">Over ₹2.5 Lakh</option>
-                          </select>
                         </div>
 
                         <button
@@ -450,7 +439,7 @@ const SEOService = () => {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className={`text-center px-2 sm:px-4 ${i !== 0 && i !== 2 ? 'border-l border-slate-200' : ''} ${i === 2 ? 'md:border-l border-slate-200' : ''}`}
                 >
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 mb-2">{stat.number}</div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl text-slate-900 mb-2">{stat.number}</div>
                   <div className="text-[#16a34a] text-[10px] sm:text-xs md:text-sm uppercase tracking-wider md:tracking-widest font-bold">{stat.label}</div>
                 </motion.div>
               ))}
@@ -462,8 +451,8 @@ const SEOService = () => {
         <section className="pt-20 sm:pt-24 pb-8 sm:pb-10 relative overflow-hidden bg-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="mb-12 sm:mb-20 text-center">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Complete SEO Solutions</h2>
-              <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">Everything you need to capture search market share, build domain authority, and drive qualified leads. We map out full-funnel keyword opportunities, resolve complex technical crawlability blocks, and scale high-value backlink campaigns to deliver sustainable organic revenue.</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-slate-900 mb-4 sm:mb-6">Complete SEO Solutions</h2>
+              <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">Everything you need to capture search market share, build domain authority, and drive qualified leads. We map out full-funnel keyword opportunities, resolve complex technical crawlability blocks, and scale high-value backlink campaigns to deliver sustainable organic revenue.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)] sm:auto-rows-[180px]">
               {/* Tall Card: Keyword Intelligence */}
@@ -483,8 +472,8 @@ const SEOService = () => {
                   <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center relative z-20 group-hover:bg-[#dcfce7] transition-all duration-500 mb-4">
                     <span className="material-symbols-outlined text-[#16a34a] text-2xl">manage_search</span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-light text-slate-900 mb-2">Keyword Intelligence</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed font-light">Data-backed research to identify high-converting, accessible search terms that your competitors are completely missing.</p>
+                  <h3 className="text-xl sm:text-2xl text-slate-900 mb-2">Keyword Intelligence</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">Data-backed research to identify high-converting, accessible search terms that your competitors are completely missing.</p>
                 </div>
               </motion.div>
 
@@ -506,9 +495,9 @@ const SEOService = () => {
                     <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center relative z-20 group-hover:bg-[#dcfce7] transition-all duration-500">
                       <span className="material-symbols-outlined text-[#16a34a] text-2xl">build</span>
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-light text-slate-900">Technical SEO</h3>
+                    <h3 className="text-xl sm:text-2xl text-slate-900">Technical SEO</h3>
                   </div>
-                  <p className="text-slate-600 text-sm leading-relaxed font-light max-w-md">Ensuring flawless crawlability, rapid indexation, and perfect core web vitals performance to lay a frictionless foundation for growth.</p>
+                  <p className="text-slate-600 text-sm leading-relaxed max-w-md">Ensuring flawless crawlability, rapid indexation, and perfect core web vitals performance to lay a frictionless foundation for growth.</p>
                 </div>
               </motion.div>
 
@@ -529,8 +518,8 @@ const SEOService = () => {
                   <div className="w-10 h-10 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center relative z-20 group-hover:bg-[#dcfce7] transition-all duration-500 mb-3">
                     <span className="material-symbols-outlined text-[#16a34a] text-xl">edit_document</span>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-light text-slate-900 mb-2">Content Strategy</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed font-light">Perfecting site architecture and content mapping for maximum relevance.</p>
+                  <h3 className="text-lg sm:text-xl text-slate-900 mb-2">Content Strategy</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">Perfecting site architecture and content mapping for maximum relevance.</p>
                 </div>
               </motion.div>
 
@@ -551,8 +540,8 @@ const SEOService = () => {
                   <div className="w-10 h-10 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center relative z-20 group-hover:bg-[#dcfce7] transition-all duration-500 mb-3">
                     <span className="material-symbols-outlined text-[#16a34a] text-xl">link</span>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-light text-slate-900 mb-2">Authority Building</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed font-light">Securing elite contextual backlinks that signal trust to search algorithms.</p>
+                  <h3 className="text-lg sm:text-xl text-slate-900 mb-2">Authority Building</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">Securing elite contextual backlinks that signal trust to search algorithms.</p>
                 </div>
               </motion.div>
             </div>
@@ -580,7 +569,7 @@ const SEOService = () => {
                 <span className="material-symbols-outlined text-[#16a34a] text-sm">monitoring</span>
                 <span className="text-[#16a34a] text-[10px] sm:text-xs font-bold uppercase tracking-wider">Advanced Analytics</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 leading-tight">Data-Driven Approach to <span className="font-fraunces italic text-[#16a34a]">Growth</span></h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-slate-900 leading-tight">Data-Driven Approach to <span className="font-fraunces italic text-[#16a34a]">Growth</span></h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
@@ -606,9 +595,9 @@ const SEOService = () => {
                     <span className="material-symbols-outlined text-[#16a34a] text-sm">monitoring</span>
                     <span className="text-[#16a34a] text-[10px] sm:text-xs font-bold uppercase tracking-wider">Advanced Analytics</span>
                   </div>
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Data-Driven Approach to <span className="font-fraunces italic text-[#16a34a]">Growth</span></h2>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-slate-900 mb-4 sm:mb-6">Data-Driven Approach to <span className="font-fraunces italic text-[#16a34a]">Growth</span></h2>
                 </div>
-                <p className="text-base sm:text-lg text-slate-600 mb-8 sm:mb-10 font-light">Guesswork has no place in modern SEO. Our strategies are built on deep data analysis, competitor reverse-engineering, and proven frameworks.</p>
+                <p className="text-base sm:text-lg text-slate-600 mb-8 sm:mb-10">Guesswork has no place in modern SEO. Our strategies are built on deep data analysis, competitor reverse-engineering, and proven frameworks.</p>
 
                 <div className="space-y-6">
                   {[
@@ -621,8 +610,8 @@ const SEOService = () => {
                         <span className="material-symbols-outlined text-[#16a34a] text-2xl">{item.icon}</span>
                       </div>
                       <div>
-                        <h4 className="text-lg sm:text-xl font-light text-slate-900 mb-1">{item.title}</h4>
-                        <p className="text-slate-600 text-sm font-light">{item.desc}</p>
+                        <h4 className="text-lg sm:text-xl text-slate-900 mb-1">{item.title}</h4>
+                        <p className="text-slate-600 text-sm">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -642,8 +631,8 @@ const SEOService = () => {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto px-4 sm:px-8 text-center"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 mb-6">Shape your business with the <span className="font-fraunces italic text-[#16a34a]">Leading SEO Company</span> in India!</h2>
-            <p className="text-lg text-slate-600 mb-8 font-light leading-relaxed">If you are looking for an SEO company to rank your website on #1 page of Google, you have come to the right place! XD Media, the leading SEO company in India, follows an integrated approach to mark your presence in the worldwide online market.</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl text-slate-900 mb-6">Shape your business with the <span className="font-fraunces italic text-[#16a34a]">Leading SEO Company</span> in India!</h2>
+            <p className="text-lg text-slate-600 mb-8 leading-relaxed">If you are looking for an SEO company to rank your website on #1 page of Google, you have come to the right place! XD Media, the leading SEO company in India, follows an integrated approach to mark your presence in the worldwide online market.</p>
             <div className="flex justify-center">
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -663,8 +652,8 @@ const SEOService = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             {/* Mobile Header block */}
             <div className="lg:hidden mb-8">
-              <h2 className="text-3xl sm:text-4xl font-light text-slate-900 leading-tight">XD Media SEO Campaign <span className="font-fraunces italic text-[#16a34a]">Process</span></h2>
-              <p className="text-slate-600 font-light mt-4 max-w-xl">In the competitive world of internet marketing, strategy should never be an afterthought. Our process is broadly divided into eight logical steps:</p>
+              <h2 className="text-3xl sm:text-4xl text-slate-900 leading-tight">XD Media SEO Campaign <span className="font-fraunces italic text-[#16a34a]">Process</span></h2>
+              <p className="text-slate-600 mt-4 max-w-xl">In the competitive world of internet marketing, strategy should never be an afterthought. Our process is broadly divided into eight logical steps:</p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 sm:gap-16 items-center">
@@ -677,8 +666,8 @@ const SEOService = () => {
               >
                 {/* Desktop-only Header block */}
                 <div className="hidden lg:block">
-                  <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mb-6">XD Media SEO Campaign <span className="font-fraunces italic text-[#16a34a]">Process</span></h2>
-                  <p className="text-slate-600 font-light mb-10 max-w-xl">In the competitive world of internet marketing, strategy should never be an afterthought. Our process is broadly divided into eight logical steps:</p>
+                  <h2 className="text-3xl sm:text-4xl text-slate-900 mb-6">XD Media SEO Campaign <span className="font-fraunces italic text-[#16a34a]">Process</span></h2>
+                  <p className="text-slate-600 mb-10 max-w-xl">In the competitive world of internet marketing, strategy should never be an afterthought. Our process is broadly divided into eight logical steps:</p>
                 </div>
 
                 <div className="space-y-6">
@@ -694,7 +683,7 @@ const SEOService = () => {
                   ].map((title, i) => (
                     <div key={i} className="flex items-center gap-6 border-b border-slate-100 pb-4 group">
                       <span className="text-xl font-fraunces italic text-[#16a34a] group-hover:scale-110 transition-transform">0{i + 1}</span>
-                      <h4 className="text-lg font-light text-slate-800 group-hover:text-[#16a34a] transition-colors">{title}</h4>
+                      <h4 className="text-lg text-slate-800 group-hover:text-[#16a34a] transition-colors">{title}</h4>
                     </div>
                   ))}
                 </div>
@@ -746,7 +735,7 @@ const SEOService = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             {/* Mobile Header block */}
             <div className="lg:hidden mb-8">
-              <h2 className="text-3xl sm:text-4xl font-light text-slate-900 leading-tight">Website & <span className="font-fraunces italic text-[#16a34a]">Competitive Analysis</span></h2>
+              <h2 className="text-3xl sm:text-4xl text-slate-900 leading-tight">Website & <span className="font-fraunces italic text-[#16a34a]">Competitive Analysis</span></h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -772,17 +761,17 @@ const SEOService = () => {
                 className="lg:order-2"
               >
                 {/* Desktop-only Header block */}
-                <h2 className="hidden lg:block text-3xl sm:text-4xl font-light text-slate-900 mb-6">Website & <span className="font-fraunces italic text-[#16a34a]">Competitive Analysis</span></h2>
+                <h2 className="hidden lg:block text-3xl sm:text-4xl text-slate-900 mb-6">Website & <span className="font-fraunces italic text-[#16a34a]">Competitive Analysis</span></h2>
                 <div className="space-y-6">
-                  <p className="text-slate-600 font-light leading-relaxed border-l-2 border-[#16a34a] pl-6">We start with a detailed analysis of your website including your Meta tags, Image alt tags, Sitemaps, SEO Friendly URLs, JS Minification Test, Canonicalization and a lot more.</p>
-                  <p className="text-slate-600 font-light leading-relaxed border-l-2 border-slate-200 pl-6">It is followed by a thorough research of your potential competitors. We then compare your website performance to those who are already ranking for the same organic keywords as yours.</p>
+                  <p className="text-slate-600 leading-relaxed border-l-2 border-[#16a34a] pl-6">We start with a detailed analysis of your website including your Meta tags, Image alt tags, Sitemaps, SEO Friendly URLs, JS Minification Test, Canonicalization and a lot more.</p>
+                  <p className="text-slate-600 leading-relaxed border-l-2 border-slate-200 pl-6">It is followed by a thorough research of your potential competitors. We then compare your website performance to those who are already ranking for the same organic keywords as yours.</p>
                 </div>
 
                 <div className="mt-10">
                   <h4 className="text-lg font-medium text-slate-900 mb-6">Competitor Analysis Focus:</h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                     {["What your competitors are doing better?", "What backlink strategies are they following?", "How are their traffic patterns?", "Onsite performance and riferring domains"].map((q, i) => (
-                      <div key={i} className="flex items-center gap-3 text-slate-600 font-light text-sm">
+                      <div key={i} className="flex items-center gap-3 text-slate-600 text-sm">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>
                         {q}
                       </div>
@@ -813,8 +802,8 @@ const SEOService = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mb-6"><span className="font-fraunces italic text-[#16a34a]">Keyword</span> Research</h2>
-                <p className="text-slate-600 font-light text-lg mb-10">The aim is to uncover keywords and actual search phrases that customers enter into search engines.</p>
+                <h2 className="text-3xl sm:text-4xl text-slate-900 mb-6"><span className="font-fraunces italic text-[#16a34a]">Keyword</span> Research</h2>
+                <p className="text-slate-600 text-lg mb-10">The aim is to uncover keywords and actual search phrases that customers enter into search engines.</p>
 
                 <div className="space-y-8">
                   {[
@@ -828,7 +817,7 @@ const SEOService = () => {
                         <span className="w-6 h-[1px] bg-slate-200 group-hover:bg-[#16a34a] transition-all"></span>
                         {item.title}
                       </h3>
-                      <p className="text-slate-600 font-light text-sm pl-9">{item.desc}</p>
+                      <p className="text-slate-600 text-sm pl-9">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -847,20 +836,20 @@ const SEOService = () => {
             <div className="mt-20 bg-[#001208] text-white p-8 sm:p-12 rounded-3xl relative overflow-hidden">
               <div className="absolute right-0 top-0 w-96 h-96 bg-[#4be277]/10 rounded-full blur-[80px]"></div>
               <div className="relative z-10">
-                <h3 className="text-2xl sm:text-3xl font-light mb-8 max-w-2xl">Ranking for local keywords can be made easy by taking care of <span className="font-fraunces italic text-[#4be277]">3 very important things</span>:</h3>
+                <h3 className="text-2xl sm:text-3xl mb-8 max-w-2xl">Ranking for local keywords can be made easy by taking care of <span className="font-fraunces italic text-[#4be277]">3 very important things</span>:</h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div>
                     <div className="text-4xl font-fraunces italic text-[#3d4a3d] mb-4">1</div>
-                    <p className="text-[#bccbb9] font-light text-sm leading-relaxed">Your website should scream about the location you are serving. Optimize your internal pages and contact page with location details (NAP).</p>
+                    <p className="text-[#bccbb9] text-sm leading-relaxed">Your website should scream about the location you are serving. Optimize your internal pages and contact page with location details (NAP).</p>
                   </div>
                   <div>
                     <div className="text-4xl font-fraunces italic text-[#3d4a3d] mb-4">2</div>
-                    <p className="text-[#bccbb9] font-light text-sm leading-relaxed">Implement relevant schema in your web pages. Helping Google categorize your local business correctly.</p>
+                    <p className="text-[#bccbb9] text-sm leading-relaxed">Implement relevant schema in your web pages. Helping Google categorize your local business correctly.</p>
                   </div>
                   <div>
                     <div className="text-4xl font-fraunces italic text-[#3d4a3d] mb-4">3</div>
-                    <p className="text-[#bccbb9] font-light text-sm leading-relaxed">Your anchor text profile should also have mention of the location while linking to your website.</p>
+                    <p className="text-[#bccbb9] text-sm leading-relaxed">Your anchor text profile should also have mention of the location while linking to your website.</p>
                   </div>
                 </div>
               </div>
@@ -872,8 +861,8 @@ const SEOService = () => {
         <section id="recent-results" className="py-20 bg-slate-100 border-t border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 mb-6">Recent Results in Google & AI Search Engines.</h2>
-              <p className="text-lg text-slate-600 max-w-4xl mx-auto font-light leading-relaxed">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl text-slate-900 mb-6">Recent Results in Google & AI Search Engines.</h2>
+              <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
                 We go beyond words and get the job done. We have generated over 1 million leads and achieved more than 1,000 successes which highlights our success. Since we rank highly for countless keywords, when you work with us, you can expect professional support that will lift your business. Let's make sure we succeed together!
               </p>
             </div>
@@ -918,7 +907,7 @@ const SEOService = () => {
                         <div className="space-y-4">
                           <div>
                             <h4 className="text-base font-bold text-slate-900 mb-1">Challenge</h4>
-                            <p className="text-slate-600 font-light text-sm">{data.challenge}</p>
+                            <p className="text-slate-600 text-sm">{data.challenge}</p>
                           </div>
 
                           <div>
@@ -944,7 +933,7 @@ const SEOService = () => {
                               <tbody className="divide-y divide-slate-50">
                                 {data.tableRows.map((item, i) => (
                                   <tr key={i} className="group hover:bg-slate-50 transition-colors">
-                                    <td className="py-2 text-slate-600 font-light">{item.label}</td>
+                                    <td className="py-2 text-slate-600">{item.label}</td>
                                     <td className="py-2 text-[#1e73be] font-bold text-right">
                                       <div className="inline-flex items-center justify-end gap-1">
                                         <span className="flex items-center gap-0.5">
@@ -1007,7 +996,7 @@ const SEOService = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             {/* Mobile Header block */}
             <div className="lg:hidden mb-8">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 leading-tight">Continuous <span className="font-fraunces italic text-[#16a34a]">Optimization</span></h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-slate-900 leading-tight">Continuous <span className="font-fraunces italic text-[#16a34a]">Optimization</span></h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
@@ -1019,8 +1008,8 @@ const SEOService = () => {
                 className="order-2 lg:order-1"
               >
                 {/* Desktop-only Header block */}
-                <h2 className="hidden lg:block text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Continuous <span className="font-fraunces italic text-[#16a34a]">Optimization</span></h2>
-                <p className="text-base sm:text-lg text-slate-600 mb-8 sm:mb-10 font-light">SEO isn't a one-and-done setup. It's a continuous process of refinement, adaptation to algorithm updates, and compounding growth.</p>
+                <h2 className="hidden lg:block text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-slate-900 mb-4 sm:mb-6">Continuous <span className="font-fraunces italic text-[#16a34a]">Optimization</span></h2>
+                <p className="text-base sm:text-lg text-slate-600 mb-8 sm:mb-10">SEO isn't a one-and-done setup. It's a continuous process of refinement, adaptation to algorithm updates, and compounding growth.</p>
 
                 <div className="space-y-4">
                   {[
@@ -1032,8 +1021,8 @@ const SEOService = () => {
                     <div key={i} className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 bg-white p-5 sm:p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md hover:border-[#4be277]/30 transition-all group">
                       <div className="text-3xl font-fraunces italic text-slate-300 group-hover:text-[#16a34a] transition-colors">{item.step}</div>
                       <div>
-                        <h4 className="font-light text-slate-900 mb-1">{item.title}</h4>
-                        <p className="text-slate-600 text-sm font-light">{item.desc}</p>
+                        <h4 className="text-slate-900 mb-1">{item.title}</h4>
+                        <p className="text-slate-600 text-sm">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -1067,7 +1056,7 @@ const SEOService = () => {
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
                 What Our Clients Say
               </h2>
-              <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light">
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
                 Real results, real testimonials from brands we've helped grow
               </p>
               <div className="w-20 h-1 mx-auto mt-6" style={{ background: '#47BF72' }}></div>
@@ -1080,8 +1069,8 @@ const SEOService = () => {
         <section className="py-20 sm:py-24 relative bg-slate-100">
           <div className="max-w-3xl mx-auto px-4 sm:px-8">
             <div className="text-center mb-12 sm:mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Frequently Asked <span className="font-fraunces italic text-[#16a34a]">Questions</span></h2>
-              <p className="text-base sm:text-lg text-slate-600 font-light">Everything you need to know about our SEO services.</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-slate-900 mb-4 sm:mb-6">Frequently Asked <span className="font-fraunces italic text-[#16a34a]">Questions</span></h2>
+              <p className="text-base sm:text-lg text-slate-600">Everything you need to know about our SEO services.</p>
             </div>
 
             <div className="space-y-4">
@@ -1098,13 +1087,13 @@ const SEOService = () => {
                     onClick={() => setActiveAccordion(activeAccordion === i ? null : i)}
                     className="w-full flex items-center justify-between p-5 sm:p-6 text-left hover:bg-slate-100 transition-colors"
                   >
-                    <span className="text-base sm:text-lg font-light text-slate-900 pr-4 sm:pr-8">{faq.question}</span>
+                    <span className="text-base sm:text-lg text-slate-900 pr-4 sm:pr-8">{faq.question}</span>
                     <span className={`material-symbols-outlined text-[#16a34a] transition-transform duration-300 shrink-0 ${activeAccordion === i ? 'rotate-180' : ''}`}>
                       expand_more
                     </span>
                   </button>
                   <div className={`overflow-hidden transition-all duration-300 ${activeAccordion === i ? 'max-h-96' : 'max-h-0'}`}>
-                    <div className="p-5 sm:p-6 pt-4 text-slate-600 leading-relaxed font-light text-sm sm:text-base border-t border-slate-200 mt-2">
+                    <div className="p-5 sm:p-6 pt-4 text-slate-600 leading-relaxed text-sm sm:text-base border-t border-slate-200 mt-2">
                       {faq.answer}
                     </div>
                   </div>
@@ -1128,10 +1117,10 @@ const SEOService = () => {
                   <span className="material-symbols-outlined text-[#16a34a] text-sm">rocket_launch</span>
                   <span className="text-[#16a34a] text-[10px] sm:text-xs font-bold uppercase tracking-wider">Free SEO Strategy Session</span>
                 </div>
-                <h2 className="text-4xl sm:text-5xl font-light text-slate-900 mb-6 leading-tight">
+                <h2 className="text-4xl sm:text-5xl text-slate-900 mb-6 leading-tight">
                   Ready to dominate your <span className="font-fraunces italic text-[#16a34a]">market?</span>
                 </h2>
-                <p className="text-lg text-slate-600 mb-10 font-light leading-relaxed">
+                <p className="text-lg text-slate-600 mb-10 leading-relaxed">
                   Stop losing customers to your competitors. Fill out the form to get a complimentary SEO audit and a custom roadmap to rank #1.
                 </p>
 
@@ -1181,7 +1170,7 @@ const SEOService = () => {
                       <span className="material-symbols-outlined text-[#16a34a] text-4xl">check_circle</span>
                     </div>
                     <h3 className="text-2xl font-medium text-slate-900 mb-2">Audit Request Received!</h3>
-                    <p className="text-slate-600 font-light mb-8">Our SEO experts will analyze your website and get back to you within 24 hours.</p>
+                    <p className="text-slate-600 mb-8">Our SEO experts will analyze your website and get back to you within 24 hours.</p>
                     <button
                       onClick={() => setBottomSubmitted(false)}
                       className="text-[#16a34a] font-bold hover:underline"
@@ -1195,7 +1184,7 @@ const SEOService = () => {
                       <input
                         type="text"
                         placeholder="Enter your name"
-                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                         value={bottomData.name}
                         onChange={(e) => setBottomData({ ...bottomData, name: e.target.value })}
                         required
@@ -1203,7 +1192,7 @@ const SEOService = () => {
                       <input
                         type="email"
                         placeholder="Company Email"
-                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                         value={bottomData.email}
                         onChange={(e) => setBottomData({ ...bottomData, email: e.target.value })}
                         required
@@ -1211,14 +1200,14 @@ const SEOService = () => {
                       <input
                         type="text"
                         placeholder="Company Name (optional)"
-                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                         value={bottomData.companyName}
                         onChange={(e) => setBottomData({ ...bottomData, companyName: e.target.value })}
                       />
                       <input
                         type="url"
                         placeholder="Website URL"
-                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                         value={bottomData.website}
                         onChange={(e) => setBottomData({ ...bottomData, website: e.target.value })}
                         required
@@ -1227,7 +1216,7 @@ const SEOService = () => {
                         <select
                           value={bottomData.countryCode}
                           onChange={(e) => setBottomData({ ...bottomData, countryCode: e.target.value })}
-                          className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm"
+                          className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all text-sm"
                         >
                           {countries.map((c, idx) => (
                             <option key={`bottom-${c.name}-${c.code}-${idx}`} value={c.code}>
@@ -1238,22 +1227,11 @@ const SEOService = () => {
                         <input
                           type="tel"
                           placeholder="Phone Number (optional)"
-                          className="sm:col-span-2 bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                          className="sm:col-span-2 bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                           value={bottomData.phoneNumber}
                           onChange={(e) => setBottomData({ ...bottomData, phoneNumber: e.target.value })}
                         />
                       </div>
-                      <select
-                        className="w-full bg-slate-50 border border-slate-200 text-slate-600 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm"
-                        value={bottomData.budgetRange}
-                        onChange={(e) => setBottomData({ ...bottomData, budgetRange: e.target.value })}
-                      >
-                        <option value="" disabled>Monthly Budget Range (optional)</option>
-                        <option value="30k-50k">₹30,000 to ₹50,000</option>
-                        <option value="50k-1l">₹50,000 to ₹1 Lakh</option>
-                        <option value="1l-2.5l">₹1 Lakh to ₹2.5 Lakh</option>
-                        <option value="over-2.5l">Over ₹2.5 Lakh</option>
-                      </select>
                     </div>
 
                     <button

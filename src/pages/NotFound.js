@@ -65,10 +65,10 @@ const NotFound = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-6"
         >
-          <h2 className="text-3xl sm:text-4xl font-light text-slate-800 tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl text-slate-800 tracking-tight mb-4">
             Oops! This page has <span className="font-fraunces italic text-[#16a34a]">drifted off course</span>
           </h2>
-          <p className="text-slate-600 font-light text-lg max-w-xl mx-auto leading-relaxed">
+          <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed">
             The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let's get you back on track.
           </p>
         </motion.div>
@@ -129,7 +129,7 @@ const NotFound = () => {
                       <h4 className="font-medium text-slate-800 group-hover:text-[#16a34a] transition-colors">
                         {link.title}
                       </h4>
-                      <p className="text-sm text-slate-500 mt-1 font-light">
+                      <p className="text-sm text-slate-500 mt-1">
                         {link.desc}
                       </p>
                     </div>

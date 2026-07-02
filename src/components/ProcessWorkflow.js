@@ -76,16 +76,16 @@ const ProcessWorkflow = () => {
                     </span>
 
                     <h2 className="text-4xl sm:text-5xl md:text-6xl leading-tight mb-6 tracking-tight">
-                        <span className="text-white font-light font-light">
+                        <span className="text-white">
                             Our Proven
                         </span>
                         <br />
-                        <span className="text-white font-fraunces italic font-light">
+                        <span className="text-white font-fraunces italic">
                             Process Workflow
                         </span>
                     </h2>
 
-                    <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed font-inter font-light">
+                    <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed font-inter">
                         From discovery to optimization, our systematic approach ensures every project delivers exceptional results.
                     </p>
                 </motion.div>
@@ -159,7 +159,7 @@ const ProcessWorkflow = () => {
 
                                                     {/* Title & Subtitle */}
                                                     <div className="flex-1">
-                                                        <h3 className="text-3xl font-light text-white mb-2 font-inter">
+                                                        <h3 className="text-3xl text-white mb-2 font-inter">
                                                             {step.title}
                                                         </h3>
                                                         <p className="text-lg font-medium font-inter" style={{ color: step.color }}>
@@ -169,7 +169,7 @@ const ProcessWorkflow = () => {
                                                 </div>
 
                                                 {/* Description */}
-                                                <p className="text-gray-400 leading-relaxed font-inter font-light mb-6">
+                                                <p className="text-gray-400 leading-relaxed font-inter mb-6">
                                                     {step.description}
                                                 </p>
 

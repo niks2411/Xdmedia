@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Canonical from '../components/SEO/Canonical';
 import { motion } from 'framer-motion';
 import { BarChart3, TrendingUp, Eye, MousePointer, Clock, CheckCircle, ArrowRight, PieChart, Activity } from 'lucide-react';
@@ -32,6 +33,13 @@ const Analytics = () => {
 
   return (
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
+      <Helmet>
+        <title>Performance Marketing Agency | Google & Meta Ads | XD Media</title>
+        <meta
+          name="description"
+          content="Maximize your ROI with performance marketing services from XD Media. We create and optimize Google Ads and Meta Ads campaigns, improve conversions, and deliver measurable business growth through data-driven strategies."
+        />
+      </Helmet>
       <Canonical path="/performance-marketing" />
       {/* Hero Section with Contact Form */}
       <section
@@ -68,16 +76,11 @@ const Analytics = () => {
                 Performance Marketing
               </motion.div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-4 sm:mb-6 tracking-tight">
-                <span className="text-white font-inter font-normal block mb-2">
-                  Performance Marketing & Brand Growth
-                </span>
-                <span className="text-white font-fraunces italic font-light">
-                  Scaled to Grow.
-                </span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 sm:mb-6 tracking-tight">
+                Performance Marketing & Brand Growth <br className="hidden sm:block" /> Scaled to Grow.
               </h1>
 
-              <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-inter font-light mb-6 sm:mb-8">
+              <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-inter mb-6 sm:mb-8">
                 Paid reach + smart targeting = predictable growth. We combine data, creativity, and strategy to deliver ROI-driven paid campaigns and strong brand presence.
               </p>
 
@@ -134,7 +137,7 @@ const Analytics = () => {
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
               Your Analytics Command Center
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light">
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               All your key metrics in one beautiful, easy-to-understand dashboard
             </p>
           </motion.div>
@@ -309,7 +312,7 @@ const Analytics = () => {
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
               Powerful Analytics Features
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light">
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               Everything you need to understand and optimize your digital presence
             </p>
           </motion.div>
@@ -332,7 +335,7 @@ const Analytics = () => {
                   <h3 className="text-2xl font-bold text-white mb-4 font-inter">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed mb-6 font-light">
+                  <p className="text-gray-400 leading-relaxed mb-6">
                     {feature.description}
                   </p>
                   <ul className="space-y-3">

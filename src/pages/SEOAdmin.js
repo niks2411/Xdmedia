@@ -272,7 +272,7 @@ const SEOAdmin = () => {
                                             <div className="flex items-center gap-2"><Calendar className="w-4 h-4 text-[#16a34a]" /> {formatDate(lead.timestamp)}</div>
                                         </div>
                                         {lead.message && (
-                                            <div className="p-4 rounded-xl bg-white/5 text-sm text-gray-300 font-light border border-white/5">
+                                            <div className="p-4 rounded-xl bg-white/5 text-sm text-gray-300 border border-white/5">
                                                 <p className="text-[#16a34a] font-bold text-[10px] uppercase mb-2">Message:</p>
                                                 {lead.message}
                                             </div>

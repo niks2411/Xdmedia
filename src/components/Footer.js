@@ -37,13 +37,13 @@ const Footer = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Text Content */}
             <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl leading-tight mb-6 sm:mb-8 tracking-tight w-full">
-                <span className="text-white drop-shadow-2xl font-light block mb-2" style={{
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-white leading-tight mb-6 sm:mb-8 tracking-tight w-full">
+                <span className="text-white drop-shadow-2xl block mb-2" style={{
                   textShadow: '0 0 40px rgba(71, 191, 114, 0.3), 0 4px 20px rgba(0,0,0,0.5)'
                 }}>
                   Let's Build Your
                 </span>
-                <span className="text-white drop-shadow-2xl italic font-light block" style={{
+                <span className="text-white drop-shadow-2xl italic block" style={{
                   fontFamily: "'Georgia', 'Times New Roman', serif",
                   background: 'linear-gradient(135deg, #ffffff 0%, #47BF72 100%)',
                   WebkitBackgroundClip: 'text',

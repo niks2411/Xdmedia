@@ -77,17 +77,17 @@ const CredibilityBacking = () => {
                         </div>
                     </div>
 
-                    <h2 className="text-4xl sm:text-5xl md:text-6xl leading-tight mb-6 tracking-tight">
-                        <span className="text-white font-light font-normal">
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl text-white leading-tight mb-6 tracking-tight">
+                        <span className="text-white font-normal">
                             Powered by
                         </span>
                         <br />
-                        <span className="text-white font-fraunces italic font-light">
+                        <span className="text-white font-fraunces italic">
                             Proven Industry Leaders
                         </span>
                     </h2>
 
-                    <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed font-inter font-light">
+                    <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed font-inter">
                         XD MEDIA is backed by established ventures with proven track records in entertainment, technology, and digital marketing.
                     </p>
                 </motion.div>
@@ -131,13 +131,13 @@ const CredibilityBacking = () => {
                                 </div>
 
                                 {/* Company Name */}
-                                <h3 className="text-2xl font-light text-white mb-2 font-inter">
+                                <h3 className="text-2xl text-white mb-2 font-inter">
                                     {company.name}
                                 </h3>
 
                                 {/* Revenue/Description */}
                                 <div className="mb-4">
-                                    <div className="text-3xl font-light mb-1" style={{ color: company.color }}>
+                                    <div className="text-3xl mb-1" style={{ color: company.color }}>
                                         {company.revenue}
                                     </div>
                                     <div className="text-sm text-gray-400 uppercase tracking-wider">
@@ -146,7 +146,7 @@ const CredibilityBacking = () => {
                                 </div>
 
                                 {/* Details */}
-                                <p className="text-gray-400 leading-relaxed font-inter font-light text-sm mb-6">
+                                <p className="text-gray-400 leading-relaxed font-inter text-sm mb-6">
                                     {company.details}
                                 </p>
 
@@ -194,10 +194,10 @@ const CredibilityBacking = () => {
                         <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
 
                         <div className="relative z-10">
-                            <h3 className="text-3xl sm:text-4xl font-light text-white mb-4 font-inter">
+                            <h3 className="text-3xl sm:text-4xl text-white mb-4 font-inter">
                                 Combined Group Strength
                             </h3>
-                            <p className="text-lg text-gray-300 mb-8 max-w-3xl mx-auto font-light">
+                            <p className="text-lg text-gray-300 mb-8 max-w-3xl mx-auto">
                                 Backed by ventures with <span className="font-bold text-white">₹35+ crore annual revenue</span>,
                                 <span className="font-bold text-white"> 112.5+ billion YouTube views delivered</span>, and
                                 <span className="font-bold text-white"> 1M+ combined subscribers</span>.

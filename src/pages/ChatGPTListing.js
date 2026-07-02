@@ -59,16 +59,11 @@ const ChatGPTListing = () => {
                 AI Search Optimization ⭐
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-4 sm:mb-6 tracking-tight">
-                <span className="text-white font-inter font-normal block mb-2">
-                  List Your Business on
-                </span>
-                <span className="text-white font-fraunces italic font-light">
-                  ChatGPT & AI Engines.
-                </span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 sm:mb-6 tracking-tight">
+                List Your Business on <br className="hidden sm:block" /> ChatGPT & AI Engines.
               </h1>
 
-              <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-inter font-light mb-6 sm:mb-8">
+              <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-inter mb-6 sm:mb-8">
                 Be discoverable where users are searching next. We optimize and index your brand for LLM scrapers, conversational searches, and AI assistants like ChatGPT, Claude, and Google Gemini.
               </p>
 
@@ -127,7 +122,7 @@ const ChatGPTListing = () => {
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
               AI Search Readiness Strategy
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light">
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               We prepare your digital assets to be read, cited, and recommended by AI engines.
             </p>
           </motion.div>
@@ -150,7 +145,7 @@ const ChatGPTListing = () => {
                   <h3 className="text-2xl font-bold text-white mb-4 font-inter">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed mb-6 font-light">
+                  <p className="text-gray-400 leading-relaxed mb-6">
                     {feature.description}
                   </p>
                   <ul className="space-y-3">

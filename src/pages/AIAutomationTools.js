@@ -59,16 +59,11 @@ const AIAutomationTools = () => {
                 Workflow Efficiency ⭐
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-4 sm:mb-6 tracking-tight">
-                <span className="text-white font-inter font-normal block mb-2">
-                  AI Integration &
-                </span>
-                <span className="text-white font-fraunces italic font-light">
-                  Workflow Automation.
-                </span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 sm:mb-6 tracking-tight">
+                AI Integration & <br className="hidden sm:block" /> Workflow Automation.
               </h1>
 
-              <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-inter font-light mb-6 sm:mb-8">
+              <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-inter mb-6 sm:mb-8">
                 Eliminate manual bottlenecks and scale your operations. We configure custom AI models, intelligent chatbots, and automated lead routing systems to grow your business 24/7.
               </p>
 
@@ -127,7 +122,7 @@ const AIAutomationTools = () => {
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
               AI & Automation Capabilities
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light">
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               We connect your website to automated sales and client operations systems.
             </p>
           </motion.div>
@@ -150,7 +145,7 @@ const AIAutomationTools = () => {
                   <h3 className="text-2xl font-bold text-white mb-4 font-inter">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed mb-6 font-light">
+                  <p className="text-gray-400 leading-relaxed mb-6">
                     {feature.description}
                   </p>
                   <ul className="space-y-3">

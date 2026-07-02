@@ -31,7 +31,8 @@ const Layout = ({ children }) => {
     ? location.pathname.slice(0, -1)
     : location.pathname;
 
-  const is404 = !validPaths.includes(normalizedPath);
+  const isBlog = normalizedPath === '/blog' || normalizedPath.startsWith('/blog/');
+  const is404 = !validPaths.includes(normalizedPath) && !isBlog;
   const hideFooter = location.pathname === '/privacy-policy' || is404;
 
   return (

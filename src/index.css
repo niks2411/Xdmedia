@@ -102,6 +102,21 @@
     font-family: 'DM Sans', sans-serif !important;
   }
 
+  /* Force all spans inside headings to inherit the parent heading font, style, and color */
+  h1 span, h2 span, h3 span, h4 span, h5 span, h6 span,
+  h1 .font-fraunces, h2 .font-fraunces, h3 .font-fraunces, h4 .font-fraunces, h5 .font-fraunces, h6 .font-fraunces {
+    font-family: inherit !important;
+    font-style: normal !important;
+    color: inherit !important;
+    background: none !important;
+    -webkit-text-fill-color: inherit !important;
+  }
+
+  /* Global font weight override for headings */
+  h1, h2, h3, h4 {
+    font-weight: 600 !important;
+  }
+
   /* Smooth transitions for all interactive elements */
   a,
   button {

@@ -82,7 +82,7 @@ const TestimonialCards = () => {
             viewport={{ once: true }}
             className="text-center lg:text-left"
           >
-            <h2 className="text-3xl md:text-3xl lg:text-4xl font-light text-white mb-6 leading-tight tracking-wide">
+            <h2 className="text-3xl md:text-3xl lg:text-4xl text-white mb-6 leading-tight tracking-wide">
               The Impact We Deliver
             </h2>
             <p className="text-lg text-gray-300 mb-12 leading-relaxed">

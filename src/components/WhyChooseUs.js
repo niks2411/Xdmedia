@@ -71,16 +71,16 @@ const WhyChooseUs = () => {
                     </span>
 
                     <h2 className="text-4xl sm:text-5xl md:text-6xl leading-tight mb-6 tracking-tight">
-                        <span className="text-white font-light">
+                        <span className="text-white">
                             Built for
                         </span>
                         <br />
-                        <span className="text-white font-fraunces italic font-light">
+                        <span className="text-white font-fraunces italic">
                             Excellence & Growth
                         </span>
                     </h2>
 
-                    <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed font-inter font-light">
+                    <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed font-inter">
                         We don't just deliver services—we craft experiences that transform businesses and drive measurable success.
                     </p>
                 </motion.div>
@@ -119,7 +119,7 @@ const WhyChooseUs = () => {
                                     {/* Content */}
                                     <div className="relative z-10">
                                         {/* Title */}
-                                        <h3 className="text-2xl font-light text-white mb-2 font-inter">
+                                        <h3 className="text-2xl text-white mb-2 font-inter">
                                             {feature.title}
                                         </h3>
 
@@ -129,7 +129,7 @@ const WhyChooseUs = () => {
                                         </p>
 
                                         {/* Description */}
-                                        <p className="text-gray-400 leading-relaxed font-inter font-light text-sm">
+                                        <p className="text-gray-400 leading-relaxed font-inter text-sm">
                                             {feature.description}
                                         </p>
                                     </div>
@@ -186,7 +186,7 @@ const WhyChooseUs = () => {
                                         </p>
 
                                         {/* Description */}
-                                        <p className="text-gray-400 leading-relaxed font-inter font-light text-sm">
+                                        <p className="text-gray-400 leading-relaxed font-inter text-sm">
                                             {feature.description}
                                         </p>
                                     </div>
@@ -243,16 +243,16 @@ const WhyChooseUs = () => {
                                 {/* Content */}
                                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight text-center">
                                     <span className="font-inter font-normal">Empowering Brands to </span>
-                                    <span className="font-fraunces italic font-light bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+                                    <span className="font-fraunces italic bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
                                         Thrive in the Digital Age
                                     </span>
                                 </h2>
 
-                                <p className="text-lg text-gray-300 leading-relaxed mb-6 font-light text-center">
+                                <p className="text-lg text-gray-300 leading-relaxed mb-6 text-center">
                                     At XDMEDIA, we believe every business deserves a powerful digital presence. Our mission is to democratize access to world-class technology, creative media, and performance marketing—helping brands of all sizes compete, grow, and succeed in an increasingly digital world.
                                 </p>
 
-                                <p className="text-base text-gray-400 leading-relaxed font-light text-center">
+                                <p className="text-base text-gray-400 leading-relaxed text-center">
                                     We're not just service providers; we're your growth partners. From the first strategy session to ongoing optimization, we're committed to delivering measurable results that drive real business impact. <span className="text-white font-medium">Your success story is our greatest achievement.</span>
                                 </p>
 

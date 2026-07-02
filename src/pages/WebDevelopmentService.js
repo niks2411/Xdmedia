@@ -231,10 +231,10 @@ const WebDevelopmentService = () => {
   return (
     <div className="bg-white text-slate-800 font-inter selection:bg-[#4be277] selection:text-[#003915] min-h-screen">
       <Helmet>
-        <title>Best Website Development Services in India | Custom Web App Development | </title>
+        <title>Web Development Services | Custom Websites | XD Media</title>
         <meta
           name="description"
-          content="Scale your business with the best website development services in India. Custom Web Application, Laravel, React, WordPress & Shopify development by ."
+          content="Create a fast, responsive, and SEO-friendly website with XD Media. Our web development services include custom websites, WordPress development, eCommerce solutions, UI/UX design, and ongoing website support."
         />
       </Helmet>
       <Canonical path="/web-development-services" />
@@ -290,10 +290,10 @@ const WebDevelopmentService = () => {
               >
                 <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl text-white leading-[1.1] tracking-tight">
                   India's Most Trusted, Web Development Company Offering <br className="hidden lg:block" />
-                  <span className="font-fraunces italic text-[#16a34a]">High-Performance</span> Digital Solutions
+                  High-Performance Digital Solutions
                 </h1>
                 <div className="space-y-4">
-                  <p className="text-lg sm:text-xl text-slate-200 font-light leading-snug">
+                  <p className="text-lg sm:text-xl text-slate-200 leading-snug">
                     Still Not Getting High Conversions from Your Site?
                   </p>
                   <p className="text-lg sm:text-xl text-slate-200 font-bold leading-snug border-l-4 border-[#47BF72] pl-6">
@@ -339,13 +339,13 @@ const WebDevelopmentService = () => {
                       <div className="w-20 h-20 bg-[#f0fdf4] rounded-full flex items-center justify-center mx-auto mb-6">
                         <span className="material-symbols-outlined text-[#16a34a] text-4xl">check_circle</span>
                       </div>
-                      <h3 className="text-2xl font-light text-slate-900 mb-2">Request Received!</h3>
-                      <p className="text-slate-500 mb-8 font-light">Our web architects will analyze your requirement and contact you shortly.</p>
+                      <h3 className="text-2xl text-slate-900 mb-2">Request Received!</h3>
+                      <p className="text-slate-500 mb-8">Our web architects will analyze your requirement and contact you shortly.</p>
                       <button onClick={() => setHeroSubmitted(false)} className="text-[#16a34a] font-bold hover:underline">Submit another request</button>
                     </div>
                   ) : (
                     <>
-                      <h3 className="text-xl sm:text-2xl font-light text-slate-900 mb-8 text-center leading-tight">
+                      <h3 className="text-xl sm:text-2xl text-slate-900 mb-8 text-center leading-tight">
                         Get A Free <span className="font-fraunces italic text-[#16a34a]">Web Development</span> Proposal & Estimate
                       </h3>
 
@@ -354,7 +354,7 @@ const WebDevelopmentService = () => {
                           <input
                             type="text"
                             placeholder="Enter your name"
-                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                             value={heroData.name}
                             onChange={(e) => setHeroData({ ...heroData, name: e.target.value })}
                             required
@@ -362,7 +362,7 @@ const WebDevelopmentService = () => {
                           <input
                             type="email"
                             placeholder="Company Email"
-                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                             value={heroData.email}
                             onChange={(e) => setHeroData({ ...heroData, email: e.target.value })}
                             required
@@ -370,14 +370,14 @@ const WebDevelopmentService = () => {
                           <input
                             type="text"
                             placeholder="Company Name (optional)"
-                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                             value={heroData.companyName}
                             onChange={(e) => setHeroData({ ...heroData, companyName: e.target.value })}
                           />
                           <input
                             type="url"
                             placeholder="Current Website URL (Optional)"
-                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                             value={heroData.website}
                             onChange={(e) => setHeroData({ ...heroData, website: e.target.value })}
                           />
@@ -385,7 +385,7 @@ const WebDevelopmentService = () => {
                             <select
                               value={heroData.countryCode}
                               onChange={(e) => setHeroData({ ...heroData, countryCode: e.target.value })}
-                              className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm"
+                              className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all text-sm"
                             >
                               {countries.map((c, idx) => (
                                 <option key={`hero-${c.name}-${c.code}-${idx}`} value={c.code}>
@@ -396,22 +396,11 @@ const WebDevelopmentService = () => {
                             <input
                               type="tel"
                               placeholder="Phone Number (optional)"
-                              className="sm:col-span-2 bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                              className="sm:col-span-2 bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                               value={heroData.phoneNumber}
                               onChange={(e) => setHeroData({ ...heroData, phoneNumber: e.target.value })}
                             />
                           </div>
-                          <select
-                            className="w-full bg-slate-50 border border-slate-200 text-slate-600 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm"
-                            value={heroData.budgetRange}
-                            onChange={(e) => setHeroData({ ...heroData, budgetRange: e.target.value })}
-                          >
-                            <option value="" disabled>Project Budget Range (optional)</option>
-                            <option value="50k-1l">₹50,000 to ₹1 Lakh</option>
-                            <option value="1l-2.5l">₹1 Lakh to ₹2.5 Lakh</option>
-                            <option value="2.5l-5l">₹2.5 Lakh to ₹5 Lakh</option>
-                            <option value="over-5l">Over ₹5 Lakh</option>
-                          </select>
                         </div>
 
                         <button
@@ -445,7 +434,7 @@ const WebDevelopmentService = () => {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className={`text-center px-2 sm:px-4 ${i !== 0 && i !== 2 ? 'border-l border-slate-200' : ''} ${i === 2 ? 'md:border-l border-slate-200' : ''}`}
                 >
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 mb-2">{stat.number}</div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl text-slate-900 mb-2">{stat.number}</div>
                   <div className="text-[#16a34a] text-[10px] sm:text-xs md:text-sm uppercase tracking-wider md:tracking-widest font-bold">{stat.label}</div>
                 </motion.div>
               ))}
@@ -457,8 +446,8 @@ const WebDevelopmentService = () => {
         <section className="py-20 sm:py-24 relative overflow-hidden bg-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="mb-12 sm:mb-20 text-center">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Complete Web Development Solutions</h2>
-              <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto font-light">Custom designed, high-performing websites and software systems engineered for rapid scale.</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-slate-900 mb-4 sm:mb-6">Complete Web Development Solutions</h2>
+              <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">Custom designed, high-performing websites and software systems engineered for rapid scale.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)] sm:auto-rows-[180px]">
               {/* Tall Card: Custom Web Apps */}
@@ -478,8 +467,8 @@ const WebDevelopmentService = () => {
                   <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center relative z-20 group-hover:bg-[#dcfce7] transition-all duration-500 mb-4">
                     <span className="material-symbols-outlined text-[#16a34a] text-2xl">code</span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-light text-slate-900 mb-2">Custom Web Applications</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed font-light">Robust frontend designs matching React.js & Next.js architectures with database REST/GraphQL APIs configured for speed and security.</p>
+                  <h3 className="text-xl sm:text-2xl text-slate-900 mb-2">Custom Web Applications</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">Robust frontend designs matching React.js & Next.js architectures with database REST/GraphQL APIs configured for speed and security.</p>
                 </div>
               </motion.div>
 
@@ -501,9 +490,9 @@ const WebDevelopmentService = () => {
                     <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center relative z-20 group-hover:bg-[#dcfce7] transition-all duration-500">
                       <span className="material-symbols-outlined text-[#16a34a] text-2xl">shopping_cart</span>
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-light text-slate-900">eCommerce & Portals</h3>
+                    <h3 className="text-xl sm:text-2xl text-slate-900">eCommerce & Portals</h3>
                   </div>
-                  <p className="text-slate-600 text-sm leading-relaxed font-light max-w-md">Conversion-optimized custom liquid storefronts, Shopify implementations, user profile dashboards, and automated local payment gateways.</p>
+                  <p className="text-slate-600 text-sm leading-relaxed max-w-md">Conversion-optimized custom liquid storefronts, Shopify implementations, user profile dashboards, and automated local payment gateways.</p>
                 </div>
               </motion.div>
 
@@ -524,8 +513,8 @@ const WebDevelopmentService = () => {
                   <div className="w-10 h-10 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center relative z-20 group-hover:bg-[#dcfce7] transition-all duration-500 mb-3">
                     <span className="material-symbols-outlined text-[#16a34a] text-xl">layers</span>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-light text-slate-900 mb-2">CMS Content Systems</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed font-light">Custom WordPress development, Gutenberg blocks, and headless CMS configurations for absolute content editing flexibility.</p>
+                  <h3 className="text-lg sm:text-xl text-slate-900 mb-2">CMS Content Systems</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">Custom WordPress development, Gutenberg blocks, and headless CMS configurations for absolute content editing flexibility.</p>
                 </div>
               </motion.div>
 
@@ -546,8 +535,8 @@ const WebDevelopmentService = () => {
                   <div className="w-10 h-10 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center relative z-20 group-hover:bg-[#dcfce7] transition-all duration-500 mb-3">
                     <span className="material-symbols-outlined text-[#16a34a] text-xl">database</span>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-light text-slate-900 mb-2">Enterprise CRMs</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed font-light">Custom dashboard logs, Perfex CRM setups, ERP connectivity, and structured SQL/NoSQL database configurations.</p>
+                  <h3 className="text-lg sm:text-xl text-slate-900 mb-2">Enterprise CRMs</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">Custom dashboard logs, Perfex CRM setups, ERP connectivity, and structured SQL/NoSQL database configurations.</p>
                 </div>
               </motion.div>
             </div>
@@ -562,10 +551,10 @@ const WebDevelopmentService = () => {
                 <span className="material-symbols-outlined text-[#16a34a] text-sm font-bold">work</span>
                 <span className="text-[#16a34a] text-[10px] sm:text-xs font-bold uppercase tracking-wider">Our Showcase</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 mb-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl text-slate-900 mb-4">
                 Featured <span className="font-fraunces italic text-[#16a34a]">Web Development</span> Projects
               </h2>
-              <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto font-light">
+              <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
                 Take a look at some of the high-performance applications, Web3 platforms, and custom portals we have engineered.
               </p>
             </div>
@@ -606,11 +595,11 @@ const WebDevelopmentService = () => {
                             ))}
                           </div>
                           
-                          <h3 className="text-2xl sm:text-3xl font-light text-slate-900 leading-tight">
+                          <h3 className="text-2xl sm:text-3xl text-slate-900 leading-tight">
                             {project.title}
                           </h3>
                           
-                          <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
+                          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                             {project.description}
                           </p>
 
@@ -692,7 +681,7 @@ const WebDevelopmentService = () => {
                 <span className="material-symbols-outlined text-[#16a34a] text-sm">monitoring</span>
                 <span className="text-[#16a34a] text-[10px] sm:text-xs font-bold uppercase tracking-wider">Advanced Performance</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 leading-tight">Data-Driven Approach to <span className="font-fraunces italic text-[#16a34a]">Engineering</span></h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-slate-900 leading-tight">Data-Driven Approach to <span className="font-fraunces italic text-[#16a34a]">Engineering</span></h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
@@ -718,9 +707,9 @@ const WebDevelopmentService = () => {
                     <span className="material-symbols-outlined text-[#16a34a] text-sm">monitoring</span>
                     <span className="text-[#16a34a] text-[10px] sm:text-xs font-bold uppercase tracking-wider">Advanced Performance</span>
                   </div>
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Data-Driven Approach to <span className="font-fraunces italic text-[#16a34a]">Engineering</span></h2>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-slate-900 mb-4 sm:mb-6">Data-Driven Approach to <span className="font-fraunces italic text-[#16a34a]">Engineering</span></h2>
                 </div>
-                <p className="text-base sm:text-lg text-slate-600 mb-8 sm:mb-10 font-light">Guesswork has no place in custom software development. We architect frameworks that prioritize loading speed, database integrity, and high search visibility.</p>
+                <p className="text-base sm:text-lg text-slate-600 mb-8 sm:mb-10">Guesswork has no place in custom software development. We architect frameworks that prioritize loading speed, database integrity, and high search visibility.</p>
 
                 <div className="space-y-6">
                   {[
@@ -733,8 +722,8 @@ const WebDevelopmentService = () => {
                         <span className="material-symbols-outlined text-[#16a34a] text-2xl">{item.icon}</span>
                       </div>
                       <div>
-                        <h4 className="text-lg sm:text-xl font-light text-slate-900 mb-1">{item.title}</h4>
-                        <p className="text-slate-600 text-sm font-light">{item.desc}</p>
+                        <h4 className="text-lg sm:text-xl text-slate-900 mb-1">{item.title}</h4>
+                        <p className="text-slate-600 text-sm">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -753,8 +742,8 @@ const WebDevelopmentService = () => {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto px-4 sm:px-8 text-center"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 mb-6">Shape your business with the <span className="font-fraunces italic text-[#16a34a]">Leading Web Development Company</span> in India!</h2>
-            <p className="text-lg text-slate-600 mb-8 font-light leading-relaxed">If you are looking for a development company to build custom web applications, eCommerce portals, or corporate sites, you have come to the right place!  follows an integrated agile approach to deliver secure and scalable platforms.</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl text-slate-900 mb-6">Shape your business with the <span className="font-fraunces italic text-[#16a34a]">Leading Web Development Company</span> in India!</h2>
+            <p className="text-lg text-slate-600 mb-8 leading-relaxed">If you are looking for a development company to build custom web applications, eCommerce portals, or corporate sites, you have come to the right place!  follows an integrated agile approach to deliver secure and scalable platforms.</p>
             <div className="flex justify-center">
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -774,8 +763,8 @@ const WebDevelopmentService = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             {/* Mobile Header block */}
             <div className="lg:hidden mb-8">
-              <h2 className="text-3xl sm:text-4xl font-light text-slate-900 leading-tight">Web Development <span className="font-fraunces italic text-[#16a34a]">Process</span></h2>
-              <p className="text-slate-600 font-light mt-4 max-w-xl">From concept to cloud deployment, our workflow is structured into eight logical sprints ensuring zero downtime and complete project alignment:</p>
+              <h2 className="text-3xl sm:text-4xl text-slate-900 leading-tight">Web Development <span className="font-fraunces italic text-[#16a34a]">Process</span></h2>
+              <p className="text-slate-600 mt-4 max-w-xl">From concept to cloud deployment, our workflow is structured into eight logical sprints ensuring zero downtime and complete project alignment:</p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
@@ -788,8 +777,8 @@ const WebDevelopmentService = () => {
               >
                 {/* Desktop-only Header block */}
                 <div className="hidden lg:block">
-                  <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mb-6">Web Development <span className="font-fraunces italic text-[#16a34a]">Process</span></h2>
-                  <p className="text-slate-600 font-light mb-10 max-w-xl">From concept to cloud deployment, our workflow is structured into eight logical sprints ensuring zero downtime and complete project alignment:</p>
+                  <h2 className="text-3xl sm:text-4xl text-slate-900 mb-6">Web Development <span className="font-fraunces italic text-[#16a34a]">Process</span></h2>
+                  <p className="text-slate-600 mb-10 max-w-xl">From concept to cloud deployment, our workflow is structured into eight logical sprints ensuring zero downtime and complete project alignment:</p>
                 </div>
 
                 <div className="space-y-6">
@@ -805,7 +794,7 @@ const WebDevelopmentService = () => {
                   ].map((title, i) => (
                     <div key={i} className="flex items-center gap-6 border-b border-slate-100 pb-4 group">
                       <span className="text-xl font-fraunces italic text-[#16a34a] group-hover:scale-110 transition-transform">0{i + 1}</span>
-                      <h4 className="text-lg font-light text-slate-800 group-hover:text-[#16a34a] transition-colors">{title}</h4>
+                      <h4 className="text-lg text-slate-800 group-hover:text-[#16a34a] transition-colors">{title}</h4>
                     </div>
                   ))}
                 </div>
@@ -857,7 +846,7 @@ const WebDevelopmentService = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             {/* Mobile Header block */}
             <div className="lg:hidden mb-8">
-              <h2 className="text-3xl sm:text-4xl font-light text-slate-900 leading-tight">Code Integrity & <span className="font-fraunces italic text-[#16a34a]">Architecture Audit</span></h2>
+              <h2 className="text-3xl sm:text-4xl text-slate-900 leading-tight">Code Integrity & <span className="font-fraunces italic text-[#16a34a]">Architecture Audit</span></h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -883,17 +872,17 @@ const WebDevelopmentService = () => {
                 className="lg:order-2"
               >
                 {/* Desktop-only Header block */}
-                <h2 className="hidden lg:block text-3xl sm:text-4xl font-light text-slate-900 mb-6">Code Integrity & <span className="font-fraunces italic text-[#16a34a]">Architecture Audit</span></h2>
+                <h2 className="hidden lg:block text-3xl sm:text-4xl text-slate-900 mb-6">Code Integrity & <span className="font-fraunces italic text-[#16a34a]">Architecture Audit</span></h2>
                 <div className="space-y-6">
-                  <p className="text-slate-600 font-light leading-relaxed border-l-2 border-[#16a34a] pl-6">We inspect your existing databases, API latency values, server loads, and frontend responsiveness configs to map out performance bottlenecks before writing a single line of code.</p>
-                  <p className="text-slate-600 font-light leading-relaxed border-l-2 border-slate-200 pl-6">We compare layout metrics and responsiveness constraints to ensure your future system scales flawlessly under concurrent traffic loads.</p>
+                  <p className="text-slate-600 leading-relaxed border-l-2 border-[#16a34a] pl-6">We inspect your existing databases, API latency values, server loads, and frontend responsiveness configs to map out performance bottlenecks before writing a single line of code.</p>
+                  <p className="text-slate-600 leading-relaxed border-l-2 border-slate-200 pl-6">We compare layout metrics and responsiveness constraints to ensure your future system scales flawlessly under concurrent traffic loads.</p>
                 </div>
 
                 <div className="mt-10">
                   <h4 className="text-lg font-medium text-slate-900 mb-6">Technical Audit Focus:</h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {["Are SQL database queries running slow?", "How responsive is the mobile navigation?", "Are SSL certificates and CORS secure?", "Is API latency below 150ms? (Redis/REST)"].map((q, i) => (
-                      <div key={i} className="flex items-center gap-3 text-slate-600 font-light text-sm">
+                      <div key={i} className="flex items-center gap-3 text-slate-600 text-sm">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>
                         {q}
                       </div>
@@ -912,7 +901,7 @@ const WebDevelopmentService = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             {/* Mobile Header block */}
             <div className="lg:hidden mb-8">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 leading-tight">Continuous <span className="font-fraunces italic text-[#16a34a]">Optimization</span></h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-slate-900 leading-tight">Continuous <span className="font-fraunces italic text-[#16a34a]">Optimization</span></h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
@@ -924,8 +913,8 @@ const WebDevelopmentService = () => {
                 className="order-2 lg:order-1"
               >
                 {/* Desktop-only Header block */}
-                <h2 className="hidden lg:block text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Continuous <span className="font-fraunces italic text-[#16a34a]">Optimization</span></h2>
-                <p className="text-base sm:text-lg text-slate-600 mb-8 sm:mb-10 font-light">Custom software isn't static. We support your code long after deployment with database checks and server upgrades.</p>
+                <h2 className="hidden lg:block text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-slate-900 mb-4 sm:mb-6">Continuous <span className="font-fraunces italic text-[#16a34a]">Optimization</span></h2>
+                <p className="text-base sm:text-lg text-slate-600 mb-8 sm:mb-10">Custom software isn't static. We support your code long after deployment with database checks and server upgrades.</p>
 
                 <div className="space-y-4">
                   {[
@@ -937,8 +926,8 @@ const WebDevelopmentService = () => {
                     <div key={i} className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 bg-white p-5 sm:p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md hover:border-[#4be277]/30 transition-all group">
                       <div className="text-3xl font-fraunces italic text-slate-300 group-hover:text-[#16a34a] transition-colors">{item.step}</div>
                       <div>
-                        <h4 className="font-light text-slate-900 mb-1">{item.title}</h4>
-                        <p className="text-slate-600 text-sm font-light">{item.desc}</p>
+                        <h4 className="text-slate-900 mb-1">{item.title}</h4>
+                        <p className="text-slate-600 text-sm">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -971,7 +960,7 @@ const WebDevelopmentService = () => {
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
                 What Our Clients Say
               </h2>
-              <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light">
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
                 Real results, real testimonials from brands we've helped grow
               </p>
               <div className="w-20 h-1 mx-auto mt-6" style={{ background: '#47BF72' }}></div>
@@ -984,8 +973,8 @@ const WebDevelopmentService = () => {
         <section className="py-20 sm:py-24 relative bg-slate-100">
           <div className="max-w-3xl mx-auto px-4 sm:px-8">
             <div className="text-center mb-12 sm:mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light text-slate-900 mb-4 sm:mb-6">Frequently Asked <span className="font-fraunces italic text-[#16a34a]">Questions</span></h2>
-              <p className="text-base sm:text-lg text-slate-600 font-light">Everything you need to know about our web development services.</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-slate-900 mb-4 sm:mb-6">Frequently Asked <span className="font-fraunces italic text-[#16a34a]">Questions</span></h2>
+              <p className="text-base sm:text-lg text-slate-600">Everything you need to know about our web development services.</p>
             </div>
 
             <div className="space-y-4">
@@ -1002,13 +991,13 @@ const WebDevelopmentService = () => {
                     onClick={() => setActiveAccordion(activeAccordion === i ? null : i)}
                     className="w-full flex items-center justify-between p-5 sm:p-6 text-left hover:bg-slate-100 transition-colors"
                   >
-                    <span className="text-base sm:text-lg font-light text-slate-900 pr-4 sm:pr-8">{faq.question}</span>
+                    <span className="text-base sm:text-lg text-slate-900 pr-4 sm:pr-8">{faq.question}</span>
                     <span className={`material-symbols-outlined text-[#16a34a] transition-transform duration-300 shrink-0 ${activeAccordion === i ? 'rotate-180' : ''}`}>
                       expand_more
                     </span>
                   </button>
                   <div className={`overflow-hidden transition-all duration-300 ${activeAccordion === i ? 'max-h-96' : 'max-h-0'}`}>
-                    <div className="p-5 sm:p-6 pt-4 text-slate-600 leading-relaxed font-light text-sm sm:text-base border-t border-slate-200 mt-2">
+                    <div className="p-5 sm:p-6 pt-4 text-slate-600 leading-relaxed text-sm sm:text-base border-t border-slate-200 mt-2">
                       {faq.answer}
                     </div>
                   </div>
@@ -1032,10 +1021,10 @@ const WebDevelopmentService = () => {
                   <span className="material-symbols-outlined text-[#16a34a] text-sm">rocket_launch</span>
                   <span className="text-[#16a34a] text-[10px] sm:text-xs font-bold uppercase tracking-wider">Free Custom Strategy Session</span>
                 </div>
-                <h2 className="text-4xl sm:text-5xl font-light text-slate-900 mb-6 leading-tight">
+                <h2 className="text-4xl sm:text-5xl text-slate-900 mb-6 leading-tight">
                   Ready to compile your <span className="font-fraunces italic text-[#16a34a]">digital presence?</span>
                 </h2>
-                <p className="text-lg text-slate-600 mb-10 font-light leading-relaxed">
+                <p className="text-lg text-slate-600 mb-10 leading-relaxed">
                   Stop settling for slow templates. Work with certified web architects to build secure, optimized code infrastructure that converts clicks into buyers.
                 </p>
 
@@ -1085,7 +1074,7 @@ const WebDevelopmentService = () => {
                       <span className="material-symbols-outlined text-[#16a34a] text-4xl">check_circle</span>
                     </div>
                     <h3 className="text-2xl font-medium text-slate-900 mb-2">Proposal Request Received!</h3>
-                    <p className="text-slate-600 font-light mb-8">Our development experts will analyze your specifications and get back to you within 24 hours.</p>
+                    <p className="text-slate-600 mb-8">Our development experts will analyze your specifications and get back to you within 24 hours.</p>
                     <button
                       onClick={() => setBottomSubmitted(false)}
                       className="text-[#16a34a] font-bold hover:underline"
@@ -1095,7 +1084,7 @@ const WebDevelopmentService = () => {
                   </div>
                 ) : (
                   <form onSubmit={handleBottomSubmit} className="bg-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-100">
-                    <h3 className="text-xl sm:text-2xl font-light text-slate-900 mb-8 text-center leading-tight">
+                    <h3 className="text-xl sm:text-2xl text-slate-900 mb-8 text-center leading-tight">
                       Get A Free <span className="font-fraunces italic text-[#16a34a]">Web Development</span> Proposal & Estimate
                     </h3>
 
@@ -1103,7 +1092,7 @@ const WebDevelopmentService = () => {
                       <input
                         type="text"
                         placeholder="Enter your name"
-                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                         value={bottomData.name}
                         onChange={(e) => setBottomData({ ...bottomData, name: e.target.value })}
                         required
@@ -1111,7 +1100,7 @@ const WebDevelopmentService = () => {
                       <input
                         type="email"
                         placeholder="Company Email"
-                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                         value={bottomData.email}
                         onChange={(e) => setBottomData({ ...bottomData, email: e.target.value })}
                         required
@@ -1119,14 +1108,14 @@ const WebDevelopmentService = () => {
                       <input
                         type="text"
                         placeholder="Company Name (optional)"
-                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                         value={bottomData.companyName}
                         onChange={(e) => setBottomData({ ...bottomData, companyName: e.target.value })}
                       />
                       <input
                         type="url"
                         placeholder="Current Website URL (Optional)"
-                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                        className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                         value={bottomData.website}
                         onChange={(e) => setBottomData({ ...bottomData, website: e.target.value })}
                       />
@@ -1134,7 +1123,7 @@ const WebDevelopmentService = () => {
                         <select
                           value={bottomData.countryCode}
                           onChange={(e) => setBottomData({ ...bottomData, countryCode: e.target.value })}
-                          className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm"
+                          className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all text-sm"
                         >
                           {countries.map((c, idx) => (
                             <option key={`bottom-${c.name}-${c.code}-${idx}`} value={c.code}>
@@ -1145,22 +1134,11 @@ const WebDevelopmentService = () => {
                         <input
                           type="tel"
                           placeholder="Phone Number (optional)"
-                          className="sm:col-span-2 bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400 font-light"
+                          className="sm:col-span-2 bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all placeholder-slate-400"
                           value={bottomData.phoneNumber}
                           onChange={(e) => setBottomData({ ...bottomData, phoneNumber: e.target.value })}
                         />
                       </div>
-                      <select
-                        className="w-full bg-slate-50 border border-slate-200 text-slate-600 px-4 py-3.5 rounded-xl focus:border-[#4be277] focus:bg-white outline-none transition-all font-light text-sm"
-                        value={bottomData.budgetRange}
-                        onChange={(e) => setBottomData({ ...bottomData, budgetRange: e.target.value })}
-                      >
-                        <option value="" disabled>Project Budget Range (optional)</option>
-                        <option value="50k-1l">₹50,000 to ₹1 Lakh</option>
-                        <option value="1l-2.5l">₹1 Lakh to ₹2.5 Lakh</option>
-                        <option value="2.5l-5l">₹2.5 Lakh to ₹5 Lakh</option>
-                        <option value="over-5l">Over ₹5 Lakh</option>
-                      </select>
                     </div>
                     <button
                       disabled={bottomSubmitting}

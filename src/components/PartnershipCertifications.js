@@ -99,7 +99,7 @@ const PartnershipCertifications = () => {
                                 </div>
 
                                 {/* Description */}
-                                <p className="text-xs text-gray-400 leading-relaxed font-light">
+                                <p className="text-xs text-gray-400 leading-relaxed">
                                     {cert.description}
                                 </p>
 

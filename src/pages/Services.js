@@ -153,17 +153,11 @@ const Services = () => {
               Our Services
             </span>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl leading-tight mb-6 tracking-tight">
-              <span className="text-white font-inter font-normal">
-                End-to-End Solutions
-              </span>
-              <br />
-              <span className="text-white font-fraunces italic font-light">
-                Under One Roof
-              </span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl text-white leading-tight mb-6 tracking-tight">
+              End-to-End Solutions <br /> Under One Roof
             </h1>
 
-            <p className="text-lg text-gray-400 leading-relaxed font-inter font-light mb-8">
+            <p className="text-lg text-gray-400 leading-relaxed font-inter mb-8">
               From digital marketing to technology and creative solutions—everything you need to build, grow, and scale your brand. <span className="text-white font-medium">All services delivered in-house, not outsourced.</span>
             </p>
 
@@ -277,7 +271,7 @@ const Services = () => {
                       </h3>
 
                       {/* Description */}
-                      <p className="text-gray-400 leading-relaxed font-inter font-light mb-6">
+                      <p className="text-gray-400 leading-relaxed font-inter mb-6">
                         {service.description}
                       </p>
 
@@ -339,7 +333,7 @@ const Services = () => {
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-inter">
               Ready to Transform Your Brand?
             </h2>
-            <p className="text-lg text-gray-300 mb-8 font-light">
+            <p className="text-lg text-gray-300 mb-8">
               Let's discuss how our end-to-end solutions can help you achieve your business goals.
             </p>
             <button

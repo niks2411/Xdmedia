@@ -59,16 +59,11 @@ const GMBOptimization = () => {
                 Local SEO Dominance ⭐
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-4 sm:mb-6 tracking-tight">
-                <span className="text-white font-inter font-normal block mb-2">
-                  Google My Business
-                </span>
-                <span className="text-white font-fraunces italic font-light">
-                  #1 Map Optimization.
-                </span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 sm:mb-6 tracking-tight">
+                Google My Business <br className="hidden sm:block" /> #1 Map Optimization.
               </h1>
 
-              <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-inter font-light mb-6 sm:mb-8">
+              <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-inter mb-6 sm:mb-8">
                 Rank first on Google Maps and the local map pack. We optimize your business profile to capture high-intent buyers searching for services in your area.
               </p>
 
@@ -127,7 +122,7 @@ const GMBOptimization = () => {
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
               GMB Optimization Capabilities
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light">
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               We focus on the local indicators Google values to give your business maps visibility.
             </p>
           </motion.div>
@@ -150,7 +145,7 @@ const GMBOptimization = () => {
                   <h3 className="text-2xl font-bold text-white mb-4 font-inter">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed mb-6 font-light">
+                  <p className="text-gray-400 leading-relaxed mb-6">
                     {feature.description}
                   </p>
                   <ul className="space-y-3">

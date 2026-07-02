@@ -110,9 +110,9 @@ const PrivacyPolicy = () => {
           </Link>
           
           <h1 className="text-3xl sm:text-4xl text-white mb-2 tracking-tight">
-            Privacy <span className="font-fraunces italic text-[#47BF72]">Notice</span>
+            Privacy Notice
           </h1>
-          <p className="text-xs text-gray-400 font-light">
+          <p className="text-xs text-gray-400">
             Last Updated: <span className="text-white font-medium">{lastUpdated}</span>
           </p>
         </div>
@@ -156,7 +156,7 @@ const PrivacyPolicy = () => {
 
 
           {/* Privacy Content */}
-          <div className="space-y-12 text-sm leading-relaxed text-gray-300 font-light max-w-4xl">
+          <div className="space-y-12 text-sm leading-relaxed text-gray-300 max-w-4xl">
             
             {/* Intro Summary Card */}
             <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6 sm:p-8 space-y-4">

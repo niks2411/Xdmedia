@@ -165,13 +165,13 @@ const Home = () => {
                 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl text-white leading-[1.1] tracking-tight mb-6 sm:mb-8"
               >
                 1 SEO Strategy = <br className="hidden lg:block" />
-                <span className="font-fraunces italic text-[#16a34a]">3X Your Organic Traffic</span>
+                3X Your Organic Traffic
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.4 }}
-                className="text-sm sm:text-base text-white/90 mb-6 leading-relaxed font-inter font-light max-w-xl"
+                className="text-sm sm:text-base text-white/90 mb-6 leading-relaxed font-inter max-w-xl"
                 style={{
                   textShadow: '0 2px 10px rgba(0,0,0,0.3)'
                 }}
@@ -182,7 +182,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
-                className="space-y-3 mb-8 text-white/90 text-sm sm:text-base font-inter font-light max-w-xl"
+                className="space-y-3 mb-8 text-white/90 text-sm sm:text-base font-inter max-w-xl"
               >
                 {[
                   { title: "Transparent reporting", desc: "you see everything, always" },
@@ -247,14 +247,14 @@ const Home = () => {
                     }}>
                       <CheckCircle className="w-10 h-10 text-green-600" />
                     </div>
-                    <h3 className="text-2xl font-light text-slate-900 mb-2">Request Received!</h3>
-                    <p className="text-slate-500 font-light text-sm">
+                    <h3 className="text-2xl text-slate-900 mb-2">Request Received!</h3>
+                    <p className="text-slate-500 text-sm">
                       Thank you. Our experts will get back to you within 24 hours.
                     </p>
                   </motion.div>
                 ) : (
                   <div className="relative z-10">
-                    <h3 className="text-xl sm:text-2xl font-light text-slate-900 mb-8 text-center leading-tight font-inter">
+                    <h3 className="text-xl sm:text-2xl text-slate-900 mb-8 text-center leading-tight font-inter">
                       Get A Free <span className="font-fraunces italic text-[#16a34a]">Growth Proposal</span> & Estimate
                     </h3>
 
@@ -298,7 +298,7 @@ const Home = () => {
                           value={formData.countryCode}
                           onChange={handleInputChange}
                           disabled={isSubmitting}
-                          className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#47BF72] focus:bg-white outline-none transition-all font-light text-sm"
+                          className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#47BF72] focus:bg-white outline-none transition-all text-sm"
                         >
                           {countries.map((c, idx) => (
                             <option key={`${c.name}-${c.code}-${idx}`} value={c.code}>
@@ -403,8 +403,8 @@ const Home = () => {
             className="text-center mb-20"
           >
             <span className="text-sm font-bold text-green-600 uppercase tracking-[0.3em] font-inter mb-4 block">Services</span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-6 leading-tight tracking-wide">Our Core Growth Services</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-gray-900 mb-6 leading-tight tracking-wide">Our Core Growth Services</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               We provide execution-first digital services designed to work together, <span className="text-gray-900 font-medium">Not in silos.</span>
             </p>
           </motion.div>
@@ -460,7 +460,7 @@ const Home = () => {
                     <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-6 group-hover:bg-green-500 group-hover:shadow-green-500/20 transition-all duration-500">
                       <service.icon className="w-7 h-7 text-green-600 group-hover:text-white transition-colors duration-500" />
                     </div>
-                    <h3 className="text-xl font-light text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-300 tracking-wide">{service.title}</h3>
+                    <h3 className="text-xl text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-300 tracking-wide">{service.title}</h3>
 
                     {/* Static Description */}
                     <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
@@ -499,14 +499,14 @@ const Home = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6 leading-tight tracking-wide"
+              className="text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight tracking-wide"
             >
-              <span className="text-white drop-shadow-2xl font-light" style={{
+              <span className="text-white drop-shadow-2xl" style={{
                 textShadow: '0 0 40px rgba(255, 255, 255, 0.2), 0 4px 20px rgba(0,0,0,0.5)'
               }}>
                 Next-Gen Technology for{' '}
               </span>
-              <span className="text-white drop-shadow-2xl font-fraunces italic font-light" style={{
+              <span className="text-white drop-shadow-2xl font-fraunces italic" style={{
                 background: 'linear-gradient(135deg, #ffffff 0%, #47BF72 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -639,7 +639,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6 leading-tight tracking-wide text-center lg:text-left"
+                className="text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight tracking-wide text-center lg:text-left"
               >
                 Who We Are
               </motion.h2>
@@ -689,7 +689,7 @@ const Home = () => {
                   transition={{ duration: 0.5, delay: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  <div className="text-4xl md:text-5xl font-light text-white" style={{ textShadow: '0 0 20px rgba(71, 191, 114, 0.5)' }}>22,000+</div>
+                  <div className="text-4xl md:text-5xl text-white" style={{ textShadow: '0 0 20px rgba(71, 191, 114, 0.5)' }}>22,000+</div>
                   <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Projects Delivered</div>
                 </motion.div>
                 <motion.div
@@ -698,7 +698,7 @@ const Home = () => {
                   transition={{ duration: 0.5, delay: 0.6 }}
                   viewport={{ once: true }}
                 >
-                  <div className="text-4xl md:text-5xl font-light text-white" style={{ textShadow: '0 0 20px rgba(71, 191, 114, 0.5)' }}>8,000+</div>
+                  <div className="text-4xl md:text-5xl text-white" style={{ textShadow: '0 0 20px rgba(71, 191, 114, 0.5)' }}>8,000+</div>
                   <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Clients Served</div>
                 </motion.div>
                 <motion.div
@@ -707,7 +707,7 @@ const Home = () => {
                   transition={{ duration: 0.5, delay: 0.7 }}
                   viewport={{ once: true }}
                 >
-                  <div className="text-4xl md:text-5xl font-light text-white" style={{ textShadow: '0 0 20px rgba(71, 191, 114, 0.5)' }}>23+</div>
+                  <div className="text-4xl md:text-5xl text-white" style={{ textShadow: '0 0 20px rgba(71, 191, 114, 0.5)' }}>23+</div>
                   <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Countries Served</div>
                 </motion.div>
               </div>
@@ -720,7 +720,7 @@ const Home = () => {
               </div>
               <div className="relative rounded-lg bg-white p-8 overflow-hidden" style={{ background: '#f8fafc' }}>
                 <div className="text-center mb-4">
-                  <div className="text-lg font-light font-inter text-gray-800">We are Certified partners</div>
+                  <div className="text-lg font-inter text-gray-800">We are Certified partners</div>
                   {/* <div className="text-sm text-gray-600">Our partners</div> */}
                 </div>
                 <div className="relative overflow-hidden h-28 flex items-center">
@@ -754,8 +754,8 @@ const Home = () => {
             className="text-center mb-24"
           >
             <span className="text-sm font-bold text-green-500 uppercase tracking-[0.5em] font-inter mb-4 block">Execution Engine</span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6 leading-tight tracking-wide">How We Build Growth</h2>
-            <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto leading-relaxed">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight tracking-wide">How We Build Growth</h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
               We fix foundations, connect channels, then scale performance. <br />
               <span className="text-white font-medium italic">Most agencies guess; we engineer.</span>
             </p>
@@ -869,7 +869,7 @@ const Home = () => {
                             <h3 className="text-xl font-bold mb-2 transition-colors duration-500 text-white">
                               {item.step}
                             </h3>
-                            <p className={`text-sm font-light leading-relaxed transition-colors duration-500 ${isActive ? 'text-white' : 'text-white/70'}`}>
+                            <p className={`text-sm  leading-relaxed transition-colors duration-500 ${isActive ? 'text-white' : 'text-white/70'}`}>
                               {item.desc}
                             </p>
                           </div>
@@ -984,7 +984,7 @@ const Home = () => {
                   <div>
                     <span className="text-green-500 text-[10px] font-bold uppercase tracking-wider block mb-1">Step 0{i + 1}</span>
                     <h3 className="text-lg font-bold text-white mb-2">{item.step}</h3>
-                    <p className="text-gray-400 text-sm font-light leading-relaxed">{item.desc}</p>
+                    <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -1018,7 +1018,7 @@ const Home = () => {
               className="text-center"
             >
               <span className="text-sm font-bold text-green-600 uppercase tracking-widest mb-4 block underline decoration-green-500/30 underline-offset-8 font-inter">Outcome Focus</span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-12 leading-tight tracking-wide">What Our Work Improves</h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl text-gray-900 mb-12 leading-tight tracking-wide">What Our Work Improves</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
                   { title: "Rankings", icon: TrendingUp },
@@ -1041,7 +1041,7 @@ const Home = () => {
                       <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center flex-shrink-0 group-hover:bg-green-500 transition-all duration-500 border border-gray-100">
                         <Icon className="w-7 h-7 text-green-600 group-hover:text-white transition-colors duration-300" />
                       </div>
-                      <span className="text-gray-700 font-light text-lg leading-tight group-hover:text-gray-900 transition-colors duration-300 tracking-wide text-center">{item.title}</span>
+                      <span className="text-gray-700 text-lg leading-tight group-hover:text-gray-900 transition-colors duration-300 tracking-wide text-center">{item.title}</span>
                     </motion.div>
                   );
                 })}

@@ -264,9 +264,9 @@ const WhiteLabelSEO = () => {
                 </div>
                 <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl text-white leading-[1.1] tracking-tight">
                   Premium SEO Services <br />
-                  <span className="font-fraunces italic text-[#47BF72]">Under Your Brand Name</span>
+                  Under Your Brand Name
                 </h1>
-                <p className="text-lg sm:text-xl text-gray-300 font-light max-w-xl leading-relaxed">
+                <p className="text-lg sm:text-xl text-gray-300 max-w-xl leading-relaxed">
                   Offer premium SEO capabilities to your clients without hiring a single employee. We deliver world-class rankings while your agency takes 100% of the credit.
                 </p>
 
@@ -305,13 +305,13 @@ const WhiteLabelSEO = () => {
                       <div className="w-16 h-16 bg-[#47BF72]/15 border border-[#47BF72]/30 rounded-full flex items-center justify-center mx-auto mb-6">
                         <CheckCircle className="w-8 h-8 text-[#47BF72]" />
                       </div>
-                      <h3 className="text-xl font-light text-white mb-2">Proposal Requested!</h3>
-                      <p className="text-gray-400 mb-8 font-light text-sm">Our agency partnership managers will contact you within 24 hours.</p>
+                      <h3 className="text-xl text-white mb-2">Proposal Requested!</h3>
+                      <p className="text-gray-400 mb-8 text-sm">Our agency partnership managers will contact you within 24 hours.</p>
                       <button onClick={() => setIsSubmitted(false)} className="text-[#47BF72] font-semibold hover:underline text-sm">Submit another request</button>
                     </div>
                   ) : (
                     <>
-                      <h3 className="text-xl sm:text-2xl font-light text-white mb-6 text-center leading-tight">
+                      <h3 className="text-xl sm:text-2xl text-white mb-6 text-center leading-tight">
                         Request Agency <span className="font-fraunces italic text-[#47BF72]">Partner Proposal</span>
                       </h3>
 
@@ -326,7 +326,7 @@ const WhiteLabelSEO = () => {
                         <input
                           type="text"
                           placeholder="Your Name"
-                          className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 font-light text-sm"
+                          className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 text-sm"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           required
@@ -334,7 +334,7 @@ const WhiteLabelSEO = () => {
                         <input
                           type="email"
                           placeholder="Agency Email"
-                          className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 font-light text-sm"
+                          className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 text-sm"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           required
@@ -342,7 +342,7 @@ const WhiteLabelSEO = () => {
                         <input
                           type="text"
                           placeholder="Agency Name"
-                          className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 font-light text-sm"
+                          className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 text-sm"
                           value={formData.agencyName}
                           onChange={(e) => setFormData({ ...formData, agencyName: e.target.value })}
                           required
@@ -350,7 +350,7 @@ const WhiteLabelSEO = () => {
                         <input
                           type="url"
                           placeholder="Agency Website"
-                          className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 font-light text-sm"
+                          className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 text-sm"
                           value={formData.website}
                           onChange={(e) => setFormData({ ...formData, website: e.target.value })}
                           required
@@ -359,7 +359,7 @@ const WhiteLabelSEO = () => {
                           <select
                             value={formData.countryCode}
                             onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
-                            className="sm:col-span-1 bg-slate-900 border border-white/10 text-white/70 px-3 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all font-light text-sm text-left"
+                            className="sm:col-span-1 bg-slate-900 border border-white/10 text-white/70 px-3 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all text-sm text-left"
                           >
                             {countries.map((c, idx) => (
                               <option key={`hero-${c.name}-${c.code}-${idx}`} value={c.code}>
@@ -370,14 +370,14 @@ const WhiteLabelSEO = () => {
                           <input
                             type="tel"
                             placeholder="Phone Number"
-                            className="sm:col-span-2 bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 font-light text-sm"
+                            className="sm:col-span-2 bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 text-sm"
                             value={formData.phoneNumber}
                             onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
                             required
                           />
                         </div>
                         <select
-                          className="w-full bg-slate-900 border border-white/10 text-white/70 px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all font-light text-sm"
+                          className="w-full bg-slate-900 border border-white/10 text-white/70 px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all text-sm"
                           value={formData.clientCount}
                           onChange={(e) => setFormData({ ...formData, clientCount: e.target.value })}
                           required
@@ -420,7 +420,7 @@ const WhiteLabelSEO = () => {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className={`text-center px-4 ${i !== 0 ? 'border-l border-white/10' : ''}`}
                 >
-                  <div className="text-3xl sm:text-4xl font-light text-[#47BF72] mb-1">{stat.number}</div>
+                  <div className="text-3xl sm:text-4xl text-[#47BF72] mb-1">{stat.number}</div>
                   <div className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-widest leading-tight">{stat.label}</div>
                 </motion.div>
               ))}
@@ -432,8 +432,8 @@ const WhiteLabelSEO = () => {
         <section className="py-24 relative overflow-hidden bg-[#0d0d0d]">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="mb-20 text-center">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-white mb-6">Why Agencies Partner With Us</h2>
-              <p className="text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl text-white mb-6">Why Agencies Partner With Us</h2>
+              <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
                 Elevate your agency's execution capabilities with a backend team designed to scale your margins seamlessly.
               </p>
             </div>
@@ -451,7 +451,7 @@ const WhiteLabelSEO = () => {
                     <span className="material-symbols-outlined text-[#47BF72] group-hover:text-black text-2xl">{benefit.icon}</span>
                   </div>
                   <h3 className="text-lg sm:text-xl font-medium text-white mb-3">{benefit.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed font-light flex-grow">{benefit.description}</p>
+                  <p className="text-gray-400 text-sm leading-relaxed flex-grow">{benefit.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -462,8 +462,8 @@ const WhiteLabelSEO = () => {
         <section className="py-24 bg-black border-y border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="text-center mb-20">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-white mb-4">Under-the-Hood Execution</h2>
-              <p className="text-gray-400 max-w-xl mx-auto font-light">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl text-white mb-4">Under-the-Hood Execution</h2>
+              <p className="text-gray-400 max-w-xl mx-auto">
                 Complete execution covering every technical, off-page, and creative optimization requirement.
               </p>
             </div>
@@ -480,7 +480,7 @@ const WhiteLabelSEO = () => {
                   </div>
                   <div className="p-6">
                     <h4 className="text-lg font-medium text-white mb-2">{service.title}</h4>
-                    <p className="text-gray-400 text-sm leading-relaxed font-light">{service.description}</p>
+                    <p className="text-gray-400 text-sm leading-relaxed">{service.description}</p>
                   </div>
                 </div>
               ))}
@@ -491,7 +491,7 @@ const WhiteLabelSEO = () => {
         {/* Workflow timeline */}
         <section className="py-24 bg-[#0d0d0d]">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-white mb-20 text-center">Onboarding & Delivery Workflow</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl text-white mb-20 text-center">Onboarding & Delivery Workflow</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {steps.map((step, i) => (
                 <div key={i} className="relative group">
@@ -500,7 +500,7 @@ const WhiteLabelSEO = () => {
                       <span className="text-lg font-semibold text-[#47BF72]">{step.number}</span>
                     </div>
                     <h5 className="text-base sm:text-lg font-medium text-white mb-2">{step.title}</h5>
-                    <p className="text-gray-400 text-xs sm:text-sm leading-relaxed font-light">{step.description}</p>
+                    <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">{step.description}</p>
                   </div>
                 </div>
               ))}
@@ -513,7 +513,7 @@ const WhiteLabelSEO = () => {
         {/* FAQs */}
         <section className="py-24 bg-[#0d0d0d] border-t border-white/5">
           <div className="max-w-4xl mx-auto px-4 sm:px-8">
-            <h2 className="text-3xl sm:text-4xl font-light text-center text-white mb-16">Frequently Asked Questions</h2>
+            <h2 className="text-3xl sm:text-4xl text-center text-white mb-16">Frequently Asked Questions</h2>
             <div className="space-y-4">
               {faqs.map((faq, i) => (
                 <div key={i} className="border-b border-white/10 pb-4">
@@ -521,7 +521,7 @@ const WhiteLabelSEO = () => {
                     onClick={() => setActiveFaq(activeFaq === i ? null : i)}
                     className="w-full flex justify-between items-center text-left py-4 focus:outline-none"
                   >
-                    <span className="text-base sm:text-lg font-light text-white hover:text-[#47BF72] transition-colors flex items-center gap-3">
+                    <span className="text-base sm:text-lg text-white hover:text-[#47BF72] transition-colors flex items-center gap-3">
                       <HelpCircle className="w-5 h-5 text-[#47BF72] shrink-0" />
                       {faq.question}
                     </span>
@@ -540,7 +540,7 @@ const WhiteLabelSEO = () => {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                       >
-                        <p className="text-gray-400 text-sm leading-relaxed font-light pl-8 pb-4">
+                        <p className="text-gray-400 text-sm leading-relaxed pl-8 pb-4">
                           {faq.answer}
                         </p>
                       </motion.div>
@@ -557,8 +557,8 @@ const WhiteLabelSEO = () => {
           <div className="absolute inset-0 hero-glow opacity-30 pointer-events-none"></div>
           <div className="max-w-4xl mx-auto px-4 sm:px-8 relative z-10">
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-light text-white mb-4">Start Growing Your Agency Today</h2>
-              <p className="text-gray-400 text-sm sm:text-base font-light">
+              <h2 className="text-3xl sm:text-4xl text-white mb-4">Start Growing Your Agency Today</h2>
+              <p className="text-gray-400 text-sm sm:text-base">
                 Ready to deliver top-tier search visibility under your own brand? Fill out the brief below and talk to our experts.
               </p>
             </div>
@@ -569,8 +569,8 @@ const WhiteLabelSEO = () => {
                   <div className="w-16 h-16 bg-[#47BF72]/15 border border-[#47BF72]/30 rounded-full flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="w-8 h-8 text-[#47BF72]" />
                   </div>
-                  <h3 className="text-2xl font-light text-white mb-2">Thank you!</h3>
-                  <p className="text-gray-400 mb-8 font-light text-sm">We've received your request and will schedule a partner onboarding sync shortly.</p>
+                  <h3 className="text-2xl text-white mb-2">Thank you!</h3>
+                  <p className="text-gray-400 mb-8 text-sm">We've received your request and will schedule a partner onboarding sync shortly.</p>
                   <button onClick={() => setBottomSubmitted(false)} className="text-[#47BF72] font-semibold hover:underline text-sm">Send another request</button>
                 </div>
               ) : (
@@ -586,7 +586,7 @@ const WhiteLabelSEO = () => {
                     <input
                       type="text"
                       placeholder="Your Name"
-                      className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 font-light text-sm"
+                      className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 text-sm"
                       value={bottomData.name}
                       onChange={(e) => setBottomData({ ...bottomData, name: e.target.value })}
                       required
@@ -594,7 +594,7 @@ const WhiteLabelSEO = () => {
                     <input
                       type="email"
                       placeholder="Agency Email"
-                      className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 font-light text-sm"
+                      className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 text-sm"
                       value={bottomData.email}
                       onChange={(e) => setBottomData({ ...bottomData, email: e.target.value })}
                       required
@@ -605,7 +605,7 @@ const WhiteLabelSEO = () => {
                     <input
                       type="text"
                       placeholder="Agency Name"
-                      className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 font-light text-sm"
+                      className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 text-sm"
                       value={bottomData.agencyName}
                       onChange={(e) => setBottomData({ ...bottomData, agencyName: e.target.value })}
                       required
@@ -613,7 +613,7 @@ const WhiteLabelSEO = () => {
                     <input
                       type="url"
                       placeholder="Agency Website"
-                      className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 font-light text-sm"
+                      className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 text-sm"
                       value={bottomData.website}
                       onChange={(e) => setBottomData({ ...bottomData, website: e.target.value })}
                       required
@@ -625,7 +625,7 @@ const WhiteLabelSEO = () => {
                       <select
                         value={bottomData.countryCode}
                         onChange={(e) => setBottomData({ ...bottomData, countryCode: e.target.value })}
-                        className="sm:col-span-1 bg-slate-900 border border-white/10 text-white/70 px-3 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all font-light text-sm text-left"
+                        className="sm:col-span-1 bg-slate-900 border border-white/10 text-white/70 px-3 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all text-sm text-left"
                       >
                         {countries.map((c, idx) => (
                           <option key={`bottom-${c.name}-${c.code}-${idx}`} value={c.code}>
@@ -636,14 +636,14 @@ const WhiteLabelSEO = () => {
                       <input
                         type="tel"
                         placeholder="Phone Number"
-                        className="sm:col-span-2 bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 font-light text-sm"
+                        className="sm:col-span-2 bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all placeholder-white/30 text-sm"
                         value={bottomData.phoneNumber}
                         onChange={(e) => setBottomData({ ...bottomData, phoneNumber: e.target.value })}
                         required
                       />
                     </div>
                     <select
-                      className="w-full bg-slate-900 border border-white/10 text-white/70 px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all font-light text-sm"
+                      className="w-full bg-slate-900 border border-white/10 text-white/70 px-4 py-3 rounded-xl focus:border-[#47BF72] outline-none transition-all text-sm"
                       value={bottomData.clientCount}
                       onChange={(e) => setBottomData({ ...bottomData, clientCount: e.target.value })}
                       required

@@ -100,6 +100,13 @@ const Navbar = () => {
       ]
     },
     {
+      name: 'Blog',
+      path: '/blog',
+      icon: null,
+      preview: null,
+      description: null
+    },
+    {
       name: 'Contact Us',
       path: '/contact',
       icon: null,
@@ -162,7 +169,7 @@ const Navbar = () => {
                   <Link
                     to={item.path}
                     className={`relative flex items-center space-x-2 px-4 py-3 transition-all duration-300 group ${isActive(item.path)
-                      ? 'text-white font-light'
+                      ? 'text-white '
                       : 'text-white hover:text-green-200'
                       }`}
                     onClick={(e) => {
@@ -174,7 +181,7 @@ const Navbar = () => {
                     }}
                   >
                     {item.icon && <item.icon className="w-4 h-4" />}
-                    <span className="uppercase tracking-wide text-sm font-light">{item.name}</span>
+                    <span className="uppercase tracking-wide text-sm">{item.name}</span>
                     {item.hasDropdown && <ChevronDown className="w-3 h-3 text-white" />}
 
                     {/* Animated Line */}

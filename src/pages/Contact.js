@@ -133,7 +133,7 @@ const Contact = () => {
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl leading-tight mb-4 tracking-tight">
               <span className="text-white font-inter font-normal">Let's Work </span>
-              <span className="text-white font-fraunces italic font-light" style={{
+              <span className="text-white font-fraunces italic" style={{
                 background: 'linear-gradient(135deg, #ffffff 0%, #47BF72 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -142,7 +142,7 @@ const Contact = () => {
                 Together.
               </span>
             </h1>
-            <p className="text-base sm:text-lg text-gray-400 font-light leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
               Ready to transform your digital presence? Contact us today and let's discuss how we can help you achieve your goals.
             </p>
           </motion.div>
