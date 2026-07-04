@@ -18,7 +18,7 @@ const Contact = () => {
     email: '',
     company: '',
     phone: '',
-    countryCode: '+91',
+    countryCode: '+1',
     service: '',
     message: ''
   });
@@ -68,7 +68,7 @@ const Contact = () => {
           email: '',
           company: '',
           phone: '',
-          countryCode: '+91',
+          countryCode: '+1',
           service: '',
           message: ''
         });

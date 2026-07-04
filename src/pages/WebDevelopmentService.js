@@ -40,7 +40,7 @@ const WebDevelopmentService = () => {
     companyName: '',
     website: '',
     phoneNumber: '',
-    countryCode: '+91',
+    countryCode: '+1',
     budgetRange: ''
   });
   const [heroSubmitting, setHeroSubmitting] = useState(false);
@@ -53,7 +53,7 @@ const WebDevelopmentService = () => {
     companyName: '',
     website: '',
     phoneNumber: '',
-    countryCode: '+91',
+    countryCode: '+1',
     budgetRange: ''
   });
   const [bottomSubmitting, setBottomSubmitting] = useState(false);
@@ -132,7 +132,7 @@ const WebDevelopmentService = () => {
         companyName: '',
         website: '',
         phoneNumber: '',
-        countryCode: '+91',
+        countryCode: '+1',
         budgetRange: ''
       });
     } catch (error) {
@@ -173,7 +173,7 @@ const WebDevelopmentService = () => {
         companyName: '',
         website: '',
         phoneNumber: '',
-        countryCode: '+91',
+        countryCode: '+1',
         budgetRange: ''
       });
     } catch (error) {
@@ -442,7 +442,7 @@ const WebDevelopmentService = () => {
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-slate-900 mb-4 sm:mb-6">Complete Web Development Solutions</h2>
               <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">Custom designed, high-performing websites and software systems engineered for rapid scale.</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)] sm:auto-rows-[180px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)] sm:auto-rows-[220px]">
               {/* Tall Card: Custom Web Apps */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}

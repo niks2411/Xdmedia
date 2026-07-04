@@ -13,7 +13,7 @@ const WhiteLabelMarketing = () => {
     agencyName: '',
     website: '',
     phoneNumber: '',
-    countryCode: '+91',
+    countryCode: '+1',
     clientCount: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,7 +27,7 @@ const WhiteLabelMarketing = () => {
     agencyName: '',
     website: '',
     phoneNumber: '',
-    countryCode: '+91',
+    countryCode: '+1',
     clientCount: ''
   });
   const [bottomSubmitting, setBottomSubmitting] = useState(false);
@@ -68,7 +68,7 @@ const WhiteLabelMarketing = () => {
         agencyName: '',
         website: '',
         phoneNumber: '',
-        countryCode: '+91',
+        countryCode: '+1',
         clientCount: ''
       });
     } catch (err) {
@@ -110,7 +110,7 @@ const WhiteLabelMarketing = () => {
         agencyName: '',
         website: '',
         phoneNumber: '',
-        countryCode: '+91',
+        countryCode: '+1',
         clientCount: ''
       });
     } catch (err) {

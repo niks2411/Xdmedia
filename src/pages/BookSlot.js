@@ -69,7 +69,7 @@ const BookSlot = () => {
     name: '',
     email: '',
     phone: '',
-    countryCode: '+91',
+    countryCode: '+1',
     service: '',
     message: '',
     bookingDate: '',
@@ -397,7 +397,7 @@ const BookSlot = () => {
                                     name="phone"
                                     value={formData.phone}
                                     onChange={handleChange}
-                                    placeholder="98765 43210"
+                                    placeholder="Phone Number"
                                     className={`col-span-2 ${inputClass}`}
                                     style={inputStyle}
                                   />

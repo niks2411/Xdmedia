@@ -1,6 +1,5 @@
 export const countries = [
   // Primary markets
-  { name: "India", code: "+91" },
   { name: "US", code: "+1" },
   { name: "UK", code: "+44" },
   { name: "Canada", code: "+1" },

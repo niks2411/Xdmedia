@@ -9,7 +9,7 @@ const InlineContactForm = ({ servicePage, defaultService }) => {
         email: '',
         company: '',
         phone: '',
-        countryCode: '+91',
+        countryCode: '+1',
         message: ''
     });
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -57,7 +57,7 @@ const InlineContactForm = ({ servicePage, defaultService }) => {
                     email: '',
                     company: '',
                     phone: '',
-                    countryCode: '+91',
+                    countryCode: '+1',
                     message: ''
                 });
             }, 3000);

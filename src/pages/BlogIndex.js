@@ -38,7 +38,7 @@ const BlogIndex = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {blogPosts.map((post) => (
+            {blogPosts.filter(post => post.slug === 'seo-guide-for-businesses').map((post) => (
               <article key={post.slug} className="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100">
                 {/* Image & Tag */}
                 <Link to={`/blog/${post.slug}`} className="relative block overflow-hidden aspect-video bg-slate-100">

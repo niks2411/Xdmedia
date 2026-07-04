@@ -10,7 +10,7 @@ const BookingModal = ({ isOpen, onClose }) => {
         name: '',
         email: '',
         phone: '',
-        countryCode: '+91',
+        countryCode: '+1',
         bookingDate: '',
         timeSlot: ''
     });
@@ -107,7 +107,7 @@ const BookingModal = ({ isOpen, onClose }) => {
 
             // Reset form after 3 seconds and close modal
             setTimeout(() => {
-                setFormData({ name: '', email: '', phone: '', countryCode: '+91', bookingDate: '', timeSlot: '' });
+                setFormData({ name: '', email: '', phone: '', countryCode: '+1', bookingDate: '', timeSlot: '' });
                 setIsSuccess(false);
                 onClose();
             }, 3000);
@@ -256,7 +256,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                                                         name="phone"
                                                         value={formData.phone}
                                                         onChange={handleInputChange}
-                                                        placeholder="+91 98765 43210"
+                                                        placeholder="Phone Number"
                                                         className="sm:col-span-2 px-4 py-3 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400/50 transition-all text-sm"
                                                         style={{
                                                             background: 'rgba(255, 255, 255, 0.05)',

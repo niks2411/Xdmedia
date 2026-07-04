@@ -22,7 +22,7 @@ const Home = () => {
     name: '',
     email: '',
     phone: '',
-    countryCode: '+91',
+    countryCode: '+1',
     service: '',
     message: ''
   });
@@ -114,7 +114,7 @@ const Home = () => {
           name: '',
           email: '',
           phone: '',
-          countryCode: '+91',
+          countryCode: '+1',
           service: '',
           message: ''
         });

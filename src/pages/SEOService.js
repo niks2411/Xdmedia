@@ -17,7 +17,7 @@ const SEOService = () => {
     companyName: '',
     website: '',
     phoneNumber: '',
-    countryCode: '+91',
+    countryCode: '+1',
     budgetRange: ''
   });
   const [heroSubmitting, setHeroSubmitting] = useState(false);
@@ -30,7 +30,7 @@ const SEOService = () => {
     companyName: '',
     website: '',
     phoneNumber: '',
-    countryCode: '+91',
+    countryCode: '+1',
     budgetRange: ''
   });
   const [bottomSubmitting, setBottomSubmitting] = useState(false);
@@ -88,7 +88,7 @@ const SEOService = () => {
         companyName: '',
         website: '',
         phoneNumber: '',
-        countryCode: '+91',
+        countryCode: '+1',
         budgetRange: ''
       });
     } catch (error) {
@@ -129,7 +129,7 @@ const SEOService = () => {
         companyName: '',
         website: '',
         phoneNumber: '',
-        countryCode: '+91',
+        countryCode: '+1',
         budgetRange: ''
       });
     } catch (error) {
