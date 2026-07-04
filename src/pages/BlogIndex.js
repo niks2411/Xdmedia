@@ -13,22 +13,22 @@ const BlogIndex = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-slate-950 text-white overflow-hidden">
+      <section className="relative py-20 bg-white text-slate-900 overflow-hidden border-b border-slate-100">
         {/* Subtle grid and gradient overlays */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-70"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+        <div className="absolute -top-40 -left-40 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#47BF72]/10 border border-[#47BF72]/30 text-[#47BF72] text-xs font-semibold uppercase tracking-widest mb-6">
             <BookOpen className="w-3.5 h-3.5" />
             Resource Center
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-none mb-6 font-normal">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl text-slate-900 tracking-tight leading-none mb-6 font-normal">
             The XD Media Blog
           </h1>
-          <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
             Latest insights, guides, and strategies from our digital marketing and web development experts.
           </p>
         </div>

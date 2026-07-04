@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Building2, TrendingUp, Users, Award } from 'lucide-react';
+import { Building2, Users, Award } from 'lucide-react';
 
 const CredibilityBacking = () => {
     const parentCompanies = [
@@ -17,23 +17,11 @@ const CredibilityBacking = () => {
             ]
         },
         {
-            name: "Vidflyy Promotion LLP",
-            icon: <TrendingUp className="w-8 h-8" />,
-            revenue: "YouTube Specialist",
-            description: "Video Marketing Platform",
-            details: "Specialized YouTube & video marketing platform with organic growth and watch-time optimization expertise",
-            color: "#8B5CF6",
-            stats: [
-                { label: "Video Campaigns", value: "5000+" },
-                { label: "Watch Hours", value: "10M+" }
-            ]
-        },
-        {
             name: "Music Labels",
             icon: <Users className="w-8 h-8" />,
             revenue: "1M+ Subscribers",
             description: "Combined Reach",
-            details: "Lokgeet Punjabi & Lokgeet Haryanvi with massive regional audience and content expertise",
+            details: "Combined reach with regional audience and content expertise",
             color: "#F59E0B",
             stats: [
                 { label: "Total Subscribers", value: "1M+" },
@@ -93,7 +81,7 @@ const CredibilityBacking = () => {
                 </motion.div>
 
                 {/* Parent Companies Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
                     {parentCompanies.map((company, index) => (
                         <motion.div
                             key={index}

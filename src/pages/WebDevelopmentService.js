@@ -8,13 +8,6 @@ import { countries } from '../lib/countries';
 // Projects Showcase State (Moved outside component to prevent recreating on every render)
 const projects = [
   {
-    title: "Vidflyy",
-    url: "https://vidflyy.com",
-    description: "A specialized platform for creators and businesses to promote their videos, engineered with Next.js frontend, Node.js backend, and scalable AWS cloud infrastructure.",
-    image: "/1.jpg",
-    tech: ["Next.js", "Node.js (Express)", "AWS Cloud", "Serverless"]
-  },
-  {
     title: "ShigramPay",
     url: "https://shigrampay.ai/",
     description: "India's first payment recognition application, utilizing advanced AI engines to automate transaction tracking, invoice matching, and ledger adjustments.",
