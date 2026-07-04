@@ -35,6 +35,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:slug" element={<BlogDetail />} />
+            <Route path="/seo-guide-for-businesses" element={<BlogDetail slug="seo-guide-for-businesses" />} />
             <Route path="/website-design" element={<MarketingTools />} />
             <Route path="/performance-marketing" element={<Analytics />} />
             <Route path="/white-label-seo" element={<WhiteLabelSEO />} />
