@@ -105,7 +105,7 @@ const Footer = () => {
       </section>
 
       <footer
-        className="text-white relative overflow-hidden"
+        className="text-white relative"
         style={{
           width: '100%',
           backgroundImage: 'url(/bg1.png)',
@@ -117,16 +117,17 @@ const Footer = () => {
         <div className="w-full py-12 px-4 sm:px-6 lg:px-8">
           {/* Main Footer Content */}
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
-            <div className="lg:w-1/3 flex justify-center lg:justify-start w-full lg:-mt-36 md:-mt-28 -mt-20">
+            {/* Logo Column - Left Side */}
+            <div className="lg:w-1/3 flex justify-center lg:justify-start w-full relative z-20 mt-2 lg:mt-4 lg:pl-8">
               <img
-                src="/logo.png"
+                src="/logo2.png"
                 alt="360 Logo"
-                className="w-full max-w-[280px] md:max-w-[320px] lg:max-w-md object-contain"
+                className="w-full max-w-[290px] md:max-w-[350px] lg:max-w-[390px] object-contain"
               />
             </div>
 
             {/* Content Columns - Right Side */}
-            <div className="lg:w-2/3">
+            <div className="lg:w-2/3 w-full">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Company Info */}
                 <div>
