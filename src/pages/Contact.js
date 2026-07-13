@@ -96,14 +96,14 @@ const Contact = () => {
     },
     {
       icon: MapPin,
-      title: 'Head Office — South Africa',
-      detail: 'Sandton\nJohannesburg 2091\nSouth Africa',
+      title: 'Head Office — India',
+      detail: 'SCO-40, HLP Galleria\nSAS Nagar Mohali, 160062\nChandigarh',
       action: '#'
     },
     {
       icon: MapPin,
-      title: 'Branch Office — India',
-      detail: 'SCO-40, HLP Galleria\nSAS Nagar Mohali, 160062\nChandigarh',
+      title: 'Branch Office — South Africa',
+      detail: 'Sandton\nJohannesburg 2091\nSouth Africa',
       action: '#'
     }
   ];
@@ -137,14 +137,9 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             className="mb-16 text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl leading-tight mb-4 tracking-tight">
-              <span className="text-white font-inter font-normal">Let's Work </span>
-              <span className="text-white font-fraunces italic" style={{
-                background: 'linear-gradient(135deg, #ffffff 0%, #47BF72 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl leading-tight mb-4 tracking-tight" style={{ color: '#ffffff' }}>
+              <span className="font-inter font-normal text-white" style={{ color: '#ffffff' }}>Let's Work </span>
+              <span className="font-fraunces italic text-white" style={{ color: '#ffffff' }}>
                 Together.
               </span>
             </h1>

@@ -149,15 +149,15 @@ const Footer = () => {
                       <MapPin className="w-4 h-4 mt-1 shrink-0" />
                       <div className="space-y-3">
                         <div>
-                          <span className="text-xs font-semibold text-white block mb-0.5">Head Office — South Africa</span>
+                          <span className="text-xs font-semibold text-white block mb-0.5">Head Office — India</span>
                           <span className="text-sm text-gray-300 block leading-relaxed">
-                            Sandton, Johannesburg 2091, South Africa
+                            SCO-40, HLP Galleria, SAS Nagar Mohali, 160062, Chandigarh
                           </span>
                         </div>
                         <div className="border-t border-white/10 pt-2">
-                          <span className="text-xs font-semibold text-white block mb-0.5">Branch Office — India</span>
+                          <span className="text-xs font-semibold text-white block mb-0.5">Branch Office — South Africa</span>
                           <span className="text-sm text-gray-300 block leading-relaxed">
-                            SCO-40, HLP Galleria, SAS Nagar Mohali, 160062, Chandigarh
+                            Sandton, Johannesburg 2091, South Africa
                           </span>
                         </div>
                       </div>
