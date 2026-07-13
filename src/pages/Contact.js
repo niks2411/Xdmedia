@@ -96,8 +96,14 @@ const Contact = () => {
     },
     {
       icon: MapPin,
-      title: 'Visit Us',
-      detail: 'SCO-40, HLP Galleria, SAS Nagar Mohali, 160062, Chandigarh',
+      title: 'Head Office — South Africa',
+      detail: 'Sandton\nJohannesburg 2091\nSouth Africa',
+      action: '#'
+    },
+    {
+      icon: MapPin,
+      title: 'Branch Office — India',
+      detail: 'SCO-40, HLP Galleria\nSAS Nagar Mohali, 160062\nChandigarh',
       action: '#'
     }
   ];
@@ -171,7 +177,7 @@ const Contact = () => {
                       <info.icon className="w-6 h-6" />
                     </div>
                     <h3 className="text-lg font-semibold text-white mb-2">{info.title}</h3>
-                    <p className="text-gray-400">{info.detail}</p>
+                    <p className="text-gray-400 whitespace-pre-line">{info.detail}</p>
                   </div>
                 </motion.div>
               ))}
