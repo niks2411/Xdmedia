@@ -228,6 +228,23 @@ const SEOService = () => {
       ],
       chartTitle: "AI Citation Dashboard",
       image: "/Onegolf Performance Dashboard.png"
+    },
+    {
+      category: "Organic Clicks Growth",
+      smallLabel: "Google Search Console Performance",
+      heading: "Strong Increase in Total Clicks & Impressions",
+      challenge: "Optimizing overall search engine visibility, raising keyword rankings, and capturing more organic search traffic.",
+      resultValue: "+100.7%",
+      resultDesc: "Total clicks increased from 1.41K to 2.83K, and impressions grew from 27.9K to 63.1K, alongside a massive average position improvement from 26.3 to 9.7.",
+      tableTitle: "Metric",
+      tableRows: [
+        { label: "Total Clicks (Last 3m)", value: "2.83K", growth: "+100.7%" },
+        { label: "Total Impressions (Last 3m)", value: "63.1K", growth: "+126.2%" },
+        { label: "Average CTR", value: "4.5%", growth: "5.1% Prev" },
+        { label: "Average Position", value: "9.7", growth: "Improved" }
+      ],
+      chartTitle: "GSC Performance Report",
+      image: "/seo-page.jpeg"
     }
   ];
 
