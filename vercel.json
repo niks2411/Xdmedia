@@ -9,6 +9,26 @@
             "destination": "/static/css/main.css"
         },
         {
+            "source": "/affordable-seo-services-in-india",
+            "destination": "/affordable-seo-services-in-india.html"
+        },
+        {
+            "source": "/seo-service",
+            "destination": "/seo-service.html"
+        },
+        {
+            "source": "/web-development-services",
+            "destination": "/web-development-services.html"
+        },
+        {
+            "source": "/web-development-company-india",
+            "destination": "/web-development-company-india.html"
+        },
+        {
+            "source": "/performance-marketing",
+            "destination": "/performance-marketing.html"
+        },
+        {
             "source": "/(.*)",
             "destination": "/index.html"
         }
