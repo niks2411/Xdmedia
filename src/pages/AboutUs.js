@@ -1,5 +1,6 @@
 import React from 'react';
 import Canonical from '../components/SEO/Canonical';
+import GmbBadge from '../components/GmbBadge';
 import { motion } from 'framer-motion';
 import { TimelineDemo } from '../components/TimelineDemo';
 import { MarqueeDemo } from '../components/MarqueeDemo';
@@ -36,19 +37,9 @@ const AboutUs = () => {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <motion.div
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="inline-block px-6 py-2 rounded-full text-sm font-medium uppercase tracking-wider mb-8"
-              style={{
-                background: 'rgba(71, 191, 114, 0.2)',
-                border: '1px solid rgba(71, 191, 114, 0.4)',
-                color: '#47BF72'
-              }}
-            >
-              About XD MEDIA
-            </motion.div>
+            <div className="mb-6">
+              <GmbBadge />
+            </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl text-white leading-tight mb-8 tracking-tight">
               Creating Buzz. <br className="hidden sm:block" /> Building Brands.

@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Canonical from '../components/SEO/Canonical';
 import { ChevronDown, Send, CheckCircle, AlertCircle, HelpCircle } from 'lucide-react';
 import { countries } from '../lib/countries';
+import GmbBadge from '../components/GmbBadge';
 
 const WhiteLabelSEO = () => {
   // Hero Form State
@@ -255,12 +256,8 @@ const WhiteLabelSEO = () => {
                 transition={{ duration: 0.8 }}
                 className="text-white space-y-6 sm:space-y-10"
               >
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#47BF72]/15 border border-[#47BF72]/30 text-[#47BF72] text-xs font-semibold tracking-wider uppercase">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#47BF72] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#47BF72]"></span>
-                  </span>
-                  White Label Agency Partnership
+                <div>
+                  <GmbBadge />
                 </div>
                 <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl text-white leading-[1.1] tracking-tight">
                   Premium SEO Services <br />

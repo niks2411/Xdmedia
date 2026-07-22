@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Canonical from '../components/SEO/Canonical';
+import GmbBadge from '../components/GmbBadge';
 import { motion } from 'framer-motion';
 import {
   Mail,
@@ -137,6 +138,9 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             className="mb-16 text-center max-w-3xl mx-auto"
           >
+            <div className="mb-4">
+              <GmbBadge />
+            </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl leading-tight mb-4 tracking-tight" style={{ color: '#ffffff' }}>
               <span className="font-inter font-normal text-white" style={{ color: '#ffffff' }}>Let's Work </span>
               <span className="font-fraunces italic text-white" style={{ color: '#ffffff' }}>

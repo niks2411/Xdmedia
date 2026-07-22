@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
+import GmbBadge from '../components/GmbBadge';
 import {
   Calendar,
   Clock,
@@ -214,6 +215,9 @@ const BookSlot = () => {
                 <Sparkles className="w-3 h-3" />
                 Free 30-Min Strategy Call
               </span>
+              <div className="mb-2">
+                <GmbBadge />
+              </div>
               <h1 className="text-2xl sm:text-3xl text-white tracking-tight leading-tight">
                 Book Your Free Strategy Session
               </h1>

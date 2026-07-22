@@ -94,7 +94,7 @@ export const blogPosts = [
     date: "July 4, 2026",
     readTime: "15 Min Read",
     excerpt: "The only SEO guide you need in 2026. Technical SEO, content authority, AEO & GEO explained with real examples. For any industry, any market.",
-    image: "/images/blog/seo-guide-2026.png",
+    image: "/cover.png",
     sections: [
       {
         id: "introduction",

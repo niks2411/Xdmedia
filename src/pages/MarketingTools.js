@@ -3,6 +3,7 @@ import Canonical from '../components/SEO/Canonical';
 import { motion } from 'framer-motion';
 import { Code, Zap, Users, Target, Monitor, CheckCircle, ArrowRight, Smartphone, Gauge, Layers, Palette, Globe, Sparkles } from 'lucide-react';
 import InlineContactForm from '../components/InlineContactForm';
+import GmbBadge from '../components/GmbBadge';
 import { MacbookScroll } from '../components/ui/macbook-scroll';
 import { BackgroundLines } from '../components/ui/background-lines';
 
@@ -83,20 +84,9 @@ const MarketingTools = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <motion.div
-                initial={{ scale: 0.9 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-6 py-2 rounded-full text-sm font-medium uppercase tracking-wider mb-6"
-                style={{
-                  background: 'rgba(71, 191, 114, 0.2)',
-                  border: '1px solid rgba(71, 191, 114, 0.4)',
-                  color: '#47BF72'
-                }}
-              >
-                <Code className="w-4 h-4" />
-                Core Expertise ⭐
-              </motion.div>
+              <div className="mb-6">
+                <GmbBadge />
+              </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 sm:mb-6 tracking-tight">
                 Website Design & Development <br className="hidden sm:block" /> Designed to Convert.

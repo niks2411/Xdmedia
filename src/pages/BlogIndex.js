@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { blogPosts } from '../lib/blogData';
 import { ArrowRight, BookOpen } from 'lucide-react';
+import GmbBadge from '../components/GmbBadge';
 
 const BlogIndex = () => {
   return (
@@ -21,9 +22,8 @@ const BlogIndex = () => {
         <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#47BF72]/10 border border-[#47BF72]/30 text-[#47BF72] text-xs font-semibold uppercase tracking-widest mb-6">
-            <BookOpen className="w-3.5 h-3.5" />
-            Resource Center
+          <div className="mb-6 flex justify-center">
+            <GmbBadge variant="light" />
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl text-slate-900 tracking-tight leading-none mb-6 font-normal">
             The XD Media Blog

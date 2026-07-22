@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Canonical from '../components/SEO/Canonical';
 import { MarqueeDemo } from '../components/MarqueeDemo';
 import { countries } from '../lib/countries';
+import GmbBadge from '../components/GmbBadge';
 
 // Projects Showcase State (Moved outside component to prevent recreating on every render)
 const projects = [
@@ -281,6 +282,9 @@ const WebDevelopmentService = () => {
                 transition={{ duration: 0.8 }}
                 className="text-white space-y-6 sm:space-y-10"
               >
+                <div>
+                  <GmbBadge />
+                </div>
                 <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl text-white leading-[1.1] tracking-tight">
                   India's Most Trusted, Web Development Company Offering <br className="hidden lg:block" />
                   High-Performance Digital Solutions

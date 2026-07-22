@@ -1,5 +1,6 @@
 import React from 'react';
 import Canonical from '../components/SEO/Canonical';
+import GmbBadge from '../components/GmbBadge';
 import { motion } from 'framer-motion';
 import { MessageSquare, Sparkles, CheckCircle, Search, Cpu, Brain, Layers } from 'lucide-react';
 import InlineContactForm from '../components/InlineContactForm';
@@ -47,16 +48,8 @@ const ChatGPTListing = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div
-                className="inline-flex items-center gap-2 px-6 py-2 rounded-full text-sm font-medium uppercase tracking-wider mb-6"
-                style={{
-                  background: 'rgba(71, 191, 114, 0.2)',
-                  border: '1px solid rgba(71, 191, 114, 0.4)',
-                  color: '#47BF72'
-                }}
-              >
-                <Cpu className="w-4 h-4" />
-                AI Search Optimization ⭐
+              <div className="mb-6">
+                <GmbBadge />
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 sm:mb-6 tracking-tight">

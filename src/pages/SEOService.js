@@ -5,6 +5,7 @@ import Canonical from '../components/SEO/Canonical';
 import { countries } from '../lib/countries';
 import { MarqueeDemo } from '../components/MarqueeDemo';
 import { TrendingUp } from 'lucide-react';
+import GmbBadge from '../components/GmbBadge';
 
 const SEOService = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
@@ -309,6 +310,9 @@ const SEOService = () => {
                 transition={{ duration: 0.8 }}
                 className="text-white space-y-6 sm:space-y-10"
               >
+                <div>
+                  <GmbBadge />
+                </div>
                 <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl text-white leading-[1.1] tracking-tight">
                   <span className="sm:whitespace-nowrap">AI-Powered SEO Solutions</span> <br className="hidden lg:block" />
                   Built for Long-Term Rankings & Revenue Growth

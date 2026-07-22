@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { blogPosts } from '../lib/blogData';
 import { ArrowLeft, Share2, Facebook, Twitter, Linkedin, Link2, Sparkles, ChevronDown } from 'lucide-react';
+import GmbBadge from '../components/GmbBadge';
 
 const parseInlineMarkdown = (text) => {
   if (!text) return '';
@@ -313,6 +314,10 @@ const BlogDetail = ({ slug: propSlug }) => {
             <span>{post.date}</span>
             <span>•</span>
             <span>{post.readTime}</span>
+          </div>
+
+          <div className="mb-4">
+            <GmbBadge variant="light" />
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl text-slate-900 font-bold tracking-tight leading-tight max-w-none font-sans">

@@ -12,6 +12,7 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import ProcessWorkflow from '../components/ProcessWorkflow';
 import CredibilityBacking from '../components/CredibilityBacking';
 import BookingModal from '../components/BookingModal';
+import GmbBadge from '../components/GmbBadge';
 import { TrendingUp, Target, Zap, ShieldCheck, Search, Code, BarChart3, Users, Settings, Globe, ArrowRight, Layers, Play, RefreshCw, BarChart, Activity, ShoppingBag, Building2, Rocket, Briefcase, User, CheckCircle, AlertCircle, Send } from 'lucide-react';
 import { countries } from '../lib/countries';
 
@@ -158,6 +159,14 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="text-left ml-4"
             >
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="mb-4"
+              >
+                <GmbBadge />
+              </motion.div>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
