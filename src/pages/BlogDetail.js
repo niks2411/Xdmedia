@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import Canonical from '../components/SEO/Canonical';
 import { blogPosts } from '../lib/blogData';
 import { ArrowLeft, Share2, Facebook, Twitter, Linkedin, Link2, Sparkles, ChevronDown } from 'lucide-react';
 import GmbBadge from '../components/GmbBadge';
@@ -287,26 +288,34 @@ const BlogDetail = ({ slug: propSlug }) => {
       <Helmet>
         <title>{post.metaTitle || `${post.title} - XD MEDIA Blog`}</title>
         <meta name="description" content={post.metaDescription || post.excerpt} />
+        <meta property="og:title" content={post.metaTitle || post.title} />
+        <meta property="og:description" content={post.metaDescription || post.excerpt} />
+        <meta property="og:url" content={`https://www.xdmedia.in/blog/${post.slug || slug}`} />
+        <meta property="twitter:title" content={post.metaTitle || post.title} />
+        <meta property="twitter:description" content={post.metaDescription || post.excerpt} />
         {post.schema && (
           <script type="application/ld+json">
             {typeof post.schema === 'string' ? post.schema : JSON.stringify(post.schema)}
           </script>
         )}
       </Helmet>
+      <Canonical path={`/blog/${post.slug || slug}`} />
 
       {/* Main Content wrapper */}
       <article className="min-h-screen bg-[#FDFDFD] pb-24 font-sans">
         
         {/* Navigation & Header */}
         <header className="pt-10 pb-6 px-4 sm:px-6 lg:px-8 border-b border-gray-100 max-w-7xl mx-auto mb-10">
-          <Link
-            to="/blog"
-            className="inline-flex items-center gap-2 text-[#47BF72] hover:text-green-600 transition-colors text-xs font-semibold uppercase tracking-wider mb-6"
-          >
-            <ArrowLeft className="w-4 h-4" /> Back to Articles
-          </Link>
+          <div className="text-left mb-6">
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-2 text-[#47BF72] hover:text-green-600 transition-colors text-xs font-semibold uppercase tracking-wider"
+            >
+              <ArrowLeft className="w-4 h-4" /> Back to Articles
+            </Link>
+          </div>
           
-          <div className="flex items-center gap-2 text-xs text-gray-500 font-medium uppercase tracking-wider mb-4">
+          <div className="flex items-center justify-center flex-wrap gap-2 text-xs text-gray-500 font-medium uppercase tracking-wider mb-4">
             <span className="font-semibold text-slate-700">Ritik Rozra</span>
             <span>•</span>
             <span>{post.category}</span>
@@ -316,11 +325,11 @@ const BlogDetail = ({ slug: propSlug }) => {
             <span>{post.readTime}</span>
           </div>
 
-          <div className="mb-4">
+          <div className="mb-6 flex justify-center">
             <GmbBadge variant="light" />
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl text-slate-900 font-bold tracking-tight leading-tight max-w-none font-sans">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl text-slate-900 font-bold tracking-tight leading-tight max-w-6xl mx-auto font-sans text-center">
             {post.title}
           </h1>
         </header>

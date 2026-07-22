@@ -39,7 +39,7 @@ const PrivacyPolicy = () => {
       }
 
       const scrollPosition = window.scrollY + 140; // Navbar height + offset buffer
-      
+
       let currentSection = '';
       for (const sec of sections) {
         const el = document.getElementById(sec.id);
@@ -108,7 +108,7 @@ const PrivacyPolicy = () => {
           >
             <ArrowLeft className="w-3.5 h-3.5" /> Back to Home
           </Link>
-          
+
           <h1 className="text-3xl sm:text-4xl text-white mb-2 tracking-tight">
             Privacy Notice
           </h1>
@@ -121,7 +121,7 @@ const PrivacyPolicy = () => {
       {/* Main Container */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-12 items-start">
-          
+
           {/* Table of Contents Sticky Sidebar */}
           <aside className="hidden lg:block sticky top-28 pr-4">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-[#47BF72] mb-5">
@@ -137,11 +137,10 @@ const PrivacyPolicy = () => {
                     )}
                     <button
                       onClick={() => handleScrollTo(sec.id)}
-                      className={`text-left text-xs transition-all duration-300 focus:outline-none block py-0.5 w-full truncate ${
-                        isActive
+                      className={`text-left text-xs transition-all duration-300 focus:outline-none block py-0.5 w-full truncate ${isActive
                           ? 'text-[#47BF72] font-semibold pl-2 translate-x-0.5'
                           : 'text-gray-400 hover:text-gray-200'
-                      }`}
+                        }`}
                       title={sec.label}
                     >
                       {sec.label}
@@ -157,14 +156,14 @@ const PrivacyPolicy = () => {
 
           {/* Privacy Content */}
           <div className="space-y-12 text-sm leading-relaxed text-gray-300 max-w-4xl">
-            
+
             {/* Intro Summary Card */}
             <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6 sm:p-8 space-y-4">
               <h2 className="text-lg font-medium text-white flex items-center gap-3">
                 <Shield className="w-5 h-5 text-[#47BF72]" /> Summary of Key Points
               </h2>
               <p>
-                This Privacy Notice for <strong>XD Media</strong> ("we," "us," or "our") describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services.
+                This Privacy Notice for <strong>XD Media</strong> ("we," "us," or "our") describes how Whywe might access, collect, store, use, and/or share ("process") your personal information when you use our services.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-white/5">
                 <div className="space-y-2">
@@ -212,7 +211,7 @@ const PrivacyPolicy = () => {
                 <li>Phone numbers</li>
                 <li>Email addresses</li>
               </ul>
-              
+
               <h3 className="text-base text-[#47BF72] font-medium mt-6">Sensitive Information</h3>
               <p>We do not process sensitive personal information (such as racial origin, religious beliefs, or medical history).</p>
 
@@ -392,7 +391,7 @@ const PrivacyPolicy = () => {
             <section id="request" className="space-y-4 pt-4 border-t border-white/5">
               <h2 className="text-xl font-medium text-white">15. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</h2>
               <p>
-                Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that info, or delete it in some circumstances. 
+                Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that info, or delete it in some circumstances.
               </p>
               <p>
                 To request to review, update, or delete your personal information, please email us by clicking below:

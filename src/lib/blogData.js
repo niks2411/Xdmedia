@@ -1,16 +1,16 @@
 export const blogPosts = [
   {
     slug: "seo-guide-for-businesses",
-    title: "The Only SEO Guide For Businesses You'll Need in 2026 (And Why Most 'Experts' Are Still Stuck in 2015)",
+    title: "The SEO Guide For Businesses You'll Need in 2026 (WhyMost 'Experts' Are Still Stuck in 2015)",
     metaTitle: "The Complete SEO Guide for 2026: SEO, AEO & GEO",
-    metaDescription: "The only SEO guide you need in 2026. Technical SEO, content authority, AEO & GEO explained with real examples. For any industry, any market.",
+    metaDescription: "The SEO guide you need in 2026. Technical SEO, content authority, AEO & GEO explained with real examples. For any industry, any market.",
     schema: {
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is SEO and why does it still matter in the age of AI search?",
+          "name": "What is SEO Whydoes it still matter in the age of AI search?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "SEO is the practice of making a website discoverable and trustworthy to search engines and AI systems alike. It still matters because both Google and AI models draw their answers from the web, and visibility in either starts with the same foundation."
@@ -93,7 +93,7 @@ export const blogPosts = [
     category: "SEO",
     date: "July 4, 2026",
     readTime: "15 Min Read",
-    excerpt: "The only SEO guide you need in 2026. Technical SEO, content authority, AEO & GEO explained with real examples. For any industry, any market.",
+    excerpt: "The SEO guide you need in 2026. Technical SEO, content authority, AEO & GEO explained with real examples. For any industry, any market.",
     image: "/cover.png",
     sections: [
       {
@@ -506,7 +506,7 @@ If reading this made you realize your current site or agency is missing half of 
       {
         id: "frequently-asked-questions",
         title: "Frequently Asked Questions",
-        content: `1. What is SEO and why does it still matter in the age of AI search?
+        content: `1. What is SEO Whydoes it still matter in the age of AI search?
 SEO is the practice of making a website discoverable and trustworthy to search engines and AI systems alike. It still matters because both Google and AI models draw their answers from the web, and visibility in either starts with the same foundation.
 
 2. How long does SEO take to show results?

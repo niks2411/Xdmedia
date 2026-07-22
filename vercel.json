@@ -69,6 +69,10 @@
             "destination": "/book-a-slot.html"
         },
         {
+            "source": "/blog/seo-guide-for-businesses",
+            "destination": "/blog-seo-guide-for-businesses.html"
+        },
+        {
             "source": "/(.*)",
             "destination": "/index.html"
         }

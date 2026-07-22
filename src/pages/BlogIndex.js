@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import Canonical from '../components/SEO/Canonical';
 import { blogPosts } from '../lib/blogData';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import GmbBadge from '../components/GmbBadge';
@@ -11,7 +12,12 @@ const BlogIndex = () => {
       <Helmet>
         <title>Blog & Insights - XD MEDIA | Digital Marketing & Web Development</title>
         <meta name="description" content="Read the latest articles, guides, and insights on SEO, YouTube growth, monetization, website design, and workflow automation from the team at XD MEDIA." />
+        <meta property="og:title" content="Blog & Insights - XD MEDIA | Digital Marketing & Web Development" />
+        <meta property="og:description" content="Read the latest articles, guides, and insights on SEO, YouTube growth, monetization, website design, and workflow automation from the team at XD MEDIA." />
+        <meta property="twitter:title" content="Blog & Insights - XD MEDIA | Digital Marketing & Web Development" />
+        <meta property="twitter:description" content="Read the latest articles, guides, and insights on SEO, YouTube growth, monetization, website design, and workflow automation from the team at XD MEDIA." />
       </Helmet>
+      <Canonical path="/blog" />
 
       {/* Hero Section */}
       <section className="relative py-20 bg-white text-slate-900 overflow-hidden border-b border-slate-100">

@@ -25,7 +25,7 @@ const indexPath = path.join(__dirname, 'build', 'index.html');
 
 if (fs.existsSync(indexPath)) {
   let indexHtml = fs.readFileSync(indexPath, 'utf8');
-  
+
   const pages = [
     {
       fileName: 'affordable-seo-services-in-india.html',
@@ -99,17 +99,25 @@ if (fs.existsSync(indexPath)) {
     },
     {
       fileName: 'book-a-slot.html',
+      canonicalPath: 'book-a-slot',
       title: 'Book a Free Strategy Session | XD MEDIA',
       description: 'Schedule a free 30-minute strategy call with the XD MEDIA team. Choose your preferred date and time slot and let\'s discuss how to grow your brand.'
+    },
+    {
+      fileName: 'blog-seo-guide-for-businesses.html',
+      canonicalPath: 'blog/seo-guide-for-businesses',
+      title: 'The Complete SEO Guide for 2026: SEO, AEO & GEO | XD Media',
+      description: 'The SEO guide you need in 2026. Technical SEO, content authority, AEO & GEO explained with real examples. For any industry, any market.'
     }
   ];
 
   pages.forEach(page => {
     let modifiedHtml = indexHtml;
-    
+    const urlPath = page.canonicalPath || page.fileName.replace('.html', '');
+
     // Replace title
     modifiedHtml = modifiedHtml.replace(/<title[^>]*>[^<]*<\/title>/gi, `<title data-rh="true">${page.title}</title>`);
-    
+
     // Replace meta description
     modifiedHtml = modifiedHtml.replace(
       /<meta[^>]*name="description"[^>]*\/?>/gis,
@@ -137,6 +145,19 @@ if (fs.existsSync(indexPath)) {
       /<meta[^>]*property="twitter:description"[^>]*\/?>/gis,
       `<meta property="twitter:description" data-rh="true" content="${page.description}" />`
     );
+
+    // Replace/Inject Canonical tag
+    if (modifiedHtml.includes('<link rel="canonical"')) {
+      modifiedHtml = modifiedHtml.replace(
+        /<link[^>]*rel="canonical"[^>]*\/?>/gis,
+        `<link rel="canonical" data-rh="true" href="https://www.xdmedia.in/${urlPath}" />`
+      );
+    } else {
+      modifiedHtml = modifiedHtml.replace(
+        '</head>',
+        `  <link rel="canonical" data-rh="true" href="https://www.xdmedia.in/${urlPath}" />\n</head>`
+      );
+    }
 
     // Write the new file
     const targetPath = path.join(__dirname, 'build', page.fileName);
