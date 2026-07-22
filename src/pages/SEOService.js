@@ -257,6 +257,10 @@ const SEOService = () => {
           name="description"
           content="Improve your online visibility with affordable SEO services. XD Media offers keyword research, on-page SEO, technical SEO, local SEO, and link building to increase rankings, traffic, and qualified leads."
         />
+        <meta property="og:title" content="Affordable SEO Services | Drive Organic Growth | XD Media" />
+        <meta property="og:description" content="Improve your online visibility with affordable SEO services. XD Media offers keyword research, on-page SEO, technical SEO, local SEO, and link building to increase rankings, traffic, and qualified leads." />
+        <meta property="twitter:title" content="Affordable SEO Services | Drive Organic Growth | XD Media" />
+        <meta property="twitter:description" content="Improve your online visibility with affordable SEO services. XD Media offers keyword research, on-page SEO, technical SEO, local SEO, and link building to increase rankings, traffic, and qualified leads." />
       </Helmet>
       <Canonical path="/affordable-seo-services-in-india" />
       {/* Custom Styles */}

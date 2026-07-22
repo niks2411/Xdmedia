@@ -213,6 +213,10 @@ const WhiteLabelSEO = () => {
       <Helmet>
         <title>White Label SEO Services for Agencies | XD Media</title>
         <meta name="description" content="Scale your digital agency with premium, 100% white label SEO services. Partner wholesale pricing, branded client dashboards, and dedicated execution teams." />
+        <meta property="og:title" content="White Label SEO Services for Agencies | XD Media" />
+        <meta property="og:description" content="Scale your digital agency with premium, 100% white label SEO services. Partner wholesale pricing, branded client dashboards, and dedicated execution teams." />
+        <meta property="twitter:title" content="White Label SEO Services for Agencies | XD Media" />
+        <meta property="twitter:description" content="Scale your digital agency with premium, 100% white label SEO services. Partner wholesale pricing, branded client dashboards, and dedicated execution teams." />
       </Helmet>
       <Canonical path="/white-label-seo" />
 

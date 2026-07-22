@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Canonical from '../components/SEO/Canonical';
 import GmbBadge from '../components/GmbBadge';
 import { motion } from 'framer-motion';
@@ -26,6 +27,17 @@ const ChatGPTListing = () => {
 
   return (
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
+      <Helmet>
+        <title>List Your Business on ChatGPT & AI Engines | XD Media</title>
+        <meta
+          name="description"
+          content="Get your brand indexed and recommended by AI assistants like ChatGPT, Claude, and Gemini. Optimize your business for conversational AI search with XD Media."
+        />
+        <meta property="og:title" content="List Your Business on ChatGPT & AI Engines | XD Media" />
+        <meta property="og:description" content="Get your brand indexed and recommended by AI assistants like ChatGPT, Claude, and Gemini. Optimize your business for conversational AI search with XD Media." />
+        <meta property="twitter:title" content="List Your Business on ChatGPT & AI Engines | XD Media" />
+        <meta property="twitter:description" content="Get your brand indexed and recommended by AI assistants like ChatGPT, Claude, and Gemini. Optimize your business for conversational AI search with XD Media." />
+      </Helmet>
       <Canonical path="/list-your-business-on-chatgpt" />
       
       {/* Hero Section */}

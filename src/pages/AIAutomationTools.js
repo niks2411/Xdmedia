@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Canonical from '../components/SEO/Canonical';
 import GmbBadge from '../components/GmbBadge';
 import { motion } from 'framer-motion';
@@ -26,6 +27,17 @@ const AIAutomationTools = () => {
 
   return (
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
+      <Helmet>
+        <title>AI Integration & Workflow Automation Services | XD Media</title>
+        <meta
+          name="description"
+          content="Automate repetitive business workflows and integrate custom AI tools to scale business productivity and customer response times with XD Media."
+        />
+        <meta property="og:title" content="AI Integration & Workflow Automation Services | XD Media" />
+        <meta property="og:description" content="Automate repetitive business workflows and integrate custom AI tools to scale business productivity and customer response times with XD Media." />
+        <meta property="twitter:title" content="AI Integration & Workflow Automation Services | XD Media" />
+        <meta property="twitter:description" content="Automate repetitive business workflows and integrate custom AI tools to scale business productivity and customer response times with XD Media." />
+      </Helmet>
       <Canonical path="/ai-automation-tools" />
       
       {/* Hero Section */}

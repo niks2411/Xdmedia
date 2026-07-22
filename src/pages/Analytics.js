@@ -40,6 +40,10 @@ const Analytics = () => {
           name="description"
           content="Maximize your ROI with performance marketing services from XD Media. We create and optimize Google Ads and Meta Ads campaigns, improve conversions, and deliver measurable business growth through data-driven strategies."
         />
+        <meta property="og:title" content="Performance Marketing Agency | Google & Meta Ads | XD Media" />
+        <meta property="og:description" content="Maximize your ROI with performance marketing services from XD Media. We create and optimize Google Ads and Meta Ads campaigns, improve conversions, and deliver measurable business growth through data-driven strategies." />
+        <meta property="twitter:title" content="Performance Marketing Agency | Google & Meta Ads | XD Media" />
+        <meta property="twitter:description" content="Maximize your ROI with performance marketing services from XD Media. We create and optimize Google Ads and Meta Ads campaigns, improve conversions, and deliver measurable business growth through data-driven strategies." />
       </Helmet>
       <Canonical path="/performance-marketing" />
       {/* Hero Section with Contact Form */}

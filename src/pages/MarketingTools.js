@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Canonical from '../components/SEO/Canonical';
 import { motion } from 'framer-motion';
 import { Code, Zap, Users, Target, Monitor, CheckCircle, ArrowRight, Smartphone, Gauge, Layers, Palette, Globe, Sparkles } from 'lucide-react';
@@ -63,6 +64,17 @@ const MarketingTools = () => {
 
   return (
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
+      <Helmet>
+        <title>Website Design & Development Services | Custom Websites | XD Media</title>
+        <meta
+          name="description"
+          content="Transform your brand with bespoke website design and high-performance development services by XD Media. Fast, mobile-responsive, conversion-focused websites."
+        />
+        <meta property="og:title" content="Website Design & Development Services | Custom Websites | XD Media" />
+        <meta property="og:description" content="Transform your brand with bespoke website design and high-performance development services by XD Media. Fast, mobile-responsive, conversion-focused websites." />
+        <meta property="twitter:title" content="Website Design & Development Services | Custom Websites | XD Media" />
+        <meta property="twitter:description" content="Transform your brand with bespoke website design and high-performance development services by XD Media. Fast, mobile-responsive, conversion-focused websites." />
+      </Helmet>
       <Canonical path="/website-design" />
       {/* Hero Section with Contact Form */}
       <section

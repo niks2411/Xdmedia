@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Canonical from '../components/SEO/Canonical';
 import { motion, LazyMotion, domAnimation } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -139,6 +140,17 @@ const Home = () => {
 
   return (
     <div className="min-h-screen relative">
+      <Helmet>
+        <title>XD MEDIA - We Build Brands People Remember | Digital Marketing Agency</title>
+        <meta
+          name="description"
+          content="XD MEDIA - Where Strategy Meets Creativity. We help brands stop blending in and start standing out. Full-stack marketing, branding & technology agency backed by proven industry leaders."
+        />
+        <meta property="og:title" content="XD MEDIA - We Build Brands People Remember | Digital Marketing Agency" />
+        <meta property="og:description" content="Where Strategy Meets Creativity. We help brands stop blending in and start standing out. Full-stack marketing, branding & technology agency." />
+        <meta property="twitter:title" content="XD MEDIA - We Build Brands People Remember | Digital Marketing Agency" />
+        <meta property="twitter:description" content="Where Strategy Meets Creativity. We help brands stop blending in and start standing out. Full-stack marketing, branding & technology agency." />
+      </Helmet>
       <Canonical path="/" />
       {/* Hero Section */}
       <section className="relative overflow-hidden min-h-[500px] lg:min-h-[600px] w-full flex items-start pt-16 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 bg-slate-900">

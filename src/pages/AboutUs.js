@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Canonical from '../components/SEO/Canonical';
 import GmbBadge from '../components/GmbBadge';
 import { motion } from 'framer-motion';
@@ -16,6 +17,17 @@ const AboutUs = () => {
 
   return (
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
+      <Helmet>
+        <title>About Us | XD MEDIA - Digital Marketing & Branding Agency</title>
+        <meta
+          name="description"
+          content="Learn about XD MEDIA. We are a full-stack digital marketing, branding, and technology agency delivering end-to-end solutions that drive real, measurable growth for global brands."
+        />
+        <meta property="og:title" content="About Us | XD MEDIA - Digital Marketing & Branding Agency" />
+        <meta property="og:description" content="Learn about XD MEDIA. We are a full-stack digital marketing, branding, and technology agency delivering end-to-end solutions that drive real, measurable growth for global brands." />
+        <meta property="twitter:title" content="About Us | XD MEDIA - Digital Marketing & Branding Agency" />
+        <meta property="twitter:description" content="Learn about XD MEDIA. We are a full-stack digital marketing, branding, and technology agency delivering end-to-end solutions that drive real, measurable growth for global brands." />
+      </Helmet>
       <Canonical path="/about-us" />
       {/* Hero Section - Dark Green Theme matching homepage */}
       <section

@@ -247,6 +247,10 @@ const WhiteLabelMarketing = () => {
       <Helmet>
         <title>White Label Digital Marketing Partner Plan | XD Media</title>
         <meta name="description" content="Scale your agency catalog with white label Google Ads, Meta Ads, SEO, and email marketing. 100% invisible fulfillment and wholesale agency margins." />
+        <meta property="og:title" content="White Label Digital Marketing Partner Plan | XD Media" />
+        <meta property="og:description" content="Scale your agency catalog with white label Google Ads, Meta Ads, SEO, and email marketing. 100% invisible fulfillment and wholesale agency margins." />
+        <meta property="twitter:title" content="White Label Digital Marketing Partner Plan | XD Media" />
+        <meta property="twitter:description" content="Scale your agency catalog with white label Google Ads, Meta Ads, SEO, and email marketing. 100% invisible fulfillment and wholesale agency margins." />
       </Helmet>
       <Canonical path="/white-label-digital-marketing" />
 

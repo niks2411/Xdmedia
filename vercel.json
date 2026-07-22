@@ -29,6 +29,46 @@
             "destination": "/performance-marketing.html"
         },
         {
+            "source": "/website-design",
+            "destination": "/website-design.html"
+        },
+        {
+            "source": "/about-us",
+            "destination": "/about-us.html"
+        },
+        {
+            "source": "/contact",
+            "destination": "/contact.html"
+        },
+        {
+            "source": "/blog",
+            "destination": "/blog.html"
+        },
+        {
+            "source": "/white-label-seo",
+            "destination": "/white-label-seo.html"
+        },
+        {
+            "source": "/white-label-digital-marketing",
+            "destination": "/white-label-digital-marketing.html"
+        },
+        {
+            "source": "/list-your-business-on-chatgpt",
+            "destination": "/list-your-business-on-chatgpt.html"
+        },
+        {
+            "source": "/gmb-optimization",
+            "destination": "/gmb-optimization.html"
+        },
+        {
+            "source": "/ai-automation-tools",
+            "destination": "/ai-automation-tools.html"
+        },
+        {
+            "source": "/book-a-slot",
+            "destination": "/book-a-slot.html"
+        },
+        {
             "source": "/(.*)",
             "destination": "/index.html"
         }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Canonical from '../components/SEO/Canonical';
 import GmbBadge from '../components/GmbBadge';
 import { motion } from 'framer-motion';
@@ -26,6 +27,17 @@ const GMBOptimization = () => {
 
   return (
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
+      <Helmet>
+        <title>Google My Business Optimization | Rank #1 Local Map Pack | XD Media</title>
+        <meta
+          name="description"
+          content="Dominate local search rankings with XD Media's GMB Optimization services. Drive high-intent phone calls, foot traffic, and leads with top 3 Map Pack rankings."
+        />
+        <meta property="og:title" content="Google My Business Optimization | Rank #1 Local Map Pack | XD Media" />
+        <meta property="og:description" content="Dominate local search rankings with XD Media's GMB Optimization services. Drive high-intent phone calls, foot traffic, and leads with top 3 Map Pack rankings." />
+        <meta property="twitter:title" content="Google My Business Optimization | Rank #1 Local Map Pack | XD Media" />
+        <meta property="twitter:description" content="Dominate local search rankings with XD Media's GMB Optimization services. Drive high-intent phone calls, foot traffic, and leads with top 3 Map Pack rankings." />
+      </Helmet>
       <Canonical path="/gmb-optimization" />
       
       {/* Hero Section */}

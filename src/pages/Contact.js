@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Canonical from '../components/SEO/Canonical';
 import GmbBadge from '../components/GmbBadge';
 import { motion } from 'framer-motion';
@@ -120,6 +121,17 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
+      <Helmet>
+        <title>Contact Us | XD MEDIA - Digital Marketing & Tech Solutions</title>
+        <meta
+          name="description"
+          content="Get in touch with XD MEDIA. Contact our team to discuss your SEO, web development, branding, or performance marketing goals today."
+        />
+        <meta property="og:title" content="Contact Us | XD MEDIA - Digital Marketing & Tech Solutions" />
+        <meta property="og:description" content="Get in touch with XD MEDIA. Contact our team to discuss your SEO, web development, branding, or performance marketing goals today." />
+        <meta property="twitter:title" content="Contact Us | XD MEDIA - Digital Marketing & Tech Solutions" />
+        <meta property="twitter:description" content="Get in touch with XD MEDIA. Contact our team to discuss your SEO, web development, branding, or performance marketing goals today." />
+      </Helmet>
       <Canonical path="/contact" />
 
       {/* Contact Form & Info */}

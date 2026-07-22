@@ -230,6 +230,10 @@ const WebDevelopmentService = () => {
           name="description"
           content="Create a fast, responsive, and SEO-friendly website with XD Media. Our web development services include custom websites, WordPress development, eCommerce solutions, UI/UX design, and ongoing website support."
         />
+        <meta property="og:title" content="Web Development Services | Custom Websites | XD Media" />
+        <meta property="og:description" content="Create a fast, responsive, and SEO-friendly website with XD Media. Our web development services include custom websites, WordPress development, eCommerce solutions, UI/UX design, and ongoing website support." />
+        <meta property="twitter:title" content="Web Development Services | Custom Websites | XD Media" />
+        <meta property="twitter:description" content="Create a fast, responsive, and SEO-friendly website with XD Media. Our web development services include custom websites, WordPress development, eCommerce solutions, UI/UX design, and ongoing website support." />
       </Helmet>
       <Canonical path="/web-development-services" />
       {/* Custom Styles */}
